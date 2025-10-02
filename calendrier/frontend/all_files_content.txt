@@ -1,5 +1,200 @@
+
+📂 Directory: C:\Users\Tech\Calendrier-1\calendrier\frontend
+================================================================================
+
+📝 File: eslint.config.js
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\eslint.config.js
+--------------------------------------------------------------------------------
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{js,jsx}'],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs['recommended-latest'],
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        ecmaFeatures: { jsx: true },
+        sourceType: 'module',
+      },
+    },
+    rules: {
+      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+    },
+  },
+])
+
+📝 File: index.html
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\index.html
+--------------------------------------------------------------------------------
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+📝 File: package.json
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\package.json
+--------------------------------------------------------------------------------
+{
+  "name": "calendrier",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "start:server": "node src/server/index.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.58.0",
+    "@tailwindcss/vite": "^4.1.13",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "express": "^5.1.0",
+    "react": "^19.1.1",
+    "react-big-calendar": "^1.19.4",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.13"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "eslint": "^9.35.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.4.0",
+    "vite": "^7.1.6"
+  }
+}
+
+📝 File: README.md
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\README.md
+--------------------------------------------------------------------------------
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+📝 File: vite.config.js
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\vite.config.js
+--------------------------------------------------------------------------------
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+})
+
+================================================================================
+
+📂 Directory: C:\Users\Tech\Calendrier-1\calendrier\frontend\public
+================================================================================
+
+================================================================================
+
+📂 Directory: C:\Users\Tech\Calendrier-1\calendrier\frontend\src
+================================================================================
+
+📝 File: App.css
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\App.css
+--------------------------------------------------------------------------------
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+📝 File: App.jsx
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\App.jsx
+--------------------------------------------------------------------------------
+import React from "react";
+import MyBigCalendar from "./Calendar.jsx";
+
+function App() {
+  return (
+    <div className="App">
+      <MyBigCalendar />
+    </div>
+  );
+}
+
+export default App;
+
+📝 File: Calendar.jsx
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\Calendar.jsx
+--------------------------------------------------------------------------------
 // src/Calendar.jsx
-import { supabase } from "./supabaseClient";
 import { createEvent } from "./services/api";
 import React, { useState, useMemo } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
@@ -253,27 +448,6 @@ export default function MyBigCalendar() {
     setSaveAllMessage(null);
 
     try {
-      // fetch current authenticated user once
-      const {
-        data: { user },
-        error: userErr,
-      } = await supabase.auth.getUser();
-
-      if (userErr) {
-        console.error("Error fetching user:", userErr);
-        setSaveAllMessage("Failed to get authenticated user. Please sign in.");
-        setIsSavingAll(false);
-        return;
-      }
-
-      if (!user || !user.id) {
-        setSaveAllMessage("You must be signed in to save events.");
-        setIsSavingAll(false);
-        return;
-      }
-
-      const userId = user.id;
-
       await Promise.all(
         events.map((ev) =>
           createEvent({
@@ -284,7 +458,7 @@ export default function MyBigCalendar() {
                 : String(ev.start),
             end: ev.end instanceof Date ? ev.end.toISOString() : String(ev.end),
             allDay: !!ev.allDay,
-            userId, // pass authenticated user id
+            userId: ev.userId ?? null,
             category: ev.category ?? null,
             color: ev.color ?? null,
           })
@@ -579,3 +753,345 @@ export default function MyBigCalendar() {
     </div>
   );
 }
+
+📝 File: index.css
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\index.css
+--------------------------------------------------------------------------------
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Simple Card */
+.simple-card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Simple Input */
+.simple-input {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: white;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.simple-input:focus {
+  border-color: #555;
+}
+
+.simple-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.simple-input::placeholder {
+  color: #888;
+}
+
+.simple-input.border-red-500 {
+  border-color: #ef4444;
+}
+
+/* Simple Button */
+.simple-button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.simple-button:hover:not(:disabled) {
+  background-color: #444;
+}
+
+.simple-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #222;
+}
+
+/* Simple Checkbox */
+.simple-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #666;
+}
+
+/* View Toggle Buttons */
+.view-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-btn:hover {
+  background-color: #444;
+  color: white;
+}
+
+.view-btn.active {
+  background-color: #555;
+  color: white;
+  border-color: #777;
+}
+
+/* Calendar Styles */
+.rbc-header {
+  background-color: #1a1a1a !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 12px !important;
+  border: 1px solid #333 !important;
+}
+
+.rbc-today {
+  background-color: #333 !important;
+  color: white !important;
+}
+
+.rbc-event {
+  background-color: #555 !important;
+  border: none !important;
+  border-radius: 4px !important;
+  color: white !important;
+}
+
+.rbc-event:hover {
+  background-color: #666 !important;
+}
+
+.rbc-btn-group > button {
+  background-color: #1a1a1a !important;
+  border: 1px solid #333 !important;
+  color: white !important;
+  padding: 8px 16px !important;
+  border-radius: 4px !important;
+  margin: 0 2px !important;
+}
+
+.rbc-btn-group > button:hover {
+  background-color: #333 !important;
+}
+
+.rbc-active {
+  background-color: #555 !important;
+  color: white !important;
+}
+
+.rbc-toolbar {
+  margin-bottom: 20px !important;
+  padding: 16px !important;
+  background-color: #1a1a1a !important;
+  border: 1px solid #333 !important;
+  border-radius: 8px !important;
+}
+
+.rbc-toolbar-label {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: white !important;
+  text-align: center !important;
+  flex-grow: 1 !important;
+}
+
+.rbc-time-slot {
+  border-color: #333 !important;
+}
+
+.rbc-timeslot-group {
+  border-color: #333 !important;
+}
+
+.rbc-date-cell {
+  padding: 8px !important;
+  color: white !important;
+}
+
+.rbc-date-cell.rbc-off-range {
+  color: #666 !important;
+}
+
+.rbc-button-link {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.rbc-button-link:hover {
+  color: #ccc !important;
+}
+
+.rbc-selected {
+  background-color: #333 !important;
+  border: 1px solid #555 !important;
+}
+
+.rbc-calendar {
+  background-color: #000 !important;
+  color: white !important;
+}
+
+.rbc-month-view {
+  background-color: #000 !important;
+}
+
+.rbc-day-bg {
+  background-color: #000 !important;
+}
+
+.rbc-time-view {
+  background-color: #000 !important;
+}
+
+.rbc-time-content {
+  background-color: #000 !important;
+}
+
+.rbc-time-header {
+  background-color: #000 !important;
+}
+
+📝 File: main.jsx
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\main.jsx
+--------------------------------------------------------------------------------
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
+📝 File: supabaseClient.js
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\supabaseClient.js
+--------------------------------------------------------------------------------
+// src/supabaseClient.js
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.warn("Supabase variables not set. Check .env");
+}
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+================================================================================
+
+📂 Directory: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\assets
+================================================================================
+
+================================================================================
+
+📂 Directory: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\services
+================================================================================
+
+📝 File: api.js
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\services\api.js
+--------------------------------------------------------------------------------
+// src/services/api.js (updated — no all_day)
+import { supabase } from "../supabaseClient";
+
+/**
+ * Fetch events. Optional filters: userId, from, to
+ */
+export async function fetchEvents(userId, opts = {}) {
+  let query = supabase.from("events").select("*");
+
+  if (userId !== undefined && userId !== null) {
+    query = query.eq("user_id", String(userId));
+  }
+  if (opts.from) {
+    query = query.gte("end", opts.from);
+  }
+  if (opts.to) {
+    query = query.lte("start", opts.to);
+  }
+
+  const { data, error } = await query.order("start", { ascending: true });
+  if (error) throw error;
+  return data;
+}
+
+export async function createEvent(payload) {
+  // payload: { title, start, end, userId, category, color }
+  const insertObj = {
+    title: payload.title,
+    start: payload.start,
+    end: payload.end,
+    user_id: payload.userId ?? null,
+    category: payload.category ?? null,
+    color: payload.color ?? null,
+  };
+
+  const { data, error } = await supabase
+    .from("events")
+    .insert([insertObj])
+    .select()
+    .single();
+
+  if (error) throw error;
+  return data;
+}
+
+export async function updateEvent(id, payload) {
+  const updateObj = {
+    title: payload.title,
+    start: payload.start,
+    end: payload.end,
+    category: payload.category ?? null,
+    color: payload.color ?? null,
+  };
+
+  const { data, error } = await supabase
+    .from("events")
+    .update(updateObj)
+    .eq("id", id)
+    .select()
+    .single();
+
+  if (error) throw error;
+  return data;
+}
+
+export async function deleteEvent(id) {
+  const { error } = await supabase.from("events").delete().eq("id", id);
+  if (error) throw error;
+  return true;
+}
+
+================================================================================

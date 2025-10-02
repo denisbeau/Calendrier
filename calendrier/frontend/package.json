@@ -7,11 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start:server": "node src/server/index.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.58.0",
     "@tailwindcss/vite": "^4.1.13",
+    "cors": "^2.8.5",
     "date-fns": "^4.1.0",
+    "express": "^5.1.0",
     "react": "^19.1.1",
     "react-big-calendar": "^1.19.4",
     "react-dom": "^19.1.1",
