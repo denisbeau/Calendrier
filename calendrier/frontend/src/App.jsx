@@ -1,11 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
+import NavBar from "./NavBar.jsx";
 import MyBigCalendar from "./Calendar.jsx";
 
-function App() {
+function TeamsPlaceholder() {
   return (
-    <div className="App">
-      <MyBigCalendar />
+    <div className={`min-h-screen flex items-center justify-center '}`}>
+      <h1 className="text-2xl">Teams - Coming Soon</h1>
     </div>
+  );
+}
+
+function HomePlaceholder() {
+  return (
+    <div className={`min-h-screen flex items-center justify-center `}>
+      <h1 className="text-2xl">Home - Coming Soon</h1>
+    </div>
+  );
+}
+
+  
+function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+
+  const renderPage = () => {
+    switch(currentPage) {
+      case 'home':
+        return <HomePlaceholder setCurrentPage={setCurrentPage} />;
+      case 'calendar':
+        return <MyBigCalendar />;
+      case 'teams':
+        return <TeamsPlaceholder />;
+      default:
+        return <HomePlaceholder setCurrentPage={setCurrentPage} />;
+    }
+  };
+
+  return (
+      <div className="App">
+        <NavBar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+        {renderPage()}
+      </div>
   );
 }
 

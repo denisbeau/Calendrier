@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -12,212 +12,276 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #000000;
+}
+
+body.dark {
+  background-color: #111111;
   color: #ffffff;
 }
 
+body.light {
+  background-color: #f8fafc;
+  color: #1f2937;
+}
+
 /* Simple Card */
-.simple-card {
-  background-color: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 20px;
+body.dark .simple-card {
+  background-color: #1f1f1f;
+  border: 1px solid #404040;
+  border-radius: 6px;
+  padding: 24px;
+}
+
+body.light .simple-card {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 24px;
 }
 
 /* Simple Input */
-.simple-input {
+body.dark .simple-input {
   width: 100%;
-  padding: 12px 16px;
-  background-color: #1a1a1a;
-  border: 1px solid #333;
+  padding: 10px 14px;
+  background-color: #1f1f1f;
+  border: 1px solid #404040;
   border-radius: 4px;
   color: white;
   outline: none;
-  transition: border-color 0.2s ease;
 }
 
-.simple-input:focus {
-  border-color: #555;
+body.light .simple-input {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  color: #1f2937;
+  outline: none;
+}
+
+body.dark .simple-input:focus {
+  border-color: #606060;
+}
+
+body.light .simple-input:focus {
+  border-color: #3b82f6;
 }
 
 .simple-input:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
-.simple-input::placeholder {
-  color: #888;
+body.dark .simple-input::placeholder {
+  color: #888888;
+}
+
+body.light .simple-input::placeholder {
+  color: #6b7280;
 }
 
 .simple-input.border-red-500 {
-  border-color: #ef4444;
+  border-color: #dc2626;
 }
 
 /* Simple Button */
-.simple-button {
+body.dark .simple-button {
   width: 100%;
-  padding: 12px 20px;
-  background-color: #333;
-  border: 1px solid #555;
+  padding: 10px 16px;
+  background-color: #404040;
+  border: 1px solid #606060;
   border-radius: 4px;
   color: white;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 
-.simple-button:hover:not(:disabled) {
-  background-color: #444;
+body.light .simple-button {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  color: #1f2937;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-.simple-button:disabled {
-  opacity: 0.6;
+body.dark .simple-button:hover:not(:disabled) {
+  background-color: #505050;
+}
+
+body.light .simple-button:hover:not(:disabled) {
+  background-color: #e5e7eb;
+}
+
+body.dark .simple-button:disabled {
+  opacity: 0.5;
   cursor: not-allowed;
-  background-color: #222;
+  background-color: #2a2a2a;
 }
 
-/* Simple Checkbox */
-.simple-checkbox {
-  width: 16px;
-  height: 16px;
-  accent-color: #666;
+body.light .simple-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f9fafb;
 }
 
-/* View Toggle Buttons */
-.view-btn {
-  padding: 8px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 4px;
-  border: 1px solid #555;
-  background-color: #333;
-  color: #ccc;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.view-btn:hover {
-  background-color: #444;
-  color: white;
-}
-
-.view-btn.active {
-  background-color: #555;
-  color: white;
-  border-color: #777;
-}
-
-/* Calendar Styles */
-.rbc-header {
-  background-color: #1a1a1a !important;
+/* Calendar Styles - Dark Theme */
+body.dark .rbc-header {
+  background-color: #1f1f1f !important;
   color: white !important;
-  font-weight: 600 !important;
-  padding: 12px !important;
-  border: 1px solid #333 !important;
+  font-weight: 500 !important;
+  padding: 10px !important;
+  border: 1px solid #404040 !important;
 }
 
-.rbc-today {
-  background-color: #333 !important;
-  color: white !important;
+body.dark .rbc-today {
+  background-color: #404040 !important;
 }
 
-.rbc-event {
-  background-color: #555 !important;
+body.dark .rbc-event {
+  background-color: #606060 !important;
   border: none !important;
+  border-radius: 3px !important;
+  color: white !important;
+}
+
+body.dark .rbc-btn-group > button {
+  background-color: #1f1f1f !important;
+  border: 1px solid #404040 !important;
+  color: white !important;
+  padding: 6px 12px !important;
+  border-radius: 3px !important;
+  margin: 0 1px !important;
+}
+
+body.dark .rbc-btn-group > button:hover {
+  background-color: #404040 !important;
+}
+
+body.dark .rbc-active {
+  background-color: #606060 !important;
+}
+
+body.dark .rbc-toolbar {
+  margin-bottom: 16px !important;
+  padding: 12px !important;
+  background-color: #1f1f1f !important;
+  border: 1px solid #404040 !important;
   border-radius: 4px !important;
+}
+
+body.dark .rbc-toolbar-label {
+  font-size: 18px !important;
+  font-weight: 600 !important;
   color: white !important;
 }
 
-.rbc-event:hover {
-  background-color: #666 !important;
+body.dark .rbc-time-slot,
+body.dark .rbc-timeslot-group {
+  border-color: #404040 !important;
 }
 
-.rbc-btn-group > button {
-  background-color: #1a1a1a !important;
-  border: 1px solid #333 !important;
-  color: white !important;
-  padding: 8px 16px !important;
-  border-radius: 4px !important;
-  margin: 0 2px !important;
-}
-
-.rbc-btn-group > button:hover {
-  background-color: #333 !important;
-}
-
-.rbc-active {
-  background-color: #555 !important;
+body.dark .rbc-date-cell {
   color: white !important;
 }
 
-.rbc-toolbar {
-  margin-bottom: 20px !important;
-  padding: 16px !important;
-  background-color: #1a1a1a !important;
-  border: 1px solid #333 !important;
-  border-radius: 8px !important;
+body.dark .rbc-date-cell.rbc-off-range {
+  color: #808080 !important;
 }
 
-.rbc-toolbar-label {
-  font-size: 20px !important;
-  font-weight: 700 !important;
-  color: white !important;
-  text-align: center !important;
-  flex-grow: 1 !important;
-}
-
-.rbc-time-slot {
-  border-color: #333 !important;
-}
-
-.rbc-timeslot-group {
-  border-color: #333 !important;
-}
-
-.rbc-date-cell {
-  padding: 8px !important;
-  color: white !important;
-}
-
-.rbc-date-cell.rbc-off-range {
-  color: #666 !important;
-}
-
-.rbc-button-link {
+body.dark .rbc-button-link {
   color: white !important;
   text-decoration: none !important;
 }
 
-.rbc-button-link:hover {
-  color: #ccc !important;
-}
-
-.rbc-selected {
-  background-color: #333 !important;
-  border: 1px solid #555 !important;
-}
-
-.rbc-calendar {
-  background-color: #000 !important;
+body.dark .rbc-calendar,
+body.dark .rbc-month-view,
+body.dark .rbc-day-bg,
+body.dark .rbc-time-view,
+body.dark .rbc-time-content,
+body.dark .rbc-time-header {
+  background-color: #111111 !important;
   color: white !important;
 }
 
-.rbc-month-view {
-  background-color: #000 !important;
+/* Calendar Styles - Light Theme */
+body.light .rbc-header {
+  background-color: #f9fafb !important;
+  color: #1f2937 !important;
+  font-weight: 500 !important;
+  padding: 10px !important;
+  border: 1px solid #d1d5db !important;
 }
 
-.rbc-day-bg {
-  background-color: #000 !important;
+body.light .rbc-today {
+  background-color: #dbeafe !important;
 }
 
-.rbc-time-view {
-  background-color: #000 !important;
+body.light .rbc-event {
+  background-color: #3b82f6 !important;
+  border: none !important;
+  border-radius: 3px !important;
+  color: white !important;
 }
 
-.rbc-time-content {
-  background-color: #000 !important;
+body.light .rbc-btn-group > button {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #1f2937 !important;
+  padding: 6px 12px !important;
+  border-radius: 3px !important;
+  margin: 0 1px !important;
 }
 
-.rbc-time-header {
-  background-color: #000 !important;
+body.light .rbc-btn-group > button:hover {
+  background-color: #f3f4f6 !important;
+}
+
+body.light .rbc-active {
+  background-color: #e5e7eb !important;
+}
+
+body.light .rbc-toolbar {
+  margin-bottom: 16px !important;
+  padding: 12px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 4px !important;
+}
+
+body.light .rbc-toolbar-label {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+}
+
+body.light .rbc-time-slot,
+body.light .rbc-timeslot-group {
+  border-color: #e5e7eb !important;
+}
+
+body.light .rbc-date-cell {
+  color: #1f2937 !important;
+}
+
+body.light .rbc-date-cell.rbc-off-range {
+  color: #9ca3af !important;
+}
+
+body.light .rbc-button-link {
+  color: #1f2937 !important;
+  text-decoration: none !important;
+}
+
+body.light .rbc-calendar,
+body.light .rbc-month-view,
+body.light .rbc-day-bg,
+body.light .rbc-time-view,
+body.light .rbc-time-content,
+body.light .rbc-time-header {
+  background-color: #f8fafc !important;
+  color: #1f2937 !important;
 }
