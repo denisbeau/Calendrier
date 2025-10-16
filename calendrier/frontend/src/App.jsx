@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Home from "./Home.jsx";
 import NavBar from "./NavBar.jsx";
 import MyBigCalendar from "./Calendar.jsx";
 
@@ -25,13 +26,13 @@ function App() {
   const renderPage = () => {
     switch(currentPage) {
       case 'home':
-        return <HomePlaceholder setCurrentPage={setCurrentPage} />;
+        return <Home setCurrentPage={setCurrentPage} />;
       case 'calendar':
         return <MyBigCalendar />;
       case 'teams':
         return <TeamsPlaceholder />;
       default:
-        return <HomePlaceholder setCurrentPage={setCurrentPage} />;
+        return <Home setCurrentPage={setCurrentPage} />;
     }
   };
 
