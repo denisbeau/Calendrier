@@ -4,6 +4,12 @@ import format from "date-fns/format";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
+import addDays from "date-fns/addDays";
+import addWeeks from "date-fns/addWeeks";
+import addMonths from "date-fns/addMonths";
+import subDays from "date-fns/subDays";
+import subWeeks from "date-fns/subWeeks";
+import subMonths from "date-fns/subMonths";
 import enUS from "date-fns/locale/en-US";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
@@ -44,16 +50,17 @@ export default function MyBigCalendar() {
   };
 
   const [events, setEvents] = useState([]);
-  const [newEvent, setNewEvent] = useState({ 
+  const [formEvent, setFormEvent] = useState({ 
     title: "", 
     start: getCurrentDateTime(), 
-    end: getOneHourFromNow(), 
-    allDay: false 
+    end: getOneHourFromNow(),  
   });
-  const [editingEvent, setEditingEvent] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
+  const [editingEventId, setEditingEventId] = useState(null);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentView, setCurrentView] = useState('week');
+  const [currentDate, setCurrentDate] = useState(new Date());
 
   // Basic id generator for demo purposes
   const nextId = useMemo(() => {
@@ -95,7 +102,7 @@ export default function MyBigCalendar() {
     return newErrors;
   }
 
-  async function handleAddEvent(e) {
+  async function handleFormSubmit(e) {
     e.preventDefault();
     
     if (isSubmitting) return; // Prevent double submission
@@ -104,152 +111,181 @@ export default function MyBigCalendar() {
     setErrors({});
 
     try {
-      const validationErrors = validateEvent(newEvent);
+      const validationErrors = validateEvent(formEvent);
       
       if (Object.keys(validationErrors).length > 0) {
         setErrors(validationErrors);
         return;
       }
 
-      const startDate = new Date(newEvent.start);
-      const endDate = new Date(newEvent.end);
+      const startDate = new Date(formEvent.start);
+      const endDate = new Date(formEvent.end);
 
-      const newEventObj = {
-        id: nextId(),
-        title: newEvent.title.trim(),
-        start: startDate,
-        end: endDate,
-        allDay: newEvent.allDay,
-      };
+      if (isEditing) {
+        // Update existing event
+        const updatedEvent = {
+          id: editingEventId,
+          title: formEvent.title.trim(),
+          start: startDate,
+          end: endDate,
+        };
 
-      setEvents(prev => [...prev, newEventObj]);
-      setNewEvent({ 
-        title: "", 
-        start: getCurrentDateTime(), 
-        end: getOneHourFromNow(), 
-        allDay: false 
-      });
-      
-    } catch (error) {
-      console.error("Error adding event:", error);
-      setErrors({ general: "Failed to add event. Please try again." });
-    } finally {
-      setIsSubmitting(false);
-    }
-  }
+        setEvents(prev => prev.map(event => 
+          event.id === editingEventId ? updatedEvent : event
+        ));
+        
+        // Reset to create mode
+        handleCancelEdit();
+      } else {
+        // Create new event
+        const newEventObj = {
+          id: nextId(),
+          title: formEvent.title.trim(),
+          start: startDate,
+          end: endDate,
+        };
 
-  async function handleUpdateEvent(e) {
-    e.preventDefault();
-    
-    if (isSubmitting || !editingEvent) return;
-    
-    setIsSubmitting(true);
-    setErrors({});
-
-    try {
-      const validationErrors = validateEvent(editingEvent);
-      
-      if (Object.keys(validationErrors).length > 0) {
-        setErrors(validationErrors);
-        return;
+        setEvents(prev => [...prev, newEventObj]);
+        setFormEvent({ 
+          title: "", 
+          start: getCurrentDateTime(), 
+          end: getOneHourFromNow(), 
+        });
       }
-
-      const startDate = new Date(editingEvent.start);
-      const endDate = new Date(editingEvent.end);
-
-      const updatedEvent = {
-        ...editingEvent,
-        title: editingEvent.title.trim(),
-        start: startDate,
-        end: endDate,
-      };
-
-      setEvents(prev => prev.map(event => 
-        event.id === editingEvent.id ? updatedEvent : event
-      ));
-      
-      setEditingEvent(null);
       
     } catch (error) {
-      console.error("Error updating event:", error);
-      setErrors({ general: "Failed to update event. Please try again." });
+      console.error("Error saving event:", error);
+      setErrors({ general: "Failed to save event. Please try again." });
     } finally {
       setIsSubmitting(false);
     }
   }
+
+
 
   function handleSelectEvent(event) {
-    // Set the event for editing
-    setEditingEvent({
-      ...event,
+    // Populate the main form with the event data for editing
+    setFormEvent({
+      title: event.title,
       start: formatDateTimeLocal(event.start),
       end: formatDateTimeLocal(event.end)
     });
+    setIsEditing(true);
+    setEditingEventId(event.id);
+    setErrors({});
   }
 
-  function handleDeleteEvent(eventId) {
+  function handleDeleteEvent() {
     if (window.confirm("Are you sure you want to delete this event?")) {
-      setEvents(prev => prev.filter(event => event.id !== eventId));
-      if (editingEvent && editingEvent.id === eventId) {
-        setEditingEvent(null);
-      }
+      setEvents(prev => prev.filter(event => event.id !== editingEventId));
+      handleCancelEdit();
     }
   }
 
   function handleCancelEdit() {
-    setEditingEvent(null);
+    setIsEditing(false);
+    setEditingEventId(null);
+    setFormEvent({ 
+      title: "", 
+      start: getCurrentDateTime(), 
+      end: getOneHourFromNow(), 
+    });
     setErrors({});
   }
 
   function handleSelectSlot(slotInfo) {
     try {
-      const title = prompt("New event title for selected range:");
-      if (!title || !title.trim()) return;
+      // Format the selected time range for display
+      const startTime = slotInfo.start.toLocaleString();
+      const endTime = slotInfo.end.toLocaleString();
       
-      const isAllDay = slotInfo.slots && slotInfo.slots.length === 1;
+      const title = prompt(`Enter event title for:\n${startTime} - ${endTime}`);
+      if (!title || !title.trim()) return;
       
       const newEventObj = {
         id: nextId(),
         title: title.trim(),
         start: slotInfo.start,
         end: slotInfo.end,
-        allDay: isAllDay,
       };
       
       setEvents(prev => [...prev, newEventObj]);
+      
+      // Show success message
+      console.log(`Event "${title.trim()}" created successfully!`);
+      
     } catch (error) {
       console.error("Error creating event from slot:", error);
+      console.error("SlotInfo:", slotInfo);
+      console.error("Events array:", events);
+      alert("Failed to create event. Please try again.");
     }
   }
 
-  return (
-    <div className="min-h-screen bg-black text-white p-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-white mb-2">Calendar</h1>
-          <p className="text-gray-400">Manage your events and schedule</p>
-        </div>
+  // Navigation functions
+  function handleToday() {
+    setCurrentDate(new Date());
+  }
 
-        {/* Add event form */}
+  function handleNavigateBack() {
+    setCurrentDate(prevDate => {
+      switch (currentView) {
+        case 'day':
+          return subDays(prevDate, 1);
+        case 'week':
+          return subWeeks(prevDate, 1);
+        case 'month':
+          return subMonths(prevDate, 1);
+        case 'agenda':
+          return subWeeks(prevDate, 1);
+        default:
+          return subWeeks(prevDate, 1);
+      }
+    });
+  }
+
+  function handleNavigateNext() {
+    setCurrentDate(prevDate => {
+      switch (currentView) {
+        case 'day':
+          return addDays(prevDate, 1);
+        case 'week':
+          return addWeeks(prevDate, 1);
+        case 'month':
+          return addMonths(prevDate, 1);
+        case 'agenda':
+          return addWeeks(prevDate, 1);
+        default:
+          return addWeeks(prevDate, 1);
+      }
+    });
+  }
+
+  return (
+    <div className="min-h-screen p-6 bg-gray-50 text-gray-900">
+      <div className="max-w-7xl mx-auto">
+
         <div className="simple-card mb-8">
-          <h2 className="text-xl font-semibold text-white mb-4">Create New Event</h2>
+          <h2 className="text-xl font-semibold mb-4 text-gray-900">
+            {isEditing ? 'Edit Event' : 'Create New Event'}
+          </h2>
           
           {errors.general && (
-            <div className="mb-4 p-3 bg-red-900/20 border border-red-500 rounded text-red-300 text-sm">
+            <div className="mb-4 p-3 border border-red-500 rounded text-sm bg-red-50 text-red-700">
               {errors.general}
             </div>
           )}
           
-          <form onSubmit={handleAddEvent} className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+          <form onSubmit={handleFormSubmit} className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium mb-2 text-gray-700">
                 Title *
               </label>
               <input
                 className={`simple-input ${errors.title ? 'border-red-500' : ''}`}
-                value={newEvent.title}
+                value={formEvent.title}
                 onChange={(e) => {
-                  setNewEvent({ ...newEvent, title: e.target.value });
+                  setFormEvent({ ...formEvent, title: e.target.value });
                   if (errors.title) {
                     setErrors(prev => ({ ...prev, title: null }));
                   }
@@ -263,15 +299,15 @@ export default function MyBigCalendar() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium mb-2 text-gray-700">
                 Start Time *
               </label>
               <input
                 type="datetime-local"
                 className={`simple-input ${errors.start ? 'border-red-500' : ''}`}
-                value={newEvent.start}
+                value={formEvent.start}
                 onChange={(e) => {
-                  setNewEvent({ ...newEvent, start: e.target.value });
+                  setFormEvent({ ...formEvent, start: e.target.value });
                   if (errors.start) {
                     setErrors(prev => ({ ...prev, start: null }));
                   }
@@ -284,15 +320,15 @@ export default function MyBigCalendar() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium mb-2 text-gray-700">
                 End Time *
               </label>
               <input
                 type="datetime-local"
                 className={`simple-input ${errors.end ? 'border-red-500' : ''}`}
-                value={newEvent.end}
+                value={formEvent.end}
                 onChange={(e) => {
-                  setNewEvent({ ...newEvent, end: e.target.value });
+                  setFormEvent({ ...formEvent, end: e.target.value });
                   if (errors.end) {
                     setErrors(prev => ({ ...prev, end: null }));
                   }
@@ -305,33 +341,50 @@ export default function MyBigCalendar() {
             </div>
 
             <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  id="allDay"
-                  checked={newEvent.allDay}
-                  onChange={(e) => setNewEvent({ ...newEvent, allDay: e.target.checked })}
-                  className="simple-checkbox"
+              {isEditing ? (
+                <div className="flex gap-2">
+                  <button 
+                    type="submit" 
+                    className="simple-button flex-1"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Updating...' : 'Update Event'}
+                  </button>
+                  
+                  <button
+                    type="button"
+                    onClick={handleDeleteEvent}
+                    className="simple-button bg-red-600 hover:bg-red-700 flex-1"
+                    disabled={isSubmitting}
+                  >
+                    Delete Event
+                  </button>
+                  
+                  <button
+                    type="button"
+                    onClick={handleCancelEdit}
+                    className="simple-button bg-gray-600 hover:bg-gray-700 flex-1"
+                    disabled={isSubmitting}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              ) : (
+                <button 
+                  type="submit" 
+                  className="simple-button"
                   disabled={isSubmitting}
-                />
-                <label htmlFor="allDay" className="text-sm text-gray-300">
-                  All day event
-                </label>
-              </div>
-              <button 
-                type="submit" 
-                className="simple-button"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Creating...' : 'Create Event'}
-              </button>
+                >
+                  {isSubmitting ? 'Creating...' : 'Create Event'}
+                </button>
+              )}
             </div>
           </form>
         </div>
 
         {/* Calendar */}
         <div className="simple-card">
-          <h3 className="text-xl font-semibold text-white mb-4">Calendar</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-900">Calendar</h3>
           <Calendar
             localizer={localizer}
             events={events}
@@ -345,99 +398,13 @@ export default function MyBigCalendar() {
             onView={setCurrentView}
             views={['month', 'week', 'day', 'agenda']}
             popup
+            date={currentDate}
+            onNavigate={setCurrentDate}
+            scrollToTime={new Date(1970, 1, 1, 8)}
           />
         </div>
 
-        {editingEvent && (
-          <div className="simple-card">
-            <h3 className="text-xl font-semibold mb-4 text-white">Edit Event</h3>
-            
-            <form onSubmit={handleUpdateEvent}>
-              <div className="space-y-4">
-                <div>
-                  <label htmlFor="edit-title" className="block text-sm font-medium text-gray-300 mb-1">
-                    Event Title
-                  </label>
-                  <input
-                    type="text"
-                    id="edit-title"
-                    className="simple-input"
-                    placeholder="Enter event title..."
-                    value={editingEvent.title}
-                    onChange={(e) => setEditingEvent(prev => ({ ...prev, title: e.target.value }))}
-                  />
-                  {errors.title && (
-                    <p className="text-red-400 text-sm mt-1">{errors.title}</p>
-                  )}
-                </div>
 
-                <div>
-                  <label htmlFor="edit-start" className="block text-sm font-medium text-gray-300 mb-1">
-                    Start Date & Time
-                  </label>
-                  <input
-                    type="datetime-local"
-                    id="edit-start"
-                    className="simple-input"
-                    value={editingEvent.start}
-                    onChange={(e) => setEditingEvent(prev => ({ ...prev, start: e.target.value }))}
-                  />
-                  {errors.start && (
-                    <p className="text-red-400 text-sm mt-1">{errors.start}</p>
-                  )}
-                </div>
-
-                <div>
-                  <label htmlFor="edit-end" className="block text-sm font-medium text-gray-300 mb-1">
-                    End Date & Time
-                  </label>
-                  <input
-                    type="datetime-local"
-                    id="edit-end"
-                    className="simple-input"
-                    value={editingEvent.end}
-                    onChange={(e) => setEditingEvent(prev => ({ ...prev, end: e.target.value }))}
-                  />
-                  {errors.end && (
-                    <p className="text-red-400 text-sm mt-1">{errors.end}</p>
-                  )}
-                </div>
-
-                {errors.general && (
-                  <div className="text-red-400 text-sm">
-                    {errors.general}
-                  </div>
-                )}
-
-                <div className="flex gap-2">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="simple-button flex-1"
-                  >
-                    {isSubmitting ? 'Updating...' : 'Update Event'}
-                  </button>
-                  
-                  <button
-                    type="button"
-                    onClick={() => handleDeleteEvent(editingEvent.id)}
-                    className="simple-button bg-red-600 hover:bg-red-700 flex-1"
-                  >
-                    Delete Event
-                  </button>
-                  
-                  <button
-                    type="button"
-                    onClick={handleCancelEdit}
-                    className="simple-button bg-gray-600 hover:bg-gray-700 flex-1"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        )}
 
       </div>
     </div>
