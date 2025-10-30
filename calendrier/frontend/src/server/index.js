@@ -14,7 +14,9 @@ const PORT = process.env.PORT || 3001;
 // Create a nodemailer transporter using SMTP settings from env
 function createTransporter() {
   const host = process.env.SMTP_HOST;
-  const port = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : undefined;
+  const port = process.env.SMTP_PORT
+    ? Number(process.env.SMTP_PORT)
+    : undefined;
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
 
@@ -40,21 +42,33 @@ app.post("/api/invite", async (req, res) => {
     return res.status(400).json({ error: "groupId and email are required" });
   }
 
-  const frontend = process.env.FRONTEND_URL || process.env.VITE_FRONTEND_URL || "http://localhost:5173";
-  const acceptUrl = `${frontend.replace(/\/$/,"")}/accept-invite?group=${encodeURIComponent(
+  const frontend =
+    process.env.FRONTEND_URL ||
+    process.env.VITE_FRONTEND_URL ||
+    "http://localhost:5173";
+  const acceptUrl = `${frontend.replace(
+    /\/$/,
+    ""
+  )}/accept-invite?group=${encodeURIComponent(
     groupId
   )}&email=${encodeURIComponent(email)}`;
 
   // Compose email
-  const from = process.env.FROM_EMAIL || `no-reply@${process.env.SMTP_HOST || "localhost"}`;
+  const from =
+    process.env.FROM_EMAIL ||
+    `no-reply@${process.env.SMTP_HOST || "localhost"}`;
   const subject = `Invitation à rejoindre le groupe (${groupId})`;
   const text = `Vous êtes invité(e) à rejoindre le groupe. Acceptez l'invitation : ${acceptUrl}`;
   const html = `<p>Vous êtes invité(e) à rejoindre le groupe.</p><p><a href="${acceptUrl}">Accepter l'invitation</a></p>`;
 
   // If transporter is not configured, return created but with warning
   if (!transporter) {
-    console.warn("SMTP transporter not configured. Set SMTP_HOST and related env vars to actually send emails.");
-    return res.status(201).json({ ok: true, warn: "smtp-not-configured", acceptUrl });
+    console.warn(
+      "SMTP transporter not configured. Set SMTP_HOST and related env vars to actually send emails."
+    );
+    return res
+      .status(201)
+      .json({ ok: true, warn: "smtp-not-configured", acceptUrl });
   }
 
   try {
@@ -72,25 +86,41 @@ app.post("/api/send-invite", async (req, res) => {
     req.body || {};
 
   if (!email || !groupId || !token) {
-    return res.status(400).json({ error: "email, groupId and token are required" });
+    return res
+      .status(400)
+      .json({ error: "email, groupId and token are required" });
   }
 
   const frontend =
-    acceptUrlBase || process.env.FRONTEND_URL || process.env.VITE_FRONTEND_URL || "http://localhost:5173";
+    acceptUrlBase ||
+    process.env.FRONTEND_URL ||
+    process.env.VITE_FRONTEND_URL ||
+    "http://localhost:5173";
 
-  const acceptUrl = `${frontend.replace(/\/$/,"")}/accept-invite?token=${encodeURIComponent(
-    token
-  )}`;
+  const acceptUrl = `${frontend.replace(
+    /\/$/,
+    ""
+  )}/accept-invite?token=${encodeURIComponent(token)}`;
 
-  const from = process.env.FROM_EMAIL || `no-reply@${process.env.SMTP_HOST || "localhost"}`;
+  const from =
+    process.env.FROM_EMAIL ||
+    `no-reply@${process.env.SMTP_HOST || "localhost"}`;
   const subject = `Invitation à rejoindre ${groupName || "un groupe"}`;
-  const text = `Vous êtes invité(e) à rejoindre ${groupName || "un groupe"}. Acceptez : ${acceptUrl}`;
-  const html = `<p>${inviterEmail ? `${inviterEmail} ` : ""}vous invite à rejoindre <strong>$
+  const text = `Vous êtes invité(e) à rejoindre ${
+    groupName || "un groupe"
+  }. Acceptez : ${acceptUrl}`;
+  const html = `<p>${
+    inviterEmail ? `${inviterEmail} ` : ""
+  }vous invite à rejoindre <strong>$
   {groupName || "le groupe"}</strong>.</p><p><a href="${acceptUrl}">Accepter l'invitation</a></p>`;
 
   if (!transporter) {
-    console.warn("SMTP transporter not configured. Set SMTP_HOST and related env vars to actually send emails.");
-    return res.status(201).json({ ok: true, warn: "smtp-not-configured", acceptUrl });
+    console.warn(
+      "SMTP transporter not configured. Set SMTP_HOST and related env vars to actually send emails."
+    );
+    return res
+      .status(201)
+      .json({ ok: true, warn: "smtp-not-configured", acceptUrl });
   }
 
   try {
