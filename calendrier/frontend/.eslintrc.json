@@ -1,0 +1,14 @@
+{
+  "overrides": [
+    {
+      "files": ["cypress/**/*.js"],
+      "env": { "cypress": true, "browser": true },
+      "rules": {}
+    },
+    {
+      "files": ["cypress.config.js"],
+      "env": { "node": true },
+      "rules": {}
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+Start of analysis
+Found 11 files
+10 are in the main's scope  (1204 lines of code)
+  *.jsx: 6 files, (946 lines of code)
+  *.css: 2 files, (217 lines of code)
+  *.js: 2 files, (41 lines of code)
+0 are in the test's scope  (0 lines of code)
+0 are in the generated's scope  (0 lines of code)
+0 are in the build and deployment's scope  (0 lines of code)
+0 are in the other's scope  (0 lines of code)
+Excluded from analyses 1 files
+Analysing dependencies...
+6 are in the DECOMPOSITION_primary\ROOT's scope  (819 lines of code)
+  *.jsx: 3 files, (584 lines of code)
+  *.css: 2 files, (217 lines of code)
+  *.js: 1 files, (18 lines of code)
+3 are in the DECOMPOSITION_primary\components's scope  (362 lines of code)
+  *.jsx: 3 files, (362 lines of code)
+1 are in the DECOMPOSITION_primary\services's scope  (23 lines of code)
+  *.js: 1 files, (23 lines of code)
+  - "primary", found 0 dependencies (0 component dependencies)
+0 are in the CONCERN_general\TODOs's scope  (0 lines of code)
+10 are in the CONCERN_general\Unclassified's scope  (1204 lines of code)
+  *.jsx: 6 files, (946 lines of code)
+  *.css: 2 files, (217 lines of code)
+  *.js: 2 files, (41 lines of code)
+Analysing units...
+Basic unit metrics...
+  - found 1 units (22 lines of code in units)
+Unit size 0 / 0 / 22 / 0 / 0
+Unit size per component:
+Unit Size Component services: 0 / 0 / 22 / 0 / 0
+Unit size per extension:
+Unit Size Extension js: 0 / 0 / 22 / 0 / 0
+Conditional complexity: 22 / 0 / 0 / 0 / 0
+Conditional complexity per component:
+Conditional Complexity Component services 22 / 0 / 0 / 0 / 0
+Conditional complexity per extension:
+Conditional Complexity Component js: 22 / 0 / 0 / 0 / 0
+Analysing duplication...
+  - found 4 duplicates (58 duplicated lines vs. 1130 cleaned lines) in 3 files
+  - per component:primary
+     - "components": 44 duplicated lines vs. 340 total lines
+     - "ROOT": 14 duplicated lines vs. 770 total lines
+     - "services": 0 duplicated lines vs. 20 total lines
+  - per extension:
+     - "jsx": 58 duplicated lines vs. 877 total lines
+Total analysis time: .16s
+

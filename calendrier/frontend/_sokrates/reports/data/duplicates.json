@@ -1,0 +1,122 @@
+{
+  "title" : "Duplication",
+  "timestamp" : "2025-10-16 16:04:41",
+  "duplicates" : [ {
+    "blockSize" : 10,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "components/Login.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 153,
+        "components" : [ "primary::components" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 144,
+      "startLine" : 124,
+      "endLine" : 135,
+      "cleanedStartLine" : 111,
+      "cleanedEndLine" : 120
+    }, {
+      "file" : {
+        "relativePath" : "components/SignUp.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 175,
+        "components" : [ "primary::components" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 163,
+      "startLine" : 136,
+      "endLine" : 147,
+      "cleanedStartLine" : 119,
+      "cleanedEndLine" : 128
+    } ]
+  }, {
+    "blockSize" : 7,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "Calendar.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 513,
+        "components" : [ "primary::ROOT" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 478,
+      "startLine" : 25,
+      "endLine" : 31,
+      "cleanedStartLine" : 23,
+      "cleanedEndLine" : 29
+    }, {
+      "file" : {
+        "relativePath" : "Calendar.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 513,
+        "components" : [ "primary::ROOT" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 478,
+      "startLine" : 36,
+      "endLine" : 42,
+      "cleanedStartLine" : 33,
+      "cleanedEndLine" : 39
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "components/Login.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 153,
+        "components" : [ "primary::components" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 144,
+      "startLine" : 7,
+      "endLine" : 12,
+      "cleanedStartLine" : 6,
+      "cleanedEndLine" : 11
+    }, {
+      "file" : {
+        "relativePath" : "components/SignUp.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 175,
+        "components" : [ "primary::components" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 163,
+      "startLine" : 29,
+      "endLine" : 34,
+      "cleanedStartLine" : 26,
+      "cleanedEndLine" : 31
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "components/Login.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 153,
+        "components" : [ "primary::components" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 144,
+      "startLine" : 139,
+      "endLine" : 144,
+      "cleanedStartLine" : 123,
+      "cleanedEndLine" : 128
+    }, {
+      "file" : {
+        "relativePath" : "components/SignUp.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 175,
+        "components" : [ "primary::components" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 163,
+      "startLine" : 149,
+      "endLine" : 154,
+      "cleanedStartLine" : 130,
+      "cleanedEndLine" : 135
+    } ]
+  } ],
+  "overallDuplication" : null
+}

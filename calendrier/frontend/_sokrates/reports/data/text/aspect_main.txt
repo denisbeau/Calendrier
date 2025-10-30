@@ -1,0 +1,11 @@
+Path	Lines of Code
+App.css	37
+App.jsx	62
+Calendar.jsx	513
+components/AuthContext.jsx	34
+components/Login.jsx	153
+components/SignUp.jsx	175
+index.css	180
+main.jsx	9
+services/api.js	23
+supabaseClient.js	18

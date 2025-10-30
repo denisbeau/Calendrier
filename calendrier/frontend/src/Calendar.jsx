@@ -1,7 +1,8 @@
 // src/Calendar.jsx
 import { supabase } from "./supabaseClient";
 import { createEvent } from "./services/api";
-import React, { useState, useMemo } from "react";
+import { fetchUserGroups, fetchGroupEvents } from "./services/groups";
+import React, { useState, useMemo, useEffect } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import format from "date-fns/format";
 import parse from "date-fns/parse";
@@ -9,8 +10,6 @@ import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
 import enUS from "date-fns/locale/en-US";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import { fetchUserGroups, fetchGroupEvents } from "./services/groups";
-import { useEffect } from "react";
 
 const locales = { "en-US": enUS };
 const localizer = dateFnsLocalizer({
@@ -22,60 +21,7 @@ const localizer = dateFnsLocalizer({
 });
 
 export default function MyBigCalendar({ groupId = null }) {
-  // charger events de groupe (ou d'un groupe précis)
-  useEffect(() => {
-    let mounted = true;
-
-    async function loadGroupEvents() {
-      try {
-        if (groupId) {
-          // afficher uniquement les événements du groupe sélectionné
-          const evs = await fetchGroupEvents(groupId);
-          const mapped = (evs || []).map((ev) => ({
-            id: `g-${ev.id}`,
-            title: ev.title,
-            start: new Date(ev.start_at),
-            end: new Date(ev.end_at),
-            allDay: false,
-            isGroupEvent: true,
-            groupId: ev.group_id,
-          }));
-          if (!mounted) return;
-          // remplacer events locaux par ces events (on garde uniquement les events de groupe view)
-          setEvents(mapped);
-        } else {
-          // pas de groupId : charger tous les events de tous les groupes de l'utilisateur et les fusionner
-          const groupsData = await fetchUserGroups();
-          if (!groupsData || groupsData.length === 0) return;
-          const promises = groupsData.map((g) => fetchGroupEvents(g.group.id));
-          const results = await Promise.all(promises);
-          const groupEvents = results.flat().map((ev) => ({
-            id: `g-${ev.id}`,
-            title: `${ev.title} (G)`,
-            start: new Date(ev.start_at),
-            end: new Date(ev.end_at),
-            allDay: false,
-            isGroupEvent: true,
-            groupId: ev.group_id,
-          }));
-          if (!mounted) return;
-          // merge: keep non-group events and append group events
-          setEvents((prev) => {
-            const nonGroup = prev.filter((e) => !String(e.id).startsWith("g-"));
-            return [...nonGroup, ...groupEvents];
-          });
-        }
-      } catch (err) {
-        console.error("Failed loading group events:", err);
-      }
-    }
-
-    loadGroupEvents();
-    return () => {
-      mounted = false;
-    };
-  }, [groupId]); // relancer quand groupId change
-
+  // helper date factories
   const getCurrentDateTime = () => {
     const now = new Date();
     const year = now.getFullYear();
@@ -107,6 +53,7 @@ export default function MyBigCalendar({ groupId = null }) {
     return `${year}-${month}-${day}T${hours}:${minutes}`;
   };
 
+  // state
   const [events, setEvents] = useState([]);
   const [newEvent, setNewEvent] = useState({
     title: "",
@@ -125,9 +72,94 @@ export default function MyBigCalendar({ groupId = null }) {
 
   // Basic id generator for demo purposes
   const nextId = useMemo(() => {
-    return () => Math.max(0, ...events.map((e) => e.id || 0)) + 1;
+    return () =>
+      Math.max(0, ...events.map((e) => (typeof e.id === "number" ? e.id : 0))) +
+      1;
   }, [events]);
 
+  // --- helper: fetch personal events from "events" table
+  async function fetchPersonalEventsFromDb() {
+    const { data, error } = await supabase
+      .from("events")
+      .select("*")
+      .order("start", { ascending: true });
+
+    if (error) {
+      console.error("fetchPersonalEventsFromDb error:", error);
+      throw error;
+    }
+    return data || [];
+  }
+
+  // load events: if groupId => only that group; else => personal + all group events for user's groups
+  useEffect(() => {
+    console.debug("MyBigCalendar loading groupId=", groupId);
+    let mounted = true;
+
+    async function loadEvents() {
+      try {
+        if (groupId) {
+          // show only the selected group's events
+          const evs = await fetchGroupEvents(groupId);
+          const mapped = (evs || []).map((ev) => ({
+            id: `g-${ev.id}`,
+            title: ev.title,
+            start: new Date(ev.start_at),
+            end: new Date(ev.end_at),
+            allDay: !!ev.all_day,
+            isGroupEvent: true,
+            groupId: ev.group_id,
+          }));
+          if (!mounted) return;
+          setEvents(mapped);
+        } else {
+          // personal events first
+          const personal = await fetchPersonalEventsFromDb();
+          const personalMapped = (personal || []).map((ev) => ({
+            id: ev.id,
+            title: ev.title,
+            start: new Date(ev.start),
+            end: new Date(ev.end),
+            allDay: !!ev.all_day,
+            isGroupEvent: false,
+            userId: ev.user_id,
+          }));
+
+          // then fetch groups and merge their events
+          const groupsData = await fetchUserGroups();
+          let groupEvents = [];
+          if (groupsData && groupsData.length > 0) {
+            const promises = groupsData.map((g) =>
+              fetchGroupEvents(g.group.id)
+            );
+            const results = await Promise.all(promises);
+            groupEvents = results.flat().map((ev) => ({
+              id: `g-${ev.id}`,
+              title: `${ev.title} (G)`,
+              start: new Date(ev.start_at),
+              end: new Date(ev.end_at),
+              allDay: !!ev.all_day,
+              isGroupEvent: true,
+              groupId: ev.group_id,
+            }));
+          }
+
+          if (!mounted) return;
+          // merge: personal first, then group events
+          setEvents([...personalMapped, ...groupEvents]);
+        }
+      } catch (err) {
+        console.error("Failed loading events:", err);
+      }
+    }
+
+    loadEvents();
+    return () => {
+      mounted = false;
+    };
+  }, [groupId]);
+
+  // validation helper
   function validateEvent(event) {
     const newErrors = {};
 
@@ -254,7 +286,6 @@ export default function MyBigCalendar({ groupId = null }) {
   }
 
   function handleSelectEvent(event) {
-    // Set the event for editing
     setEditingEvent({
       ...event,
       start: formatDateTimeLocal(event.start),
@@ -270,9 +301,7 @@ export default function MyBigCalendar({ groupId = null }) {
     if (editingEvent && editingEvent.id === eventId) {
       setEditingEvent(null);
     }
-    // NOTE: we do not call the server delete here because the "save all" approach
-    // inserts everything to the server in bulk. If you want immediate deletes,
-    // add a call to your API's delete function.
+    // NOTE: immediate delete in DB not implemented here (save-all pattern).
   }
 
   function handleCancelEdit() {
@@ -337,22 +366,61 @@ export default function MyBigCalendar({ groupId = null }) {
 
       const userId = user.id;
 
-      await Promise.all(
-        events.map((ev) =>
-          createEvent({
-            title: ev.title,
-            start:
-              ev.start instanceof Date
-                ? ev.start.toISOString()
-                : String(ev.start),
-            end: ev.end instanceof Date ? ev.end.toISOString() : String(ev.end),
-            allDay: !!ev.allDay,
-            userId, // pass authenticated user id
-            category: ev.category ?? null,
-            color: ev.color ?? null,
-          })
-        )
-      );
+      // Build promises; skip events from groups (id starts with 'g-')
+      const savePromises = events.map((ev) => {
+        if (String(ev.id).startsWith("g-")) return Promise.resolve(null);
+
+        return createEvent({
+          title: ev.title,
+          start:
+            ev.start instanceof Date
+              ? ev.start.toISOString()
+              : String(ev.start),
+          end: ev.end instanceof Date ? ev.end.toISOString() : String(ev.end),
+          allDay: !!ev.allDay,
+          userId,
+          category: ev.category ?? null,
+          color: ev.color ?? null,
+          groupId: groupId ?? undefined,
+        });
+      });
+
+      await Promise.all(savePromises);
+
+      // --- refresh local events after save ---
+      if (groupId) {
+        const evs = await fetchGroupEvents(groupId);
+        const mapped = (evs || []).map((ev) => ({
+          id: `g-${ev.id}`,
+          title: ev.title,
+          start: new Date(ev.start_at),
+          end: new Date(ev.end_at),
+          allDay: !!ev.all_day,
+          isGroupEvent: true,
+          groupId: ev.group_id,
+        }));
+        setEvents((prev) => {
+          // keep non-group events (personal) and append fresh group events
+          const nonGroup = prev.filter((e) => !String(e.id).startsWith("g-"));
+          return [...nonGroup, ...mapped];
+        });
+      } else {
+        // reload personal events and keep any group events currently present
+        const personal = await fetchPersonalEventsFromDb();
+        const personalMapped = (personal || []).map((ev) => ({
+          id: ev.id,
+          title: ev.title,
+          start: new Date(ev.start),
+          end: new Date(ev.end),
+          allDay: !!ev.all_day,
+          isGroupEvent: false,
+          userId: ev.user_id,
+        }));
+        setEvents((prev) => {
+          const groupOnly = prev.filter((e) => String(e.id).startsWith("g-"));
+          return [...personalMapped, ...groupOnly];
+        });
+      }
 
       setSaveAllMessage("All events were successfully saved to the server.");
     } catch (err) {
@@ -422,9 +490,7 @@ export default function MyBigCalendar({ groupId = null }) {
                 value={newEvent.title}
                 onChange={(e) => {
                   setNewEvent({ ...newEvent, title: e.target.value });
-                  if (errors.title) {
-                    setErrors((prev) => ({ ...prev, title: null }));
-                  }
+                  if (errors.title) setErrors((p) => ({ ...p, title: null }));
                 }}
                 placeholder="Enter event title"
                 disabled={isSubmitting}
@@ -446,9 +512,7 @@ export default function MyBigCalendar({ groupId = null }) {
                 value={newEvent.start}
                 onChange={(e) => {
                   setNewEvent({ ...newEvent, start: e.target.value });
-                  if (errors.start) {
-                    setErrors((prev) => ({ ...prev, start: null }));
-                  }
+                  if (errors.start) setErrors((p) => ({ ...p, start: null }));
                 }}
                 disabled={isSubmitting}
               />
@@ -467,9 +531,7 @@ export default function MyBigCalendar({ groupId = null }) {
                 value={newEvent.end}
                 onChange={(e) => {
                   setNewEvent({ ...newEvent, end: e.target.value });
-                  if (errors.end) {
-                    setErrors((prev) => ({ ...prev, end: null }));
-                  }
+                  if (errors.end) setErrors((p) => ({ ...p, end: null }));
                 }}
                 disabled={isSubmitting}
               />
@@ -521,9 +583,11 @@ export default function MyBigCalendar({ groupId = null }) {
             onView={setCurrentView}
             views={["month", "week", "day", "agenda"]}
             popup
+            eventPropGetter={eventPropGetter}
           />
         </div>
 
+        {/* Edit panel */}
         {editingEvent && (
           <div className="simple-card">
             <h3 className="text-xl font-semibold mb-4 text-white">

@@ -1,14 +1,51 @@
+/* global process */
 // src/components/Login.jsx
 import React, { useState } from "react";
 import { supabase } from "../supabaseClient";
 
-// Prefill test credentials only in development.
-// You can set VITE_TEST_EMAIL and VITE_TEST_PASSWORD in .env for your own values.
-const DEV_TEST_EMAIL = import.meta.env.DEV
-  ? import.meta.env.VITE_TEST_EMAIL ?? "test@example.com"
+// safe helper (if not already imported from a shared helper)
+function getViteEnv(name, defaultValue = undefined) {
+  try {
+    // try reading import.meta if available (vite)
+    // eslint: using eval here is intentional to avoid static bundler transform
+    // and access import.meta safely in different environments.
+    const meta = eval(
+      'typeof import !== "undefined" ? import.meta : undefined'
+    );
+    const val = meta?.env?.[name];
+
+    // fallback to process.env only when process exists
+    const procEnv =
+      typeof process !== "undefined" && process && process.env
+        ? process.env[name]
+        : undefined;
+
+    return val ?? procEnv ?? defaultValue;
+  } catch {
+    const procEnv =
+      typeof process !== "undefined" && process && process.env
+        ? process.env[name]
+        : undefined;
+    return procEnv ?? defaultValue;
+  }
+}
+
+const devDefault =
+  typeof process !== "undefined" &&
+  process &&
+  process.env?.NODE_ENV === "development"
+    ? "true"
+    : "false";
+
+const DEV =
+  getViteEnv("DEV", devDefault) === true ||
+  getViteEnv("DEV", devDefault) === "true";
+
+const DEV_TEST_EMAIL = DEV
+  ? getViteEnv("VITE_TEST_EMAIL", "test@example.com")
   : "";
-const DEV_TEST_PASSWORD = import.meta.env.DEV
-  ? import.meta.env.VITE_TEST_PASSWORD ?? "password123"
+const DEV_TEST_PASSWORD = DEV
+  ? getViteEnv("VITE_TEST_PASSWORD", "password123")
   : "";
 
 export default function Login({ onLoggedIn }) {
@@ -30,12 +67,11 @@ export default function Login({ onLoggedIn }) {
 
     setLoading(true);
 
-    // Use then/catch and never re-throw to avoid unhandled rejections
     try {
       if (password) {
         await supabase.auth
           .signInWithPassword({ email, password })
-          .then(({ data, error: signInError }) => {
+          .then(({ error: signInError }) => {
             if (signInError) {
               // Friendly message for common 400 credential errors
               if (signInError?.status === 400) {
@@ -44,8 +80,7 @@ export default function Login({ onLoggedIn }) {
                 setError(signInError?.message ?? "Failed to sign in.");
               }
               // only log full details in dev
-              if (import.meta.env.DEV) {
-                // eslint-disable-next-line no-console
+              if (import.meta.env?.DEV) {
                 console.debug("signInWithPassword error:", signInError);
               }
               return;
@@ -53,26 +88,24 @@ export default function Login({ onLoggedIn }) {
 
             // success path
             setInfo("Logged in.");
-            onLoggedIn?.(data);
+            // onLoggedIn may expect data from supabase; fetch current session instead
+            onLoggedIn?.();
           })
           .catch((err) => {
             // network or unexpected error — show generic message
             setError("An unexpected error occurred. Please try again.");
-            if (import.meta.env.DEV) {
-              // eslint-disable-next-line no-console
+            if (import.meta.env?.DEV) {
               console.debug("signInWithPassword unexpected error:", err);
             }
-            // do not re-throw
           });
       } else {
         // magic link flow
         await supabase.auth
           .signInWithOtp({ email })
-          .then(({ data, error: linkError }) => {
+          .then(({ error: linkError }) => {
             if (linkError) {
               setError(linkError?.message ?? "Failed to send magic link.");
-              if (import.meta.env.DEV) {
-                // eslint-disable-next-line no-console
+              if (import.meta.env?.DEV) {
                 console.debug("signInWithOtp error:", linkError);
               }
               return;
@@ -81,8 +114,7 @@ export default function Login({ onLoggedIn }) {
           })
           .catch((err) => {
             setError("An unexpected error occurred. Please try again.");
-            if (import.meta.env.DEV) {
-              // eslint-disable-next-line no-console
+            if (import.meta.env?.DEV) {
               console.debug("signInWithOtp unexpected error:", err);
             }
           });
@@ -94,7 +126,7 @@ export default function Login({ onLoggedIn }) {
 
   function fillTestCreds() {
     // Only allow this in development mode (safety)
-    if (!import.meta.env.DEV) return;
+    if (!import.meta.env?.DEV) return;
     setEmail(DEV_TEST_EMAIL);
     setPassword(DEV_TEST_PASSWORD);
     setError(null);
@@ -151,7 +183,7 @@ export default function Login({ onLoggedIn }) {
           </button>
 
           {/* Visible only in dev to avoid leaking test helpers in production */}
-          {import.meta.env.DEV && (
+          {import.meta.env?.DEV && (
             <button
               type="button"
               className="simple-button"

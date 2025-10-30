@@ -1,4 +1,4 @@
-// src/App.jsx (seulement la partie AuthArea à remplacer)
+// src/App.jsx
 import React, { useState } from "react";
 import MyBigCalendar from "./Calendar.jsx";
 import { AuthProvider, useAuth } from "./components/AuthContext";
@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Groups from "./components/Groups";
 
+/* AuthArea (utilise useAuth depuis AuthContext) */
 function AuthArea() {
   const { user, initializing, signOut } = useAuth();
   const [view, setView] = useState("calendar"); // "calendar" | "groups" | "groupCalendar"
@@ -94,5 +95,16 @@ function AuthArea() {
         <SignUp onSignedUp={() => setMode("login")} />
       )}
     </div>
+  );
+}
+
+/* App wrapper exported par défaut — c'est celui que main.jsx importe */
+export default function App() {
+  return (
+    <AuthProvider>
+      <div className="min-h-screen bg-black text-white">
+        <AuthArea />
+      </div>
+    </AuthProvider>
   );
 }

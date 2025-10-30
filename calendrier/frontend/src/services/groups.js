@@ -1,23 +1,58 @@
 // src/services/groups.js
 import { supabase } from "../supabaseClient";
 
+/** utils */
+function generate6CharCode() {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let s = "";
+  for (let i = 0; i < 6; i++)
+    s += letters[Math.floor(Math.random() * letters.length)];
+  return s;
+}
+
 /**
  * createGroup({ name, description })
  * - creator becomes owner and admin
+ * - generates a 6-letter invite_code stored in groups.invite_code
  */
 export async function createGroup({ name, description }) {
   const { data: userData } = await supabase.auth.getUser();
   const user = userData?.user;
   if (!user) throw new Error("Not authenticated");
 
-  // insert group
-  const { data: group, error: groupErr } = await supabase
-    .from("groups")
-    .insert([{ name, description, owner_id: user.id }])
-    .select()
-    .single();
+  // generate code (naive loop to avoid collision in the VERY rare case)
+  let invite_code = generate6CharCode();
+  // attempt up to a few times to avoid unique constraint collision
+  let attempts = 0;
+  let group = null;
+  while (attempts < 5) {
+    const { data: inserted, error } = await supabase
+      .from("groups")
+      .insert([
+        {
+          name,
+          description,
+          owner_id: user.id,
+          invite_code,
+        },
+      ])
+      .select()
+      .single();
 
-  if (groupErr) throw groupErr;
+    if (!error) {
+      group = inserted;
+      break;
+    }
+
+    // If unique index collision on invite_code, generate a new code and retry
+    // Supabase returns constraint errors with message including 'duplicate key' or similar.
+    attempts += 1;
+    invite_code = generate6CharCode();
+  }
+
+  if (!group) {
+    throw new Error("Failed to create group (code generation collision?)");
+  }
 
   // add creator as admin in group_members
   const { error: memberErr } = await supabase.from("group_members").insert([
@@ -43,12 +78,13 @@ export async function fetchUserGroups() {
 
   const { data, error } = await supabase
     .from("group_members")
-    .select("group_id, role, groups(name, description, owner_id, created_at)")
+    .select(
+      "group_id, role, groups(id, name, description, owner_id, created_at, invite_code)"
+    )
     .eq("user_id", user.id);
 
   if (error) throw error;
 
-  // normalize return: each item contains group & role
   return (data || []).map((row) => ({
     group: row.groups,
     role: row.role,
@@ -56,70 +92,58 @@ export async function fetchUserGroups() {
 }
 
 /**
- * inviteByEmail(groupId, email, expiresAt) - create invite token
+ * joinGroupByCode(code) - current authenticated user joins the group matching invite_code
  */
-export async function inviteByEmail(groupId, email, expiresAt = null) {
-  // generate token client-side (simple random) — you may prefer server-side for security
-  const token = `${Math.random().toString(36).slice(2)}${Date.now().toString(
-    36
-  )}`;
+export async function joinGroupByCode(code) {
+  if (!code || typeof code !== "string" || code.trim().length !== 6) {
+    throw new Error("Code must be 6 letters.");
+  }
 
-  const insert = {
-    group_id: groupId,
-    email,
-    token,
-    expires_at: expiresAt,
-  };
+  const normalized = code.trim().toUpperCase();
 
-  const { data, error } = await supabase
-    .from("group_invites")
-    .insert([insert])
-    .select()
-    .single();
-  if (error) throw error;
-  return data;
-}
-
-/**
- * acceptInvite(token) - current authenticated user accepts an invite with token
- */
-export async function acceptInvite(token) {
   const { data: userData } = await supabase.auth.getUser();
   const user = userData?.user;
   if (!user) throw new Error("Not authenticated");
 
-  // fetch invite
-  const { data: invite, error: invErr } = await supabase
-    .from("group_invites")
-    .select("*")
-    .eq("token", token)
-    .single();
+  // find group by invite_code
+  const { data: group, error: groupErr } = await supabase
+    .from("groups")
+    .select("id, name")
+    .eq("invite_code", normalized)
+    .maybeSingle();
 
-  if (invErr) throw invErr;
-  if (!invite) throw new Error("Invite not found");
+  if (groupErr) throw groupErr;
+  if (!group) throw new Error("Invalid group code.");
 
-  // check expiration
-  if (invite.expires_at && new Date(invite.expires_at) < new Date()) {
-    throw new Error("Invite expired");
-  }
-
-  // check member count (enforce 10 members max)
-  const { data: members, error: memErr } = await supabase
+  // check if already a member
+  const { data: existing, error: exErr } = await supabase
     .from("group_members")
     .select("*")
-    .eq("group_id", invite.group_id);
+    .eq("group_id", group.id)
+    .eq("user_id", user.id)
+    .maybeSingle();
+
+  if (exErr) throw exErr;
+  if (existing) return existing; // already a member — return it silently
+
+  // check members count (max 10 as your previous rule)
+  const { data: members, error: memErr } = await supabase
+    .from("group_members")
+    .select("id", { count: "exact" })
+    .eq("group_id", group.id);
 
   if (memErr) throw memErr;
-  if ((members || []).length >= 10) {
+  const currentCount = (members && members.length) || 0;
+  if (currentCount >= 10) {
     throw new Error("Group is full (max 10 members).");
   }
 
-  // insert membership
+  // insert membership as 'member'
   const { data: membership, error: addErr } = await supabase
     .from("group_members")
     .insert([
       {
-        group_id: invite.group_id,
+        group_id: group.id,
         user_id: user.id,
         role: "member",
       },
@@ -129,24 +153,15 @@ export async function acceptInvite(token) {
 
   if (addErr) throw addErr;
 
-  // optionally delete invite after consumption
-  const { error: delErr } = await supabase
-    .from("group_invites")
-    .delete()
-    .eq("id", invite.id);
-
-  if (delErr) {
-    // non-blocking: log but don't fail
-    console.warn("Failed removing invite after accept:", delErr);
-  }
-
   return membership;
 }
 
 /**
- * fetchGroupEvents(groupId) - returns group events
+ * (optional) fetchGroupEvents(groupId) - unchanged
  */
 export async function fetchGroupEvents(groupId) {
+  if (!groupId) return [];
+
   const { data, error } = await supabase
     .from("group_events")
     .select("*")

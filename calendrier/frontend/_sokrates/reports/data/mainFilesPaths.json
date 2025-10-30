@@ -1,0 +1,1 @@
+[ "App.css", "App.jsx", "Calendar.jsx", "components/AuthContext.jsx", "components/Login.jsx", "components/SignUp.jsx", "index.css", "main.jsx", "services/api.js", "supabaseClient.js" ]

@@ -1,0 +1,121 @@
+<head>
+    <style> body {
+        margin: 0;
+    } </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/3d-force-graph"></script>
+</head>
+
+<body>
+<div id="3d-graph"></div>
+
+<script>
+    const gData = {
+  "nodes" : [ {
+    "id" : "duplicate4",
+    "size" : 2
+  }, {
+    "id" : "[Calendar.jsx]",
+    "size" : 2
+  }, {
+    "id" : "duplicate3",
+    "size" : 2
+  }, {
+    "id" : "[components/SignUp.jsx]",
+    "size" : 3
+  }, {
+    "id" : "[components/Login.jsx]",
+    "size" : 3
+  }, {
+    "id" : "duplicate2",
+    "size" : 2
+  }, {
+    "id" : "duplicate1",
+    "size" : 2
+  } ],
+  "links" : [ {
+    "source" : "[components/Login.jsx]",
+    "target" : "duplicate1",
+    "count" : 1
+  }, {
+    "source" : "duplicate1",
+    "target" : "[components/Login.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/SignUp.jsx]",
+    "target" : "duplicate1",
+    "count" : 1
+  }, {
+    "source" : "duplicate1",
+    "target" : "[components/SignUp.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[Calendar.jsx]",
+    "target" : "duplicate2",
+    "count" : 1
+  }, {
+    "source" : "duplicate2",
+    "target" : "[Calendar.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[Calendar.jsx]",
+    "target" : "duplicate2",
+    "count" : 1
+  }, {
+    "source" : "duplicate2",
+    "target" : "[Calendar.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/Login.jsx]",
+    "target" : "duplicate3",
+    "count" : 1
+  }, {
+    "source" : "duplicate3",
+    "target" : "[components/Login.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/SignUp.jsx]",
+    "target" : "duplicate3",
+    "count" : 1
+  }, {
+    "source" : "duplicate3",
+    "target" : "[components/SignUp.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/Login.jsx]",
+    "target" : "duplicate4",
+    "count" : 1
+  }, {
+    "source" : "duplicate4",
+    "target" : "[components/Login.jsx]",
+    "count" : 1
+  }, {
+    "source" : "[components/SignUp.jsx]",
+    "target" : "duplicate4",
+    "count" : 1
+  }, {
+    "source" : "duplicate4",
+    "target" : "[components/SignUp.jsx]",
+    "count" : 1
+  } ]
+}
+
+    const maxNodeSize = gData.nodes.map(n => n.size).reduce((a, b) => Math.max(a, b));
+    const maxCount = gData.links.map(l => l.count).reduce((a, b) => Math.max(a, b));
+
+    gData.links = gData.links.map(l => { return {source: l.target, target: l.source, count: l.count} });
+
+    const Graph = ForceGraph3D()
+    (document.getElementById('3d-graph'))
+        .graphData(gData)
+        .nodeRelSize(4)
+        .nodeVal(n => Math.max(20 * n.size / maxNodeSize, 0.001))
+        .nodeLabel(n => n.id + " (" + n.size + ")")
+        .nodeColor(n => n.id.startsWith("[") ? "skyblue" : "")
+        .linkDirectionalParticles(6)
+        .linkDirectionalParticleSpeed(d => d.count / maxCount * 0.01)
+        .linkOpacity(0.1)
+        .linkWidth(d => 3 * d.count / maxCount + 0.1);
+
+</script>
+</body>

@@ -1,0 +1,4 @@
+Path	Lines of Code
+components/AuthContext.jsx	34
+components/Login.jsx	153
+components/SignUp.jsx	175

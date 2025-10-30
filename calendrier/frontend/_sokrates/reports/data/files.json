@@ -1,0 +1,61 @@
+[ {
+  "relativePath" : "App.css",
+  "extension" : "css",
+  "linesOfCode" : 37,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "App.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 62,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Calendar.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 513,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "components/AuthContext.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 34,
+  "components" : [ "primary::components" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "components/Login.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 153,
+  "components" : [ "primary::components" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "components/SignUp.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 175,
+  "components" : [ "primary::components" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "index.css",
+  "extension" : "css",
+  "linesOfCode" : 180,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "main.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 9,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "services/api.js",
+  "extension" : "js",
+  "linesOfCode" : 23,
+  "components" : [ "primary::services" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "supabaseClient.js",
+  "extension" : "js",
+  "linesOfCode" : 18,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ "::Unclassified" ]
+} ]

@@ -1,0 +1,15 @@
+[ {
+  "shortName" : "export async function createEvent()",
+  "longName" : "",
+  "relativeFileName" : "services/api.js",
+  "fileLinesCount" : 29,
+  "components" : [ "primary::services" ],
+  "startLine" : 4,
+  "endLine" : 29,
+  "linesOfCode" : 22,
+  "mcCabeIndex" : 4,
+  "numberOfParameters" : 1,
+  "numberOfLiterals" : 0,
+  "numberOfStatements" : 0,
+  "numberOfExpressions" : 0
+} ]

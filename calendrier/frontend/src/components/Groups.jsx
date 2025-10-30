@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import {
   createGroup,
   fetchUserGroups,
-  inviteByEmail,
+  joinGroupByCode,
 } from "../services/groups";
 import { useAuth } from "./AuthContext";
 
@@ -12,8 +12,8 @@ export default function Groups({ onShowGroupCalendar }) {
   const [groups, setGroups] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [inviteEmail, setInviteEmail] = useState("");
-  const [selectedGroupId, setSelectedGroupId] = useState("");
+  const [joinCode, setJoinCode] = useState("");
+  const [createdCode, setCreatedCode] = useState(null);
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState(null);
 
@@ -35,16 +35,23 @@ export default function Groups({ onShowGroupCalendar }) {
   async function handleCreate(e) {
     e.preventDefault();
     setMsg(null);
+    setCreatedCode(null);
     if (!name.trim()) return setMsg("Nom requis");
     setLoading(true);
     try {
-      await createGroup({
+      const group = await createGroup({
         name: name.trim(),
         description: description.trim() || null,
       });
       setName("");
       setDescription("");
       setMsg("Groupe créé.");
+      // show the invite code if server returned it
+      if (group?.invite_code) {
+        setCreatedCode(group.invite_code);
+      } else {
+        setCreatedCode(null);
+      }
       await loadGroups();
     } catch (err) {
       console.error(err);
@@ -54,23 +61,21 @@ export default function Groups({ onShowGroupCalendar }) {
     }
   }
 
-  async function handleInvite(e) {
+  async function handleJoin(e) {
     e.preventDefault();
     setMsg(null);
-    if (!selectedGroupId) return setMsg("Veuillez sélectionner un groupe.");
-    if (!inviteEmail || !inviteEmail.includes("@"))
-      return setMsg("Veuillez entrer une adresse e-mail valide.");
+    const code = (joinCode || "").trim().toUpperCase();
+    if (!code || code.length !== 6)
+      return setMsg("Entrez un code à 6 lettres.");
     setLoading(true);
     try {
-      await inviteByEmail(selectedGroupId, inviteEmail.trim());
-      setInviteEmail("");
-      setMsg(
-        "Invitation créée : le token a été enregistré dans la table `group_invites`. " +
-          "L'envoi d'e-mail n'est pas encore automatisé (à implémenter côté serveur)."
-      );
+      await joinGroupByCode(code);
+      setJoinCode("");
+      setMsg("Vous avez rejoint le groupe !");
+      await loadGroups();
     } catch (err) {
-      console.error(err);
-      setMsg(err.message || "Erreur lors de la création de l'invitation");
+      console.error("joinGroupByCode:", err);
+      setMsg(err.message || "Impossible de rejoindre le groupe.");
     } finally {
       setLoading(false);
     }
@@ -79,6 +84,7 @@ export default function Groups({ onShowGroupCalendar }) {
   return (
     <div className="simple-card max-w-4xl mx-auto p-4 space-y-4">
       <h2 className="text-2xl font-semibold">Mes groupes</h2>
+
       {msg && (
         <div className="text-sm text-gray-300 p-2 bg-gray-900/20 rounded">
           {msg}
@@ -105,43 +111,38 @@ export default function Groups({ onShowGroupCalendar }) {
               {loading ? "Création..." : "Créer"}
             </button>
           </form>
+
+          {createdCode && (
+            <div className="mt-2 text-sm">
+              Code d'invitation généré :{" "}
+              <strong className="font-mono text-lg">{createdCode}</strong>
+              <div className="text-xs text-gray-400 mt-1">
+                Partagez ce code (6 lettres) avec les personnes que vous voulez
+                inviter.
+              </div>
+            </div>
+          )}
         </div>
 
         <div>
-          <h3 className="font-medium">Inviter par e-mail</h3>
-          <label className="text-sm text-gray-300 block mb-1">
-            Choisir le groupe (destination de l'invitation)
-          </label>
-          <select
-            className="simple-input mb-2"
-            value={selectedGroupId}
-            onChange={(e) => setSelectedGroupId(e.target.value)}
-          >
-            <option value="">-- sélectionnez un groupe --</option>
-            {groups.map((g) => (
-              <option key={g.group.id} value={g.group.id}>
-                {g.group.name}
-              </option>
-            ))}
-          </select>
+          <h3 className="font-medium">Rejoindre un groupe (par code)</h3>
 
-          <form onSubmit={handleInvite} className="mt-2 flex gap-2">
+          <form onSubmit={handleJoin} className="mt-2 flex gap-2 items-center">
             <input
-              placeholder="invite@example.com"
+              placeholder="Entrez le code (6 lettres)"
               className="simple-input flex-1"
-              value={inviteEmail}
-              onChange={(e) => setInviteEmail(e.target.value)}
+              value={joinCode}
+              onChange={(e) => setJoinCode(e.target.value)}
+              maxLength={6}
             />
             <button className="simple-button" disabled={loading}>
-              Inviter
+              {loading ? "..." : "Rejoindre"}
             </button>
           </form>
 
           <p className="text-xs text-gray-400 mt-2">
-            Remarque : pour l'instant l'envoi d'e-mail n'est pas automatisé — le
-            token d'invitation est créé et stocké dans la table{" "}
-            <code>group_invites</code>. Il faut déployer une fonction serveur
-            pour envoyer réellement le courriel (SendGrid, Mailgun...).
+            Entrez le code à 6 lettres du groupe. Si le code est valide, vous
+            serez ajouté directement au groupe.
           </p>
         </div>
       </div>
