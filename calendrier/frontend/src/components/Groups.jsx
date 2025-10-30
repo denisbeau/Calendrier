@@ -7,13 +7,13 @@ import {
 } from "../services/groups";
 import { useAuth } from "./AuthContext";
 
-export default function Groups() {
+export default function Groups({ onShowGroupCalendar }) {
   const { user } = useAuth();
   const [groups, setGroups] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [inviteEmail, setInviteEmail] = useState("");
-  const [selectedGroup, setSelectedGroup] = useState(null);
+  const [selectedGroupId, setSelectedGroupId] = useState("");
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState(null);
 
@@ -25,14 +25,16 @@ export default function Groups() {
   async function loadGroups() {
     try {
       const data = await fetchUserGroups();
-      setGroups(data);
+      setGroups(data || []);
     } catch (err) {
       console.error("Failed to load groups:", err);
+      setMsg("Erreur lors du chargement des groupes.");
     }
   }
 
   async function handleCreate(e) {
     e.preventDefault();
+    setMsg(null);
     if (!name.trim()) return setMsg("Nom requis");
     setLoading(true);
     try {
@@ -42,10 +44,11 @@ export default function Groups() {
       });
       setName("");
       setDescription("");
-      setMsg("Groupe créé");
+      setMsg("Groupe créé.");
       await loadGroups();
     } catch (err) {
-      setMsg(err.message || "Erreur");
+      console.error(err);
+      setMsg(err.message || "Erreur lors de la création du groupe");
     } finally {
       setLoading(false);
     }
@@ -53,17 +56,21 @@ export default function Groups() {
 
   async function handleInvite(e) {
     e.preventDefault();
-    if (!selectedGroup || !inviteEmail)
-      return setMsg("Sélectionner un groupe et un email");
+    setMsg(null);
+    if (!selectedGroupId) return setMsg("Veuillez sélectionner un groupe.");
+    if (!inviteEmail || !inviteEmail.includes("@"))
+      return setMsg("Veuillez entrer une adresse e-mail valide.");
     setLoading(true);
     try {
-      await inviteByEmail(selectedGroup.group.id, inviteEmail.trim());
+      await inviteByEmail(selectedGroupId, inviteEmail.trim());
       setInviteEmail("");
       setMsg(
-        "Invitation créée (token stocké). Envoie e-mail à implémenter côté serveur."
+        "Invitation créée : le token a été enregistré dans la table `group_invites`. " +
+          "L'envoi d'e-mail n'est pas encore automatisé (à implémenter côté serveur)."
       );
     } catch (err) {
-      setMsg(err.message || "Erreur invitation");
+      console.error(err);
+      setMsg(err.message || "Erreur lors de la création de l'invitation");
     } finally {
       setLoading(false);
     }
@@ -72,7 +79,11 @@ export default function Groups() {
   return (
     <div className="simple-card max-w-4xl mx-auto p-4 space-y-4">
       <h2 className="text-2xl font-semibold">Mes groupes</h2>
-      {msg && <div className="text-sm text-gray-300">{msg}</div>}
+      {msg && (
+        <div className="text-sm text-gray-300 p-2 bg-gray-900/20 rounded">
+          {msg}
+        </div>
+      )}
 
       <div className="grid md:grid-cols-2 gap-4">
         <div>
@@ -97,41 +108,41 @@ export default function Groups() {
         </div>
 
         <div>
-          <h3 className="font-medium">Inviter par email</h3>
-          <div>
-            <label className="text-sm text-gray-300">Choisir un groupe</label>
-            <select
-              className="simple-input"
-              value={selectedGroup ? selectedGroup.group.id : ""}
-              onChange={(e) => {
-                const g = groups.find((x) => x.group.id === e.target.value);
-                setSelectedGroup(g || null);
-              }}
-            >
-              <option value="">-- sélectionnez --</option>
-              {groups.map((g) => (
-                <option key={g.group.id} value={g.group.id}>
-                  {g.group.name} ({g.role})
-                </option>
-              ))}
-            </select>
+          <h3 className="font-medium">Inviter par e-mail</h3>
+          <label className="text-sm text-gray-300 block mb-1">
+            Choisir le groupe (destination de l'invitation)
+          </label>
+          <select
+            className="simple-input mb-2"
+            value={selectedGroupId}
+            onChange={(e) => setSelectedGroupId(e.target.value)}
+          >
+            <option value="">-- sélectionnez un groupe --</option>
+            {groups.map((g) => (
+              <option key={g.group.id} value={g.group.id}>
+                {g.group.name}
+              </option>
+            ))}
+          </select>
 
-            <form onSubmit={handleInvite} className="mt-2 flex gap-2">
-              <input
-                placeholder="invite@example.com"
-                className="simple-input flex-1"
-                value={inviteEmail}
-                onChange={(e) => setInviteEmail(e.target.value)}
-              />
-              <button className="simple-button" disabled={loading}>
-                Inviter
-              </button>
-            </form>
-            <p className="text-xs text-gray-400 mt-2">
-              Actuellement l'envoi d'email n'est pas automisé — le token est
-              créé dans la table group_invites.
-            </p>
-          </div>
+          <form onSubmit={handleInvite} className="mt-2 flex gap-2">
+            <input
+              placeholder="invite@example.com"
+              className="simple-input flex-1"
+              value={inviteEmail}
+              onChange={(e) => setInviteEmail(e.target.value)}
+            />
+            <button className="simple-button" disabled={loading}>
+              Inviter
+            </button>
+          </form>
+
+          <p className="text-xs text-gray-400 mt-2">
+            Remarque : pour l'instant l'envoi d'e-mail n'est pas automatisé — le
+            token d'invitation est créé et stocké dans la table{" "}
+            <code>group_invites</code>. Il faut déployer une fonction serveur
+            pour envoyer réellement le courriel (SendGrid, Mailgun...).
+          </p>
         </div>
       </div>
 
@@ -142,15 +153,29 @@ export default function Groups() {
             <li className="text-sm text-gray-400">Aucun groupe</li>
           )}
           {groups.map((g) => (
-            <li key={g.group.id} className="p-2 border rounded bg-gray-900/40">
-              <div className="flex justify-between items-center">
-                <div>
-                  <div className="font-semibold">{g.group.name}</div>
-                  <div className="text-sm text-gray-400">
-                    {g.group.description}
-                  </div>
+            <li
+              key={g.group.id}
+              className="p-2 border rounded bg-gray-900/40 flex items-center justify-between"
+            >
+              <div>
+                <div className="font-semibold">{g.group.name}</div>
+                <div className="text-sm text-gray-400">
+                  {g.group.description}
                 </div>
-                <div className="text-sm text-gray-300">{g.role}</div>
+              </div>
+
+              <div className="flex gap-2">
+                <button
+                  className="simple-button"
+                  onClick={() =>
+                    onShowGroupCalendar && onShowGroupCalendar(g.group.id)
+                  }
+                >
+                  Voir calendrier
+                </button>
+                <div className="text-sm text-gray-300 self-center">
+                  {g.role}
+                </div>
               </div>
             </li>
           ))}

@@ -9,6 +9,8 @@ import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
 import enUS from "date-fns/locale/en-US";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import { fetchUserGroups, fetchGroupEvents } from "./services/groups";
+import { useEffect } from "react";
 
 const locales = { "en-US": enUS };
 const localizer = dateFnsLocalizer({
@@ -19,7 +21,61 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-export default function MyBigCalendar() {
+export default function MyBigCalendar({ groupId = null }) {
+  // charger events de groupe (ou d'un groupe précis)
+  useEffect(() => {
+    let mounted = true;
+
+    async function loadGroupEvents() {
+      try {
+        if (groupId) {
+          // afficher uniquement les événements du groupe sélectionné
+          const evs = await fetchGroupEvents(groupId);
+          const mapped = (evs || []).map((ev) => ({
+            id: `g-${ev.id}`,
+            title: ev.title,
+            start: new Date(ev.start_at),
+            end: new Date(ev.end_at),
+            allDay: false,
+            isGroupEvent: true,
+            groupId: ev.group_id,
+          }));
+          if (!mounted) return;
+          // remplacer events locaux par ces events (on garde uniquement les events de groupe view)
+          setEvents(mapped);
+        } else {
+          // pas de groupId : charger tous les events de tous les groupes de l'utilisateur et les fusionner
+          const groupsData = await fetchUserGroups();
+          if (!groupsData || groupsData.length === 0) return;
+          const promises = groupsData.map((g) => fetchGroupEvents(g.group.id));
+          const results = await Promise.all(promises);
+          const groupEvents = results.flat().map((ev) => ({
+            id: `g-${ev.id}`,
+            title: `${ev.title} (G)`,
+            start: new Date(ev.start_at),
+            end: new Date(ev.end_at),
+            allDay: false,
+            isGroupEvent: true,
+            groupId: ev.group_id,
+          }));
+          if (!mounted) return;
+          // merge: keep non-group events and append group events
+          setEvents((prev) => {
+            const nonGroup = prev.filter((e) => !String(e.id).startsWith("g-"));
+            return [...nonGroup, ...groupEvents];
+          });
+        }
+      } catch (err) {
+        console.error("Failed loading group events:", err);
+      }
+    }
+
+    loadGroupEvents();
+    return () => {
+      mounted = false;
+    };
+  }, [groupId]); // relancer quand groupId change
+
   const getCurrentDateTime = () => {
     const now = new Date();
     const year = now.getFullYear();
@@ -105,6 +161,13 @@ export default function MyBigCalendar() {
     }
 
     return newErrors;
+  }
+
+  function eventPropGetter(event) {
+    if (event.isGroupEvent) {
+      return { style: { borderLeft: "4px solid #4f46e5" } }; // accent à gauche
+    }
+    return {};
   }
 
   async function handleAddEvent(e) {
