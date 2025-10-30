@@ -7,13 +7,18 @@ root_folder = r"C:\Users\Tech\Calendrier-1\calendrier\frontend"
 output_file = os.path.join(root_folder, "all_files_content.txt")
 
 # File extensions to include
-TEXT_EXTENSIONS = ('.php', '.html', '.js', '.jsx', '.ts', '.tsx',
-                   '.css', '.scss', '.json', '.xml', '.md', '.txt', '.yml', '.yaml')
+TEXT_EXTENSIONS = (
+    '.php', '.html', '.js', '.jsx', '.ts', '.tsx',
+    '.css', '.scss', '.json', '.xml', '.md', '.txt', '.yml', '.yaml'
+)
+
+# Folders to skip completely
+EXCLUDED_FOLDERS = {".git", "node_modules", "_sokrates", "_sokrates-explorer"}
 
 with open(output_file, "w", encoding="utf-8") as out:
     for foldername, subfolders, filenames in os.walk(root_folder):
-        # Skip .git and node_modules folders
-        subfolders[:] = [d for d in subfolders if d not in (".git", "node_modules")]
+        # Skip unwanted folders
+        subfolders[:] = [d for d in subfolders if d not in EXCLUDED_FOLDERS]
 
         out.write(f"\n📂 Directory: {foldername}\n")
         out.write("=" * 80 + "\n")
@@ -26,8 +31,10 @@ with open(output_file, "w", encoding="utf-8") as out:
                 continue
 
             # Skip package-lock.json at the root folder
-            if (filename == "package-lock.json" 
-                and os.path.dirname(file_path) == os.path.abspath(root_folder)):
+            if (
+                filename == "package-lock.json"
+                and os.path.dirname(file_path) == os.path.abspath(root_folder)
+            ):
                 continue
 
             # Skip non-text files

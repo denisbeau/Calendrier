@@ -1,40 +1,4 @@
 
-📂 Directory: C:\Users\Tech\Calendrier-1\calendrier\frontend
-================================================================================
-
-📝 File: eslint.config.js
-Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\eslint.config.js
---------------------------------------------------------------------------------
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import { defineConfig, globalIgnores } from 'eslint/config'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{js,jsx}'],
-    extends: [
-      js.configs.recommended,
-      reactHooks.configs['recommended-latest'],
-      reactRefresh.configs.vite,
-    ],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
-      },
-    },
-    rules: {
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
-    },
-  },
-])
-
 📝 File: index.html
 Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\index.html
 --------------------------------------------------------------------------------
@@ -51,45 +15,6 @@ Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\index.html
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
-
-📝 File: package.json
-Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\package.json
---------------------------------------------------------------------------------
-{
-  "name": "calendrier",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "start:server": "node src/server/index.js"
-  },
-  "dependencies": {
-    "@supabase/supabase-js": "^2.58.0",
-    "@tailwindcss/vite": "^4.1.13",
-    "cors": "^2.8.5",
-    "date-fns": "^4.1.0",
-    "express": "^5.1.0",
-    "react": "^19.1.1",
-    "react-big-calendar": "^1.19.4",
-    "react-dom": "^19.1.1",
-    "tailwindcss": "^4.1.13"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.35.0",
-    "@types/react": "^19.1.13",
-    "@types/react-dom": "^19.1.9",
-    "@vitejs/plugin-react": "^5.0.2",
-    "eslint": "^9.35.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.4.0",
-    "vite": "^7.1.6"
-  }
-}
 
 📝 File: README.md
 Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\README.md
@@ -118,6 +43,307 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
 })
+
+================================================================================
+
+📂 Directory: C:\Users\Tech\Calendrier-1\calendrier\frontend\cypress
+================================================================================
+
+================================================================================
+
+📂 Directory: C:\Users\Tech\Calendrier-1\calendrier\frontend\cypress\downloads
+================================================================================
+
+================================================================================
+
+📂 Directory: C:\Users\Tech\Calendrier-1\calendrier\frontend\cypress\e2e
+================================================================================
+
+📝 File: signup.cy.js
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\cypress\e2e\signup.cy.js
+--------------------------------------------------------------------------------
+/* eslint-disable no-undef */
+// cypress/e2e/signup.cy.js
+// Full end-to-end test: creates mail.tm mailbox, signs up in the app, follows confirmation link, asserts signed-in state.
+
+describe("Signup flow with disposable mailbox (mail.tm)", () => {
+  const apiBase = "https://api.mail.tm";
+  const randomId = Math.random().toString(36).substring(2, 10);
+  const password = "password123";
+  let testEmail;
+  let token;
+
+  function createDisposableAccount(attempts = 5) {
+    return cy
+      .request({ url: `${apiBase}/domains`, failOnStatusCode: false })
+      .then((resp) => {
+        const domains =
+          resp.body["hydra:member"] || resp.body?.hydra?.member || resp.body;
+        const domain =
+          Array.isArray(domains) && domains.length
+            ? domains[0].domain
+            : "mail.tm";
+        testEmail = `cypress-${randomId}@${domain}`;
+
+        return cy.request({
+          method: "POST",
+          url: `${apiBase}/accounts`,
+          body: { address: testEmail, password },
+          failOnStatusCode: false,
+        });
+      })
+      .then((r) => {
+        // If rate limited, retry a few times
+        if ((r.status === 429 || r.status === 503) && attempts > 1) {
+          Cypress.log({
+            name: "mail.tm",
+            message: `Rate limited creating mailbox, retrying... attempts left: ${
+              attempts - 1
+            }`,
+          });
+          return cy
+            .wait(1500)
+            .then(() => createDisposableAccount(attempts - 1));
+        }
+        if (r.status !== 201 && r.status !== 200) {
+          throw new Error(
+            `mail.tm account create failed: ${r.status} ${JSON.stringify(
+              r.body
+            )}`
+          );
+        }
+        Cypress.log({
+          name: "mail.tm",
+          message: `Created mailbox ${testEmail}`,
+        });
+        return cy.wrap(r);
+      });
+  }
+
+  function loginToMailbox(attempts = 6) {
+    return cy
+      .request({
+        method: "POST",
+        url: `${apiBase}/token`,
+        body: { address: testEmail, password },
+        failOnStatusCode: false,
+      })
+      .then((r) => {
+        if ((r.status === 401 || r.status === 429) && attempts > 1) {
+          Cypress.log({
+            name: "mail.tm",
+            message: `mail.tm token retry (status=${r.status})`,
+          });
+          return cy.wait(1200).then(() => loginToMailbox(attempts - 1));
+        }
+        if (r.status !== 200 && r.status !== 201) {
+          throw new Error(
+            `mail.tm token failed: ${r.status} ${JSON.stringify(r.body)}`
+          );
+        }
+        token = r.body.token;
+        Cypress.log({ name: "mail.tm", message: "mail.tm token acquired" });
+        return cy.wrap(r);
+      });
+  }
+
+  // Poll mailbox until a message appears
+  function waitForEmail({ timeout = 180000, interval = 2000 } = {}) {
+    const start = Date.now();
+    function poll() {
+      return cy
+        .request({
+          method: "GET",
+          url: `${apiBase}/messages`,
+          headers: { Authorization: `Bearer ${token}` },
+          failOnStatusCode: false,
+        })
+        .then((r) => {
+          if (r.status !== 200) {
+            if (Date.now() - start > timeout)
+              throw new Error("Timed out polling mailbox (non-200)");
+            return cy.wait(interval).then(poll);
+          }
+          const messages =
+            r.body["hydra:member"] || r.body?.hydra?.member || r.body;
+          if (Array.isArray(messages) && messages.length > 0) {
+            return cy.wrap(messages[0]);
+          }
+          if (Date.now() - start > timeout)
+            throw new Error(
+              "Timed out waiting for verification email (empty mailbox)"
+            );
+          return cy.wait(interval).then(poll);
+        });
+    }
+    return poll();
+  }
+
+  function extractLinkFromHtml(html) {
+    if (!html) return null;
+    // common pattern: href="..." or raw URL
+    const hrefMatch = html.match(/href="([^"]+)"/i);
+    if (hrefMatch) return hrefMatch[1];
+    const href2 = html.match(/https?:\/\/[^\s"'<>]+/i);
+    return href2 ? href2[0] : null;
+  }
+
+  it("creates mailbox, signs up, follows verification link and is signed in", () => {
+    createDisposableAccount()
+      .then(() => loginToMailbox())
+      .then(() => {
+        // Visit the app (ensure baseUrl set in cypress.config.js or use full URL)
+        cy.clearCookies();
+        cy.clearLocalStorage();
+        cy.visit("/");
+
+        // Open signup form: try common selectors/texts
+        cy.get("button.view-btn", { timeout: 10000 }).then(($btns) => {
+          const found = [...$btns].find((b) => /sign up/i.test(b.innerText));
+          if (found) return cy.wrap(found).click();
+          return cy
+            .contains(/^Sign up$/i, { timeout: 8000 })
+            .click({ force: true });
+        });
+
+        // Fill form with a small delay to avoid flakiness
+        cy.get('input[placeholder="Your full name"]', { timeout: 10000 })
+          .should("be.visible")
+          .clear()
+          .type(`Cypress Test ${randomId}`, { delay: 10 });
+
+        cy.get('input[placeholder="you@example.com"]')
+          .clear()
+          .type(testEmail, { delay: 10 })
+          .should("have.value", testEmail);
+
+        // Password fields (support one or two password inputs)
+        cy.get('input[placeholder="At least 6 characters"]', {
+          timeout: 8000,
+        }).then(($inputs) => {
+          if ($inputs.length === 0) throw new Error("No password input found");
+          cy.wrap($inputs[0]).type(password, { log: false });
+          if ($inputs.length > 1)
+            cy.wrap($inputs[1]).type(password, { log: false });
+        });
+
+        // Submit signup
+        cy.contains(/^Sign up$/i, { timeout: 8000 }).click();
+
+        // App should show a "check your email" / success message
+        cy.contains(/Sign-?up succeeded|Check your email|verification email/i, {
+          timeout: 20000,
+        }).should("exist");
+
+        // Now poll mailbox for verification email
+        return waitForEmail({ timeout: 180000, interval: 2000 });
+      })
+      .then((msg) => {
+        // fetch full message and follow confirmation link
+        return cy.request({
+          method: "GET",
+          url: `${apiBase}/messages/${msg.id}`,
+          headers: { Authorization: `Bearer ${token}` },
+        });
+      })
+      .then((full) => {
+        const html = full.body.html || full.body.text || "";
+        const link = extractLinkFromHtml(html);
+        expect(link, "confirmation link found").to.be.a("string");
+
+        // Visit the confirmation link
+        cy.visit(link);
+
+        // After following the link the app should show a signed-in state
+        cy.contains(/signed in|logged in|welcome|signed in as/i, {
+          timeout: 15000,
+        }).should("exist");
+
+        // Optionally assert the user email is visible in UI
+        cy.contains(testEmail).should("exist");
+      });
+  });
+});
+
+================================================================================
+
+📂 Directory: C:\Users\Tech\Calendrier-1\calendrier\frontend\cypress\fixtures
+================================================================================
+
+📝 File: example.json
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\cypress\fixtures\example.json
+--------------------------------------------------------------------------------
+{
+  "name": "Using fixtures to represent data",
+  "email": "hello@cypress.io",
+  "body": "Fixtures are a great way to mock data for responses to routes"
+}
+
+================================================================================
+
+📂 Directory: C:\Users\Tech\Calendrier-1\calendrier\frontend\cypress\support
+================================================================================
+
+📝 File: commands.js
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\cypress\support\commands.js
+--------------------------------------------------------------------------------
+// ***********************************************
+// This example commands.js shows you how to
+// create various custom commands and overwrite
+// existing commands.
+//
+// For more comprehensive examples of custom
+// commands please read more here:
+// https://on.cypress.io/custom-commands
+// ***********************************************
+//
+//
+// -- This is a parent command --
+// Cypress.Commands.add('login', (email, password) => { ... })
+//
+//
+// -- This is a child command --
+// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
+//
+//
+// -- This is a dual command --
+// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
+//
+//
+// -- This will overwrite an existing command --
+// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+📝 File: e2e.js
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\cypress\support\e2e.js
+--------------------------------------------------------------------------------
+/* eslint-env cypress */
+// ***********************************************************
+// This example support/e2e.js is processed and
+// loaded automatically before your test files.
+//
+// This is a great place to put global configuration and
+// behavior that modifies Cypress.
+//
+// You can change the location of this file or turn off
+// automatically serving support files with the
+// 'supportFile' configuration option.
+//
+// You can read more here:
+// https://on.cypress.io/configuration
+// ***********************************************************
+
+// Import commands.js using ES2015 syntax:
+import "./commands";
+
+// catch uncaught exceptions from the AUT so they don't fail the test
+Cypress.on("uncaught:exception", (err) => {
+  // log to the browser console (visible in Cypress headed mode)
+  // eslint-disable-next-line no-console
+  console.error("Uncaught exception in app:", err.message, err.stack);
+
+  // returning false prevents Cypress from failing the test
+  return false;
+});
 
 ================================================================================
 
@@ -257,6 +483,11 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
 
 ================================================================================
 
+📂 Directory: C:\Users\Tech\Calendrier-1\calendrier\frontend\migrations
+================================================================================
+
+================================================================================
+
 📂 Directory: C:\Users\Tech\Calendrier-1\calendrier\frontend\public
 ================================================================================
 
@@ -320,10 +551,14 @@ import MyBigCalendar from "./Calendar.jsx";
 import { AuthProvider, useAuth } from "./components/AuthContext";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
+import Groups from "./components/Groups";
 
+/* AuthArea (utilise useAuth depuis AuthContext) */
 function AuthArea() {
   const { user, initializing, signOut } = useAuth();
-  const [mode, setMode] = useState("login"); // "login" | "signup"
+  const [view, setView] = useState("calendar"); // "calendar" | "groups" | "groupCalendar"
+  const [mode, setMode] = useState("login"); // login / signup
+  const [selectedGroupId, setSelectedGroupId] = useState(null);
 
   if (initializing) return <div className="p-6">Loading auth...</div>;
 
@@ -337,13 +572,49 @@ function AuthArea() {
             </div>
           </div>
           <div className="flex gap-2">
+            <button
+              className="simple-button"
+              onClick={() => setView("calendar")}
+            >
+              Calendar
+            </button>
+            <button className="simple-button" onClick={() => setView("groups")}>
+              Groups
+            </button>
             <button className="simple-button" onClick={() => signOut()}>
               Sign out
             </button>
           </div>
         </div>
 
-        <MyBigCalendar />
+        {view === "calendar" && <MyBigCalendar />}
+        {view === "groups" && (
+          <Groups
+            onShowGroupCalendar={(gid) => {
+              setSelectedGroupId(gid);
+              setView("groupCalendar");
+            }}
+          />
+        )}
+        {view === "groupCalendar" && (
+          <div>
+            <div className="mb-4 flex gap-2">
+              <button
+                className="simple-button"
+                onClick={() => setView("calendar")}
+              >
+                Retour au calendrier perso
+              </button>
+              <button
+                className="simple-button"
+                onClick={() => setView("groups")}
+              >
+                Retour aux groupes
+              </button>
+            </div>
+            <MyBigCalendar groupId={selectedGroupId} />
+          </div>
+        )}
       </div>
     );
   }
@@ -374,6 +645,7 @@ function AuthArea() {
   );
 }
 
+/* App wrapper exported par défaut — c'est celui que main.jsx importe */
 export default function App() {
   return (
     <AuthProvider>
@@ -390,7 +662,8 @@ Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\Calendar.jsx
 // src/Calendar.jsx
 import { supabase } from "./supabaseClient";
 import { createEvent } from "./services/api";
-import React, { useState, useMemo } from "react";
+import { fetchUserGroups, fetchGroupEvents } from "./services/groups";
+import React, { useState, useMemo, useEffect } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import format from "date-fns/format";
 import parse from "date-fns/parse";
@@ -408,7 +681,8 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-export default function MyBigCalendar() {
+export default function MyBigCalendar({ groupId = null }) {
+  // helper date factories
   const getCurrentDateTime = () => {
     const now = new Date();
     const year = now.getFullYear();
@@ -440,6 +714,7 @@ export default function MyBigCalendar() {
     return `${year}-${month}-${day}T${hours}:${minutes}`;
   };
 
+  // state
   const [events, setEvents] = useState([]);
   const [newEvent, setNewEvent] = useState({
     title: "",
@@ -458,9 +733,94 @@ export default function MyBigCalendar() {
 
   // Basic id generator for demo purposes
   const nextId = useMemo(() => {
-    return () => Math.max(0, ...events.map((e) => e.id || 0)) + 1;
+    return () =>
+      Math.max(0, ...events.map((e) => (typeof e.id === "number" ? e.id : 0))) +
+      1;
   }, [events]);
 
+  // --- helper: fetch personal events from "events" table
+  async function fetchPersonalEventsFromDb() {
+    const { data, error } = await supabase
+      .from("events")
+      .select("*")
+      .order("start", { ascending: true });
+
+    if (error) {
+      console.error("fetchPersonalEventsFromDb error:", error);
+      throw error;
+    }
+    return data || [];
+  }
+
+  // load events: if groupId => only that group; else => personal + all group events for user's groups
+  useEffect(() => {
+    console.debug("MyBigCalendar loading groupId=", groupId);
+    let mounted = true;
+
+    async function loadEvents() {
+      try {
+        if (groupId) {
+          // show only the selected group's events
+          const evs = await fetchGroupEvents(groupId);
+          const mapped = (evs || []).map((ev) => ({
+            id: `g-${ev.id}`,
+            title: ev.title,
+            start: new Date(ev.start_at),
+            end: new Date(ev.end_at),
+            allDay: !!ev.all_day,
+            isGroupEvent: true,
+            groupId: ev.group_id,
+          }));
+          if (!mounted) return;
+          setEvents(mapped);
+        } else {
+          // personal events first
+          const personal = await fetchPersonalEventsFromDb();
+          const personalMapped = (personal || []).map((ev) => ({
+            id: ev.id,
+            title: ev.title,
+            start: new Date(ev.start),
+            end: new Date(ev.end),
+            allDay: !!ev.all_day,
+            isGroupEvent: false,
+            userId: ev.user_id,
+          }));
+
+          // then fetch groups and merge their events
+          const groupsData = await fetchUserGroups();
+          let groupEvents = [];
+          if (groupsData && groupsData.length > 0) {
+            const promises = groupsData.map((g) =>
+              fetchGroupEvents(g.group.id)
+            );
+            const results = await Promise.all(promises);
+            groupEvents = results.flat().map((ev) => ({
+              id: `g-${ev.id}`,
+              title: `${ev.title} (G)`,
+              start: new Date(ev.start_at),
+              end: new Date(ev.end_at),
+              allDay: !!ev.all_day,
+              isGroupEvent: true,
+              groupId: ev.group_id,
+            }));
+          }
+
+          if (!mounted) return;
+          // merge: personal first, then group events
+          setEvents([...personalMapped, ...groupEvents]);
+        }
+      } catch (err) {
+        console.error("Failed loading events:", err);
+      }
+    }
+
+    loadEvents();
+    return () => {
+      mounted = false;
+    };
+  }, [groupId]);
+
+  // validation helper
   function validateEvent(event) {
     const newErrors = {};
 
@@ -494,6 +854,13 @@ export default function MyBigCalendar() {
     }
 
     return newErrors;
+  }
+
+  function eventPropGetter(event) {
+    if (event.isGroupEvent) {
+      return { style: { borderLeft: "4px solid #4f46e5" } }; // accent à gauche
+    }
+    return {};
   }
 
   async function handleAddEvent(e) {
@@ -580,7 +947,6 @@ export default function MyBigCalendar() {
   }
 
   function handleSelectEvent(event) {
-    // Set the event for editing
     setEditingEvent({
       ...event,
       start: formatDateTimeLocal(event.start),
@@ -596,9 +962,7 @@ export default function MyBigCalendar() {
     if (editingEvent && editingEvent.id === eventId) {
       setEditingEvent(null);
     }
-    // NOTE: we do not call the server delete here because the "save all" approach
-    // inserts everything to the server in bulk. If you want immediate deletes,
-    // add a call to your API's delete function.
+    // NOTE: immediate delete in DB not implemented here (save-all pattern).
   }
 
   function handleCancelEdit() {
@@ -663,22 +1027,61 @@ export default function MyBigCalendar() {
 
       const userId = user.id;
 
-      await Promise.all(
-        events.map((ev) =>
-          createEvent({
-            title: ev.title,
-            start:
-              ev.start instanceof Date
-                ? ev.start.toISOString()
-                : String(ev.start),
-            end: ev.end instanceof Date ? ev.end.toISOString() : String(ev.end),
-            allDay: !!ev.allDay,
-            userId, // pass authenticated user id
-            category: ev.category ?? null,
-            color: ev.color ?? null,
-          })
-        )
-      );
+      // Build promises; skip events from groups (id starts with 'g-')
+      const savePromises = events.map((ev) => {
+        if (String(ev.id).startsWith("g-")) return Promise.resolve(null);
+
+        return createEvent({
+          title: ev.title,
+          start:
+            ev.start instanceof Date
+              ? ev.start.toISOString()
+              : String(ev.start),
+          end: ev.end instanceof Date ? ev.end.toISOString() : String(ev.end),
+          allDay: !!ev.allDay,
+          userId,
+          category: ev.category ?? null,
+          color: ev.color ?? null,
+          groupId: groupId ?? undefined,
+        });
+      });
+
+      await Promise.all(savePromises);
+
+      // --- refresh local events after save ---
+      if (groupId) {
+        const evs = await fetchGroupEvents(groupId);
+        const mapped = (evs || []).map((ev) => ({
+          id: `g-${ev.id}`,
+          title: ev.title,
+          start: new Date(ev.start_at),
+          end: new Date(ev.end_at),
+          allDay: !!ev.all_day,
+          isGroupEvent: true,
+          groupId: ev.group_id,
+        }));
+        setEvents((prev) => {
+          // keep non-group events (personal) and append fresh group events
+          const nonGroup = prev.filter((e) => !String(e.id).startsWith("g-"));
+          return [...nonGroup, ...mapped];
+        });
+      } else {
+        // reload personal events and keep any group events currently present
+        const personal = await fetchPersonalEventsFromDb();
+        const personalMapped = (personal || []).map((ev) => ({
+          id: ev.id,
+          title: ev.title,
+          start: new Date(ev.start),
+          end: new Date(ev.end),
+          allDay: !!ev.all_day,
+          isGroupEvent: false,
+          userId: ev.user_id,
+        }));
+        setEvents((prev) => {
+          const groupOnly = prev.filter((e) => String(e.id).startsWith("g-"));
+          return [...personalMapped, ...groupOnly];
+        });
+      }
 
       setSaveAllMessage("All events were successfully saved to the server.");
     } catch (err) {
@@ -748,9 +1151,7 @@ export default function MyBigCalendar() {
                 value={newEvent.title}
                 onChange={(e) => {
                   setNewEvent({ ...newEvent, title: e.target.value });
-                  if (errors.title) {
-                    setErrors((prev) => ({ ...prev, title: null }));
-                  }
+                  if (errors.title) setErrors((p) => ({ ...p, title: null }));
                 }}
                 placeholder="Enter event title"
                 disabled={isSubmitting}
@@ -772,9 +1173,7 @@ export default function MyBigCalendar() {
                 value={newEvent.start}
                 onChange={(e) => {
                   setNewEvent({ ...newEvent, start: e.target.value });
-                  if (errors.start) {
-                    setErrors((prev) => ({ ...prev, start: null }));
-                  }
+                  if (errors.start) setErrors((p) => ({ ...p, start: null }));
                 }}
                 disabled={isSubmitting}
               />
@@ -793,9 +1192,7 @@ export default function MyBigCalendar() {
                 value={newEvent.end}
                 onChange={(e) => {
                   setNewEvent({ ...newEvent, end: e.target.value });
-                  if (errors.end) {
-                    setErrors((prev) => ({ ...prev, end: null }));
-                  }
+                  if (errors.end) setErrors((p) => ({ ...p, end: null }));
                 }}
                 disabled={isSubmitting}
               />
@@ -847,9 +1244,11 @@ export default function MyBigCalendar() {
             onView={setCurrentView}
             views={["month", "week", "day", "agenda"]}
             popup
+            eventPropGetter={eventPropGetter}
           />
         </div>
 
+        {/* Edit panel */}
         {editingEvent && (
           <div className="simple-card">
             <h3 className="text-xl font-semibold mb-4 text-white">
@@ -1029,7 +1428,8 @@ body {
 
 /* Simple Button */
 .simple-button {
-  width: 100%;
+  width: auto; /* don't be full-width by default inside a flex row */
+  flex: 0 0 auto; /* don't grow or shrink unexpectedly */
   padding: 12px 20px;
   background-color: #333;
   border: 1px solid #555;
@@ -1038,10 +1438,16 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  min-width: 88px; /* ensure a usable minimum width */
 }
 
 .simple-button:hover:not(:disabled) {
   background-color: #444;
+}
+
+.simple-button.block {
+  width: 100%;
+  flex: 0 0 auto;
 }
 
 .simple-button:disabled {
@@ -1213,32 +1619,39 @@ createRoot(document.getElementById('root')).render(
 📝 File: supabaseClient.js
 Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\supabaseClient.js
 --------------------------------------------------------------------------------
-// src/supabaseClient.js (amélioré pour debug)
+// src/supabaseClient.js
 import { createClient } from "@supabase/supabase-js";
 
+// Read Vite environment variables (Vite injects import.meta.env at build/time)
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  // fail fast in dev so you ne pas envoyer des requêtes vides
   console.error(
     "Supabase env variables not set. Check .env (VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY)."
   );
 }
 
-// DEBUG: expose small portion for quick dev inspection
-console.log("VITE_SUPABASE_URL set:", !!supabaseUrl);
-console.log(
-  "VITE_SUPABASE_ANON_KEY present (prefix):",
-  supabaseAnonKey ? supabaseAnonKey.slice(0, 10) : "no key"
-);
+// Small dev-only info (avoid logging full keys in case of accident)
+if (import.meta.env.DEV) {
+  // Only log presence/prefix in dev
+  // eslint-disable-next-line no-console
+  console.log("VITE_SUPABASE_URL set:", !!supabaseUrl);
+  // eslint-disable-next-line no-console
+  console.log(
+    "VITE_SUPABASE_ANON_KEY present (prefix):",
+    supabaseAnonKey ? supabaseAnonKey.slice(0, 10) : "no key"
+  );
+  // attach short debug object in dev only
+  // eslint-disable-next-line no-undef
+  window.__SUPABASE_DEV = {
+    url: supabaseUrl ?? null,
+    anonPrefix: supabaseAnonKey ? supabaseAnonKey.slice(0, 10) : null,
+  };
+}
 
-window.__SUPABASE_DEV = {
-  url: supabaseUrl ?? null,
-  anonPrefix: supabaseAnonKey ? supabaseAnonKey.slice(0, 10) : null,
-};
-
-export const supabase = createClient(supabaseUrl ?? "", supabaseAnonKey ?? "");
+// export client
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 ================================================================================
 
@@ -1296,20 +1709,248 @@ export function AuthProvider({ children }) {
 
 export const useAuth = () => useContext(AuthContext);
 
+📝 File: Groups.jsx
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\components\Groups.jsx
+--------------------------------------------------------------------------------
+// src/components/Groups.jsx
+import React, { useEffect, useState } from "react";
+import {
+  createGroup,
+  fetchUserGroups,
+  joinGroupByCode,
+} from "../services/groups";
+import { useAuth } from "./AuthContext";
+
+export default function Groups({ onShowGroupCalendar }) {
+  const { user } = useAuth();
+  const [groups, setGroups] = useState([]);
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [joinCode, setJoinCode] = useState("");
+  const [createdCode, setCreatedCode] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [msg, setMsg] = useState(null);
+
+  useEffect(() => {
+    if (!user) return;
+    loadGroups();
+  }, [user]);
+
+  async function loadGroups() {
+    try {
+      const data = await fetchUserGroups();
+      setGroups(data || []);
+    } catch (err) {
+      console.error("Failed to load groups:", err);
+      setMsg("Erreur lors du chargement des groupes.");
+    }
+  }
+
+  async function handleCreate(e) {
+    e.preventDefault();
+    setMsg(null);
+    setCreatedCode(null);
+    if (!name.trim()) return setMsg("Nom requis");
+    setLoading(true);
+    try {
+      const group = await createGroup({
+        name: name.trim(),
+        description: description.trim() || null,
+      });
+      setName("");
+      setDescription("");
+      setMsg("Groupe créé.");
+      // show the invite code if server returned it
+      if (group?.invite_code) {
+        setCreatedCode(group.invite_code);
+      } else {
+        setCreatedCode(null);
+      }
+      await loadGroups();
+    } catch (err) {
+      console.error(err);
+      setMsg(err.message || "Erreur lors de la création du groupe");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function handleJoin(e) {
+    e.preventDefault();
+    setMsg(null);
+    const code = (joinCode || "").trim().toUpperCase();
+    if (!code || code.length !== 6)
+      return setMsg("Entrez un code à 6 lettres.");
+    setLoading(true);
+    try {
+      await joinGroupByCode(code);
+      setJoinCode("");
+      setMsg("Vous avez rejoint le groupe !");
+      await loadGroups();
+    } catch (err) {
+      console.error("joinGroupByCode:", err);
+      setMsg(err.message || "Impossible de rejoindre le groupe.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <div className="simple-card max-w-4xl mx-auto p-4 space-y-4">
+      <h2 className="text-2xl font-semibold">Mes groupes</h2>
+
+      {msg && (
+        <div className="text-sm text-gray-300 p-2 bg-gray-900/20 rounded">
+          {msg}
+        </div>
+      )}
+
+      <div className="grid md:grid-cols-2 gap-4">
+        <div>
+          <h3 className="font-medium">Créer un groupe</h3>
+          <form onSubmit={handleCreate} className="space-y-2">
+            <input
+              placeholder="Nom du groupe"
+              className="simple-input"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              placeholder="Description (facultatif)"
+              className="simple-input"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+            <button className="simple-button" disabled={loading}>
+              {loading ? "Création..." : "Créer"}
+            </button>
+          </form>
+
+          {createdCode && (
+            <div className="mt-2 text-sm">
+              Code d'invitation généré :{" "}
+              <strong className="font-mono text-lg">{createdCode}</strong>
+              <div className="text-xs text-gray-400 mt-1">
+                Partagez ce code (6 lettres) avec les personnes que vous voulez
+                inviter.
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div>
+          <h3 className="font-medium">Rejoindre un groupe (par code)</h3>
+
+          <form onSubmit={handleJoin} className="mt-2 flex gap-2 items-center">
+            <input
+              placeholder="Entrez le code (6 lettres)"
+              className="simple-input flex-1"
+              value={joinCode}
+              onChange={(e) => setJoinCode(e.target.value)}
+              maxLength={6}
+            />
+            <button className="simple-button" disabled={loading}>
+              {loading ? "..." : "Rejoindre"}
+            </button>
+          </form>
+
+          <p className="text-xs text-gray-400 mt-2">
+            Entrez le code à 6 lettres du groupe. Si le code est valide, vous
+            serez ajouté directement au groupe.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h3 className="font-medium">Groupes dont vous faites partie</h3>
+        <ul className="space-y-2">
+          {groups.length === 0 && (
+            <li className="text-sm text-gray-400">Aucun groupe</li>
+          )}
+          {groups.map((g) => (
+            <li
+              key={g.group.id}
+              className="p-2 border rounded bg-gray-900/40 flex items-center justify-between"
+            >
+              <div>
+                <div className="font-semibold">{g.group.name}</div>
+                <div className="text-sm text-gray-400">
+                  {g.group.description}
+                </div>
+              </div>
+
+              <div className="flex gap-2">
+                <button
+                  className="simple-button"
+                  onClick={() =>
+                    onShowGroupCalendar && onShowGroupCalendar(g.group.id)
+                  }
+                >
+                  Voir calendrier
+                </button>
+                <div className="text-sm text-gray-300 self-center">
+                  {g.role}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 📝 File: Login.jsx
 Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\components\Login.jsx
 --------------------------------------------------------------------------------
+/* global process */
 // src/components/Login.jsx
 import React, { useState } from "react";
 import { supabase } from "../supabaseClient";
 
-// Prefill test credentials only in development.
-// You can set VITE_TEST_EMAIL and VITE_TEST_PASSWORD in .env for your own values.
-const DEV_TEST_EMAIL = import.meta.env.DEV
-  ? import.meta.env.VITE_TEST_EMAIL ?? "test@example.com"
+// safe helper (if not already imported from a shared helper)
+function getViteEnv(name, defaultValue = undefined) {
+  try {
+    // try reading import.meta if available (vite)
+    // eslint: using eval here is intentional to avoid static bundler transform
+    // and access import.meta safely in different environments.
+    const meta = eval(
+      'typeof import !== "undefined" ? import.meta : undefined'
+    );
+    const val = meta?.env?.[name];
+
+    // fallback to process.env only when process exists
+    const procEnv =
+      typeof process !== "undefined" && process && process.env
+        ? process.env[name]
+        : undefined;
+
+    return val ?? procEnv ?? defaultValue;
+  } catch {
+    const procEnv =
+      typeof process !== "undefined" && process && process.env
+        ? process.env[name]
+        : undefined;
+    return procEnv ?? defaultValue;
+  }
+}
+
+const devDefault =
+  typeof process !== "undefined" &&
+  process &&
+  process.env?.NODE_ENV === "development"
+    ? "true"
+    : "false";
+
+const DEV =
+  getViteEnv("DEV", devDefault) === true ||
+  getViteEnv("DEV", devDefault) === "true";
+
+const DEV_TEST_EMAIL = DEV
+  ? getViteEnv("VITE_TEST_EMAIL", "test@example.com")
   : "";
-const DEV_TEST_PASSWORD = import.meta.env.DEV
-  ? import.meta.env.VITE_TEST_PASSWORD ?? "password123"
+const DEV_TEST_PASSWORD = DEV
+  ? getViteEnv("VITE_TEST_PASSWORD", "password123")
   : "";
 
 export default function Login({ onLoggedIn }) {
@@ -1331,12 +1972,11 @@ export default function Login({ onLoggedIn }) {
 
     setLoading(true);
 
-    // Use then/catch and never re-throw to avoid unhandled rejections
     try {
       if (password) {
         await supabase.auth
           .signInWithPassword({ email, password })
-          .then(({ data, error: signInError }) => {
+          .then(({ error: signInError }) => {
             if (signInError) {
               // Friendly message for common 400 credential errors
               if (signInError?.status === 400) {
@@ -1345,8 +1985,7 @@ export default function Login({ onLoggedIn }) {
                 setError(signInError?.message ?? "Failed to sign in.");
               }
               // only log full details in dev
-              if (import.meta.env.DEV) {
-                // eslint-disable-next-line no-console
+              if (import.meta.env?.DEV) {
                 console.debug("signInWithPassword error:", signInError);
               }
               return;
@@ -1354,26 +1993,24 @@ export default function Login({ onLoggedIn }) {
 
             // success path
             setInfo("Logged in.");
-            onLoggedIn?.(data);
+            // onLoggedIn may expect data from supabase; fetch current session instead
+            onLoggedIn?.();
           })
           .catch((err) => {
             // network or unexpected error — show generic message
             setError("An unexpected error occurred. Please try again.");
-            if (import.meta.env.DEV) {
-              // eslint-disable-next-line no-console
+            if (import.meta.env?.DEV) {
               console.debug("signInWithPassword unexpected error:", err);
             }
-            // do not re-throw
           });
       } else {
         // magic link flow
         await supabase.auth
           .signInWithOtp({ email })
-          .then(({ data, error: linkError }) => {
+          .then(({ error: linkError }) => {
             if (linkError) {
               setError(linkError?.message ?? "Failed to send magic link.");
-              if (import.meta.env.DEV) {
-                // eslint-disable-next-line no-console
+              if (import.meta.env?.DEV) {
                 console.debug("signInWithOtp error:", linkError);
               }
               return;
@@ -1382,8 +2019,7 @@ export default function Login({ onLoggedIn }) {
           })
           .catch((err) => {
             setError("An unexpected error occurred. Please try again.");
-            if (import.meta.env.DEV) {
-              // eslint-disable-next-line no-console
+            if (import.meta.env?.DEV) {
               console.debug("signInWithOtp unexpected error:", err);
             }
           });
@@ -1395,7 +2031,7 @@ export default function Login({ onLoggedIn }) {
 
   function fillTestCreds() {
     // Only allow this in development mode (safety)
-    if (!import.meta.env.DEV) return;
+    if (!import.meta.env?.DEV) return;
     setEmail(DEV_TEST_EMAIL);
     setPassword(DEV_TEST_PASSWORD);
     setError(null);
@@ -1452,7 +2088,7 @@ export default function Login({ onLoggedIn }) {
           </button>
 
           {/* Visible only in dev to avoid leaking test helpers in production */}
-          {import.meta.env.DEV && (
+          {import.meta.env?.DEV && (
             <button
               type="button"
               className="simple-button"
@@ -1473,197 +2109,227 @@ Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\components\SignUp.jsx
 --------------------------------------------------------------------------------
 // src/components/SignUp.jsx
 import React, { useState } from "react";
-import { supabase } from "../supabaseClient";
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const INVISIBLE_REGEX = /[\u200B\u200C\u200D\uFEFF\u00A0]/g;
-
-function sanitizeEmail(raw) {
-  if (!raw) return "";
-  let s = String(raw).trim();
-  if (
-    (s.startsWith('"') && s.endsWith('"')) ||
-    (s.startsWith("'") && s.endsWith("'"))
-  ) {
-    s = s.slice(1, -1).trim();
-  }
-  // enlever caractères invisibles unicode
-  s = s.replace(INVISIBLE_REGEX, "");
-  // supprimer **tous** les blancs (espaces, newlines, tab)
-  s = s.replace(/\s+/g, "");
-  return s;
-}
-
-// Prefill test values only in development. You can override via .env:
-// VITE_TEST_FULLNAME, VITE_TEST_EMAIL, VITE_TEST_PASSWORD
-const DEV_TEST_FULLNAME = import.meta.env.DEV
-  ? import.meta.env.VITE_TEST_FULLNAME ?? "Test User"
-  : "";
-const DEV_TEST_EMAIL = import.meta.env.DEV
-  ? import.meta.env.VITE_TEST_EMAIL ?? "test@example.com"
-  : "";
-const DEV_TEST_PASSWORD = import.meta.env.DEV
-  ? import.meta.env.VITE_TEST_PASSWORD ?? "password123"
-  : "";
+import { supabase } from "../supabaseClient"; // adjust path if needed
 
 export default function SignUp({ onSignedUp }) {
-  const [fullName, setFullName] = useState(() => DEV_TEST_FULLNAME);
-  const [email, setEmail] = useState(() => DEV_TEST_EMAIL);
-  const [password, setPassword] = useState(() => DEV_TEST_PASSWORD);
-  const [confirm, setConfirm] = useState(() => DEV_TEST_PASSWORD);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [message, setMessage] = useState(null);
+  const [errorMsg, setErrorMsg] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setError(null);
-    setMessage(null);
+    setErrorMsg("");
+    setSuccessMsg("");
 
-    // Validate full name
-    if (!fullName.trim()) {
-      setError("Full name is required.");
-      return;
-    }
-
-    const normalizedEmail = sanitizeEmail(email);
-    console.log("raw email (json):", JSON.stringify(email));
-    console.log("normalized email (json):", JSON.stringify(normalizedEmail));
-    if (!normalizedEmail) {
-      setError("Please provide an email.");
-      return;
-    }
-    if (!EMAIL_RE.test(normalizedEmail)) {
-      setError("Please enter a valid email address.");
-      return;
-    }
-    if (!password || password.length < 6) {
-      setError("Password must be at least 6 characters.");
-      return;
-    }
-    if (password !== confirm) {
-      setError("Passwords do not match.");
+    if (!email || !password) {
+      setErrorMsg("Email and password are required.");
       return;
     }
 
     setLoading(true);
     try {
-      const { data, error: signError } = await supabase.auth.signUp({
-        email: normalizedEmail,
-        password,
-        options: { data: { full_name: fullName.trim() } },
-      });
-      console.log("signUp result:", { data, signError });
-
-      setMessage(
-        "Sign-up succeeded. Check your email for a confirmation link (if required)."
+      // Supabase signUp sends confirmation email if configured
+      const { data, error } = await supabase.auth.signUp(
+        {
+          email: email.trim(),
+          password,
+        },
+        {
+          data: { full_name: name.trim() || null },
+        }
       );
-      onSignedUp?.(data);
+
+      if (error) {
+        // show friendly message
+        setErrorMsg(error.message || "Signup failed. Try again.");
+      } else {
+        // show a clear message for tests to match
+        setSuccessMsg(
+          "Sign-up succeeded — check your email for a confirmation link."
+        );
+        // don't call onSignedUp here; allow user to confirm email first.
+        // Optionally offer a "Back to login" button that calls onSignedUp()
+      }
     } catch (err) {
-      setError("An unexpected error occurred. Please try again.");
-      console.error("SignUp unexpected error:", err);
+      console.error("signup error:", err);
+      setErrorMsg("Unexpected error. See console.");
     } finally {
       setLoading(false);
+      // keep fields (or clear if you prefer)
     }
   }
 
-  function fillTestValues() {
-    if (!import.meta.env.DEV) return;
-    setFullName(DEV_TEST_FULLNAME);
-    setEmail(DEV_TEST_EMAIL);
-    setPassword(DEV_TEST_PASSWORD);
-    setConfirm(DEV_TEST_PASSWORD);
-    setError(null);
-    setMessage("Filled test signup values.");
-  }
-
   return (
-    <div className="simple-card max-w-md mx-auto">
-      <h2 className="text-2xl font-semibold mb-4">Sign up</h2>
-
-      {error && (
-        <div className="mb-3 text-red-500 text-lg font-semibold" role="alert">
-          {error}
+    <div className="space-y-4">
+      {errorMsg && (
+        <div className="text-sm text-red-300 bg-red-900/10 p-2 rounded">
+          {errorMsg}
         </div>
       )}
-      {message && <div className="mb-3 text-green-300">{message}</div>}
-
-      <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-        <div>
-          <label className="block text-sm text-gray-300 mb-1">
-            Full Name *
-          </label>
-          <input
-            type="text"
-            className="simple-input"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-            disabled={loading}
-            placeholder="Your full name"
-            required
-          />
+      {successMsg && (
+        <div className="text-sm text-green-300 bg-green-900/10 p-2 rounded">
+          {successMsg}
         </div>
+      )}
 
-        <div>
-          <label className="block text-sm text-gray-300 mb-1">Email *</label>
-          <input
-            type="email"
-            className="simple-input"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            disabled={loading}
-            placeholder="you@example.com"
-            required
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm text-gray-300 mb-1">Password *</label>
-          <input
-            type="password"
-            className="simple-input"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            disabled={loading}
-            placeholder="At least 6 characters"
-            required
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm text-gray-300 mb-1">
-            Confirm Password *
-          </label>
-          <input
-            type="password"
-            className="simple-input"
-            value={confirm}
-            onChange={(e) => setConfirm(e.target.value)}
-            disabled={loading}
-            required
-          />
-        </div>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <input
+          placeholder="Your full name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="simple-input"
+        />
+        <input
+          placeholder="you@example.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="simple-input"
+        />
+        <input
+          placeholder="At least 6 characters"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="simple-input"
+        />
 
         <div className="flex gap-2">
-          <button type="submit" className="simple-button" disabled={loading}>
+          <button type="submit" disabled={loading} className="simple-button">
             {loading ? "Signing up..." : "Sign up"}
           </button>
 
-          {import.meta.env.DEV && (
-            <button
-              type="button"
-              className="simple-button"
-              onClick={fillTestValues}
-              disabled={loading}
-            >
-              Fill test values
-            </button>
-          )}
+          {/* allow user to go back to login view */}
+          <button
+            type="button"
+            onClick={() => typeof onSignedUp === "function" && onSignedUp()}
+            className="simple-button bg-gray-600 hover:bg-gray-700"
+          >
+            Back to login
+          </button>
         </div>
       </form>
     </div>
   );
 }
+
+================================================================================
+
+📂 Directory: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\server
+================================================================================
+
+📝 File: index.js
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\server\index.js
+--------------------------------------------------------------------------------
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import nodemailer from "nodemailer";
+
+dotenv.config();
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+const PORT = process.env.PORT || 3001;
+
+// Create a nodemailer transporter using SMTP settings from env
+function createTransporter() {
+  const host = process.env.SMTP_HOST;
+  const port = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : undefined;
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+
+  if (!host) return null;
+
+  return nodemailer.createTransport({
+    host,
+    port,
+    secure: port === 465, // true for 465, false for other ports
+    auth: user && pass ? { user, pass } : undefined,
+  });
+}
+
+const transporter = createTransporter();
+
+app.get("/api/health", (req, res) => res.json({ ok: true }));
+
+// POST /api/invite
+// body: { groupId, email }
+app.post("/api/invite", async (req, res) => {
+  const { groupId, email } = req.body || {};
+  if (!groupId || !email) {
+    return res.status(400).json({ error: "groupId and email are required" });
+  }
+
+  const frontend = process.env.FRONTEND_URL || process.env.VITE_FRONTEND_URL || "http://localhost:5173";
+  const acceptUrl = `${frontend.replace(/\/$/,"")}/accept-invite?group=${encodeURIComponent(
+    groupId
+  )}&email=${encodeURIComponent(email)}`;
+
+  // Compose email
+  const from = process.env.FROM_EMAIL || `no-reply@${process.env.SMTP_HOST || "localhost"}`;
+  const subject = `Invitation à rejoindre le groupe (${groupId})`;
+  const text = `Vous êtes invité(e) à rejoindre le groupe. Acceptez l'invitation : ${acceptUrl}`;
+  const html = `<p>Vous êtes invité(e) à rejoindre le groupe.</p><p><a href="${acceptUrl}">Accepter l'invitation</a></p>`;
+
+  // If transporter is not configured, return created but with warning
+  if (!transporter) {
+    console.warn("SMTP transporter not configured. Set SMTP_HOST and related env vars to actually send emails.");
+    return res.status(201).json({ ok: true, warn: "smtp-not-configured", acceptUrl });
+  }
+
+  try {
+    await transporter.sendMail({ from, to: email, subject, text, html });
+    return res.status(201).json({ ok: true });
+  } catch (err) {
+    console.error("Failed to send invite email:", err);
+    return res.status(500).json({ error: "failed-to-send" });
+  }
+});
+
+// compatibility with frontend `inviteByEmail` which calls /api/send-invite
+app.post("/api/send-invite", async (req, res) => {
+  const { email, groupId, token, groupName, inviterEmail, acceptUrlBase } =
+    req.body || {};
+
+  if (!email || !groupId || !token) {
+    return res.status(400).json({ error: "email, groupId and token are required" });
+  }
+
+  const frontend =
+    acceptUrlBase || process.env.FRONTEND_URL || process.env.VITE_FRONTEND_URL || "http://localhost:5173";
+
+  const acceptUrl = `${frontend.replace(/\/$/,"")}/accept-invite?token=${encodeURIComponent(
+    token
+  )}`;
+
+  const from = process.env.FROM_EMAIL || `no-reply@${process.env.SMTP_HOST || "localhost"}`;
+  const subject = `Invitation à rejoindre ${groupName || "un groupe"}`;
+  const text = `Vous êtes invité(e) à rejoindre ${groupName || "un groupe"}. Acceptez : ${acceptUrl}`;
+  const html = `<p>${inviterEmail ? `${inviterEmail} ` : ""}vous invite à rejoindre <strong>$
+  {groupName || "le groupe"}</strong>.</p><p><a href="${acceptUrl}">Accepter l'invitation</a></p>`;
+
+  if (!transporter) {
+    console.warn("SMTP transporter not configured. Set SMTP_HOST and related env vars to actually send emails.");
+    return res.status(201).json({ ok: true, warn: "smtp-not-configured", acceptUrl });
+  }
+
+  try {
+    await transporter.sendMail({ from, to: email, subject, text, html });
+    return res.status(201).json({ ok: true });
+  } catch (err) {
+    console.error("Failed to send invite email:", err);
+    return res.status(500).json({ error: "failed-to-send" });
+  }
+});
+
+app.listen(PORT, () => {
+  console.log(`Invite server listening on http://localhost:${PORT}`);
+});
 
 ================================================================================
 
@@ -1673,34 +2339,261 @@ export default function SignUp({ onSignedUp }) {
 📝 File: api.js
 Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\services\api.js
 --------------------------------------------------------------------------------
-// src/services/api.js — safe createEvent that strips null fields
+// src/services/api.js
 import { supabase } from "../supabaseClient";
 
+/**
+ * createEvent(payload)
+ * payload fields:
+ *  - title (string) (required)
+ *  - start (ISO string or Date)  // for personal events -> inserted into events.start
+ *  - end (ISO string or Date)    // for personal events -> events.end
+ *  - groupId (uuid) (optional)   // if provided -> insert into group_events (start_at/end_at)
+ *  - userId (uuid) (optional)
+ *  - allDay (boolean) (optional)
+ *  - category, color (optional)
+ */
 export async function createEvent(payload) {
-  const insertObj = {
-    title: payload.title,
-    start: payload.start,
-    end: payload.end,
-    user_id: payload.userId ?? undefined,
-    category: payload.category ?? undefined,
-    color: payload.color ?? undefined,
-  };
+  if (!payload || !payload.title) {
+    throw new Error("createEvent: payload.title is required");
+  }
 
-  // remove undefined/null props so we don't reference columns that might not exist
-  Object.keys(insertObj).forEach((k) => {
-    if (insertObj[k] === undefined || insertObj[k] === null) {
-      delete insertObj[k];
+  const startIso =
+    payload.start instanceof Date
+      ? payload.start.toISOString()
+      : String(payload.start);
+  const endIso =
+    payload.end instanceof Date
+      ? payload.end.toISOString()
+      : String(payload.end);
+
+  if (payload.groupId) {
+    const insertObj = {
+      title: payload.title,
+      start_at: startIso,
+      end_at: endIso,
+      group_id: payload.groupId,
+    };
+
+    if (typeof payload.userId !== "undefined")
+      insertObj.created_by = payload.userId;
+    if (typeof payload.allDay !== "undefined")
+      insertObj.all_day = payload.allDay;
+    if (payload.category) insertObj.category = payload.category;
+    if (payload.color) insertObj.color = payload.color;
+
+    const { data, error } = await supabase
+      .from("group_events")
+      .insert([insertObj]);
+    // debug: évite .select() si PostgREST a un souci de schéma
+    if (error) {
+      console.error("createEvent group_events insert error:", error);
+      throw error;
     }
-  });
+    return data;
+  } else {
+    // insert into personal events table
+    const insertObj = {
+      title: payload.title,
+      start: startIso,
+      end: endIso,
+      user_id: payload.userId ?? undefined,
+      all_day: payload.allDay ?? undefined,
+      category: payload.category ?? undefined,
+      color: payload.color ?? undefined,
+    };
+
+    Object.keys(insertObj).forEach((k) => {
+      if (insertObj[k] === undefined || insertObj[k] === null)
+        delete insertObj[k];
+    });
+
+    const { data, error } = await supabase
+      .from("events")
+      .insert([insertObj])
+      .select()
+      .single();
+
+    if (error) throw error;
+    return data;
+  }
+}
+
+📝 File: groups.js
+Path: C:\Users\Tech\Calendrier-1\calendrier\frontend\src\services\groups.js
+--------------------------------------------------------------------------------
+// src/services/groups.js
+import { supabase } from "../supabaseClient";
+
+/** utils */
+function generate6CharCode() {
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let s = "";
+  for (let i = 0; i < 6; i++)
+    s += letters[Math.floor(Math.random() * letters.length)];
+  return s;
+}
+
+/**
+ * createGroup({ name, description })
+ * - creator becomes owner and admin
+ * - generates a 6-letter invite_code stored in groups.invite_code
+ */
+export async function createGroup({ name, description }) {
+  const { data: userData } = await supabase.auth.getUser();
+  const user = userData?.user;
+  if (!user) throw new Error("Not authenticated");
+
+  // generate code (naive loop to avoid collision in the VERY rare case)
+  let invite_code = generate6CharCode();
+  // attempt up to a few times to avoid unique constraint collision
+  let attempts = 0;
+  let group = null;
+  while (attempts < 5) {
+    const { data: inserted, error } = await supabase
+      .from("groups")
+      .insert([
+        {
+          name,
+          description,
+          owner_id: user.id,
+          invite_code,
+        },
+      ])
+      .select()
+      .single();
+
+    if (!error) {
+      group = inserted;
+      break;
+    }
+
+    // If unique index collision on invite_code, generate a new code and retry
+    // Supabase returns constraint errors with message including 'duplicate key' or similar.
+    attempts += 1;
+    invite_code = generate6CharCode();
+  }
+
+  if (!group) {
+    throw new Error("Failed to create group (code generation collision?)");
+  }
+
+  // add creator as admin in group_members
+  const { error: memberErr } = await supabase.from("group_members").insert([
+    {
+      group_id: group.id,
+      user_id: user.id,
+      role: "admin",
+    },
+  ]);
+
+  if (memberErr) throw memberErr;
+
+  return group;
+}
+
+/**
+ * fetchUserGroups() - returns groups where current user is member
+ */
+export async function fetchUserGroups() {
+  const { data: userData } = await supabase.auth.getUser();
+  const user = userData?.user;
+  if (!user) return [];
 
   const { data, error } = await supabase
-    .from("events")
-    .insert([insertObj])
+    .from("group_members")
+    .select(
+      "group_id, role, groups(id, name, description, owner_id, created_at, invite_code)"
+    )
+    .eq("user_id", user.id);
+
+  if (error) throw error;
+
+  return (data || []).map((row) => ({
+    group: row.groups,
+    role: row.role,
+  }));
+}
+
+/**
+ * joinGroupByCode(code) - current authenticated user joins the group matching invite_code
+ */
+export async function joinGroupByCode(code) {
+  if (!code || typeof code !== "string" || code.trim().length !== 6) {
+    throw new Error("Code must be 6 letters.");
+  }
+
+  const normalized = code.trim().toUpperCase();
+
+  const { data: userData } = await supabase.auth.getUser();
+  const user = userData?.user;
+  if (!user) throw new Error("Not authenticated");
+
+  // find group by invite_code
+  const { data: group, error: groupErr } = await supabase
+    .from("groups")
+    .select("id, name")
+    .eq("invite_code", normalized)
+    .maybeSingle();
+
+  if (groupErr) throw groupErr;
+  if (!group) throw new Error("Invalid group code.");
+
+  // check if already a member
+  const { data: existing, error: exErr } = await supabase
+    .from("group_members")
+    .select("*")
+    .eq("group_id", group.id)
+    .eq("user_id", user.id)
+    .maybeSingle();
+
+  if (exErr) throw exErr;
+  if (existing) return existing; // already a member — return it silently
+
+  // check members count (max 10 as your previous rule)
+  const { data: members, error: memErr } = await supabase
+    .from("group_members")
+    .select("id", { count: "exact" })
+    .eq("group_id", group.id);
+
+  if (memErr) throw memErr;
+  const currentCount = (members && members.length) || 0;
+  if (currentCount >= 10) {
+    throw new Error("Group is full (max 10 members).");
+  }
+
+  // insert membership as 'member'
+  const { data: membership, error: addErr } = await supabase
+    .from("group_members")
+    .insert([
+      {
+        group_id: group.id,
+        user_id: user.id,
+        role: "member",
+      },
+    ])
     .select()
     .single();
 
+  if (addErr) throw addErr;
+
+  return membership;
+}
+
+/**
+ * (optional) fetchGroupEvents(groupId) - unchanged
+ */
+export async function fetchGroupEvents(groupId) {
+  if (!groupId) return [];
+
+  const { data, error } = await supabase
+    .from("group_events")
+    .select("*")
+    .eq("group_id", groupId)
+    .order("start_at", { ascending: true });
+
   if (error) throw error;
-  return data;
+  return data || [];
 }
 
 ================================================================================

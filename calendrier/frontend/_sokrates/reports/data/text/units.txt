@@ -1,0 +1,9 @@
+id: 1
+unit: export async function createEvent()
+file: services/api.js
+start line: 4
+end line: 29
+size: 22 LOC
+McCabe index: 4
+number of parameters: 1
+

@@ -55,7 +55,8 @@ body {
 
 /* Simple Button */
 .simple-button {
-  width: 100%;
+  width: auto; /* don't be full-width by default inside a flex row */
+  flex: 0 0 auto; /* don't grow or shrink unexpectedly */
   padding: 12px 20px;
   background-color: #333;
   border: 1px solid #555;
@@ -64,10 +65,16 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  min-width: 88px; /* ensure a usable minimum width */
 }
 
 .simple-button:hover:not(:disabled) {
   background-color: #444;
+}
+
+.simple-button.block {
+  width: 100%;
+  flex: 0 0 auto;
 }
 
 .simple-button:disabled {

@@ -1,0 +1,71 @@
+[ {
+  "relativePath" : "App.css",
+  "extension" : "css",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "App.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 62,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Calendar.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 513,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "components/AuthContext.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 34,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "components/Login.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 153,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "components/SignUp.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 175,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "index.css",
+  "extension" : "css",
+  "linesOfCode" : 180,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "main.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 9,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "services/api.js",
+  "extension" : "js",
+  "linesOfCode" : 23,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 4,
+  "linesOfCodeInUnits" : 22
+}, {
+  "relativePath" : "supabaseClient.js",
+  "extension" : "js",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+} ]

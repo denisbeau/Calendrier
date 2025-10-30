@@ -1,0 +1,26 @@
+{
+  "name": "Calendrier Frontend - Conventions",
+  "description": "Conventions d'analyse pour le projet Calendrier (React).",
+  "scoping": {
+    "include": ["src/**"],
+    "exclude": [
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      "public/**",
+      "_sokrates/**",
+      ".git/**",
+      "**/*.min.js"
+    ]
+  },
+  "fileTypes": {
+    "source": ["js", "jsx", "ts", "tsx", "css", "scss", "json"]
+  },
+  "limits": {
+    "maxFileSizeMb": 5
+  },
+  "analysisOptions": {
+    "detectTests": true,
+    "countBlankLines": false
+  }
+}

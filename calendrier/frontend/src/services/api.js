@@ -1,29 +1,79 @@
-// src/services/api.js — safe createEvent that strips null fields
+// src/services/api.js
 import { supabase } from "../supabaseClient";
 
+/**
+ * createEvent(payload)
+ * payload fields:
+ *  - title (string) (required)
+ *  - start (ISO string or Date)  // for personal events -> inserted into events.start
+ *  - end (ISO string or Date)    // for personal events -> events.end
+ *  - groupId (uuid) (optional)   // if provided -> insert into group_events (start_at/end_at)
+ *  - userId (uuid) (optional)
+ *  - allDay (boolean) (optional)
+ *  - category, color (optional)
+ */
 export async function createEvent(payload) {
-  const insertObj = {
-    title: payload.title,
-    start: payload.start,
-    end: payload.end,
-    user_id: payload.userId ?? undefined,
-    category: payload.category ?? undefined,
-    color: payload.color ?? undefined,
-  };
+  if (!payload || !payload.title) {
+    throw new Error("createEvent: payload.title is required");
+  }
 
-  // remove undefined/null props so we don't reference columns that might not exist
-  Object.keys(insertObj).forEach((k) => {
-    if (insertObj[k] === undefined || insertObj[k] === null) {
-      delete insertObj[k];
+  const startIso =
+    payload.start instanceof Date
+      ? payload.start.toISOString()
+      : String(payload.start);
+  const endIso =
+    payload.end instanceof Date
+      ? payload.end.toISOString()
+      : String(payload.end);
+
+  if (payload.groupId) {
+    const insertObj = {
+      title: payload.title,
+      start_at: startIso,
+      end_at: endIso,
+      group_id: payload.groupId,
+    };
+
+    if (typeof payload.userId !== "undefined")
+      insertObj.created_by = payload.userId;
+    if (typeof payload.allDay !== "undefined")
+      insertObj.all_day = payload.allDay;
+    if (payload.category) insertObj.category = payload.category;
+    if (payload.color) insertObj.color = payload.color;
+
+    const { data, error } = await supabase
+      .from("group_events")
+      .insert([insertObj]);
+    // debug: évite .select() si PostgREST a un souci de schéma
+    if (error) {
+      console.error("createEvent group_events insert error:", error);
+      throw error;
     }
-  });
+    return data;
+  } else {
+    // insert into personal events table
+    const insertObj = {
+      title: payload.title,
+      start: startIso,
+      end: endIso,
+      user_id: payload.userId ?? undefined,
+      all_day: payload.allDay ?? undefined,
+      category: payload.category ?? undefined,
+      color: payload.color ?? undefined,
+    };
 
-  const { data, error } = await supabase
-    .from("events")
-    .insert([insertObj])
-    .select()
-    .single();
+    Object.keys(insertObj).forEach((k) => {
+      if (insertObj[k] === undefined || insertObj[k] === null)
+        delete insertObj[k];
+    });
 
-  if (error) throw error;
-  return data;
+    const { data, error } = await supabase
+      .from("events")
+      .insert([insertObj])
+      .select()
+      .single();
+
+    if (error) throw error;
+    return data;
+  }
 }

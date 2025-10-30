@@ -1,0 +1,7 @@
+Path	Lines of Code
+App.css	37
+App.jsx	62
+Calendar.jsx	513
+index.css	180
+main.jsx	9
+supabaseClient.js	18

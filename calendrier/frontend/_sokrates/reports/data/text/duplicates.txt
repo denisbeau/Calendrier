@@ -1,0 +1,24 @@
+duplicated block id: 1
+size: 10 cleaned lines of code
+in 2 files:
+ - components/Login.jsx (124:135)
+ - components/SignUp.jsx (136:147)
+
+duplicated block id: 2
+size: 7 cleaned lines of code
+in 2 files:
+ - Calendar.jsx (25:31)
+ - Calendar.jsx (36:42)
+
+duplicated block id: 3
+size: 6 cleaned lines of code
+in 2 files:
+ - components/Login.jsx (7:12)
+ - components/SignUp.jsx (29:34)
+
+duplicated block id: 4
+size: 6 cleaned lines of code
+in 2 files:
+ - components/Login.jsx (139:144)
+ - components/SignUp.jsx (149:154)
+

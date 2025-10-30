@@ -1,0 +1,159 @@
+[ {
+  "key" : "primary",
+  "components" : [ {
+    "name" : "ROOT",
+    "filesCount" : 6,
+    "linesOfCode" : 819,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.jsx",
+      "value" : 3,
+      "description" : [ ]
+    }, {
+      "name" : "  *.css",
+      "value" : 2,
+      "description" : [ ]
+    }, {
+      "name" : "  *.js",
+      "value" : 1,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.jsx",
+      "value" : 584,
+      "description" : [ ]
+    }, {
+      "name" : "  *.css",
+      "value" : 217,
+      "description" : [ ]
+    }, {
+      "name" : "  *.js",
+      "value" : 18,
+      "description" : [ ]
+    } ]
+  }, {
+    "name" : "components",
+    "filesCount" : 3,
+    "linesOfCode" : 362,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.jsx",
+      "value" : 3,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.jsx",
+      "value" : 362,
+      "description" : [ ]
+    } ]
+  }, {
+    "name" : "services",
+    "filesCount" : 1,
+    "linesOfCode" : 23,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.js",
+      "value" : 1,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.js",
+      "value" : 23,
+      "description" : [ ]
+    } ]
+  } ],
+  "componentDependencies" : [ ],
+  "componentDependenciesErrors" : [ ],
+  "logicalDecomposition" : {
+    "name" : "primary",
+    "scope" : "main",
+    "filters" : [ ],
+    "componentsFolderDepth" : 1,
+    "minComponentsCount" : 0,
+    "components" : [ {
+      "name" : "ROOT",
+      "sourceFileFilters" : [ {
+        "pathPattern" : "src/.*",
+        "contentPattern" : "",
+        "exception" : false,
+        "note" : ""
+      }, {
+        "pathPattern" : "src/components/.*",
+        "contentPattern" : "",
+        "exception" : true,
+        "note" : ""
+      }, {
+        "pathPattern" : "src/services/.*",
+        "contentPattern" : "",
+        "exception" : true,
+        "note" : ""
+      } ],
+      "files" : [ ]
+    }, {
+      "name" : "components",
+      "sourceFileFilters" : [ {
+        "pathPattern" : "src/components/.*",
+        "contentPattern" : "",
+        "exception" : false,
+        "note" : ""
+      } ],
+      "files" : [ ]
+    }, {
+      "name" : "services",
+      "sourceFileFilters" : [ {
+        "pathPattern" : "src/services/.*",
+        "contentPattern" : "",
+        "exception" : false,
+        "note" : ""
+      } ],
+      "files" : [ ]
+    } ],
+    "metaComponents" : [ ],
+    "groups" : [ ],
+    "includeRemainingFiles" : true,
+    "dependenciesFinder" : {
+      "useBuiltInDependencyFinders" : true,
+      "rules" : [ ],
+      "metaRules" : [ ]
+    },
+    "renderingOptions" : {
+      "orientation" : "TB",
+      "maxNumberOfDependencies" : 100,
+      "renderComponentsWithoutDependencies" : true,
+      "renderIndirectDependencies" : false,
+      "renderInternalIndirectDependencies" : false,
+      "reverseDirection" : false
+    },
+    "includeExternalComponents" : true,
+    "dependencyLinkThreshold" : 1,
+    "duplicationLinkThreshold" : 50,
+    "temporalLinkThreshold" : 1,
+    "maxSearchDepthLines" : 200
+  },
+  "fileCountPerComponent" : [ {
+    "name" : "ROOT",
+    "value" : 6,
+    "description" : [ ]
+  }, {
+    "name" : "components",
+    "value" : 3,
+    "description" : [ ]
+  }, {
+    "name" : "services",
+    "value" : 1,
+    "description" : [ ]
+  } ],
+  "linesOfCodePerComponent" : [ {
+    "name" : "ROOT",
+    "value" : 819,
+    "description" : [ ]
+  }, {
+    "name" : "components",
+    "value" : 362,
+    "description" : [ ]
+  }, {
+    "name" : "services",
+    "value" : 23,
+    "description" : [ ]
+  } ]
+} ]
