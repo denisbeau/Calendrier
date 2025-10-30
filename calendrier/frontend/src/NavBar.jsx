@@ -1,12 +1,14 @@
 import React from 'react';
+import { useTheme } from './theme/ThemeProvider.jsx'
 
 export default function NavBar({ currentPage, setCurrentPage }) {
-  
+  const { isDark, toggleTheme } = useTheme();
+
   return (
-    <nav className="border-b bg-white border-gray-300">
+    <nav className={`border-b ${isDark ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-300'}`}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
-          
+
           {/* Navigation Links */}
           <div className="flex space-x-12">
             <button 
@@ -40,9 +42,18 @@ export default function NavBar({ currentPage, setCurrentPage }) {
               Teams
             </button>
           </div>
-          
 
-          
+          {/* Right-side actions (theme toggle) */}
+          <div className="flex items-center">
+            <button
+              onClick={toggleTheme}
+              className={`p-2 rounded-lg mr-2 ${isDark ? 'bg-gray-700 hover:bg-gray-600 text-yellow-400' : 'bg-gray-200 hover:bg-gray-300 text-gray-800'}`}
+              title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {isDark ? '☀️' : '🌙'}
+            </button>
+          </div>
+
         </div>
       </div>
     </nav>
