@@ -8,9 +8,13 @@ export default function NavBar({ currentPage, setCurrentPage }) {
     <nav className={`border-b ${isDark ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-300'}`}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex items-center select-none">
+            <span className={`font-semibold text-lg tracking-wide ${isDark ? 'text-white' : 'text-gray-900'}`}>WeSchedule</span>
+          </div>
 
           {/* Navigation Links */}
-          <div className="flex space-x-12">
+          <div className="flex space-x-12 ml-12">
             <button 
               onClick={() => setCurrentPage('home')}
               className={`px-4 py-2 text-sm font-medium ${
