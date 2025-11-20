@@ -1,121 +1,266 @@
 {
   "title" : "Duplication",
-  "timestamp" : "2025-10-16 16:04:41",
+  "timestamp" : "2025-11-04 13:37:57",
   "duplicates" : [ {
+    "blockSize" : 14,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "src/server/index.js",
+        "extension" : "js",
+        "linesOfCode" : 110,
+        "components" : [ "primary::src" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 99,
+      "startLine" : 65,
+      "endLine" : 81,
+      "cleanedStartLine" : 42,
+      "cleanedEndLine" : 55
+    }, {
+      "file" : {
+        "relativePath" : "src/server/index.js",
+        "extension" : "js",
+        "linesOfCode" : 110,
+        "components" : [ "primary::src" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 99,
+      "startLine" : 117,
+      "endLine" : 133,
+      "cleanedStartLine" : 83,
+      "cleanedEndLine" : 96
+    } ]
+  }, {
     "blockSize" : 10,
     "duplicatedFileBlocks" : [ {
       "file" : {
-        "relativePath" : "components/Login.jsx",
+        "relativePath" : "src/Calendar.jsx",
         "extension" : "jsx",
-        "linesOfCode" : 153,
-        "components" : [ "primary::components" ],
+        "linesOfCode" : 629,
+        "components" : [ "primary::src" ],
         "concerns" : [ "::Unclassified" ]
       },
-      "sourceFileCleanedLinesOfCode" : 144,
-      "startLine" : 124,
-      "endLine" : 135,
-      "cleanedStartLine" : 111,
-      "cleanedEndLine" : 120
+      "sourceFileCleanedLinesOfCode" : 594,
+      "startLine" : 103,
+      "endLine" : 112,
+      "cleanedStartLine" : 92,
+      "cleanedEndLine" : 101
     }, {
       "file" : {
-        "relativePath" : "components/SignUp.jsx",
+        "relativePath" : "src/Calendar.jsx",
         "extension" : "jsx",
-        "linesOfCode" : 175,
-        "components" : [ "primary::components" ],
+        "linesOfCode" : 629,
+        "components" : [ "primary::src" ],
         "concerns" : [ "::Unclassified" ]
       },
-      "sourceFileCleanedLinesOfCode" : 163,
-      "startLine" : 136,
-      "endLine" : 147,
-      "cleanedStartLine" : 119,
-      "cleanedEndLine" : 128
+      "sourceFileCleanedLinesOfCode" : 594,
+      "startLine" : 392,
+      "endLine" : 401,
+      "cleanedStartLine" : 332,
+      "cleanedEndLine" : 341
+    } ]
+  }, {
+    "blockSize" : 10,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "src/Calendar.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 629,
+        "components" : [ "primary::src" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 594,
+      "startLine" : 117,
+      "endLine" : 126,
+      "cleanedStartLine" : 106,
+      "cleanedEndLine" : 115
+    }, {
+      "file" : {
+        "relativePath" : "src/Calendar.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 629,
+        "components" : [ "primary::src" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 594,
+      "startLine" : 409,
+      "endLine" : 418,
+      "cleanedStartLine" : 349,
+      "cleanedEndLine" : 358
     } ]
   }, {
     "blockSize" : 7,
     "duplicatedFileBlocks" : [ {
       "file" : {
-        "relativePath" : "Calendar.jsx",
+        "relativePath" : "src/Calendar.jsx",
         "extension" : "jsx",
-        "linesOfCode" : 513,
-        "components" : [ "primary::ROOT" ],
+        "linesOfCode" : 629,
+        "components" : [ "primary::src" ],
         "concerns" : [ "::Unclassified" ]
       },
-      "sourceFileCleanedLinesOfCode" : 478,
-      "startLine" : 25,
-      "endLine" : 31,
-      "cleanedStartLine" : 23,
-      "cleanedEndLine" : 29
-    }, {
-      "file" : {
-        "relativePath" : "Calendar.jsx",
-        "extension" : "jsx",
-        "linesOfCode" : 513,
-        "components" : [ "primary::ROOT" ],
-        "concerns" : [ "::Unclassified" ]
-      },
-      "sourceFileCleanedLinesOfCode" : 478,
-      "startLine" : 36,
-      "endLine" : 42,
-      "cleanedStartLine" : 33,
-      "cleanedEndLine" : 39
-    } ]
-  }, {
-    "blockSize" : 6,
-    "duplicatedFileBlocks" : [ {
-      "file" : {
-        "relativePath" : "components/Login.jsx",
-        "extension" : "jsx",
-        "linesOfCode" : 153,
-        "components" : [ "primary::components" ],
-        "concerns" : [ "::Unclassified" ]
-      },
-      "sourceFileCleanedLinesOfCode" : 144,
-      "startLine" : 7,
-      "endLine" : 12,
-      "cleanedStartLine" : 6,
-      "cleanedEndLine" : 11
-    }, {
-      "file" : {
-        "relativePath" : "components/SignUp.jsx",
-        "extension" : "jsx",
-        "linesOfCode" : 175,
-        "components" : [ "primary::components" ],
-        "concerns" : [ "::Unclassified" ]
-      },
-      "sourceFileCleanedLinesOfCode" : 163,
-      "startLine" : 29,
-      "endLine" : 34,
-      "cleanedStartLine" : 26,
+      "sourceFileCleanedLinesOfCode" : 594,
+      "startLine" : 27,
+      "endLine" : 33,
+      "cleanedStartLine" : 25,
       "cleanedEndLine" : 31
+    }, {
+      "file" : {
+        "relativePath" : "src/Calendar.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 629,
+        "components" : [ "primary::src" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 594,
+      "startLine" : 38,
+      "endLine" : 44,
+      "cleanedStartLine" : 35,
+      "cleanedEndLine" : 41
+    } ]
+  }, {
+    "blockSize" : 7,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "eslint.config.js",
+        "extension" : "js",
+        "linesOfCode" : 59,
+        "components" : [ "primary::ROOT" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 51,
+      "startLine" : 21,
+      "endLine" : 27,
+      "cleanedStartLine" : 12,
+      "cleanedEndLine" : 18
+    }, {
+      "file" : {
+        "relativePath" : "eslint.config.js",
+        "extension" : "js",
+        "linesOfCode" : 59,
+        "components" : [ "primary::ROOT" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 51,
+      "startLine" : 40,
+      "endLine" : 46,
+      "cleanedStartLine" : 27,
+      "cleanedEndLine" : 33
     } ]
   }, {
     "blockSize" : 6,
     "duplicatedFileBlocks" : [ {
       "file" : {
-        "relativePath" : "components/Login.jsx",
-        "extension" : "jsx",
-        "linesOfCode" : 153,
-        "components" : [ "primary::components" ],
+        "relativePath" : "src/server/index.js",
+        "extension" : "js",
+        "linesOfCode" : 110,
+        "components" : [ "primary::src" ],
         "concerns" : [ "::Unclassified" ]
       },
-      "sourceFileCleanedLinesOfCode" : 144,
+      "sourceFileCleanedLinesOfCode" : 99,
+      "startLine" : 46,
+      "endLine" : 51,
+      "cleanedStartLine" : 27,
+      "cleanedEndLine" : 32
+    }, {
+      "file" : {
+        "relativePath" : "src/server/index.js",
+        "extension" : "js",
+        "linesOfCode" : 110,
+        "components" : [ "primary::src" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 99,
+      "startLine" : 96,
+      "endLine" : 102,
+      "cleanedStartLine" : 65,
+      "cleanedEndLine" : 70
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "src/Calendar.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 629,
+        "components" : [ "primary::src" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 594,
       "startLine" : 139,
       "endLine" : 144,
-      "cleanedStartLine" : 123,
-      "cleanedEndLine" : 128
+      "cleanedStartLine" : 127,
+      "cleanedEndLine" : 132
     }, {
       "file" : {
-        "relativePath" : "components/SignUp.jsx",
+        "relativePath" : "src/Calendar.jsx",
         "extension" : "jsx",
-        "linesOfCode" : 175,
-        "components" : [ "primary::components" ],
+        "linesOfCode" : 629,
+        "components" : [ "primary::src" ],
         "concerns" : [ "::Unclassified" ]
       },
-      "sourceFileCleanedLinesOfCode" : 163,
-      "startLine" : 149,
-      "endLine" : 154,
-      "cleanedStartLine" : 130,
-      "cleanedEndLine" : 135
+      "sourceFileCleanedLinesOfCode" : 594,
+      "startLine" : 396,
+      "endLine" : 401,
+      "cleanedStartLine" : 336,
+      "cleanedEndLine" : 341
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "eslint.config.js",
+        "extension" : "js",
+        "linesOfCode" : 59,
+        "components" : [ "primary::ROOT" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 51,
+      "startLine" : 44,
+      "endLine" : 50,
+      "cleanedStartLine" : 31,
+      "cleanedEndLine" : 36
+    }, {
+      "file" : {
+        "relativePath" : "eslint.config.js",
+        "extension" : "js",
+        "linesOfCode" : 59,
+        "components" : [ "primary::ROOT" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 51,
+      "startLine" : 62,
+      "endLine" : 68,
+      "cleanedStartLine" : 45,
+      "cleanedEndLine" : 50
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "src/Calendar.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 629,
+        "components" : [ "primary::src" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 594,
+      "startLine" : 107,
+      "endLine" : 112,
+      "cleanedStartLine" : 96,
+      "cleanedEndLine" : 101
+    }, {
+      "file" : {
+        "relativePath" : "src/Calendar.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 629,
+        "components" : [ "primary::src" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 594,
+      "startLine" : 139,
+      "endLine" : 144,
+      "cleanedStartLine" : 127,
+      "cleanedEndLine" : 132
     } ]
   } ],
   "overallDuplication" : null

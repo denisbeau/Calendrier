@@ -1,9 +1,99 @@
 id: 1
 unit: export async function createEvent()
-file: services/api.js
-start line: 4
-end line: 29
+file: src/services/api.js
+start line: 15
+end line: 79
+size: 56 LOC
+McCabe index: 14
+number of parameters: 1
+
+id: 2
+unit: export async function joinGroupByCode()
+file: src/services/groups.js
+start line: 97
+end line: 157
+size: 46 LOC
+McCabe index: 14
+number of parameters: 1
+
+id: 3
+unit: export async function createGroup()
+file: src/services/groups.js
+start line: 18
+end line: 69
+size: 40 LOC
+McCabe index: 6
+number of parameters: 2
+
+id: 4
+unit: export default defineConfig()
+file: eslint.config.js
+start line: 7
+end line: 30
 size: 22 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 5
+unit: export async function fetchUserGroups()
+file: src/services/groups.js
+start line: 74
+end line: 92
+size: 16 LOC
 McCabe index: 4
+number of parameters: 0
+
+id: 6
+unit: function createTransporter()
+file: src/server/index.js
+start line: 15
+end line: 31
+size: 15 LOC
+McCabe index: 5
+number of parameters: 0
+
+id: 7
+unit: export async function fetchGroupEvents()
+file: src/services/groups.js
+start line: 162
+end line: 173
+size: 10 LOC
+McCabe index: 4
+number of parameters: 1
+
+id: 8
+unit: function generate6CharCode()
+file: src/services/groups.js
+start line: 5
+end line: 11
+size: 7 LOC
+McCabe index: 2
+number of parameters: 0
+
+id: 9
+unit: setupNodeEvents()
+file: cypress.config.js
+start line: 10
+end line: 18
+size: 5 LOC
+McCabe index: 1
+number of parameters: 2
+
+id: 10
+unit: log()
+file: cypress.config.js
+start line: 12
+end line: 15
+size: 4 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 11
+unit: export default defineConfig()
+file: vite.config.js
+start line: 6
+end line: 8
+size: 3 LOC
+McCabe index: 1
 number of parameters: 1
 

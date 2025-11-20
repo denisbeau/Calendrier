@@ -1,24 +1,54 @@
 duplicated block id: 1
-size: 10 cleaned lines of code
+size: 14 cleaned lines of code
 in 2 files:
- - components/Login.jsx (124:135)
- - components/SignUp.jsx (136:147)
+ - src/server/index.js (65:81)
+ - src/server/index.js (117:133)
 
 duplicated block id: 2
-size: 7 cleaned lines of code
+size: 10 cleaned lines of code
 in 2 files:
- - Calendar.jsx (25:31)
- - Calendar.jsx (36:42)
+ - src/Calendar.jsx (103:112)
+ - src/Calendar.jsx (392:401)
 
 duplicated block id: 3
-size: 6 cleaned lines of code
+size: 10 cleaned lines of code
 in 2 files:
- - components/Login.jsx (7:12)
- - components/SignUp.jsx (29:34)
+ - src/Calendar.jsx (117:126)
+ - src/Calendar.jsx (409:418)
 
 duplicated block id: 4
+size: 7 cleaned lines of code
+in 2 files:
+ - src/Calendar.jsx (27:33)
+ - src/Calendar.jsx (38:44)
+
+duplicated block id: 5
+size: 7 cleaned lines of code
+in 2 files:
+ - eslint.config.js (21:27)
+ - eslint.config.js (40:46)
+
+duplicated block id: 6
 size: 6 cleaned lines of code
 in 2 files:
- - components/Login.jsx (139:144)
- - components/SignUp.jsx (149:154)
+ - src/server/index.js (46:51)
+ - src/server/index.js (96:102)
+
+duplicated block id: 7
+size: 6 cleaned lines of code
+in 2 files:
+ - src/Calendar.jsx (139:144)
+ - src/Calendar.jsx (396:401)
+
+duplicated block id: 8
+size: 6 cleaned lines of code
+in 2 files:
+ - eslint.config.js (44:50)
+ - eslint.config.js (62:68)
+
+duplicated block id: 9
+size: 6 cleaned lines of code
+in 2 files:
+ - src/Calendar.jsx (107:112)
+ - src/Calendar.jsx (139:144)
 

@@ -1,71 +1,148 @@
 [ {
-  "relativePath" : "App.css",
+  "relativePath" : "cypress/support/commands.js",
+  "extension" : "js",
+  "linesOfCode" : 1,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "cypress/support/e2e.js",
+  "extension" : "js",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "cypress.config.js",
+  "extension" : "js",
+  "linesOfCode" : 15,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 9
+}, {
+  "relativePath" : "eslint.config.js",
+  "extension" : "js",
+  "linesOfCode" : 59,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 22
+}, {
+  "relativePath" : "index.html",
+  "extension" : "html",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "migrations/001_create_groups.sql",
+  "extension" : "sql",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "projet.py",
+  "extension" : "py",
+  "linesOfCode" : 48,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "src/App.css",
   "extension" : "css",
   "linesOfCode" : 37,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
-  "relativePath" : "App.jsx",
+  "relativePath" : "src/App.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 62,
+  "linesOfCode" : 103,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
-  "relativePath" : "Calendar.jsx",
+  "relativePath" : "src/Calendar.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 513,
+  "linesOfCode" : 629,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
-  "relativePath" : "components/AuthContext.jsx",
+  "relativePath" : "src/components/AuthContext.jsx",
   "extension" : "jsx",
   "linesOfCode" : 34,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
-  "relativePath" : "components/Login.jsx",
+  "relativePath" : "src/components/Groups.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 153,
+  "linesOfCode" : 173,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
-  "relativePath" : "components/SignUp.jsx",
+  "relativePath" : "src/components/Login.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 175,
-  "unitsCount" : 0,
-  "unitsMcCabeIndexSum" : 0,
-  "linesOfCodeInUnits" : 0
-}, {
-  "relativePath" : "index.css",
-  "extension" : "css",
   "linesOfCode" : 180,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
-  "relativePath" : "main.jsx",
+  "relativePath" : "src/components/SignUp.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 98,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "src/index.css",
+  "extension" : "css",
+  "linesOfCode" : 186,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "src/main.jsx",
   "extension" : "jsx",
   "linesOfCode" : 9,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
-  "relativePath" : "services/api.js",
+  "relativePath" : "src/server/index.js",
   "extension" : "js",
-  "linesOfCode" : 23,
+  "linesOfCode" : 110,
   "unitsCount" : 1,
-  "unitsMcCabeIndexSum" : 4,
-  "linesOfCodeInUnits" : 22
+  "unitsMcCabeIndexSum" : 5,
+  "linesOfCodeInUnits" : 15
 }, {
-  "relativePath" : "supabaseClient.js",
+  "relativePath" : "src/services/api.js",
   "extension" : "js",
-  "linesOfCode" : 18,
+  "linesOfCode" : 57,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 14,
+  "linesOfCodeInUnits" : 56
+}, {
+  "relativePath" : "src/services/groups.js",
+  "extension" : "js",
+  "linesOfCode" : 120,
+  "unitsCount" : 5,
+  "unitsMcCabeIndexSum" : 30,
+  "linesOfCodeInUnits" : 119
+}, {
+  "relativePath" : "src/supabaseClient.js",
+  "extension" : "js",
+  "linesOfCode" : 20,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vite.config.js",
+  "extension" : "js",
+  "linesOfCode" : 6,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 3
 } ]

@@ -1,7 +1,6 @@
 Path	Lines of Code
-App.css	37
-App.jsx	62
-Calendar.jsx	513
-index.css	180
-main.jsx	9
-supabaseClient.js	18
+cypress.config.js	15
+eslint.config.js	59
+index.html	13
+projet.py	48
+vite.config.js	6

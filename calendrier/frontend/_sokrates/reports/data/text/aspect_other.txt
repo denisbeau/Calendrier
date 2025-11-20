@@ -1,1 +1,7 @@
 Path	Lines of Code
+README.md	7
+all_files_content.txt	1481
+analysis_conventions.json	26
+cypress/fixtures/example.json	5
+eslint-config.json	1449
+package.json	57

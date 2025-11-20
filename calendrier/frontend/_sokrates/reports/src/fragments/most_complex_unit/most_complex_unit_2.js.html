@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>export async function joinGroupByCode()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">export async function joinGroupByCode()</h3>
+<p style="margin-top: 4px">in <i>src/services/groups.js [97:157]</i></p>
+<ul>
+    <li><b>46</b> lines of code</li>
+    <li><b>14</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="js">
+export async function joinGroupByCode(code) {
+  if (!code || typeof code !== &quot;string&quot; || code.trim().length !== 6) {
+    throw new Error(&quot;Code must be 6 letters.&quot;);
+  }
+
+  const normalized = code.trim().toUpperCase();
+
+  const { data: userData } = await supabase.auth.getUser();
+  const user = userData?.user;
+  if (!user) throw new Error(&quot;Not authenticated&quot;);
+
+  // find group by invite_code
+  const { data: group, error: groupErr } = await supabase
+    .from(&quot;groups&quot;)
+    .select(&quot;id, name&quot;)
+    .eq(&quot;invite_code&quot;, normalized)
+    .maybeSingle();
+
+  if (groupErr) throw groupErr;
+  if (!group) throw new Error(&quot;Invalid group code.&quot;);
+
+  // check if already a member
+  const { data: existing, error: exErr } = await supabase
+    .from(&quot;group_members&quot;)
+    .select(&quot;*&quot;)
+    .eq(&quot;group_id&quot;, group.id)
+    .eq(&quot;user_id&quot;, user.id)
+    .maybeSingle();
+
+  if (exErr) throw exErr;
+  if (existing) return existing; // already a member &mdash; return it silently
+
+  // check members count (max 10 as your previous rule)
+  const { data: members, error: memErr } = await supabase
+    .from(&quot;group_members&quot;)
+    .select(&quot;id&quot;, { count: &quot;exact&quot; })
+    .eq(&quot;group_id&quot;, group.id);
+
+  if (memErr) throw memErr;
+  const currentCount = (members &amp;&amp; members.length) || 0;
+  if (currentCount &gt;= 10) {
+    throw new Error(&quot;Group is full (max 10 members).&quot;);
+  }
+
+  // insert membership as 'member'
+  const { data: membership, error: addErr } = await supabase
+    .from(&quot;group_members&quot;)
+    .insert([
+      {
+        group_id: group.id,
+        user_id: user.id,
+        role: &quot;member&quot;,
+      },
+    ])
+    .select()
+    .single();
+
+  if (addErr) throw addErr;
+
+  return membership;
+}
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

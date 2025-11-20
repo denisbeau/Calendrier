@@ -9,8 +9,12 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start:server": "node src/server/index.js",
-    "test": "jest --watchAll=false --color",
-    "test:watch": "jest --watch"
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "sokrates:analyze": "echo 'Run Sokrates manually: java -jar sokrates-LATEST.jar analyze' && exit 0"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.58.0",
@@ -47,6 +51,7 @@
     "msw": "^2.11.6",
     "text-encoding": "^0.7.0",
     "vite": "^7.1.6",
+    "vitest": "^4.0.7",
     "web-streams-polyfill": "^4.2.0",
     "whatwg-fetch": "^3.6.20"
   }

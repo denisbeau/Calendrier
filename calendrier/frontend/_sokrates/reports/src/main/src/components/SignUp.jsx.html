@@ -1,0 +1,133 @@
+<html>
+<head>
+    <title>src/components/SignUp.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">src/components/SignUp.jsx (<b>98</b> lines of code) (<a href="SignUp.jsx">raw</a>):</h3>
+<div id="editor">// src/components/SignUp.jsx
+import React, { useState } from &quot;react&quot;;
+import { supabase } from &quot;../supabaseClient&quot;; // adjust path if needed
+
+export default function SignUp({ onSignedUp }) {
+  const [name, setName] = useState(&quot;&quot;);
+  const [email, setEmail] = useState(&quot;&quot;);
+  const [password, setPassword] = useState(&quot;&quot;);
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(&quot;&quot;);
+  const [successMsg, setSuccessMsg] = useState(&quot;&quot;);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setErrorMsg(&quot;&quot;);
+    setSuccessMsg(&quot;&quot;);
+
+    if (!email || !password) {
+      setErrorMsg(&quot;Email and password are required.&quot;);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      // Supabase signUp sends confirmation email if configured
+      const { data, error } = await supabase.auth.signUp(
+        {
+          email: email.trim(),
+          password,
+        },
+        {
+          data: { full_name: name.trim() || null },
+        }
+      );
+
+      if (error) {
+        // show friendly message
+        setErrorMsg(error.message || &quot;Signup failed. Try again.&quot;);
+      } else {
+        // show a clear message for tests to match
+        setSuccessMsg(
+          &quot;Sign-up succeeded &mdash; check your email for a confirmation link.&quot;
+        );
+        // don't call onSignedUp here; allow user to confirm email first.
+        // Optionally offer a &quot;Back to login&quot; button that calls onSignedUp()
+      }
+    } catch (err) {
+      console.error(&quot;signup error:&quot;, err);
+      setErrorMsg(&quot;Unexpected error. See console.&quot;);
+    } finally {
+      setLoading(false);
+      // keep fields (or clear if you prefer)
+    }
+  }
+
+  return (
+    &lt;div className=&quot;space-y-4&quot;&gt;
+      {errorMsg &amp;&amp; (
+        &lt;div className=&quot;text-sm text-red-300 bg-red-900/10 p-2 rounded&quot;&gt;
+          {errorMsg}
+        &lt;/div&gt;
+      )}
+      {successMsg &amp;&amp; (
+        &lt;div className=&quot;text-sm text-green-300 bg-green-900/10 p-2 rounded&quot;&gt;
+          {successMsg}
+        &lt;/div&gt;
+      )}
+
+      &lt;form onSubmit={handleSubmit} className=&quot;space-y-4&quot;&gt;
+        &lt;input
+          placeholder=&quot;Your full name&quot;
+          value={name}
+          onChange={(e) =&gt; setName(e.target.value)}
+          className=&quot;simple-input&quot;
+        /&gt;
+        &lt;input
+          placeholder=&quot;you@example.com&quot;
+          value={email}
+          onChange={(e) =&gt; setEmail(e.target.value)}
+          className=&quot;simple-input&quot;
+        /&gt;
+        &lt;input
+          placeholder=&quot;At least 6 characters&quot;
+          type=&quot;password&quot;
+          value={password}
+          onChange={(e) =&gt; setPassword(e.target.value)}
+          className=&quot;simple-input&quot;
+        /&gt;
+
+        &lt;div className=&quot;flex gap-2&quot;&gt;
+          &lt;button type=&quot;submit&quot; disabled={loading} className=&quot;simple-button&quot;&gt;
+            {loading ? &quot;Signing up...&quot; : &quot;Sign up&quot;}
+          &lt;/button&gt;
+
+          {/* allow user to go back to login view */}
+          &lt;button
+            type=&quot;button&quot;
+            onClick={() =&gt; typeof onSignedUp === &quot;function&quot; &amp;&amp; onSignedUp()}
+            className=&quot;simple-button bg-gray-600 hover:bg-gray-700&quot;
+          &gt;
+            Back to login
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  );
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

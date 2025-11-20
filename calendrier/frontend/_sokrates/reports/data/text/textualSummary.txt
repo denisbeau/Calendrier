@@ -1,49 +1,67 @@
 Start of analysis
-Found 11 files
-10 are in the main's scope  (1204 lines of code)
-  *.jsx: 6 files, (946 lines of code)
-  *.css: 2 files, (217 lines of code)
-  *.js: 2 files, (41 lines of code)
-0 are in the test's scope  (0 lines of code)
+Found 28554 files
+21 are in the main's scope  (1938 lines of code)
+  *.jsx: 7 files, (1226 lines of code)
+  *.js: 9 files, (393 lines of code)
+  *.css: 2 files, (223 lines of code)
+  *.py: 1 files, (48 lines of code)
+  *.sql: 1 files, (35 lines of code)
+  *.html: 1 files, (13 lines of code)
+1 are in the test's scope  (15 lines of code)
+  *.js: 1 files, (15 lines of code)
 0 are in the generated's scope  (0 lines of code)
 0 are in the build and deployment's scope  (0 lines of code)
-0 are in the other's scope  (0 lines of code)
-Excluded from analyses 1 files
+6 are in the other's scope  (3025 lines of code)
+  *.json: 4 files, (1537 lines of code)
+  *.txt: 1 files, (1481 lines of code)
+  *.md: 1 files, (7 lines of code)
+Excluded from analyses 28526 files
 Analysing dependencies...
-6 are in the DECOMPOSITION_primary\ROOT's scope  (819 lines of code)
-  *.jsx: 3 files, (584 lines of code)
-  *.css: 2 files, (217 lines of code)
-  *.js: 1 files, (18 lines of code)
-3 are in the DECOMPOSITION_primary\components's scope  (362 lines of code)
-  *.jsx: 3 files, (362 lines of code)
-1 are in the DECOMPOSITION_primary\services's scope  (23 lines of code)
-  *.js: 1 files, (23 lines of code)
+2 are in the DECOMPOSITION_primary\cypress's scope  (6 lines of code)
+  *.js: 2 files, (6 lines of code)
+5 are in the DECOMPOSITION_primary\ROOT's scope  (141 lines of code)
+  *.js: 3 files, (80 lines of code)
+  *.py: 1 files, (48 lines of code)
+  *.html: 1 files, (13 lines of code)
+1 are in the DECOMPOSITION_primary\migrations's scope  (35 lines of code)
+  *.sql: 1 files, (35 lines of code)
+13 are in the DECOMPOSITION_primary\src's scope  (1756 lines of code)
+  *.jsx: 7 files, (1226 lines of code)
+  *.js: 4 files, (307 lines of code)
+  *.css: 2 files, (223 lines of code)
   - "primary", found 0 dependencies (0 component dependencies)
 0 are in the CONCERN_general\TODOs's scope  (0 lines of code)
-10 are in the CONCERN_general\Unclassified's scope  (1204 lines of code)
-  *.jsx: 6 files, (946 lines of code)
-  *.css: 2 files, (217 lines of code)
-  *.js: 2 files, (41 lines of code)
+21 are in the CONCERN_general\Unclassified's scope  (1938 lines of code)
+  *.jsx: 7 files, (1226 lines of code)
+  *.js: 9 files, (393 lines of code)
+  *.css: 2 files, (223 lines of code)
+  *.py: 1 files, (48 lines of code)
+  *.sql: 1 files, (35 lines of code)
+  *.html: 1 files, (13 lines of code)
 Analysing units...
 Basic unit metrics...
-  - found 1 units (22 lines of code in units)
-Unit size 0 / 0 / 22 / 0 / 0
+  - found 11 units (224 lines of code in units)
+Unit size 29 / 31 / 108 / 56 / 0
 Unit size per component:
-Unit Size Component services: 0 / 0 / 22 / 0 / 0
+Unit Size Component ROOT: 12 / 0 / 22 / 0 / 0
+Unit Size Component src: 17 / 31 / 86 / 56 / 0
 Unit size per extension:
-Unit Size Extension js: 0 / 0 / 22 / 0 / 0
-Conditional complexity: 22 / 0 / 0 / 0 / 0
+Unit Size Extension js: 29 / 31 / 108 / 56 / 0
+Conditional complexity: 82 / 40 / 102 / 0 / 0
 Conditional complexity per component:
-Conditional Complexity Component services 22 / 0 / 0 / 0 / 0
+Conditional Complexity Component ROOT 34 / 0 / 0 / 0 / 0
+Conditional Complexity Component src 48 / 40 / 102 / 0 / 0
 Conditional complexity per extension:
-Conditional Complexity Component js: 22 / 0 / 0 / 0 / 0
+Conditional Complexity Component js: 82 / 40 / 102 / 0 / 0
 Analysing duplication...
-  - found 4 duplicates (58 duplicated lines vs. 1130 cleaned lines) in 3 files
+  - found 9 duplicates (123 duplicated lines vs. 1799 cleaned lines) in 3 files
   - per component:primary
-     - "components": 44 duplicated lines vs. 340 total lines
-     - "ROOT": 14 duplicated lines vs. 770 total lines
-     - "services": 0 duplicated lines vs. 20 total lines
+     - "src": 100 duplicated lines vs. 1633 total lines
+     - "ROOT": 23 duplicated lines vs. 126 total lines
+     - "cypress": 0 duplicated lines vs. 5 total lines
+     - "migrations": 0 duplicated lines vs. 35 total lines
   - per extension:
-     - "jsx": 58 duplicated lines vs. 877 total lines
-Total analysis time: .16s
+     - "js": 63 duplicated lines vs. 348 total lines
+     - "jsx": 60 duplicated lines vs. 1136 total lines
+Total analysis time: 8.35s
 

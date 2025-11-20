@@ -1,0 +1,2 @@
+Path	Lines of Code
+migrations/001_create_groups.sql	35

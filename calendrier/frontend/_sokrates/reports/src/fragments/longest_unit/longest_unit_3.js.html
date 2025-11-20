@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>export async function createGroup()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">export async function createGroup()</h3>
+<p style="margin-top: 4px">in <i>src/services/groups.js [18:69]</i></p>
+<ul>
+    <li><b>40</b> lines of code</li>
+    <li><b>6</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="js">
+export async function createGroup({ name, description }) {
+  const { data: userData } = await supabase.auth.getUser();
+  const user = userData?.user;
+  if (!user) throw new Error(&quot;Not authenticated&quot;);
+
+  // generate code (naive loop to avoid collision in the VERY rare case)
+  let invite_code = generate6CharCode();
+  // attempt up to a few times to avoid unique constraint collision
+  let attempts = 0;
+  let group = null;
+  while (attempts &lt; 5) {
+    const { data: inserted, error } = await supabase
+      .from(&quot;groups&quot;)
+      .insert([
+        {
+          name,
+          description,
+          owner_id: user.id,
+          invite_code,
+        },
+      ])
+      .select()
+      .single();
+
+    if (!error) {
+      group = inserted;
+      break;
+    }
+
+    // If unique index collision on invite_code, generate a new code and retry
+    // Supabase returns constraint errors with message including 'duplicate key' or similar.
+    attempts += 1;
+    invite_code = generate6CharCode();
+  }
+
+  if (!group) {
+    throw new Error(&quot;Failed to create group (code generation collision?)&quot;);
+  }
+
+  // add creator as admin in group_members
+  const { error: memberErr } = await supabase.from(&quot;group_members&quot;).insert([
+    {
+      group_id: group.id,
+      user_id: user.id,
+      role: &quot;admin&quot;,
+    },
+  ]);
+
+  if (memberErr) throw memberErr;
+
+  return group;
+}
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

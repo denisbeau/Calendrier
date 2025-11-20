@@ -1,0 +1,199 @@
+<html>
+<head>
+    <title>src/services/groups.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">src/services/groups.js (<b>120</b> lines of code) (<a href="groups.js">raw</a>):</h3>
+<div id="editor">// src/services/groups.js
+import { supabase } from &quot;../supabaseClient&quot;;
+
+/** utils */
+function generate6CharCode() {
+  const letters = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+  let s = &quot;&quot;;
+  for (let i = 0; i &lt; 6; i++)
+    s += letters[Math.floor(Math.random() * letters.length)];
+  return s;
+}
+
+/**
+ * createGroup({ name, description })
+ * - creator becomes owner and admin
+ * - generates a 6-letter invite_code stored in groups.invite_code
+ */
+export async function createGroup({ name, description }) {
+  const { data: userData } = await supabase.auth.getUser();
+  const user = userData?.user;
+  if (!user) throw new Error(&quot;Not authenticated&quot;);
+
+  // generate code (naive loop to avoid collision in the VERY rare case)
+  let invite_code = generate6CharCode();
+  // attempt up to a few times to avoid unique constraint collision
+  let attempts = 0;
+  let group = null;
+  while (attempts &lt; 5) {
+    const { data: inserted, error } = await supabase
+      .from(&quot;groups&quot;)
+      .insert([
+        {
+          name,
+          description,
+          owner_id: user.id,
+          invite_code,
+        },
+      ])
+      .select()
+      .single();
+
+    if (!error) {
+      group = inserted;
+      break;
+    }
+
+    // If unique index collision on invite_code, generate a new code and retry
+    // Supabase returns constraint errors with message including 'duplicate key' or similar.
+    attempts += 1;
+    invite_code = generate6CharCode();
+  }
+
+  if (!group) {
+    throw new Error(&quot;Failed to create group (code generation collision?)&quot;);
+  }
+
+  // add creator as admin in group_members
+  const { error: memberErr } = await supabase.from(&quot;group_members&quot;).insert([
+    {
+      group_id: group.id,
+      user_id: user.id,
+      role: &quot;admin&quot;,
+    },
+  ]);
+
+  if (memberErr) throw memberErr;
+
+  return group;
+}
+
+/**
+ * fetchUserGroups() - returns groups where current user is member
+ */
+export async function fetchUserGroups() {
+  const { data: userData } = await supabase.auth.getUser();
+  const user = userData?.user;
+  if (!user) return [];
+
+  const { data, error } = await supabase
+    .from(&quot;group_members&quot;)
+    .select(
+      &quot;group_id, role, groups(id, name, description, owner_id, created_at, invite_code)&quot;
+    )
+    .eq(&quot;user_id&quot;, user.id);
+
+  if (error) throw error;
+
+  return (data || []).map((row) =&gt; ({
+    group: row.groups,
+    role: row.role,
+  }));
+}
+
+/**
+ * joinGroupByCode(code) - current authenticated user joins the group matching invite_code
+ */
+export async function joinGroupByCode(code) {
+  if (!code || typeof code !== &quot;string&quot; || code.trim().length !== 6) {
+    throw new Error(&quot;Code must be 6 letters.&quot;);
+  }
+
+  const normalized = code.trim().toUpperCase();
+
+  const { data: userData } = await supabase.auth.getUser();
+  const user = userData?.user;
+  if (!user) throw new Error(&quot;Not authenticated&quot;);
+
+  // find group by invite_code
+  const { data: group, error: groupErr } = await supabase
+    .from(&quot;groups&quot;)
+    .select(&quot;id, name&quot;)
+    .eq(&quot;invite_code&quot;, normalized)
+    .maybeSingle();
+
+  if (groupErr) throw groupErr;
+  if (!group) throw new Error(&quot;Invalid group code.&quot;);
+
+  // check if already a member
+  const { data: existing, error: exErr } = await supabase
+    .from(&quot;group_members&quot;)
+    .select(&quot;*&quot;)
+    .eq(&quot;group_id&quot;, group.id)
+    .eq(&quot;user_id&quot;, user.id)
+    .maybeSingle();
+
+  if (exErr) throw exErr;
+  if (existing) return existing; // already a member &mdash; return it silently
+
+  // check members count (max 10 as your previous rule)
+  const { data: members, error: memErr } = await supabase
+    .from(&quot;group_members&quot;)
+    .select(&quot;id&quot;, { count: &quot;exact&quot; })
+    .eq(&quot;group_id&quot;, group.id);
+
+  if (memErr) throw memErr;
+  const currentCount = (members &amp;&amp; members.length) || 0;
+  if (currentCount &gt;= 10) {
+    throw new Error(&quot;Group is full (max 10 members).&quot;);
+  }
+
+  // insert membership as 'member'
+  const { data: membership, error: addErr } = await supabase
+    .from(&quot;group_members&quot;)
+    .insert([
+      {
+        group_id: group.id,
+        user_id: user.id,
+        role: &quot;member&quot;,
+      },
+    ])
+    .select()
+    .single();
+
+  if (addErr) throw addErr;
+
+  return membership;
+}
+
+/**
+ * (optional) fetchGroupEvents(groupId) - unchanged
+ */
+export async function fetchGroupEvents(groupId) {
+  if (!groupId) return [];
+
+  const { data, error } = await supabase
+    .from(&quot;group_events&quot;)
+    .select(&quot;*&quot;)
+    .eq(&quot;group_id&quot;, groupId)
+    .order(&quot;start_at&quot;, { ascending: true });
+
+  if (error) throw error;
+  return data || [];
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

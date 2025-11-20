@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>cypress.config.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">cypress.config.js (<b>15</b> lines of code) (<a href="cypress.config.js">raw</a>):</h3>
+<div id="editor">/* eslint-env node */
+/* eslint-disable no-console */
+const { defineConfig } = require(&quot;cypress&quot;);
+
+module.exports = defineConfig({
+  e2e: {
+    // IMPORTANT: set baseUrl to where your dev server serves the app
+    baseUrl: &quot;http://localhost:5173&quot;,
+
+    setupNodeEvents(on, config) {
+      on(&quot;task&quot;, {
+        log(message) {
+          console.log(&quot;[cypress task log]&quot;, message);
+          return null;
+        },
+      });
+      return config;
+    },
+  },
+});
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

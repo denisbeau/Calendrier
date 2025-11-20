@@ -1,1 +1,8 @@
-[ ]
+[ {
+  "relativePath" : "jest.config.js",
+  "extension" : "js",
+  "linesOfCode" : 15,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+} ]

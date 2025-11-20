@@ -1,0 +1,256 @@
+<html>
+<head>
+    <title>src/index.css</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">src/index.css (<b>186</b> lines of code) (<a href="index.css">raw</a>):</h3>
+<div id="editor">@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Simple Card */
+.simple-card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Simple Input */
+.simple-input {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: white;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.simple-input:focus {
+  border-color: #555;
+}
+
+.simple-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.simple-input::placeholder {
+  color: #888;
+}
+
+.simple-input.border-red-500 {
+  border-color: #ef4444;
+}
+
+/* Simple Button */
+.simple-button {
+  width: auto; /* don't be full-width by default inside a flex row */
+  flex: 0 0 auto; /* don't grow or shrink unexpectedly */
+  padding: 12px 20px;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-width: 88px; /* ensure a usable minimum width */
+}
+
+.simple-button:hover:not(:disabled) {
+  background-color: #444;
+}
+
+.simple-button.block {
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.simple-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #222;
+}
+
+/* Simple Checkbox */
+.simple-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #666;
+}
+
+/* View Toggle Buttons */
+.view-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background-color: #333;
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-btn:hover {
+  background-color: #444;
+  color: white;
+}
+
+.view-btn.active {
+  background-color: #555;
+  color: white;
+  border-color: #777;
+}
+
+/* Calendar Styles */
+.rbc-header {
+  background-color: #1a1a1a !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 12px !important;
+  border: 1px solid #333 !important;
+}
+
+.rbc-today {
+  background-color: #333 !important;
+  color: white !important;
+}
+
+.rbc-event {
+  background-color: #555 !important;
+  border: none !important;
+  border-radius: 4px !important;
+  color: white !important;
+}
+
+.rbc-event:hover {
+  background-color: #666 !important;
+}
+
+.rbc-btn-group &gt; button {
+  background-color: #1a1a1a !important;
+  border: 1px solid #333 !important;
+  color: white !important;
+  padding: 8px 16px !important;
+  border-radius: 4px !important;
+  margin: 0 2px !important;
+}
+
+.rbc-btn-group &gt; button:hover {
+  background-color: #333 !important;
+}
+
+.rbc-active {
+  background-color: #555 !important;
+  color: white !important;
+}
+
+.rbc-toolbar {
+  margin-bottom: 20px !important;
+  padding: 16px !important;
+  background-color: #1a1a1a !important;
+  border: 1px solid #333 !important;
+  border-radius: 8px !important;
+}
+
+.rbc-toolbar-label {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: white !important;
+  text-align: center !important;
+  flex-grow: 1 !important;
+}
+
+.rbc-time-slot {
+  border-color: #333 !important;
+}
+
+.rbc-timeslot-group {
+  border-color: #333 !important;
+}
+
+.rbc-date-cell {
+  padding: 8px !important;
+  color: white !important;
+}
+
+.rbc-date-cell.rbc-off-range {
+  color: #666 !important;
+}
+
+.rbc-button-link {
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.rbc-button-link:hover {
+  color: #ccc !important;
+}
+
+.rbc-selected {
+  background-color: #333 !important;
+  border: 1px solid #555 !important;
+}
+
+.rbc-calendar {
+  background-color: #000 !important;
+  color: white !important;
+}
+
+.rbc-month-view {
+  background-color: #000 !important;
+}
+
+.rbc-day-bg {
+  background-color: #000 !important;
+}
+
+.rbc-time-view {
+  background-color: #000 !important;
+}
+
+.rbc-time-content {
+  background-color: #000 !important;
+}
+
+.rbc-time-header {
+  background-color: #000 !important;
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/css");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

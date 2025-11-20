@@ -6,38 +6,77 @@
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
 <h3 style="margin-bottom: 0">export async function createEvent()</h3>
-<p style="margin-top: 4px">in <i>services/api.js [4:29]</i></p>
+<p style="margin-top: 4px">in <i>src/services/api.js [15:79]</i></p>
 <ul>
-    <li><b>22</b> lines of code</li>
-    <li><b>4</b> McCabe index (conditional complexity)</li>
+    <li><b>56</b> lines of code</li>
+    <li><b>14</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="js">
 export async function createEvent(payload) {
-  const insertObj = {
-    title: payload.title,
-    start: payload.start,
-    end: payload.end,
-    user_id: payload.userId ?? undefined,
-    category: payload.category ?? undefined,
-    color: payload.color ?? undefined,
-  };
+  if (!payload || !payload.title) {
+    throw new Error(&quot;createEvent: payload.title is required&quot;);
+  }
 
-  // remove undefined/null props so we don't reference columns that might not exist
-  Object.keys(insertObj).forEach((k) =&gt; {
-    if (insertObj[k] === undefined || insertObj[k] === null) {
-      delete insertObj[k];
+  const startIso =
+    payload.start instanceof Date
+      ? payload.start.toISOString()
+      : String(payload.start);
+  const endIso =
+    payload.end instanceof Date
+      ? payload.end.toISOString()
+      : String(payload.end);
+
+  if (payload.groupId) {
+    const insertObj = {
+      title: payload.title,
+      start_at: startIso,
+      end_at: endIso,
+      group_id: payload.groupId,
+    };
+
+    if (typeof payload.userId !== &quot;undefined&quot;)
+      insertObj.created_by = payload.userId;
+    if (typeof payload.allDay !== &quot;undefined&quot;)
+      insertObj.all_day = payload.allDay;
+    if (payload.category) insertObj.category = payload.category;
+    if (payload.color) insertObj.color = payload.color;
+
+    const { data, error } = await supabase
+      .from(&quot;group_events&quot;)
+      .insert([insertObj]);
+    // debug: &eacute;vite .select() si PostgREST a un souci de sch&eacute;ma
+    if (error) {
+      console.error(&quot;createEvent group_events insert error:&quot;, error);
+      throw error;
     }
-  });
+    return data;
+  } else {
+    // insert into personal events table
+    const insertObj = {
+      title: payload.title,
+      start: startIso,
+      end: endIso,
+      user_id: payload.userId ?? undefined,
+      all_day: payload.allDay ?? undefined,
+      category: payload.category ?? undefined,
+      color: payload.color ?? undefined,
+    };
 
-  const { data, error } = await supabase
-    .from(&quot;events&quot;)
-    .insert([insertObj])
-    .select()
-    .single();
+    Object.keys(insertObj).forEach((k) =&gt; {
+      if (insertObj[k] === undefined || insertObj[k] === null)
+        delete insertObj[k];
+    });
 
-  if (error) throw error;
-  return data;
+    const { data, error } = await supabase
+      .from(&quot;events&quot;)
+      .insert([insertObj])
+      .select()
+      .single();
+
+    if (error) throw error;
+    return data;
+  }
 }
 
 </code>

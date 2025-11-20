@@ -1,64 +1,95 @@
 [ {
   "key" : "primary",
   "components" : [ {
+    "name" : "cypress",
+    "filesCount" : 2,
+    "linesOfCode" : 6,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.js",
+      "value" : 2,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.js",
+      "value" : 6,
+      "description" : [ ]
+    } ]
+  }, {
     "name" : "ROOT",
-    "filesCount" : 6,
-    "linesOfCode" : 819,
+    "filesCount" : 5,
+    "linesOfCode" : 141,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.js",
+      "value" : 3,
+      "description" : [ ]
+    }, {
+      "name" : "  *.py",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.html",
+      "value" : 1,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.js",
+      "value" : 80,
+      "description" : [ ]
+    }, {
+      "name" : "  *.py",
+      "value" : 48,
+      "description" : [ ]
+    }, {
+      "name" : "  *.html",
+      "value" : 13,
+      "description" : [ ]
+    } ]
+  }, {
+    "name" : "migrations",
+    "filesCount" : 1,
+    "linesOfCode" : 35,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.sql",
+      "value" : 1,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.sql",
+      "value" : 35,
+      "description" : [ ]
+    } ]
+  }, {
+    "name" : "src",
+    "filesCount" : 13,
+    "linesOfCode" : 1756,
     "numberOfRegexLineMatches" : 0,
     "fileCountPerExtension" : [ {
       "name" : "  *.jsx",
-      "value" : 3,
+      "value" : 7,
+      "description" : [ ]
+    }, {
+      "name" : "  *.js",
+      "value" : 4,
       "description" : [ ]
     }, {
       "name" : "  *.css",
       "value" : 2,
       "description" : [ ]
-    }, {
-      "name" : "  *.js",
-      "value" : 1,
-      "description" : [ ]
     } ],
     "linesOfCodePerExtension" : [ {
       "name" : "  *.jsx",
-      "value" : 584,
+      "value" : 1226,
+      "description" : [ ]
+    }, {
+      "name" : "  *.js",
+      "value" : 307,
       "description" : [ ]
     }, {
       "name" : "  *.css",
-      "value" : 217,
-      "description" : [ ]
-    }, {
-      "name" : "  *.js",
-      "value" : 18,
-      "description" : [ ]
-    } ]
-  }, {
-    "name" : "components",
-    "filesCount" : 3,
-    "linesOfCode" : 362,
-    "numberOfRegexLineMatches" : 0,
-    "fileCountPerExtension" : [ {
-      "name" : "  *.jsx",
-      "value" : 3,
-      "description" : [ ]
-    } ],
-    "linesOfCodePerExtension" : [ {
-      "name" : "  *.jsx",
-      "value" : 362,
-      "description" : [ ]
-    } ]
-  }, {
-    "name" : "services",
-    "filesCount" : 1,
-    "linesOfCode" : 23,
-    "numberOfRegexLineMatches" : 0,
-    "fileCountPerExtension" : [ {
-      "name" : "  *.js",
-      "value" : 1,
-      "description" : [ ]
-    } ],
-    "linesOfCodePerExtension" : [ {
-      "name" : "  *.js",
-      "value" : 23,
+      "value" : 223,
       "description" : [ ]
     } ]
   } ],
@@ -71,37 +102,51 @@
     "componentsFolderDepth" : 1,
     "minComponentsCount" : 0,
     "components" : [ {
+      "name" : "cypress",
+      "sourceFileFilters" : [ {
+        "pathPattern" : "./cypress/.*",
+        "contentPattern" : "",
+        "exception" : false,
+        "note" : ""
+      } ],
+      "files" : [ ]
+    }, {
       "name" : "ROOT",
       "sourceFileFilters" : [ {
-        "pathPattern" : "src/.*",
+        "pathPattern" : "./.*",
         "contentPattern" : "",
         "exception" : false,
         "note" : ""
       }, {
-        "pathPattern" : "src/components/.*",
+        "pathPattern" : "./cypress/.*",
         "contentPattern" : "",
         "exception" : true,
         "note" : ""
       }, {
-        "pathPattern" : "src/services/.*",
+        "pathPattern" : "./migrations/.*",
+        "contentPattern" : "",
+        "exception" : true,
+        "note" : ""
+      }, {
+        "pathPattern" : "./src/.*",
         "contentPattern" : "",
         "exception" : true,
         "note" : ""
       } ],
       "files" : [ ]
     }, {
-      "name" : "components",
+      "name" : "migrations",
       "sourceFileFilters" : [ {
-        "pathPattern" : "src/components/.*",
+        "pathPattern" : "./migrations/.*",
         "contentPattern" : "",
         "exception" : false,
         "note" : ""
       } ],
       "files" : [ ]
     }, {
-      "name" : "services",
+      "name" : "src",
       "sourceFileFilters" : [ {
-        "pathPattern" : "src/services/.*",
+        "pathPattern" : "./src/.*",
         "contentPattern" : "",
         "exception" : false,
         "note" : ""
@@ -131,29 +176,37 @@
     "maxSearchDepthLines" : 200
   },
   "fileCountPerComponent" : [ {
+    "name" : "cypress",
+    "value" : 2,
+    "description" : [ ]
+  }, {
     "name" : "ROOT",
-    "value" : 6,
+    "value" : 5,
     "description" : [ ]
   }, {
-    "name" : "components",
-    "value" : 3,
-    "description" : [ ]
-  }, {
-    "name" : "services",
+    "name" : "migrations",
     "value" : 1,
+    "description" : [ ]
+  }, {
+    "name" : "src",
+    "value" : 13,
     "description" : [ ]
   } ],
   "linesOfCodePerComponent" : [ {
+    "name" : "cypress",
+    "value" : 6,
+    "description" : [ ]
+  }, {
     "name" : "ROOT",
-    "value" : 819,
+    "value" : 141,
     "description" : [ ]
   }, {
-    "name" : "components",
-    "value" : 362,
+    "name" : "migrations",
+    "value" : 35,
     "description" : [ ]
   }, {
-    "name" : "services",
-    "value" : 23,
+    "name" : "src",
+    "value" : 1756,
     "description" : [ ]
   } ]
 } ]

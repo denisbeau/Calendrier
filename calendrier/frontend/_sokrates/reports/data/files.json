@@ -1,61 +1,127 @@
 [ {
-  "relativePath" : "App.css",
+  "relativePath" : "cypress/support/commands.js",
+  "extension" : "js",
+  "linesOfCode" : 1,
+  "components" : [ "primary::cypress" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "cypress/support/e2e.js",
+  "extension" : "js",
+  "linesOfCode" : 5,
+  "components" : [ "primary::cypress" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "cypress.config.js",
+  "extension" : "js",
+  "linesOfCode" : 15,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "eslint.config.js",
+  "extension" : "js",
+  "linesOfCode" : 59,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "index.html",
+  "extension" : "html",
+  "linesOfCode" : 13,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "migrations/001_create_groups.sql",
+  "extension" : "sql",
+  "linesOfCode" : 35,
+  "components" : [ "primary::migrations" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "projet.py",
+  "extension" : "py",
+  "linesOfCode" : 48,
+  "components" : [ "primary::ROOT" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "src/App.css",
   "extension" : "css",
   "linesOfCode" : 37,
-  "components" : [ "primary::ROOT" ],
+  "components" : [ "primary::src" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "App.jsx",
+  "relativePath" : "src/App.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 62,
-  "components" : [ "primary::ROOT" ],
+  "linesOfCode" : 103,
+  "components" : [ "primary::src" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "Calendar.jsx",
+  "relativePath" : "src/Calendar.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 513,
-  "components" : [ "primary::ROOT" ],
+  "linesOfCode" : 629,
+  "components" : [ "primary::src" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "components/AuthContext.jsx",
+  "relativePath" : "src/components/AuthContext.jsx",
   "extension" : "jsx",
   "linesOfCode" : 34,
-  "components" : [ "primary::components" ],
+  "components" : [ "primary::src" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "components/Login.jsx",
+  "relativePath" : "src/components/Groups.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 153,
-  "components" : [ "primary::components" ],
+  "linesOfCode" : 173,
+  "components" : [ "primary::src" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "components/SignUp.jsx",
+  "relativePath" : "src/components/Login.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 175,
-  "components" : [ "primary::components" ],
-  "concerns" : [ "::Unclassified" ]
-}, {
-  "relativePath" : "index.css",
-  "extension" : "css",
   "linesOfCode" : 180,
-  "components" : [ "primary::ROOT" ],
+  "components" : [ "primary::src" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "main.jsx",
+  "relativePath" : "src/components/SignUp.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 98,
+  "components" : [ "primary::src" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "src/index.css",
+  "extension" : "css",
+  "linesOfCode" : 186,
+  "components" : [ "primary::src" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "src/main.jsx",
   "extension" : "jsx",
   "linesOfCode" : 9,
-  "components" : [ "primary::ROOT" ],
+  "components" : [ "primary::src" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "services/api.js",
+  "relativePath" : "src/server/index.js",
   "extension" : "js",
-  "linesOfCode" : 23,
-  "components" : [ "primary::services" ],
+  "linesOfCode" : 110,
+  "components" : [ "primary::src" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "supabaseClient.js",
+  "relativePath" : "src/services/api.js",
   "extension" : "js",
-  "linesOfCode" : 18,
+  "linesOfCode" : 57,
+  "components" : [ "primary::src" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "src/services/groups.js",
+  "extension" : "js",
+  "linesOfCode" : 120,
+  "components" : [ "primary::src" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "src/supabaseClient.js",
+  "extension" : "js",
+  "linesOfCode" : 20,
+  "components" : [ "primary::src" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "vite.config.js",
+  "extension" : "js",
+  "linesOfCode" : 6,
   "components" : [ "primary::ROOT" ],
   "concerns" : [ "::Unclassified" ]
 } ]

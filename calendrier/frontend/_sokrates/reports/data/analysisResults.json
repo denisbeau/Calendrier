@@ -1,7 +1,7 @@
 {
   "metadata" : {
-    "name" : "Calendrier Frontend",
-    "description" : "React frontend",
+    "name" : "Frontend",
+    "description" : "",
     "tooltip" : "",
     "logoLink" : "",
     "links" : [ ]
@@ -9,23 +9,31 @@
   "metricsList" : {
     "metrics" : [ {
       "id" : "TOTAL_NUMBER_OF_FILES",
-      "value" : 11,
+      "value" : 28554,
       "description" : "Total number of files in the source folder"
     }, {
       "id" : "NUMBER_OF_FILES_MAIN",
-      "value" : 10,
+      "value" : 21,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_MAIN",
-      "value" : 1204,
+      "value" : 1938,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_MAIN_EXT_JSX",
-      "value" : 6,
+      "value" : 7,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_MAIN_EXT_JSX",
-      "value" : 946,
+      "value" : 1226,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_MAIN_EXT_JS",
+      "value" : 9,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_MAIN_EXT_JS",
+      "value" : 393,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_MAIN_EXT_CSS",
@@ -33,27 +41,51 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_MAIN_EXT_CSS",
-      "value" : 217,
+      "value" : 223,
       "description" : null
     }, {
-      "id" : "NUMBER_OF_FILES_MAIN_EXT_JS",
-      "value" : 2,
+      "id" : "NUMBER_OF_FILES_MAIN_EXT_PY",
+      "value" : 1,
       "description" : null
     }, {
-      "id" : "LINES_OF_CODE_MAIN_EXT_JS",
-      "value" : 41,
+      "id" : "LINES_OF_CODE_MAIN_EXT_PY",
+      "value" : 48,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_MAIN_EXT_SQL",
+      "value" : 1,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_MAIN_EXT_SQL",
+      "value" : 35,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_MAIN_EXT_HTML",
+      "value" : 1,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_MAIN_EXT_HTML",
+      "value" : 13,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_TEST",
-      "value" : 0,
+      "value" : 1,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_TEST",
-      "value" : 0,
+      "value" : 15,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_TEST_EXT_JS",
+      "value" : 1,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_TEST_EXT_JS",
+      "value" : 15,
       "description" : null
     }, {
       "id" : "TEST_VS_MAIN_LINES_OF_CODE_PERCENTAGE",
-      "value" : 0.0,
+      "value" : 0.77,
       "description" : "Test / main code ratio"
     }, {
       "id" : "NUMBER_OF_FILES_GENERATED",
@@ -73,75 +105,131 @@
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_OTHER",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_OTHER",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_ROOT",
       "value" : 6,
       "description" : null
     }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_ROOT",
-      "value" : 819,
+      "id" : "LINES_OF_CODE_OTHER",
+      "value" : 3025,
       "description" : null
     }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_ROOT_EXT_JSX",
-      "value" : 3,
+      "id" : "NUMBER_OF_FILES_OTHER_EXT_JSON",
+      "value" : 4,
       "description" : null
     }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_ROOT_EXT_JSX",
-      "value" : 584,
+      "id" : "LINES_OF_CODE_OTHER_EXT_JSON",
+      "value" : 1537,
       "description" : null
     }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_ROOT_EXT_CSS",
+      "id" : "NUMBER_OF_FILES_OTHER_EXT_TXT",
+      "value" : 1,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_OTHER_EXT_TXT",
+      "value" : 1481,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_OTHER_EXT_MD",
+      "value" : 1,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_OTHER_EXT_MD",
+      "value" : 7,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_CYPRESS",
       "value" : 2,
       "description" : null
     }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_ROOT_EXT_CSS",
-      "value" : 217,
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_CYPRESS",
+      "value" : 6,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_CYPRESS_EXT_JS",
+      "value" : 2,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_CYPRESS_EXT_JS",
+      "value" : 6,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_ROOT",
+      "value" : 5,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_ROOT",
+      "value" : 141,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_ROOT_EXT_JS",
-      "value" : 1,
+      "value" : 3,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_ROOT_EXT_JS",
-      "value" : 18,
+      "value" : 80,
       "description" : null
     }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_COMPONENTS",
-      "value" : 3,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_COMPONENTS",
-      "value" : 362,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_COMPONENTS_EXT_JSX",
-      "value" : 3,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_COMPONENTS_EXT_JSX",
-      "value" : 362,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_SERVICES",
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_ROOT_EXT_PY",
       "value" : 1,
       "description" : null
     }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_SERVICES",
-      "value" : 23,
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_ROOT_EXT_PY",
+      "value" : 48,
       "description" : null
     }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_SERVICES_EXT_JS",
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_ROOT_EXT_HTML",
       "value" : 1,
       "description" : null
     }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_SERVICES_EXT_JS",
-      "value" : 23,
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_ROOT_EXT_HTML",
+      "value" : 13,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_MIGRATIONS",
+      "value" : 1,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_MIGRATIONS",
+      "value" : 35,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_MIGRATIONS_EXT_SQL",
+      "value" : 1,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_MIGRATIONS_EXT_SQL",
+      "value" : 35,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_SRC",
+      "value" : 13,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_SRC",
+      "value" : 1756,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_SRC_EXT_JSX",
+      "value" : 7,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_SRC_EXT_JSX",
+      "value" : 1226,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_SRC_EXT_JS",
+      "value" : 4,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_SRC_EXT_JS",
+      "value" : 307,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_SRC_EXT_CSS",
+      "value" : 2,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_SRC_EXT_CSS",
+      "value" : 223,
       "description" : null
     }, {
       "id" : "NUMBER_OF_DEPENDENCY_LINKS_DECOMPOSITION_PRIMARY",
@@ -165,19 +253,27 @@
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED",
-      "value" : 10,
+      "value" : 21,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED",
-      "value" : 1204,
+      "value" : 1938,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_JSX",
-      "value" : 6,
+      "value" : 7,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED_EXT_JSX",
-      "value" : 946,
+      "value" : 1226,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_JS",
+      "value" : 9,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED_EXT_JS",
+      "value" : 393,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_CSS",
@@ -185,23 +281,39 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED_EXT_CSS",
-      "value" : 217,
+      "value" : 223,
       "description" : null
     }, {
-      "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_JS",
-      "value" : 2,
+      "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_PY",
+      "value" : 1,
       "description" : null
     }, {
-      "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED_EXT_JS",
-      "value" : 41,
+      "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED_EXT_PY",
+      "value" : 48,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_SQL",
+      "value" : 1,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED_EXT_SQL",
+      "value" : 35,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_HTML",
+      "value" : 1,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED_EXT_HTML",
+      "value" : 13,
       "description" : null
     }, {
       "id" : "NEGLIGIBLE_RISK_FILE_SIZE_COUNT",
-      "value" : 6,
+      "value" : 14,
       "description" : "Number of  files with 100 or less lines of code"
     }, {
       "id" : "LOW_RISK_FILE_SIZE_COUNT",
-      "value" : 3,
+      "value" : 6,
       "description" : "Number of  files with 100 to 200 lines of code"
     }, {
       "id" : "MEDIUM_RISK_FILE_SIZE_COUNT",
@@ -217,11 +329,11 @@
       "description" : "Number of  files with more than 1000 lines of code"
     }, {
       "id" : "NEGLIGIBLE_RISK_FILE_SIZE_LOC",
-      "value" : 183,
+      "value" : 437,
       "description" : "Lines of code in  files with 100 or less lines of code"
     }, {
       "id" : "LOW_RISK_FILE_SIZE_LOC",
-      "value" : 508,
+      "value" : 872,
       "description" : "Lines of code in  files with 100 to 200 lines of code"
     }, {
       "id" : "MEDIUM_RISK_FILE_SIZE_LOC",
@@ -229,7 +341,7 @@
       "description" : "Lines of code in  files with 200 to 500 lines of code"
     }, {
       "id" : "HIGH_RISK_FILE_SIZE_LOC",
-      "value" : 513,
+      "value" : 629,
       "description" : "Lines of code in  files with 500 to 1000 lines of code"
     }, {
       "id" : "VERY_HIGH_RISK_FILE_SIZE_LOC",
@@ -237,63 +349,63 @@
       "description" : "Lines of code in  files with more than 1000 lines of code"
     }, {
       "id" : "NUMBER_OF_UNITS",
-      "value" : 1,
+      "value" : 11,
       "description" : "Number of units"
     }, {
       "id" : "LINES_OF_CODE_IN_UNITS",
-      "value" : 22,
+      "value" : 224,
       "description" : "Lines of code in units"
     }, {
       "id" : "LINES_OF_CODE_OUTSIDE_UNITS",
-      "value" : 1182,
+      "value" : 1714,
       "description" : "Lines of code in units"
     }, {
       "id" : "UNIT_SIZE_NEGLIGIBLE_RISK_LOC",
-      "value" : 0,
+      "value" : 29,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 0.0,
+      "value" : 12.946428571428571,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_NEGLIGIBLE_RISK_COUNT",
-      "value" : 0,
+      "value" : 5,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_LOW_RISK_LOC",
-      "value" : 0,
+      "value" : 31,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_LOW_RISK_PERCENTAGE",
-      "value" : 0.0,
+      "value" : 13.839285714285714,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_LOW_RISK_COUNT",
-      "value" : 0,
+      "value" : 2,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_MEDIUM_RISK_LOC",
-      "value" : 22,
+      "value" : 108,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_MEDIUM_RISK_PERCENTAGE",
-      "value" : 100.0,
+      "value" : 48.214285714285715,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_MEDIUM_RISK_COUNT",
-      "value" : 1,
+      "value" : 3,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_HIGH_RISK_LOC",
-      "value" : 0,
+      "value" : 56,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_HIGH_RISK_PERCENTAGE",
-      "value" : 0.0,
+      "value" : 25.0,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_HIGH_RISK_COUNT",
-      "value" : 0,
+      "value" : 1,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_VERY_HIGH_RISK_LOC",
@@ -308,112 +420,172 @@
       "value" : 0,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_NEGLIGIBLE_RISK_LOC",
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_NEGLIGIBLE_RISK_LOC",
+      "value" : 12,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_NEGLIGIBLE_RISK_PERCENTAGE",
+      "value" : 35.294117647058826,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_NEGLIGIBLE_RISK_COUNT",
+      "value" : 3,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_LOW_RISK_LOC",
       "value" : 0,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_NEGLIGIBLE_RISK_PERCENTAGE",
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_LOW_RISK_PERCENTAGE",
       "value" : 0.0,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_NEGLIGIBLE_RISK_COUNT",
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_LOW_RISK_COUNT",
       "value" : 0,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_LOW_RISK_LOC",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_LOW_RISK_PERCENTAGE",
-      "value" : 0.0,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_LOW_RISK_COUNT",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_MEDIUM_RISK_LOC",
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_MEDIUM_RISK_LOC",
       "value" : 22,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_MEDIUM_RISK_PERCENTAGE",
-      "value" : 100.0,
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_MEDIUM_RISK_PERCENTAGE",
+      "value" : 64.70588235294117,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_MEDIUM_RISK_COUNT",
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_MEDIUM_RISK_COUNT",
       "value" : 1,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_HIGH_RISK_LOC",
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_HIGH_RISK_LOC",
       "value" : 0,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_HIGH_RISK_PERCENTAGE",
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_HIGH_RISK_PERCENTAGE",
       "value" : 0.0,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_HIGH_RISK_COUNT",
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_HIGH_RISK_COUNT",
       "value" : 0,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_VERY_HIGH_RISK_LOC",
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_VERY_HIGH_RISK_LOC",
       "value" : 0,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_VERY_HIGH_RISK_PERCENTAGE",
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_VERY_HIGH_RISK_PERCENTAGE",
       "value" : 0.0,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SERVICES_VERY_HIGH_RISK_COUNT",
+      "id" : "UNIT_SIZE_COMPONENT_ROOT_VERY_HIGH_RISK_COUNT",
+      "value" : 0,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_NEGLIGIBLE_RISK_LOC",
+      "value" : 17,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_NEGLIGIBLE_RISK_PERCENTAGE",
+      "value" : 8.947368421052632,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_NEGLIGIBLE_RISK_COUNT",
+      "value" : 2,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_LOW_RISK_LOC",
+      "value" : 31,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_LOW_RISK_PERCENTAGE",
+      "value" : 16.31578947368421,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_LOW_RISK_COUNT",
+      "value" : 2,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_MEDIUM_RISK_LOC",
+      "value" : 86,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_MEDIUM_RISK_PERCENTAGE",
+      "value" : 45.26315789473684,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_MEDIUM_RISK_COUNT",
+      "value" : 2,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_HIGH_RISK_LOC",
+      "value" : 56,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_HIGH_RISK_PERCENTAGE",
+      "value" : 29.473684210526315,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_HIGH_RISK_COUNT",
+      "value" : 1,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_VERY_HIGH_RISK_LOC",
+      "value" : 0,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_VERY_HIGH_RISK_PERCENTAGE",
+      "value" : 0.0,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_SRC_VERY_HIGH_RISK_COUNT",
       "value" : 0,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_NEGLIGIBLE_RISK_LOC",
-      "value" : 0,
+      "value" : 29,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 0.0,
+      "value" : 12.946428571428571,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_NEGLIGIBLE_RISK_COUNT",
-      "value" : 0,
+      "value" : 5,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_LOW_RISK_LOC",
-      "value" : 0,
+      "value" : 31,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_LOW_RISK_PERCENTAGE",
-      "value" : 0.0,
+      "value" : 13.839285714285714,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_LOW_RISK_COUNT",
-      "value" : 0,
+      "value" : 2,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_MEDIUM_RISK_LOC",
-      "value" : 22,
+      "value" : 108,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_MEDIUM_RISK_PERCENTAGE",
-      "value" : 100.0,
+      "value" : 48.214285714285715,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_MEDIUM_RISK_COUNT",
-      "value" : 1,
+      "value" : 3,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_HIGH_RISK_LOC",
-      "value" : 0,
+      "value" : 56,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_HIGH_RISK_PERCENTAGE",
-      "value" : 0.0,
+      "value" : 25.0,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_HIGH_RISK_COUNT",
-      "value" : 0,
+      "value" : 1,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_VERY_HIGH_RISK_LOC",
@@ -429,39 +601,39 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_NEGLIGIBLE_RISK_LOC",
-      "value" : 22,
+      "value" : 82,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 100.0,
+      "value" : 36.607142857142854,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_NEGLIGIBLE_RISK_COUNT",
-      "value" : 1,
+      "value" : 8,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_LOW_RISK_LOC",
-      "value" : 0,
+      "value" : 40,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_LOW_RISK_PERCENTAGE",
-      "value" : 0.0,
+      "value" : 17.857142857142858,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_LOW_RISK_COUNT",
-      "value" : 0,
+      "value" : 1,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_MEDIUM_RISK_LOC",
-      "value" : 0,
+      "value" : 102,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_MEDIUM_RISK_PERCENTAGE",
-      "value" : 0.0,
+      "value" : 45.535714285714285,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_MEDIUM_RISK_COUNT",
-      "value" : 0,
+      "value" : 2,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_HIGH_RISK_LOC",
@@ -496,100 +668,160 @@
       "value" : 0,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_NEGLIGIBLE_RISK_LOC",
-      "value" : 22,
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_NEGLIGIBLE_RISK_LOC",
+      "value" : 34,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_NEGLIGIBLE_RISK_PERCENTAGE",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_NEGLIGIBLE_RISK_PERCENTAGE",
       "value" : 100.0,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_NEGLIGIBLE_RISK_COUNT",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_NEGLIGIBLE_RISK_COUNT",
+      "value" : 4,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_LOW_RISK_LOC",
+      "value" : 0,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_LOW_RISK_PERCENTAGE",
+      "value" : 0.0,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_LOW_RISK_COUNT",
+      "value" : 0,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_MEDIUM_RISK_LOC",
+      "value" : 0,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_MEDIUM_RISK_PERCENTAGE",
+      "value" : 0.0,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_MEDIUM_RISK_COUNT",
+      "value" : 0,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_HIGH_RISK_LOC",
+      "value" : 0,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_HIGH_RISK_PERCENTAGE",
+      "value" : 0.0,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_HIGH_RISK_COUNT",
+      "value" : 0,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_VERY_HIGH_RISK_LOC",
+      "value" : 0,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_VERY_HIGH_RISK_PERCENTAGE",
+      "value" : 0.0,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_VERY_HIGH_RISK_COUNT",
+      "value" : 0,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_NEGLIGIBLE_RISK_LOC",
+      "value" : 48,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_NEGLIGIBLE_RISK_PERCENTAGE",
+      "value" : 25.263157894736842,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_NEGLIGIBLE_RISK_COUNT",
+      "value" : 4,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_LOW_RISK_LOC",
+      "value" : 40,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_LOW_RISK_PERCENTAGE",
+      "value" : 21.05263157894737,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_LOW_RISK_COUNT",
       "value" : 1,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_LOW_RISK_LOC",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_MEDIUM_RISK_LOC",
+      "value" : 102,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_MEDIUM_RISK_PERCENTAGE",
+      "value" : 53.68421052631579,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_MEDIUM_RISK_COUNT",
+      "value" : 2,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_HIGH_RISK_LOC",
       "value" : 0,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_LOW_RISK_PERCENTAGE",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_HIGH_RISK_PERCENTAGE",
       "value" : 0.0,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_LOW_RISK_COUNT",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_HIGH_RISK_COUNT",
       "value" : 0,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_MEDIUM_RISK_LOC",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_VERY_HIGH_RISK_LOC",
       "value" : 0,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_MEDIUM_RISK_PERCENTAGE",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_VERY_HIGH_RISK_PERCENTAGE",
       "value" : 0.0,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_MEDIUM_RISK_COUNT",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_HIGH_RISK_LOC",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_HIGH_RISK_PERCENTAGE",
-      "value" : 0.0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_HIGH_RISK_COUNT",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_VERY_HIGH_RISK_LOC",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_VERY_HIGH_RISK_PERCENTAGE",
-      "value" : 0.0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SERVICES_VERY_HIGH_RISK_COUNT",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_VERY_HIGH_RISK_COUNT",
       "value" : 0,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_NEGLIGIBLE_RISK_LOC",
-      "value" : 22,
+      "value" : 82,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 100.0,
+      "value" : 36.607142857142854,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_NEGLIGIBLE_RISK_COUNT",
-      "value" : 1,
+      "value" : 8,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_LOW_RISK_LOC",
-      "value" : 0,
+      "value" : 40,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_LOW_RISK_PERCENTAGE",
-      "value" : 0.0,
+      "value" : 17.857142857142858,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_LOW_RISK_COUNT",
-      "value" : 0,
+      "value" : 1,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_MEDIUM_RISK_LOC",
-      "value" : 0,
+      "value" : 102,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_MEDIUM_RISK_PERCENTAGE",
-      "value" : 0.0,
+      "value" : 45.535714285714285,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_MEDIUM_RISK_COUNT",
-      "value" : 0,
+      "value" : 2,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_HIGH_RISK_LOC",
@@ -617,7 +849,7 @@
       "description" : null
     }, {
       "id" : "DUPLICATION_NUMBER_OF_DUPLICATES",
-      "value" : 4,
+      "value" : 9,
       "description" : "Number of duplicates"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_FILES_WITH_DUPLICATES",
@@ -625,71 +857,95 @@
       "description" : "Number of files with duplicates"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES",
-      "value" : 58,
+      "value" : 123,
       "description" : "Number of duplicated lines"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES",
-      "value" : 1130,
+      "value" : 1799,
       "description" : "Number of lines after cleaning for duplication calculations"
     }, {
       "id" : "DUPLICATION_PERCENTAGE",
-      "value" : 5.132743362831858,
+      "value" : 6.837131739855475,
       "description" : "Duplication percentage"
     }, {
       "id" : "UNIT_DUPLICATES_COUNT",
       "value" : 0,
       "description" : "Unit duplicates"
     }, {
-      "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_PRIMARY_COMPONENTS",
-      "value" : 44,
+      "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_PRIMARY_SRC",
+      "value" : 100,
       "description" : "Number of duplicated lines"
     }, {
-      "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_PRIMARY_COMPONENTS",
-      "value" : 44,
+      "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_PRIMARY_SRC",
+      "value" : 100,
       "description" : "Number of lines after cleaning for duplication calculations"
     }, {
-      "id" : "DUPLICATION_PERCENTAGE_PRIMARY_COMPONENTS",
+      "id" : "DUPLICATION_PERCENTAGE_PRIMARY_SRC",
       "value" : 100.0,
       "description" : "Duplication percentage"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_PRIMARY_ROOT",
-      "value" : 14,
+      "value" : 23,
       "description" : "Number of duplicated lines"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_PRIMARY_ROOT",
-      "value" : 14,
+      "value" : 23,
       "description" : "Number of lines after cleaning for duplication calculations"
     }, {
       "id" : "DUPLICATION_PERCENTAGE_PRIMARY_ROOT",
       "value" : 100.0,
       "description" : "Duplication percentage"
     }, {
-      "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_PRIMARY_SERVICES",
+      "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_PRIMARY_CYPRESS",
       "value" : 0,
       "description" : "Number of duplicated lines"
     }, {
-      "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_PRIMARY_SERVICES",
+      "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_PRIMARY_CYPRESS",
       "value" : 0,
       "description" : "Number of lines after cleaning for duplication calculations"
     }, {
-      "id" : "DUPLICATION_PERCENTAGE_PRIMARY_SERVICES",
+      "id" : "DUPLICATION_PERCENTAGE_PRIMARY_CYPRESS",
       "value" : "NaN",
       "description" : "Duplication percentage"
     }, {
+      "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_PRIMARY_MIGRATIONS",
+      "value" : 0,
+      "description" : "Number of duplicated lines"
+    }, {
+      "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_PRIMARY_MIGRATIONS",
+      "value" : 0,
+      "description" : "Number of lines after cleaning for duplication calculations"
+    }, {
+      "id" : "DUPLICATION_PERCENTAGE_PRIMARY_MIGRATIONS",
+      "value" : "NaN",
+      "description" : "Duplication percentage"
+    }, {
+      "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_JS",
+      "value" : 63,
+      "description" : "Number of duplicated lines"
+    }, {
+      "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_JS",
+      "value" : 348,
+      "description" : "Number of lines after cleaning for duplication calculations"
+    }, {
+      "id" : "DUPLICATION_PERCENTAGE_JS",
+      "value" : 18.103448275862068,
+      "description" : "Duplication percentage"
+    }, {
       "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_JSX",
-      "value" : 58,
+      "value" : 60,
       "description" : "Number of duplicated lines"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_JSX",
-      "value" : 877,
+      "value" : 1136,
       "description" : "Number of lines after cleaning for duplication calculations"
     }, {
       "id" : "DUPLICATION_PERCENTAGE_JSX",
-      "value" : 6.61345496009122,
+      "value" : 5.28169014084507,
       "description" : "Duplication percentage"
     }, {
       "id" : "TOTAL_ANALYSIS_TIME_IN_MILLIS",
-      "value" : 167,
+      "value" : 8356,
       "description" : "Total analysis time in milliseconds"
     } ]
   },
@@ -744,7 +1000,7 @@
         },
         "metric" : {
           "id" : "LINES_OF_CODE_MAIN",
-          "value" : 1204,
+          "value" : 1938,
           "description" : null
         },
         "status" : "OK"
@@ -760,10 +1016,10 @@
         },
         "metric" : {
           "id" : "DUPLICATION_PERCENTAGE",
-          "value" : 5.132743362831858,
+          "value" : 6.837131739855475,
           "description" : "Duplication percentage"
         },
-        "status" : "TOLERANT"
+        "status" : "FAILED"
       }, {
         "control" : {
           "metric" : "VERY_HIGH_RISK_FILE_SIZE_COUNT",
@@ -799,46 +1055,78 @@
       } ]
     } ]
   },
-  "totalNumberOfFilesInScope" : 11,
+  "totalNumberOfFilesInScope" : 28554,
   "mainAspectAnalysisResults" : {
     "name" : null,
-    "filesCount" : 10,
-    "linesOfCode" : 1204,
+    "filesCount" : 21,
+    "linesOfCode" : 1938,
     "numberOfRegexLineMatches" : 0,
     "fileCountPerExtension" : [ {
       "name" : "  *.jsx",
-      "value" : 6,
+      "value" : 7,
+      "description" : [ ]
+    }, {
+      "name" : "  *.js",
+      "value" : 9,
       "description" : [ ]
     }, {
       "name" : "  *.css",
       "value" : 2,
       "description" : [ ]
     }, {
-      "name" : "  *.js",
-      "value" : 2,
+      "name" : "  *.py",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.sql",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.html",
+      "value" : 1,
       "description" : [ ]
     } ],
     "linesOfCodePerExtension" : [ {
       "name" : "  *.jsx",
-      "value" : 946,
-      "description" : [ ]
-    }, {
-      "name" : "  *.css",
-      "value" : 217,
+      "value" : 1226,
       "description" : [ ]
     }, {
       "name" : "  *.js",
-      "value" : 41,
+      "value" : 393,
+      "description" : [ ]
+    }, {
+      "name" : "  *.css",
+      "value" : 223,
+      "description" : [ ]
+    }, {
+      "name" : "  *.py",
+      "value" : 48,
+      "description" : [ ]
+    }, {
+      "name" : "  *.sql",
+      "value" : 35,
+      "description" : [ ]
+    }, {
+      "name" : "  *.html",
+      "value" : 13,
       "description" : [ ]
     } ]
   },
   "testAspectAnalysisResults" : {
     "name" : null,
-    "filesCount" : 0,
-    "linesOfCode" : 0,
+    "filesCount" : 1,
+    "linesOfCode" : 15,
     "numberOfRegexLineMatches" : 0,
-    "fileCountPerExtension" : [ ],
-    "linesOfCodePerExtension" : [ ]
+    "fileCountPerExtension" : [ {
+      "name" : "  *.js",
+      "value" : 1,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.js",
+      "value" : 15,
+      "description" : [ ]
+    } ]
   },
   "generatedAspectAnalysisResults" : {
     "name" : null,
@@ -858,73 +1146,128 @@
   },
   "otherAspectAnalysisResults" : {
     "name" : null,
-    "filesCount" : 0,
-    "linesOfCode" : 0,
+    "filesCount" : 6,
+    "linesOfCode" : 3025,
     "numberOfRegexLineMatches" : 0,
-    "fileCountPerExtension" : [ ],
-    "linesOfCodePerExtension" : [ ]
+    "fileCountPerExtension" : [ {
+      "name" : "  *.json",
+      "value" : 4,
+      "description" : [ ]
+    }, {
+      "name" : "  *.txt",
+      "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "  *.md",
+      "value" : 1,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.json",
+      "value" : 1537,
+      "description" : [ ]
+    }, {
+      "name" : "  *.txt",
+      "value" : 1481,
+      "description" : [ ]
+    }, {
+      "name" : "  *.md",
+      "value" : 7,
+      "description" : [ ]
+    } ]
   },
   "logicalDecompositionsAnalysisResults" : [ {
     "key" : "primary",
     "components" : [ {
+      "name" : "cypress",
+      "filesCount" : 2,
+      "linesOfCode" : 6,
+      "numberOfRegexLineMatches" : 0,
+      "fileCountPerExtension" : [ {
+        "name" : "  *.js",
+        "value" : 2,
+        "description" : [ ]
+      } ],
+      "linesOfCodePerExtension" : [ {
+        "name" : "  *.js",
+        "value" : 6,
+        "description" : [ ]
+      } ]
+    }, {
       "name" : "ROOT",
-      "filesCount" : 6,
-      "linesOfCode" : 819,
+      "filesCount" : 5,
+      "linesOfCode" : 141,
+      "numberOfRegexLineMatches" : 0,
+      "fileCountPerExtension" : [ {
+        "name" : "  *.js",
+        "value" : 3,
+        "description" : [ ]
+      }, {
+        "name" : "  *.py",
+        "value" : 1,
+        "description" : [ ]
+      }, {
+        "name" : "  *.html",
+        "value" : 1,
+        "description" : [ ]
+      } ],
+      "linesOfCodePerExtension" : [ {
+        "name" : "  *.js",
+        "value" : 80,
+        "description" : [ ]
+      }, {
+        "name" : "  *.py",
+        "value" : 48,
+        "description" : [ ]
+      }, {
+        "name" : "  *.html",
+        "value" : 13,
+        "description" : [ ]
+      } ]
+    }, {
+      "name" : "migrations",
+      "filesCount" : 1,
+      "linesOfCode" : 35,
+      "numberOfRegexLineMatches" : 0,
+      "fileCountPerExtension" : [ {
+        "name" : "  *.sql",
+        "value" : 1,
+        "description" : [ ]
+      } ],
+      "linesOfCodePerExtension" : [ {
+        "name" : "  *.sql",
+        "value" : 35,
+        "description" : [ ]
+      } ]
+    }, {
+      "name" : "src",
+      "filesCount" : 13,
+      "linesOfCode" : 1756,
       "numberOfRegexLineMatches" : 0,
       "fileCountPerExtension" : [ {
         "name" : "  *.jsx",
-        "value" : 3,
+        "value" : 7,
+        "description" : [ ]
+      }, {
+        "name" : "  *.js",
+        "value" : 4,
         "description" : [ ]
       }, {
         "name" : "  *.css",
         "value" : 2,
         "description" : [ ]
-      }, {
-        "name" : "  *.js",
-        "value" : 1,
-        "description" : [ ]
       } ],
       "linesOfCodePerExtension" : [ {
         "name" : "  *.jsx",
-        "value" : 584,
+        "value" : 1226,
+        "description" : [ ]
+      }, {
+        "name" : "  *.js",
+        "value" : 307,
         "description" : [ ]
       }, {
         "name" : "  *.css",
-        "value" : 217,
-        "description" : [ ]
-      }, {
-        "name" : "  *.js",
-        "value" : 18,
-        "description" : [ ]
-      } ]
-    }, {
-      "name" : "components",
-      "filesCount" : 3,
-      "linesOfCode" : 362,
-      "numberOfRegexLineMatches" : 0,
-      "fileCountPerExtension" : [ {
-        "name" : "  *.jsx",
-        "value" : 3,
-        "description" : [ ]
-      } ],
-      "linesOfCodePerExtension" : [ {
-        "name" : "  *.jsx",
-        "value" : 362,
-        "description" : [ ]
-      } ]
-    }, {
-      "name" : "services",
-      "filesCount" : 1,
-      "linesOfCode" : 23,
-      "numberOfRegexLineMatches" : 0,
-      "fileCountPerExtension" : [ {
-        "name" : "  *.js",
-        "value" : 1,
-        "description" : [ ]
-      } ],
-      "linesOfCodePerExtension" : [ {
-        "name" : "  *.js",
-        "value" : 23,
+        "value" : 223,
         "description" : [ ]
       } ]
     } ],
@@ -937,37 +1280,51 @@
       "componentsFolderDepth" : 1,
       "minComponentsCount" : 0,
       "components" : [ {
+        "name" : "cypress",
+        "sourceFileFilters" : [ {
+          "pathPattern" : "./cypress/.*",
+          "contentPattern" : "",
+          "exception" : false,
+          "note" : ""
+        } ],
+        "files" : [ ]
+      }, {
         "name" : "ROOT",
         "sourceFileFilters" : [ {
-          "pathPattern" : "src/.*",
+          "pathPattern" : "./.*",
           "contentPattern" : "",
           "exception" : false,
           "note" : ""
         }, {
-          "pathPattern" : "src/components/.*",
+          "pathPattern" : "./cypress/.*",
           "contentPattern" : "",
           "exception" : true,
           "note" : ""
         }, {
-          "pathPattern" : "src/services/.*",
+          "pathPattern" : "./migrations/.*",
+          "contentPattern" : "",
+          "exception" : true,
+          "note" : ""
+        }, {
+          "pathPattern" : "./src/.*",
           "contentPattern" : "",
           "exception" : true,
           "note" : ""
         } ],
         "files" : [ ]
       }, {
-        "name" : "components",
+        "name" : "migrations",
         "sourceFileFilters" : [ {
-          "pathPattern" : "src/components/.*",
+          "pathPattern" : "./migrations/.*",
           "contentPattern" : "",
           "exception" : false,
           "note" : ""
         } ],
         "files" : [ ]
       }, {
-        "name" : "services",
+        "name" : "src",
         "sourceFileFilters" : [ {
-          "pathPattern" : "src/services/.*",
+          "pathPattern" : "./src/.*",
           "contentPattern" : "",
           "exception" : false,
           "note" : ""
@@ -997,29 +1354,37 @@
       "maxSearchDepthLines" : 200
     },
     "fileCountPerComponent" : [ {
+      "name" : "cypress",
+      "value" : 2,
+      "description" : [ ]
+    }, {
       "name" : "ROOT",
-      "value" : 6,
+      "value" : 5,
       "description" : [ ]
     }, {
-      "name" : "components",
-      "value" : 3,
-      "description" : [ ]
-    }, {
-      "name" : "services",
+      "name" : "migrations",
       "value" : 1,
+      "description" : [ ]
+    }, {
+      "name" : "src",
+      "value" : 13,
       "description" : [ ]
     } ],
     "linesOfCodePerComponent" : [ {
+      "name" : "cypress",
+      "value" : 6,
+      "description" : [ ]
+    }, {
       "name" : "ROOT",
-      "value" : 819,
+      "value" : 141,
       "description" : [ ]
     }, {
-      "name" : "components",
-      "value" : 362,
+      "name" : "migrations",
+      "value" : 35,
       "description" : [ ]
     }, {
-      "name" : "services",
-      "value" : 23,
+      "name" : "src",
+      "value" : 1756,
       "description" : [ ]
     } ]
   } ],
@@ -1034,33 +1399,57 @@
       "linesOfCodePerExtension" : [ ]
     }, {
       "name" : "Unclassified",
-      "filesCount" : 10,
-      "linesOfCode" : 1204,
+      "filesCount" : 21,
+      "linesOfCode" : 1938,
       "numberOfRegexLineMatches" : 0,
       "fileCountPerExtension" : [ {
         "name" : "  *.jsx",
-        "value" : 6,
+        "value" : 7,
+        "description" : [ ]
+      }, {
+        "name" : "  *.js",
+        "value" : 9,
         "description" : [ ]
       }, {
         "name" : "  *.css",
         "value" : 2,
         "description" : [ ]
       }, {
-        "name" : "  *.js",
-        "value" : 2,
+        "name" : "  *.py",
+        "value" : 1,
+        "description" : [ ]
+      }, {
+        "name" : "  *.sql",
+        "value" : 1,
+        "description" : [ ]
+      }, {
+        "name" : "  *.html",
+        "value" : 1,
         "description" : [ ]
       } ],
       "linesOfCodePerExtension" : [ {
         "name" : "  *.jsx",
-        "value" : 946,
-        "description" : [ ]
-      }, {
-        "name" : "  *.css",
-        "value" : 217,
+        "value" : 1226,
         "description" : [ ]
       }, {
         "name" : "  *.js",
-        "value" : 41,
+        "value" : 393,
+        "description" : [ ]
+      }, {
+        "name" : "  *.css",
+        "value" : 223,
+        "description" : [ ]
+      }, {
+        "name" : "  *.py",
+        "value" : 48,
+        "description" : [ ]
+      }, {
+        "name" : "  *.sql",
+        "value" : 35,
+        "description" : [ ]
+      }, {
+        "name" : "  *.html",
+        "value" : 13,
         "description" : [ ]
       } ]
     } ],
@@ -1071,7 +1460,7 @@
       "description" : [ ]
     }, {
       "name" : "Unclassified",
-      "value" : 10,
+      "value" : 21,
       "description" : [ ]
     } ],
     "linesOfCodePerConcern" : [ {
@@ -1080,11 +1469,75 @@
       "description" : [ ]
     }, {
       "name" : "Unclassified",
-      "value" : 1204,
+      "value" : 1938,
       "description" : [ ]
     } ]
   } ],
-  "foundTags" : [ ],
+  "foundTags" : [ {
+    "tagRule" : {
+      "tag" : "jenkins",
+      "color" : "#7CB9E8",
+      "pathPatterns" : [ "(|.*/)Jenkinsfile", "(|.*/)Jenkinsfile[.][a-z0-9_]+" ],
+      "excludePathPatterns" : [ ]
+    },
+    "evidence" : "node_modules/asn1/Jenkinsfile\nnode_modules/sshpk/Jenkinsfile"
+  }, {
+    "tagRule" : {
+      "tag" : "travis",
+      "color" : "#7CB9E8",
+      "pathPatterns" : [ "(|.*/)[.]travis[.]ya?ml" ],
+      "excludePathPatterns" : [ ]
+    },
+    "evidence" : "node_modules/cachedir/.travis.yml\nnode_modules/concat-map/.travis.yml\nnode_modules/deep-is/.travis.yml\nnode_modules/extend/.travis.yml\nnode_modules/fast-json-stable-stringify/.travis.yml\nnode_modules/fd-slicer/.travis.yml\nnode_modules/getpass/.travis.yml\nnode_modules/is-arrayish/.travis.yml\nnode_modules/isstream/.travis.yml\nnode_modules/json-buffer/.travis.yml\nnode_modules/json-schema-traverse/.travis.yml\nnode_modules/json-stable-stringify-without-jsonify/.travis.yml\nnode_modules/makeerror/.travis.yml\nnode_modules/performance-now/.travis.yml\nnode_modules/proxy-from-env/.travis.yml\nnode_modules/pump/.travis.yml\nnode_modules/request-progress/.travis.yml\nnode_modules/require-directory/.travis.yml\nnode_modules/siginfo/.travis.yml\nnode_modules/sshpk/.travis.yml\n...\n(found 4 more files)"
+  }, {
+    "tagRule" : {
+      "tag" : "github actions",
+      "color" : "#7CB9E8",
+      "pathPatterns" : [ "(|.*/)[.]github[/]workflows[/].*" ],
+      "excludePathPatterns" : [ ]
+    },
+    "evidence" : "node_modules/@ungap/structured-clone/.github/workflows/node.js.yml\nnode_modules/babel-preset-current-node-syntax/.github/workflows/nodejs.yml\nnode_modules/exit-x/.github/workflows/test.yml\nnode_modules/fastq/.github/workflows/ci.yml\nnode_modules/jest-fixed-jsdom/.github/workflows/ci.yml\nnode_modules/jest-fixed-jsdom/.github/workflows/release.yml\nnode_modules/reusify/.github/workflows/ci.yml\nnode_modules/rfdc/.github/workflows/ci.yml"
+  }, {
+    "tagRule" : {
+      "tag" : "npm",
+      "color" : "#B9D9EB",
+      "pathPatterns" : [ "(|.*/)package[.]json" ],
+      "excludePathPatterns" : [ ]
+    },
+    "evidence" : "node_modules/.vite/deps/package.json\nnode_modules/@adobe/css-tools/package.json\nnode_modules/@asamuzakjp/css-color/node_modules/lru-cache/dist/commonjs/package.json\nnode_modules/@asamuzakjp/css-color/node_modules/lru-cache/dist/esm/package.json\nnode_modules/@asamuzakjp/css-color/node_modules/lru-cache/package.json\nnode_modules/@asamuzakjp/css-color/package.json\nnode_modules/@babel/code-frame/package.json\nnode_modules/@babel/compat-data/package.json\nnode_modules/@babel/core/package.json\nnode_modules/@babel/generator/package.json\nnode_modules/@babel/helper-compilation-targets/package.json\nnode_modules/@babel/helper-globals/package.json\nnode_modules/@babel/helper-module-imports/package.json\nnode_modules/@babel/helper-module-transforms/package.json\nnode_modules/@babel/helper-plugin-utils/package.json\nnode_modules/@babel/helper-string-parser/package.json\nnode_modules/@babel/helper-validator-identifier/package.json\nnode_modules/@babel/helper-validator-option/package.json\nnode_modules/@babel/helpers/package.json\nnode_modules/@babel/parser/package.json\n...\n(found 1012 more files)"
+  }, {
+    "tagRule" : {
+      "tag" : "yarn",
+      "color" : "#B9D9EB",
+      "pathPatterns" : [ "(|.*/)[.]yarnrc", "(|.*/)yarn[.]lock" ],
+      "excludePathPatterns" : [ ]
+    },
+    "evidence" : "node_modules/combined-stream/yarn.lock\nnode_modules/uri-js/yarn.lock"
+  }, {
+    "tagRule" : {
+      "tag" : "jest",
+      "color" : "#B9D9EB",
+      "pathPatterns" : [ "(|.*/)jest[.].*" ],
+      "excludePathPatterns" : [ ]
+    },
+    "evidence" : "jest.config.js\nnode_modules/.bin/jest.cmd\nnode_modules/.bin/jest.ps1\nnode_modules/@testing-library/jest-dom/types/jest.d.ts\nnode_modules/jest-cli/bin/jest.js\nnode_modules/jest-fixed-jsdom/jest.config.js\nnode_modules/jest/bin/jest.js"
+  }, {
+    "tagRule" : {
+      "tag" : "dependabot",
+      "color" : "#B9D9EB",
+      "pathPatterns" : [ "(|.*/)dependabot[.]ya?ml" ],
+      "excludePathPatterns" : [ ]
+    },
+    "evidence" : "node_modules/fastq/.github/dependabot.yml\nnode_modules/iconv-lite/.github/dependabot.yml\nnode_modules/reusify/.github/dependabot.yml"
+  }, {
+    "tagRule" : {
+      "tag" : "make",
+      "color" : "#B9D9EB",
+      "pathPatterns" : [ "(|.*/)Makefile" ],
+      "excludePathPatterns" : [ ]
+    },
+    "evidence" : "node_modules/delayed-stream/Makefile\nnode_modules/extsprintf/Makefile\nnode_modules/json-stringify-safe/Makefile\nnode_modules/throttleit/Makefile"
+  } ],
   "filesAnalysisResults" : {
     "overallFileSizeDistribution" : {
       "key" : "",
@@ -1092,13 +1545,13 @@
       "mediumRiskThreshold" : 200,
       "highRiskThreshold" : 500,
       "veryHighRiskThreshold" : 1000,
-      "negligibleRiskValue" : 183,
-      "lowRiskValue" : 508,
+      "negligibleRiskValue" : 437,
+      "lowRiskValue" : 872,
       "mediumRiskValue" : 0,
-      "highRiskValue" : 513,
+      "highRiskValue" : 629,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 3,
-      "negligibleRiskCount" : 6,
+      "lowRiskCount" : 6,
+      "negligibleRiskCount" : 14,
       "mediumRiskCount" : 0,
       "highRiskCount" : 1,
       "veryHighRiskCount" : 0,
@@ -1107,22 +1560,134 @@
       "mediumRiskLabel" : "201-500",
       "highRiskLabel" : "501-1000",
       "veryHighRiskLabel" : "1001+",
-      "highRiskPercentage" : 42.60797342192691,
-      "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 42.19269102990033,
       "veryHighRiskPercentage" : 0.0,
-      "totalCount" : 10,
-      "totalValue" : 1204,
-      "negligibleRiskPercentage" : 15.199335548172758
+      "highRiskPercentage" : 32.45614035087719,
+      "lowRiskPercentage" : 44.99484004127967,
+      "mediumRiskPercentage" : 0.0,
+      "totalValue" : 1938,
+      "totalCount" : 21,
+      "negligibleRiskPercentage" : 22.54901960784314
     },
     "fileSizeDistributionPerExtension" : [ {
+      "key" : "js",
+      "lowRiskThreshold" : 100,
+      "mediumRiskThreshold" : 200,
+      "highRiskThreshold" : 500,
+      "veryHighRiskThreshold" : 1000,
+      "negligibleRiskValue" : 163,
+      "lowRiskValue" : 230,
+      "mediumRiskValue" : 0,
+      "highRiskValue" : 0,
+      "veryHighRiskValue" : 0,
+      "lowRiskCount" : 2,
+      "negligibleRiskCount" : 7,
+      "mediumRiskCount" : 0,
+      "highRiskCount" : 0,
+      "veryHighRiskCount" : 0,
+      "negligibleRiskLabel" : "1-100",
+      "lowRiskLabel" : "101-200",
+      "mediumRiskLabel" : "201-500",
+      "highRiskLabel" : "501-1000",
+      "veryHighRiskLabel" : "1001+",
+      "veryHighRiskPercentage" : 0.0,
+      "highRiskPercentage" : 0.0,
+      "lowRiskPercentage" : 58.524173027989825,
+      "mediumRiskPercentage" : 0.0,
+      "totalValue" : 393,
+      "totalCount" : 9,
+      "negligibleRiskPercentage" : 41.475826972010175
+    }, {
+      "key" : "html",
+      "lowRiskThreshold" : 100,
+      "mediumRiskThreshold" : 200,
+      "highRiskThreshold" : 500,
+      "veryHighRiskThreshold" : 1000,
+      "negligibleRiskValue" : 13,
+      "lowRiskValue" : 0,
+      "mediumRiskValue" : 0,
+      "highRiskValue" : 0,
+      "veryHighRiskValue" : 0,
+      "lowRiskCount" : 0,
+      "negligibleRiskCount" : 1,
+      "mediumRiskCount" : 0,
+      "highRiskCount" : 0,
+      "veryHighRiskCount" : 0,
+      "negligibleRiskLabel" : "1-100",
+      "lowRiskLabel" : "101-200",
+      "mediumRiskLabel" : "201-500",
+      "highRiskLabel" : "501-1000",
+      "veryHighRiskLabel" : "1001+",
+      "veryHighRiskPercentage" : 0.0,
+      "highRiskPercentage" : 0.0,
+      "lowRiskPercentage" : 0.0,
+      "mediumRiskPercentage" : 0.0,
+      "totalValue" : 13,
+      "totalCount" : 1,
+      "negligibleRiskPercentage" : 100.0
+    }, {
+      "key" : "sql",
+      "lowRiskThreshold" : 100,
+      "mediumRiskThreshold" : 200,
+      "highRiskThreshold" : 500,
+      "veryHighRiskThreshold" : 1000,
+      "negligibleRiskValue" : 35,
+      "lowRiskValue" : 0,
+      "mediumRiskValue" : 0,
+      "highRiskValue" : 0,
+      "veryHighRiskValue" : 0,
+      "lowRiskCount" : 0,
+      "negligibleRiskCount" : 1,
+      "mediumRiskCount" : 0,
+      "highRiskCount" : 0,
+      "veryHighRiskCount" : 0,
+      "negligibleRiskLabel" : "1-100",
+      "lowRiskLabel" : "101-200",
+      "mediumRiskLabel" : "201-500",
+      "highRiskLabel" : "501-1000",
+      "veryHighRiskLabel" : "1001+",
+      "veryHighRiskPercentage" : 0.0,
+      "highRiskPercentage" : 0.0,
+      "lowRiskPercentage" : 0.0,
+      "mediumRiskPercentage" : 0.0,
+      "totalValue" : 35,
+      "totalCount" : 1,
+      "negligibleRiskPercentage" : 100.0
+    }, {
+      "key" : "py",
+      "lowRiskThreshold" : 100,
+      "mediumRiskThreshold" : 200,
+      "highRiskThreshold" : 500,
+      "veryHighRiskThreshold" : 1000,
+      "negligibleRiskValue" : 48,
+      "lowRiskValue" : 0,
+      "mediumRiskValue" : 0,
+      "highRiskValue" : 0,
+      "veryHighRiskValue" : 0,
+      "lowRiskCount" : 0,
+      "negligibleRiskCount" : 1,
+      "mediumRiskCount" : 0,
+      "highRiskCount" : 0,
+      "veryHighRiskCount" : 0,
+      "negligibleRiskLabel" : "1-100",
+      "lowRiskLabel" : "101-200",
+      "mediumRiskLabel" : "201-500",
+      "highRiskLabel" : "501-1000",
+      "veryHighRiskLabel" : "1001+",
+      "veryHighRiskPercentage" : 0.0,
+      "highRiskPercentage" : 0.0,
+      "lowRiskPercentage" : 0.0,
+      "mediumRiskPercentage" : 0.0,
+      "totalValue" : 48,
+      "totalCount" : 1,
+      "negligibleRiskPercentage" : 100.0
+    }, {
       "key" : "css",
       "lowRiskThreshold" : 100,
       "mediumRiskThreshold" : 200,
       "highRiskThreshold" : 500,
       "veryHighRiskThreshold" : 1000,
       "negligibleRiskValue" : 37,
-      "lowRiskValue" : 180,
+      "lowRiskValue" : 186,
       "mediumRiskValue" : 0,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
@@ -1136,25 +1701,25 @@
       "mediumRiskLabel" : "201-500",
       "highRiskLabel" : "501-1000",
       "veryHighRiskLabel" : "1001+",
-      "highRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 82.94930875576037,
       "veryHighRiskPercentage" : 0.0,
+      "highRiskPercentage" : 0.0,
+      "lowRiskPercentage" : 83.40807174887892,
+      "mediumRiskPercentage" : 0.0,
+      "totalValue" : 223,
       "totalCount" : 2,
-      "totalValue" : 217,
-      "negligibleRiskPercentage" : 17.05069124423963
+      "negligibleRiskPercentage" : 16.591928251121075
     }, {
       "key" : "jsx",
       "lowRiskThreshold" : 100,
       "mediumRiskThreshold" : 200,
       "highRiskThreshold" : 500,
       "veryHighRiskThreshold" : 1000,
-      "negligibleRiskValue" : 105,
-      "lowRiskValue" : 328,
+      "negligibleRiskValue" : 141,
+      "lowRiskValue" : 456,
       "mediumRiskValue" : 0,
-      "highRiskValue" : 513,
+      "highRiskValue" : 629,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 2,
+      "lowRiskCount" : 3,
       "negligibleRiskCount" : 3,
       "mediumRiskCount" : 0,
       "highRiskCount" : 1,
@@ -1164,85 +1729,29 @@
       "mediumRiskLabel" : "201-500",
       "highRiskLabel" : "501-1000",
       "veryHighRiskLabel" : "1001+",
-      "highRiskPercentage" : 54.22832980972516,
-      "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 34.6723044397463,
       "veryHighRiskPercentage" : 0.0,
-      "totalCount" : 6,
-      "totalValue" : 946,
-      "negligibleRiskPercentage" : 11.099365750528541
-    }, {
-      "key" : "js",
-      "lowRiskThreshold" : 100,
-      "mediumRiskThreshold" : 200,
-      "highRiskThreshold" : 500,
-      "veryHighRiskThreshold" : 1000,
-      "negligibleRiskValue" : 41,
-      "lowRiskValue" : 0,
-      "mediumRiskValue" : 0,
-      "highRiskValue" : 0,
-      "veryHighRiskValue" : 0,
-      "lowRiskCount" : 0,
-      "negligibleRiskCount" : 2,
-      "mediumRiskCount" : 0,
-      "highRiskCount" : 0,
-      "veryHighRiskCount" : 0,
-      "negligibleRiskLabel" : "1-100",
-      "lowRiskLabel" : "101-200",
-      "mediumRiskLabel" : "201-500",
-      "highRiskLabel" : "501-1000",
-      "veryHighRiskLabel" : "1001+",
-      "highRiskPercentage" : 0.0,
+      "highRiskPercentage" : 51.305057096247964,
+      "lowRiskPercentage" : 37.19412724306689,
       "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 0.0,
-      "veryHighRiskPercentage" : 0.0,
-      "totalCount" : 2,
-      "totalValue" : 41,
-      "negligibleRiskPercentage" : 100.0
+      "totalValue" : 1226,
+      "totalCount" : 7,
+      "negligibleRiskPercentage" : 11.500815660685156
     } ],
     "fileSizeDistributionPerLogicalDecomposition" : [ {
       "name" : "primary",
       "fileSizeDistributionPerComponent" : [ {
-        "key" : "ROOT",
+        "key" : "cypress",
         "lowRiskThreshold" : 100,
         "mediumRiskThreshold" : 200,
         "highRiskThreshold" : 500,
         "veryHighRiskThreshold" : 1000,
-        "negligibleRiskValue" : 126,
-        "lowRiskValue" : 180,
-        "mediumRiskValue" : 0,
-        "highRiskValue" : 513,
-        "veryHighRiskValue" : 0,
-        "lowRiskCount" : 1,
-        "negligibleRiskCount" : 4,
-        "mediumRiskCount" : 0,
-        "highRiskCount" : 1,
-        "veryHighRiskCount" : 0,
-        "negligibleRiskLabel" : "1-100",
-        "lowRiskLabel" : "101-200",
-        "mediumRiskLabel" : "201-500",
-        "highRiskLabel" : "501-1000",
-        "veryHighRiskLabel" : "1001+",
-        "highRiskPercentage" : 62.637362637362635,
-        "mediumRiskPercentage" : 0.0,
-        "lowRiskPercentage" : 21.978021978021978,
-        "veryHighRiskPercentage" : 0.0,
-        "totalCount" : 6,
-        "totalValue" : 819,
-        "negligibleRiskPercentage" : 15.384615384615385
-      }, {
-        "key" : "components",
-        "lowRiskThreshold" : 100,
-        "mediumRiskThreshold" : 200,
-        "highRiskThreshold" : 500,
-        "veryHighRiskThreshold" : 1000,
-        "negligibleRiskValue" : 34,
-        "lowRiskValue" : 328,
+        "negligibleRiskValue" : 6,
+        "lowRiskValue" : 0,
         "mediumRiskValue" : 0,
         "highRiskValue" : 0,
         "veryHighRiskValue" : 0,
-        "lowRiskCount" : 2,
-        "negligibleRiskCount" : 1,
+        "lowRiskCount" : 0,
+        "negligibleRiskCount" : 2,
         "mediumRiskCount" : 0,
         "highRiskCount" : 0,
         "veryHighRiskCount" : 0,
@@ -1251,20 +1760,48 @@
         "mediumRiskLabel" : "201-500",
         "highRiskLabel" : "501-1000",
         "veryHighRiskLabel" : "1001+",
-        "highRiskPercentage" : 0.0,
-        "mediumRiskPercentage" : 0.0,
-        "lowRiskPercentage" : 90.60773480662984,
         "veryHighRiskPercentage" : 0.0,
-        "totalCount" : 3,
-        "totalValue" : 362,
-        "negligibleRiskPercentage" : 9.392265193370166
+        "highRiskPercentage" : 0.0,
+        "lowRiskPercentage" : 0.0,
+        "mediumRiskPercentage" : 0.0,
+        "totalValue" : 6,
+        "totalCount" : 2,
+        "negligibleRiskPercentage" : 100.0
       }, {
-        "key" : "services",
+        "key" : "ROOT",
         "lowRiskThreshold" : 100,
         "mediumRiskThreshold" : 200,
         "highRiskThreshold" : 500,
         "veryHighRiskThreshold" : 1000,
-        "negligibleRiskValue" : 23,
+        "negligibleRiskValue" : 141,
+        "lowRiskValue" : 0,
+        "mediumRiskValue" : 0,
+        "highRiskValue" : 0,
+        "veryHighRiskValue" : 0,
+        "lowRiskCount" : 0,
+        "negligibleRiskCount" : 5,
+        "mediumRiskCount" : 0,
+        "highRiskCount" : 0,
+        "veryHighRiskCount" : 0,
+        "negligibleRiskLabel" : "1-100",
+        "lowRiskLabel" : "101-200",
+        "mediumRiskLabel" : "201-500",
+        "highRiskLabel" : "501-1000",
+        "veryHighRiskLabel" : "1001+",
+        "veryHighRiskPercentage" : 0.0,
+        "highRiskPercentage" : 0.0,
+        "lowRiskPercentage" : 0.0,
+        "mediumRiskPercentage" : 0.0,
+        "totalValue" : 141,
+        "totalCount" : 5,
+        "negligibleRiskPercentage" : 100.0
+      }, {
+        "key" : "migrations",
+        "lowRiskThreshold" : 100,
+        "mediumRiskThreshold" : 200,
+        "highRiskThreshold" : 500,
+        "veryHighRiskThreshold" : 1000,
+        "negligibleRiskValue" : 35,
         "lowRiskValue" : 0,
         "mediumRiskValue" : 0,
         "highRiskValue" : 0,
@@ -1279,93 +1816,233 @@
         "mediumRiskLabel" : "201-500",
         "highRiskLabel" : "501-1000",
         "veryHighRiskLabel" : "1001+",
-        "highRiskPercentage" : 0.0,
-        "mediumRiskPercentage" : 0.0,
-        "lowRiskPercentage" : 0.0,
         "veryHighRiskPercentage" : 0.0,
+        "highRiskPercentage" : 0.0,
+        "lowRiskPercentage" : 0.0,
+        "mediumRiskPercentage" : 0.0,
+        "totalValue" : 35,
         "totalCount" : 1,
-        "totalValue" : 23,
         "negligibleRiskPercentage" : 100.0
+      }, {
+        "key" : "src",
+        "lowRiskThreshold" : 100,
+        "mediumRiskThreshold" : 200,
+        "highRiskThreshold" : 500,
+        "veryHighRiskThreshold" : 1000,
+        "negligibleRiskValue" : 255,
+        "lowRiskValue" : 872,
+        "mediumRiskValue" : 0,
+        "highRiskValue" : 629,
+        "veryHighRiskValue" : 0,
+        "lowRiskCount" : 6,
+        "negligibleRiskCount" : 6,
+        "mediumRiskCount" : 0,
+        "highRiskCount" : 1,
+        "veryHighRiskCount" : 0,
+        "negligibleRiskLabel" : "1-100",
+        "lowRiskLabel" : "101-200",
+        "mediumRiskLabel" : "201-500",
+        "highRiskLabel" : "501-1000",
+        "veryHighRiskLabel" : "1001+",
+        "veryHighRiskPercentage" : 0.0,
+        "highRiskPercentage" : 35.82004555808656,
+        "lowRiskPercentage" : 49.65831435079727,
+        "mediumRiskPercentage" : 0.0,
+        "totalValue" : 1756,
+        "totalCount" : 13,
+        "negligibleRiskPercentage" : 14.521640091116174
       } ]
     } ],
     "longestFiles" : [ {
-      "relativePath" : "Calendar.jsx",
+      "relativePath" : "src/Calendar.jsx",
       "extension" : "jsx",
-      "linesOfCode" : 513,
+      "linesOfCode" : 629,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "index.css",
+      "relativePath" : "src/index.css",
       "extension" : "css",
+      "linesOfCode" : 186,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "src/components/Login.jsx",
+      "extension" : "jsx",
       "linesOfCode" : 180,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "components/SignUp.jsx",
+      "relativePath" : "src/components/Groups.jsx",
       "extension" : "jsx",
-      "linesOfCode" : 175,
+      "linesOfCode" : 173,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "components/Login.jsx",
+      "relativePath" : "src/services/groups.js",
+      "extension" : "js",
+      "linesOfCode" : 120,
+      "unitsCount" : 5,
+      "unitsMcCabeIndexSum" : 30,
+      "linesOfCodeInUnits" : 119
+    }, {
+      "relativePath" : "src/server/index.js",
+      "extension" : "js",
+      "linesOfCode" : 110,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 5,
+      "linesOfCodeInUnits" : 15
+    }, {
+      "relativePath" : "src/App.jsx",
       "extension" : "jsx",
-      "linesOfCode" : 153,
+      "linesOfCode" : 103,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "App.jsx",
+      "relativePath" : "src/components/SignUp.jsx",
       "extension" : "jsx",
-      "linesOfCode" : 62,
+      "linesOfCode" : 98,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "App.css",
+      "relativePath" : "eslint.config.js",
+      "extension" : "js",
+      "linesOfCode" : 59,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 22
+    }, {
+      "relativePath" : "src/services/api.js",
+      "extension" : "js",
+      "linesOfCode" : 57,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 14,
+      "linesOfCodeInUnits" : 56
+    }, {
+      "relativePath" : "projet.py",
+      "extension" : "py",
+      "linesOfCode" : 48,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "src/App.css",
       "extension" : "css",
       "linesOfCode" : 37,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "components/AuthContext.jsx",
+      "relativePath" : "migrations/001_create_groups.sql",
+      "extension" : "sql",
+      "linesOfCode" : 35,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "src/components/AuthContext.jsx",
       "extension" : "jsx",
       "linesOfCode" : 34,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "services/api.js",
+      "relativePath" : "src/supabaseClient.js",
       "extension" : "js",
-      "linesOfCode" : 23,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 4,
-      "linesOfCodeInUnits" : 22
-    }, {
-      "relativePath" : "supabaseClient.js",
-      "extension" : "js",
-      "linesOfCode" : 18,
+      "linesOfCode" : 20,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "main.jsx",
+      "relativePath" : "cypress.config.js",
+      "extension" : "js",
+      "linesOfCode" : 15,
+      "unitsCount" : 2,
+      "unitsMcCabeIndexSum" : 2,
+      "linesOfCodeInUnits" : 9
+    }, {
+      "relativePath" : "index.html",
+      "extension" : "html",
+      "linesOfCode" : 13,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "src/main.jsx",
       "extension" : "jsx",
       "linesOfCode" : 9,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "vite.config.js",
+      "extension" : "js",
+      "linesOfCode" : 6,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 3
+    }, {
+      "relativePath" : "cypress/support/e2e.js",
+      "extension" : "js",
+      "linesOfCode" : 5,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "cypress/support/commands.js",
+      "extension" : "js",
+      "linesOfCode" : 1,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
     } ],
     "filesWithMostUnits" : [ {
-      "relativePath" : "services/api.js",
+      "relativePath" : "src/services/groups.js",
       "extension" : "js",
-      "linesOfCode" : 23,
+      "linesOfCode" : 120,
+      "unitsCount" : 5,
+      "unitsMcCabeIndexSum" : 30,
+      "linesOfCodeInUnits" : 119
+    }, {
+      "relativePath" : "cypress.config.js",
+      "extension" : "js",
+      "linesOfCode" : 15,
+      "unitsCount" : 2,
+      "unitsMcCabeIndexSum" : 2,
+      "linesOfCodeInUnits" : 9
+    }, {
+      "relativePath" : "eslint.config.js",
+      "extension" : "js",
+      "linesOfCode" : 59,
       "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 4,
+      "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 22
+    }, {
+      "relativePath" : "src/server/index.js",
+      "extension" : "js",
+      "linesOfCode" : 110,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 5,
+      "linesOfCodeInUnits" : 15
+    }, {
+      "relativePath" : "src/services/api.js",
+      "extension" : "js",
+      "linesOfCode" : 57,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 14,
+      "linesOfCodeInUnits" : 56
+    }, {
+      "relativePath" : "vite.config.js",
+      "extension" : "js",
+      "linesOfCode" : 6,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 3
     } ]
   },
   "filesHistoryAnalysisResults" : {
@@ -1398,36 +2075,36 @@
     "historyPerExtensionPerYear" : [ ]
   },
   "unitsAnalysisResults" : {
-    "totalNumberOfUnits" : 1,
-    "linesOfCodeInUnits" : 22,
+    "totalNumberOfUnits" : 11,
+    "linesOfCodeInUnits" : 224,
     "unitSizeRiskDistribution" : {
       "key" : "",
       "lowRiskThreshold" : 10,
       "mediumRiskThreshold" : 20,
       "highRiskThreshold" : 50,
       "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 0,
-      "lowRiskValue" : 0,
-      "mediumRiskValue" : 22,
-      "highRiskValue" : 0,
+      "negligibleRiskValue" : 29,
+      "lowRiskValue" : 31,
+      "mediumRiskValue" : 108,
+      "highRiskValue" : 56,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 0,
-      "negligibleRiskCount" : 0,
-      "mediumRiskCount" : 1,
-      "highRiskCount" : 0,
+      "lowRiskCount" : 2,
+      "negligibleRiskCount" : 5,
+      "mediumRiskCount" : 3,
+      "highRiskCount" : 1,
       "veryHighRiskCount" : 0,
       "negligibleRiskLabel" : "1-10",
       "lowRiskLabel" : "11-20",
       "mediumRiskLabel" : "21-50",
       "highRiskLabel" : "51-100",
       "veryHighRiskLabel" : "101+",
-      "highRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 100.0,
-      "lowRiskPercentage" : 0.0,
       "veryHighRiskPercentage" : 0.0,
-      "totalCount" : 1,
-      "totalValue" : 22,
-      "negligibleRiskPercentage" : 0.0
+      "highRiskPercentage" : 25.0,
+      "lowRiskPercentage" : 13.839285714285714,
+      "mediumRiskPercentage" : 48.214285714285715,
+      "totalValue" : 224,
+      "totalCount" : 11,
+      "negligibleRiskPercentage" : 12.946428571428571
     },
     "conditionalComplexityRiskDistribution" : {
       "key" : "",
@@ -1435,14 +2112,14 @@
       "mediumRiskThreshold" : 10,
       "highRiskThreshold" : 25,
       "veryHighRiskThreshold" : 50,
-      "negligibleRiskValue" : 22,
-      "lowRiskValue" : 0,
-      "mediumRiskValue" : 0,
+      "negligibleRiskValue" : 82,
+      "lowRiskValue" : 40,
+      "mediumRiskValue" : 102,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 0,
-      "negligibleRiskCount" : 1,
-      "mediumRiskCount" : 0,
+      "lowRiskCount" : 1,
+      "negligibleRiskCount" : 8,
+      "mediumRiskCount" : 2,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
       "negligibleRiskLabel" : "1-5",
@@ -1450,13 +2127,13 @@
       "mediumRiskLabel" : "11-25",
       "highRiskLabel" : "26-50",
       "veryHighRiskLabel" : "51+",
-      "highRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 0.0,
       "veryHighRiskPercentage" : 0.0,
-      "totalCount" : 1,
-      "totalValue" : 22,
-      "negligibleRiskPercentage" : 100.0
+      "highRiskPercentage" : 0.0,
+      "lowRiskPercentage" : 17.857142857142858,
+      "mediumRiskPercentage" : 45.535714285714285,
+      "totalValue" : 224,
+      "totalCount" : 11,
+      "negligibleRiskPercentage" : 36.607142857142854
     },
     "unitSizeRiskDistributionPerExtension" : [ {
       "key" : "js",
@@ -1464,42 +2141,42 @@
       "mediumRiskThreshold" : 20,
       "highRiskThreshold" : 50,
       "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 0,
-      "lowRiskValue" : 0,
-      "mediumRiskValue" : 22,
-      "highRiskValue" : 0,
+      "negligibleRiskValue" : 29,
+      "lowRiskValue" : 31,
+      "mediumRiskValue" : 108,
+      "highRiskValue" : 56,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 0,
-      "negligibleRiskCount" : 0,
-      "mediumRiskCount" : 1,
-      "highRiskCount" : 0,
+      "lowRiskCount" : 2,
+      "negligibleRiskCount" : 5,
+      "mediumRiskCount" : 3,
+      "highRiskCount" : 1,
       "veryHighRiskCount" : 0,
       "negligibleRiskLabel" : "1-10",
       "lowRiskLabel" : "11-20",
       "mediumRiskLabel" : "21-50",
       "highRiskLabel" : "51-100",
       "veryHighRiskLabel" : "101+",
-      "highRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 100.0,
-      "lowRiskPercentage" : 0.0,
       "veryHighRiskPercentage" : 0.0,
-      "totalCount" : 1,
-      "totalValue" : 22,
-      "negligibleRiskPercentage" : 0.0
+      "highRiskPercentage" : 25.0,
+      "lowRiskPercentage" : 13.839285714285714,
+      "mediumRiskPercentage" : 48.214285714285715,
+      "totalValue" : 224,
+      "totalCount" : 11,
+      "negligibleRiskPercentage" : 12.946428571428571
     } ],
     "unitSizeRiskDistributionPerComponent" : [ [ {
-      "key" : "services",
+      "key" : "ROOT",
       "lowRiskThreshold" : 10,
       "mediumRiskThreshold" : 20,
       "highRiskThreshold" : 50,
       "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 0,
+      "negligibleRiskValue" : 12,
       "lowRiskValue" : 0,
       "mediumRiskValue" : 22,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
       "lowRiskCount" : 0,
-      "negligibleRiskCount" : 0,
+      "negligibleRiskCount" : 3,
       "mediumRiskCount" : 1,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -1508,29 +2185,277 @@
       "mediumRiskLabel" : "21-50",
       "highRiskLabel" : "51-100",
       "veryHighRiskLabel" : "101+",
-      "highRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 100.0,
-      "lowRiskPercentage" : 0.0,
       "veryHighRiskPercentage" : 0.0,
-      "totalCount" : 1,
-      "totalValue" : 22,
-      "negligibleRiskPercentage" : 0.0
+      "highRiskPercentage" : 0.0,
+      "lowRiskPercentage" : 0.0,
+      "mediumRiskPercentage" : 64.70588235294117,
+      "totalValue" : 34,
+      "totalCount" : 4,
+      "negligibleRiskPercentage" : 35.294117647058826
+    }, {
+      "key" : "src",
+      "lowRiskThreshold" : 10,
+      "mediumRiskThreshold" : 20,
+      "highRiskThreshold" : 50,
+      "veryHighRiskThreshold" : 100,
+      "negligibleRiskValue" : 17,
+      "lowRiskValue" : 31,
+      "mediumRiskValue" : 86,
+      "highRiskValue" : 56,
+      "veryHighRiskValue" : 0,
+      "lowRiskCount" : 2,
+      "negligibleRiskCount" : 2,
+      "mediumRiskCount" : 2,
+      "highRiskCount" : 1,
+      "veryHighRiskCount" : 0,
+      "negligibleRiskLabel" : "1-10",
+      "lowRiskLabel" : "11-20",
+      "mediumRiskLabel" : "21-50",
+      "highRiskLabel" : "51-100",
+      "veryHighRiskLabel" : "101+",
+      "veryHighRiskPercentage" : 0.0,
+      "highRiskPercentage" : 29.473684210526315,
+      "lowRiskPercentage" : 16.31578947368421,
+      "mediumRiskPercentage" : 45.26315789473684,
+      "totalValue" : 190,
+      "totalCount" : 7,
+      "negligibleRiskPercentage" : 8.947368421052632
     } ] ],
     "longestUnits" : [ {
       "shortName" : "export async function createEvent()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "services/api.js",
+        "relativePath" : "src/services/api.js",
         "extension" : "js",
-        "linesOfCode" : 23,
+        "linesOfCode" : 57,
         "unitsCount" : 1,
-        "unitsMcCabeIndexSum" : 4,
+        "unitsMcCabeIndexSum" : 14,
+        "linesOfCodeInUnits" : 56
+      },
+      "startLine" : 15,
+      "endLine" : 79,
+      "linesOfCode" : 56,
+      "mcCabeIndex" : 14,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export async function joinGroupByCode()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "src/services/groups.js",
+        "extension" : "js",
+        "linesOfCode" : 120,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 30,
+        "linesOfCodeInUnits" : 119
+      },
+      "startLine" : 97,
+      "endLine" : 157,
+      "linesOfCode" : 46,
+      "mcCabeIndex" : 14,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export async function createGroup()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "src/services/groups.js",
+        "extension" : "js",
+        "linesOfCode" : 120,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 30,
+        "linesOfCodeInUnits" : 119
+      },
+      "startLine" : 18,
+      "endLine" : 69,
+      "linesOfCode" : 40,
+      "mcCabeIndex" : 6,
+      "numberOfParameters" : 2,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export default defineConfig()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "eslint.config.js",
+        "extension" : "js",
+        "linesOfCode" : 59,
+        "unitsCount" : 1,
+        "unitsMcCabeIndexSum" : 1,
         "linesOfCodeInUnits" : 22
       },
-      "startLine" : 4,
-      "endLine" : 29,
+      "startLine" : 7,
+      "endLine" : 30,
       "linesOfCode" : 22,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export async function fetchUserGroups()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "src/services/groups.js",
+        "extension" : "js",
+        "linesOfCode" : 120,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 30,
+        "linesOfCodeInUnits" : 119
+      },
+      "startLine" : 74,
+      "endLine" : 92,
+      "linesOfCode" : 16,
       "mcCabeIndex" : 4,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "function createTransporter()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "src/server/index.js",
+        "extension" : "js",
+        "linesOfCode" : 110,
+        "unitsCount" : 1,
+        "unitsMcCabeIndexSum" : 5,
+        "linesOfCodeInUnits" : 15
+      },
+      "startLine" : 15,
+      "endLine" : 31,
+      "linesOfCode" : 15,
+      "mcCabeIndex" : 5,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export async function fetchGroupEvents()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "src/services/groups.js",
+        "extension" : "js",
+        "linesOfCode" : 120,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 30,
+        "linesOfCodeInUnits" : 119
+      },
+      "startLine" : 162,
+      "endLine" : 173,
+      "linesOfCode" : 10,
+      "mcCabeIndex" : 4,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "function generate6CharCode()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "src/services/groups.js",
+        "extension" : "js",
+        "linesOfCode" : 120,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 30,
+        "linesOfCodeInUnits" : 119
+      },
+      "startLine" : 5,
+      "endLine" : 11,
+      "linesOfCode" : 7,
+      "mcCabeIndex" : 2,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "setupNodeEvents()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "cypress.config.js",
+        "extension" : "js",
+        "linesOfCode" : 15,
+        "unitsCount" : 2,
+        "unitsMcCabeIndexSum" : 2,
+        "linesOfCodeInUnits" : 9
+      },
+      "startLine" : 10,
+      "endLine" : 18,
+      "linesOfCode" : 5,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 2,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ {
+        "shortName" : "log()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "cypress.config.js",
+          "extension" : "js",
+          "linesOfCode" : 15,
+          "unitsCount" : 2,
+          "unitsMcCabeIndexSum" : 2,
+          "linesOfCodeInUnits" : 9
+        },
+        "startLine" : 12,
+        "endLine" : 15,
+        "linesOfCode" : 4,
+        "mcCabeIndex" : 1,
+        "numberOfParameters" : 1,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      } ]
+    }, {
+      "shortName" : "log()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "cypress.config.js",
+        "extension" : "js",
+        "linesOfCode" : 15,
+        "unitsCount" : 2,
+        "unitsMcCabeIndexSum" : 2,
+        "linesOfCodeInUnits" : 9
+      },
+      "startLine" : 12,
+      "endLine" : 15,
+      "linesOfCode" : 4,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export default defineConfig()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "vite.config.js",
+        "extension" : "js",
+        "linesOfCode" : 6,
+        "unitsCount" : 1,
+        "unitsMcCabeIndexSum" : 1,
+        "linesOfCodeInUnits" : 3
+      },
+      "startLine" : 6,
+      "endLine" : 8,
+      "linesOfCode" : 3,
+      "mcCabeIndex" : 1,
       "numberOfParameters" : 1,
       "numberOfLiterals" : 0,
       "numberOfStatements" : 0,
@@ -1543,14 +2468,14 @@
       "mediumRiskThreshold" : 10,
       "highRiskThreshold" : 25,
       "veryHighRiskThreshold" : 50,
-      "negligibleRiskValue" : 22,
-      "lowRiskValue" : 0,
-      "mediumRiskValue" : 0,
+      "negligibleRiskValue" : 82,
+      "lowRiskValue" : 40,
+      "mediumRiskValue" : 102,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 0,
-      "negligibleRiskCount" : 1,
-      "mediumRiskCount" : 0,
+      "lowRiskCount" : 1,
+      "negligibleRiskCount" : 8,
+      "mediumRiskCount" : 2,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
       "negligibleRiskLabel" : "1-5",
@@ -1558,27 +2483,27 @@
       "mediumRiskLabel" : "11-25",
       "highRiskLabel" : "26-50",
       "veryHighRiskLabel" : "51+",
-      "highRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 0.0,
       "veryHighRiskPercentage" : 0.0,
-      "totalCount" : 1,
-      "totalValue" : 22,
-      "negligibleRiskPercentage" : 100.0
+      "highRiskPercentage" : 0.0,
+      "lowRiskPercentage" : 17.857142857142858,
+      "mediumRiskPercentage" : 45.535714285714285,
+      "totalValue" : 224,
+      "totalCount" : 11,
+      "negligibleRiskPercentage" : 36.607142857142854
     } ],
     "conditionalComplexityRiskDistributionPerComponent" : [ [ {
-      "key" : "services",
+      "key" : "ROOT",
       "lowRiskThreshold" : 5,
       "mediumRiskThreshold" : 10,
       "highRiskThreshold" : 25,
       "veryHighRiskThreshold" : 50,
-      "negligibleRiskValue" : 22,
+      "negligibleRiskValue" : 34,
       "lowRiskValue" : 0,
       "mediumRiskValue" : 0,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
       "lowRiskCount" : 0,
-      "negligibleRiskCount" : 1,
+      "negligibleRiskCount" : 4,
       "mediumRiskCount" : 0,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -1587,29 +2512,277 @@
       "mediumRiskLabel" : "11-25",
       "highRiskLabel" : "26-50",
       "veryHighRiskLabel" : "51+",
-      "highRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 0.0,
       "veryHighRiskPercentage" : 0.0,
-      "totalCount" : 1,
-      "totalValue" : 22,
+      "highRiskPercentage" : 0.0,
+      "lowRiskPercentage" : 0.0,
+      "mediumRiskPercentage" : 0.0,
+      "totalValue" : 34,
+      "totalCount" : 4,
       "negligibleRiskPercentage" : 100.0
+    }, {
+      "key" : "src",
+      "lowRiskThreshold" : 5,
+      "mediumRiskThreshold" : 10,
+      "highRiskThreshold" : 25,
+      "veryHighRiskThreshold" : 50,
+      "negligibleRiskValue" : 48,
+      "lowRiskValue" : 40,
+      "mediumRiskValue" : 102,
+      "highRiskValue" : 0,
+      "veryHighRiskValue" : 0,
+      "lowRiskCount" : 1,
+      "negligibleRiskCount" : 4,
+      "mediumRiskCount" : 2,
+      "highRiskCount" : 0,
+      "veryHighRiskCount" : 0,
+      "negligibleRiskLabel" : "1-5",
+      "lowRiskLabel" : "6-10",
+      "mediumRiskLabel" : "11-25",
+      "highRiskLabel" : "26-50",
+      "veryHighRiskLabel" : "51+",
+      "veryHighRiskPercentage" : 0.0,
+      "highRiskPercentage" : 0.0,
+      "lowRiskPercentage" : 21.05263157894737,
+      "mediumRiskPercentage" : 53.68421052631579,
+      "totalValue" : 190,
+      "totalCount" : 7,
+      "negligibleRiskPercentage" : 25.263157894736842
     } ] ],
     "mostComplexUnits" : [ {
       "shortName" : "export async function createEvent()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "services/api.js",
+        "relativePath" : "src/services/api.js",
         "extension" : "js",
-        "linesOfCode" : 23,
+        "linesOfCode" : 57,
         "unitsCount" : 1,
-        "unitsMcCabeIndexSum" : 4,
+        "unitsMcCabeIndexSum" : 14,
+        "linesOfCodeInUnits" : 56
+      },
+      "startLine" : 15,
+      "endLine" : 79,
+      "linesOfCode" : 56,
+      "mcCabeIndex" : 14,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export async function joinGroupByCode()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "src/services/groups.js",
+        "extension" : "js",
+        "linesOfCode" : 120,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 30,
+        "linesOfCodeInUnits" : 119
+      },
+      "startLine" : 97,
+      "endLine" : 157,
+      "linesOfCode" : 46,
+      "mcCabeIndex" : 14,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export async function createGroup()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "src/services/groups.js",
+        "extension" : "js",
+        "linesOfCode" : 120,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 30,
+        "linesOfCodeInUnits" : 119
+      },
+      "startLine" : 18,
+      "endLine" : 69,
+      "linesOfCode" : 40,
+      "mcCabeIndex" : 6,
+      "numberOfParameters" : 2,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "function createTransporter()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "src/server/index.js",
+        "extension" : "js",
+        "linesOfCode" : 110,
+        "unitsCount" : 1,
+        "unitsMcCabeIndexSum" : 5,
+        "linesOfCodeInUnits" : 15
+      },
+      "startLine" : 15,
+      "endLine" : 31,
+      "linesOfCode" : 15,
+      "mcCabeIndex" : 5,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export async function fetchUserGroups()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "src/services/groups.js",
+        "extension" : "js",
+        "linesOfCode" : 120,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 30,
+        "linesOfCodeInUnits" : 119
+      },
+      "startLine" : 74,
+      "endLine" : 92,
+      "linesOfCode" : 16,
+      "mcCabeIndex" : 4,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export async function fetchGroupEvents()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "src/services/groups.js",
+        "extension" : "js",
+        "linesOfCode" : 120,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 30,
+        "linesOfCodeInUnits" : 119
+      },
+      "startLine" : 162,
+      "endLine" : 173,
+      "linesOfCode" : 10,
+      "mcCabeIndex" : 4,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "function generate6CharCode()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "src/services/groups.js",
+        "extension" : "js",
+        "linesOfCode" : 120,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 30,
+        "linesOfCodeInUnits" : 119
+      },
+      "startLine" : 5,
+      "endLine" : 11,
+      "linesOfCode" : 7,
+      "mcCabeIndex" : 2,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "setupNodeEvents()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "cypress.config.js",
+        "extension" : "js",
+        "linesOfCode" : 15,
+        "unitsCount" : 2,
+        "unitsMcCabeIndexSum" : 2,
+        "linesOfCodeInUnits" : 9
+      },
+      "startLine" : 10,
+      "endLine" : 18,
+      "linesOfCode" : 5,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 2,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ {
+        "shortName" : "log()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "cypress.config.js",
+          "extension" : "js",
+          "linesOfCode" : 15,
+          "unitsCount" : 2,
+          "unitsMcCabeIndexSum" : 2,
+          "linesOfCodeInUnits" : 9
+        },
+        "startLine" : 12,
+        "endLine" : 15,
+        "linesOfCode" : 4,
+        "mcCabeIndex" : 1,
+        "numberOfParameters" : 1,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      } ]
+    }, {
+      "shortName" : "log()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "cypress.config.js",
+        "extension" : "js",
+        "linesOfCode" : 15,
+        "unitsCount" : 2,
+        "unitsMcCabeIndexSum" : 2,
+        "linesOfCodeInUnits" : 9
+      },
+      "startLine" : 12,
+      "endLine" : 15,
+      "linesOfCode" : 4,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export default defineConfig()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "eslint.config.js",
+        "extension" : "js",
+        "linesOfCode" : 59,
+        "unitsCount" : 1,
+        "unitsMcCabeIndexSum" : 1,
         "linesOfCodeInUnits" : 22
       },
-      "startLine" : 4,
-      "endLine" : 29,
+      "startLine" : 7,
+      "endLine" : 30,
       "linesOfCode" : 22,
-      "mcCabeIndex" : 4,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export default defineConfig()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "vite.config.js",
+        "extension" : "js",
+        "linesOfCode" : 6,
+        "unitsCount" : 1,
+        "unitsMcCabeIndexSum" : 1,
+        "linesOfCodeInUnits" : 3
+      },
+      "startLine" : 6,
+      "endLine" : 8,
+      "linesOfCode" : 3,
+      "mcCabeIndex" : 1,
       "numberOfParameters" : 1,
       "numberOfLiterals" : 0,
       "numberOfStatements" : 0,
@@ -1620,76 +2793,126 @@
   "duplicationAnalysisResults" : {
     "overallDuplication" : {
       "key" : "system",
-      "numberOfDuplicates" : 4,
-      "cleanedLinesOfCode" : 1130,
-      "duplicatedLinesOfCode" : 58,
+      "numberOfDuplicates" : 9,
+      "cleanedLinesOfCode" : 1799,
+      "duplicatedLinesOfCode" : 123,
       "numberOfFilesWithDuplicates" : 3,
-      "duplicationPercentage" : 5.132743362831858
+      "duplicationPercentage" : 6.837131739855475
     },
     "duplicationPerComponent" : [ [ {
-      "key" : "components",
+      "key" : "src",
       "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 340,
-      "duplicatedLinesOfCode" : 44,
+      "cleanedLinesOfCode" : 1633,
+      "duplicatedLinesOfCode" : 100,
       "numberOfFilesWithDuplicates" : 0,
-      "duplicationPercentage" : 12.941176470588236
+      "duplicationPercentage" : 6.12369871402327
     }, {
       "key" : "ROOT",
       "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 770,
-      "duplicatedLinesOfCode" : 14,
+      "cleanedLinesOfCode" : 126,
+      "duplicatedLinesOfCode" : 23,
       "numberOfFilesWithDuplicates" : 0,
-      "duplicationPercentage" : 1.8181818181818181
+      "duplicationPercentage" : 18.253968253968253
     }, {
-      "key" : "services",
+      "key" : "cypress",
       "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 20,
+      "cleanedLinesOfCode" : 5,
+      "duplicatedLinesOfCode" : 0,
+      "numberOfFilesWithDuplicates" : 0,
+      "duplicationPercentage" : 0.0
+    }, {
+      "key" : "migrations",
+      "numberOfDuplicates" : 0,
+      "cleanedLinesOfCode" : 35,
       "duplicatedLinesOfCode" : 0,
       "numberOfFilesWithDuplicates" : 0,
       "duplicationPercentage" : 0.0
     } ] ],
     "duplicationPerConcern" : [ ],
     "duplicationPerExtension" : [ {
+      "key" : "js",
+      "numberOfDuplicates" : 0,
+      "cleanedLinesOfCode" : 348,
+      "duplicatedLinesOfCode" : 63,
+      "numberOfFilesWithDuplicates" : 0,
+      "duplicationPercentage" : 18.103448275862068
+    }, {
       "key" : "jsx",
       "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 877,
-      "duplicatedLinesOfCode" : 58,
+      "cleanedLinesOfCode" : 1136,
+      "duplicatedLinesOfCode" : 60,
       "numberOfFilesWithDuplicates" : 0,
-      "duplicationPercentage" : 6.61345496009122
+      "duplicationPercentage" : 5.28169014084507
     } ],
     "longestDuplicates" : [ {
       "displayContent" : "",
       "duplicatedFileBlocks" : [ {
         "sourceFile" : {
-          "relativePath" : "components/Login.jsx",
+          "relativePath" : "src/server/index.js",
+          "extension" : "js",
+          "linesOfCode" : 110,
+          "unitsCount" : 1,
+          "unitsMcCabeIndexSum" : 5,
+          "linesOfCodeInUnits" : 15
+        },
+        "sourceFileCleanedLinesOfCode" : 99,
+        "startLine" : 65,
+        "endLine" : 81,
+        "cleanedStartLine" : 42,
+        "cleanedEndLine" : 55,
+        "percentage" : 14.141414141414142,
+        "blockSize" : 14
+      }, {
+        "sourceFile" : {
+          "relativePath" : "src/server/index.js",
+          "extension" : "js",
+          "linesOfCode" : 110,
+          "unitsCount" : 1,
+          "unitsMcCabeIndexSum" : 5,
+          "linesOfCodeInUnits" : 15
+        },
+        "sourceFileCleanedLinesOfCode" : 99,
+        "startLine" : 117,
+        "endLine" : 133,
+        "cleanedStartLine" : 83,
+        "cleanedEndLine" : 96,
+        "percentage" : 14.141414141414142,
+        "blockSize" : 14
+      } ],
+      "blockSize" : 14
+    }, {
+      "displayContent" : "",
+      "duplicatedFileBlocks" : [ {
+        "sourceFile" : {
+          "relativePath" : "src/Calendar.jsx",
           "extension" : "jsx",
-          "linesOfCode" : 153,
+          "linesOfCode" : 629,
           "unitsCount" : 0,
           "unitsMcCabeIndexSum" : 0,
           "linesOfCodeInUnits" : 0
         },
-        "sourceFileCleanedLinesOfCode" : 144,
-        "startLine" : 124,
-        "endLine" : 135,
-        "cleanedStartLine" : 111,
-        "cleanedEndLine" : 120,
-        "percentage" : 6.944444444444445,
+        "sourceFileCleanedLinesOfCode" : 594,
+        "startLine" : 103,
+        "endLine" : 112,
+        "cleanedStartLine" : 92,
+        "cleanedEndLine" : 101,
+        "percentage" : 1.6835016835016836,
         "blockSize" : 10
       }, {
         "sourceFile" : {
-          "relativePath" : "components/SignUp.jsx",
+          "relativePath" : "src/Calendar.jsx",
           "extension" : "jsx",
-          "linesOfCode" : 175,
+          "linesOfCode" : 629,
           "unitsCount" : 0,
           "unitsMcCabeIndexSum" : 0,
           "linesOfCodeInUnits" : 0
         },
-        "sourceFileCleanedLinesOfCode" : 163,
-        "startLine" : 136,
-        "endLine" : 147,
-        "cleanedStartLine" : 119,
-        "cleanedEndLine" : 128,
-        "percentage" : 6.134969325153374,
+        "sourceFileCleanedLinesOfCode" : 594,
+        "startLine" : 392,
+        "endLine" : 401,
+        "cleanedStartLine" : 332,
+        "cleanedEndLine" : 341,
+        "percentage" : 1.6835016835016836,
         "blockSize" : 10
       } ],
       "blockSize" : 10
@@ -1697,35 +2920,71 @@
       "displayContent" : "",
       "duplicatedFileBlocks" : [ {
         "sourceFile" : {
-          "relativePath" : "Calendar.jsx",
+          "relativePath" : "src/Calendar.jsx",
           "extension" : "jsx",
-          "linesOfCode" : 513,
+          "linesOfCode" : 629,
           "unitsCount" : 0,
           "unitsMcCabeIndexSum" : 0,
           "linesOfCodeInUnits" : 0
         },
-        "sourceFileCleanedLinesOfCode" : 478,
-        "startLine" : 25,
-        "endLine" : 31,
-        "cleanedStartLine" : 23,
-        "cleanedEndLine" : 29,
-        "percentage" : 1.4644351464435146,
+        "sourceFileCleanedLinesOfCode" : 594,
+        "startLine" : 117,
+        "endLine" : 126,
+        "cleanedStartLine" : 106,
+        "cleanedEndLine" : 115,
+        "percentage" : 1.6835016835016836,
+        "blockSize" : 10
+      }, {
+        "sourceFile" : {
+          "relativePath" : "src/Calendar.jsx",
+          "extension" : "jsx",
+          "linesOfCode" : 629,
+          "unitsCount" : 0,
+          "unitsMcCabeIndexSum" : 0,
+          "linesOfCodeInUnits" : 0
+        },
+        "sourceFileCleanedLinesOfCode" : 594,
+        "startLine" : 409,
+        "endLine" : 418,
+        "cleanedStartLine" : 349,
+        "cleanedEndLine" : 358,
+        "percentage" : 1.6835016835016836,
+        "blockSize" : 10
+      } ],
+      "blockSize" : 10
+    }, {
+      "displayContent" : "",
+      "duplicatedFileBlocks" : [ {
+        "sourceFile" : {
+          "relativePath" : "src/Calendar.jsx",
+          "extension" : "jsx",
+          "linesOfCode" : 629,
+          "unitsCount" : 0,
+          "unitsMcCabeIndexSum" : 0,
+          "linesOfCodeInUnits" : 0
+        },
+        "sourceFileCleanedLinesOfCode" : 594,
+        "startLine" : 27,
+        "endLine" : 33,
+        "cleanedStartLine" : 25,
+        "cleanedEndLine" : 31,
+        "percentage" : 1.1784511784511784,
         "blockSize" : 7
       }, {
         "sourceFile" : {
-          "relativePath" : "Calendar.jsx",
+          "relativePath" : "src/Calendar.jsx",
           "extension" : "jsx",
-          "linesOfCode" : 513,
+          "linesOfCode" : 629,
           "unitsCount" : 0,
           "unitsMcCabeIndexSum" : 0,
           "linesOfCodeInUnits" : 0
         },
-        "sourceFileCleanedLinesOfCode" : 478,
-        "startLine" : 36,
-        "endLine" : 42,
-        "cleanedStartLine" : 33,
-        "cleanedEndLine" : 39,
-        "percentage" : 1.4644351464435146,
+        "sourceFileCleanedLinesOfCode" : 594,
+        "startLine" : 38,
+        "endLine" : 44,
+        "cleanedStartLine" : 35,
+        "cleanedEndLine" : 41,
+        "percentage" : 1.1784511784511784,
         "blockSize" : 7
       } ],
       "blockSize" : 7
@@ -1733,35 +2992,71 @@
       "displayContent" : "",
       "duplicatedFileBlocks" : [ {
         "sourceFile" : {
-          "relativePath" : "components/Login.jsx",
-          "extension" : "jsx",
-          "linesOfCode" : 153,
-          "unitsCount" : 0,
-          "unitsMcCabeIndexSum" : 0,
-          "linesOfCodeInUnits" : 0
+          "relativePath" : "eslint.config.js",
+          "extension" : "js",
+          "linesOfCode" : 59,
+          "unitsCount" : 1,
+          "unitsMcCabeIndexSum" : 1,
+          "linesOfCodeInUnits" : 22
         },
-        "sourceFileCleanedLinesOfCode" : 144,
-        "startLine" : 7,
-        "endLine" : 12,
-        "cleanedStartLine" : 6,
-        "cleanedEndLine" : 11,
-        "percentage" : 4.166666666666667,
+        "sourceFileCleanedLinesOfCode" : 51,
+        "startLine" : 21,
+        "endLine" : 27,
+        "cleanedStartLine" : 12,
+        "cleanedEndLine" : 18,
+        "percentage" : 13.72549019607843,
+        "blockSize" : 7
+      }, {
+        "sourceFile" : {
+          "relativePath" : "eslint.config.js",
+          "extension" : "js",
+          "linesOfCode" : 59,
+          "unitsCount" : 1,
+          "unitsMcCabeIndexSum" : 1,
+          "linesOfCodeInUnits" : 22
+        },
+        "sourceFileCleanedLinesOfCode" : 51,
+        "startLine" : 40,
+        "endLine" : 46,
+        "cleanedStartLine" : 27,
+        "cleanedEndLine" : 33,
+        "percentage" : 13.72549019607843,
+        "blockSize" : 7
+      } ],
+      "blockSize" : 7
+    }, {
+      "displayContent" : "",
+      "duplicatedFileBlocks" : [ {
+        "sourceFile" : {
+          "relativePath" : "src/server/index.js",
+          "extension" : "js",
+          "linesOfCode" : 110,
+          "unitsCount" : 1,
+          "unitsMcCabeIndexSum" : 5,
+          "linesOfCodeInUnits" : 15
+        },
+        "sourceFileCleanedLinesOfCode" : 99,
+        "startLine" : 46,
+        "endLine" : 51,
+        "cleanedStartLine" : 27,
+        "cleanedEndLine" : 32,
+        "percentage" : 6.0606060606060606,
         "blockSize" : 6
       }, {
         "sourceFile" : {
-          "relativePath" : "components/SignUp.jsx",
-          "extension" : "jsx",
-          "linesOfCode" : 175,
-          "unitsCount" : 0,
-          "unitsMcCabeIndexSum" : 0,
-          "linesOfCodeInUnits" : 0
+          "relativePath" : "src/server/index.js",
+          "extension" : "js",
+          "linesOfCode" : 110,
+          "unitsCount" : 1,
+          "unitsMcCabeIndexSum" : 5,
+          "linesOfCodeInUnits" : 15
         },
-        "sourceFileCleanedLinesOfCode" : 163,
-        "startLine" : 29,
-        "endLine" : 34,
-        "cleanedStartLine" : 26,
-        "cleanedEndLine" : 31,
-        "percentage" : 3.6809815950920246,
+        "sourceFileCleanedLinesOfCode" : 99,
+        "startLine" : 96,
+        "endLine" : 102,
+        "cleanedStartLine" : 65,
+        "cleanedEndLine" : 70,
+        "percentage" : 6.0606060606060606,
         "blockSize" : 6
       } ],
       "blockSize" : 6
@@ -1769,40 +3064,164 @@
       "displayContent" : "",
       "duplicatedFileBlocks" : [ {
         "sourceFile" : {
-          "relativePath" : "components/Login.jsx",
+          "relativePath" : "src/Calendar.jsx",
           "extension" : "jsx",
-          "linesOfCode" : 153,
+          "linesOfCode" : 629,
           "unitsCount" : 0,
           "unitsMcCabeIndexSum" : 0,
           "linesOfCodeInUnits" : 0
         },
-        "sourceFileCleanedLinesOfCode" : 144,
+        "sourceFileCleanedLinesOfCode" : 594,
         "startLine" : 139,
         "endLine" : 144,
-        "cleanedStartLine" : 123,
-        "cleanedEndLine" : 128,
-        "percentage" : 4.166666666666667,
+        "cleanedStartLine" : 127,
+        "cleanedEndLine" : 132,
+        "percentage" : 1.0101010101010102,
         "blockSize" : 6
       }, {
         "sourceFile" : {
-          "relativePath" : "components/SignUp.jsx",
+          "relativePath" : "src/Calendar.jsx",
           "extension" : "jsx",
-          "linesOfCode" : 175,
+          "linesOfCode" : 629,
           "unitsCount" : 0,
           "unitsMcCabeIndexSum" : 0,
           "linesOfCodeInUnits" : 0
         },
-        "sourceFileCleanedLinesOfCode" : 163,
-        "startLine" : 149,
-        "endLine" : 154,
-        "cleanedStartLine" : 130,
-        "cleanedEndLine" : 135,
-        "percentage" : 3.6809815950920246,
+        "sourceFileCleanedLinesOfCode" : 594,
+        "startLine" : 396,
+        "endLine" : 401,
+        "cleanedStartLine" : 336,
+        "cleanedEndLine" : 341,
+        "percentage" : 1.0101010101010102,
+        "blockSize" : 6
+      } ],
+      "blockSize" : 6
+    }, {
+      "displayContent" : "",
+      "duplicatedFileBlocks" : [ {
+        "sourceFile" : {
+          "relativePath" : "eslint.config.js",
+          "extension" : "js",
+          "linesOfCode" : 59,
+          "unitsCount" : 1,
+          "unitsMcCabeIndexSum" : 1,
+          "linesOfCodeInUnits" : 22
+        },
+        "sourceFileCleanedLinesOfCode" : 51,
+        "startLine" : 44,
+        "endLine" : 50,
+        "cleanedStartLine" : 31,
+        "cleanedEndLine" : 36,
+        "percentage" : 11.764705882352942,
+        "blockSize" : 6
+      }, {
+        "sourceFile" : {
+          "relativePath" : "eslint.config.js",
+          "extension" : "js",
+          "linesOfCode" : 59,
+          "unitsCount" : 1,
+          "unitsMcCabeIndexSum" : 1,
+          "linesOfCodeInUnits" : 22
+        },
+        "sourceFileCleanedLinesOfCode" : 51,
+        "startLine" : 62,
+        "endLine" : 68,
+        "cleanedStartLine" : 45,
+        "cleanedEndLine" : 50,
+        "percentage" : 11.764705882352942,
+        "blockSize" : 6
+      } ],
+      "blockSize" : 6
+    }, {
+      "displayContent" : "",
+      "duplicatedFileBlocks" : [ {
+        "sourceFile" : {
+          "relativePath" : "src/Calendar.jsx",
+          "extension" : "jsx",
+          "linesOfCode" : 629,
+          "unitsCount" : 0,
+          "unitsMcCabeIndexSum" : 0,
+          "linesOfCodeInUnits" : 0
+        },
+        "sourceFileCleanedLinesOfCode" : 594,
+        "startLine" : 107,
+        "endLine" : 112,
+        "cleanedStartLine" : 96,
+        "cleanedEndLine" : 101,
+        "percentage" : 1.0101010101010102,
+        "blockSize" : 6
+      }, {
+        "sourceFile" : {
+          "relativePath" : "src/Calendar.jsx",
+          "extension" : "jsx",
+          "linesOfCode" : 629,
+          "unitsCount" : 0,
+          "unitsMcCabeIndexSum" : 0,
+          "linesOfCodeInUnits" : 0
+        },
+        "sourceFileCleanedLinesOfCode" : 594,
+        "startLine" : 139,
+        "endLine" : 144,
+        "cleanedStartLine" : 127,
+        "cleanedEndLine" : 132,
+        "percentage" : 1.0101010101010102,
         "blockSize" : 6
       } ],
       "blockSize" : 6
     } ],
-    "mostFrequentDuplicates" : [ ]
+    "mostFrequentDuplicates" : [ {
+      "displayContent" : "",
+      "duplicatedFileBlocks" : [ {
+        "sourceFile" : {
+          "relativePath" : "src/Calendar.jsx",
+          "extension" : "jsx",
+          "linesOfCode" : 629,
+          "unitsCount" : 0,
+          "unitsMcCabeIndexSum" : 0,
+          "linesOfCodeInUnits" : 0
+        },
+        "sourceFileCleanedLinesOfCode" : 594,
+        "startLine" : 107,
+        "endLine" : 112,
+        "cleanedStartLine" : 96,
+        "cleanedEndLine" : 101,
+        "percentage" : 1.0101010101010102,
+        "blockSize" : 6
+      }, {
+        "sourceFile" : {
+          "relativePath" : "src/Calendar.jsx",
+          "extension" : "jsx",
+          "linesOfCode" : 629,
+          "unitsCount" : 0,
+          "unitsMcCabeIndexSum" : 0,
+          "linesOfCodeInUnits" : 0
+        },
+        "sourceFileCleanedLinesOfCode" : 594,
+        "startLine" : 139,
+        "endLine" : 144,
+        "cleanedStartLine" : 127,
+        "cleanedEndLine" : 132,
+        "percentage" : 1.0101010101010102,
+        "blockSize" : 6
+      }, {
+        "sourceFile" : {
+          "relativePath" : "src/Calendar.jsx",
+          "extension" : "jsx",
+          "linesOfCode" : 629,
+          "unitsCount" : 0,
+          "unitsMcCabeIndexSum" : 0,
+          "linesOfCodeInUnits" : 0
+        },
+        "sourceFileCleanedLinesOfCode" : 594,
+        "startLine" : 396,
+        "endLine" : 401,
+        "cleanedStartLine" : 336,
+        "cleanedEndLine" : 341,
+        "percentage" : 1.0101010101010102,
+        "blockSize" : 6
+      } ],
+      "blockSize" : 6
+    } ]
   },
   "contributorsAnalysisResults" : {
     "latestCommitDate" : "",
@@ -1813,11 +3232,80 @@
     "contributorsPerWeek" : [ ],
     "commitsPerExtensions" : [ ]
   },
-  "numberOfExcludedFiles" : 1,
+  "numberOfExcludedFiles" : 28526,
   "excludedExtensions" : {
-    "svg" : 1
+    "" : 763,
+    "css" : 13,
+    "eslintcache" : 1,
+    "npmignore" : 22,
+    "def" : 5,
+    "scss" : 10,
+    "py" : 1,
+    "project" : 1,
+    "conf" : 1,
+    "jscsrc" : 1,
+    "ps1" : 45,
+    "patch" : 1,
+    "exe" : 2,
+    "opts" : 2,
+    "xml" : 5,
+    "md" : 1093,
+    "tm_properties" : 1,
+    "editorconfig" : 13,
+    "lock" : 4,
+    "html" : 8,
+    "jar" : 1,
+    "bnf" : 6,
+    "nix" : 2,
+    "jshintrc" : 6,
+    "flow" : 80,
+    "yaml" : 68,
+    "mdown" : 1,
+    "cts" : 1283,
+    "in" : 1,
+    "babelrc" : 4,
+    "png" : 4,
+    "eslintrc" : 26,
+    "prettierrc" : 1,
+    "mts" : 452,
+    "node" : 9,
+    "1" : 4,
+    "license" : 1,
+    "bsd" : 3,
+    "gitkeep" : 1,
+    "gitmodules" : 1,
+    "cmd" : 45,
+    "apache2" : 1,
+    "log" : 1,
+    "js" : 12687,
+    "iml" : 1,
+    "gitattributes" : 3,
+    "jst" : 25,
+    "local" : 1,
+    "nvmrc" : 1,
+    "targ" : 1,
+    "browserslistrc" : 1,
+    "sh" : 1,
+    "markdown" : 6,
+    "tsx" : 1,
+    "json" : 1195,
+    "mit" : 1,
+    "tsbuildinfo" : 8,
+    "map" : 2637,
+    "svg" : 5,
+    "gitignore" : 1,
+    "env" : 1,
+    "cjs" : 1297,
+    "nycrc" : 18,
+    "txt" : 58,
+    "mjs" : 695,
+    "coffee" : 7,
+    "php" : 1,
+    "ts" : 5879,
+    "snap" : 1,
+    "prettierignore" : 1
   },
-  "analysisStartTimeMs" : 1760645081147,
-  "maxLinesOfCode" : 1204,
-  "maxFileCount" : 10
+  "analysisStartTimeMs" : 1762281468794,
+  "maxFileCount" : 21,
+  "maxLinesOfCode" : 3025
 }
