@@ -50,11 +50,21 @@ export default function MyBigCalendar() {
   };
 
   const [events, setEvents] = useState([]);
+  const [categories, setCategories] = useState({
+    '#2563EB': 'Category #1',
+    '#DC2626': 'Category #2',
+    '#059669': 'Category #3',
+    '#F59E0B': 'Category #4',
+    '#9333EA': 'Category #5',
+    '#4B5563': 'Category #6',
+  });
+  const [editingColor, setEditingColor] = useState(null);
   const [formEvent, setFormEvent] = useState({ 
     title: "", 
     start: getCurrentDateTime(), 
     end: getOneHourFromNow(),  
     color: '#2563EB', // default blue
+    categoryName: 'Category #1',
   });
   const [isEditing, setIsEditing] = useState(false);
   const [editingEventId, setEditingEventId] = useState(null);
@@ -130,6 +140,7 @@ export default function MyBigCalendar() {
           start: startDate,
           end: endDate,
           color: formEvent.color || '#2563EB',
+          categoryName: formEvent.categoryName?.trim() || 'Category #1',
         };
 
         setEvents(prev => prev.map(event => 
@@ -146,6 +157,7 @@ export default function MyBigCalendar() {
           start: startDate,
           end: endDate,
           color: formEvent.color || '#2563EB',
+          categoryName: formEvent.categoryName?.trim() || 'Category #1',
         };
 
         setEvents(prev => [...prev, newEventObj]);
@@ -154,6 +166,7 @@ export default function MyBigCalendar() {
           start: getCurrentDateTime(), 
           end: getOneHourFromNow(), 
           color: '#2563EB',
+          categoryName: 'Category #1',
         });
       }
       
@@ -172,9 +185,9 @@ export default function MyBigCalendar() {
     setFormEvent({
       title: event.title,
       start: formatDateTimeLocal(event.start),
-      end: formatDateTimeLocal(event.end)
-      ,
-      color: event.color || '#2563EB'
+      end: formatDateTimeLocal(event.end),
+      color: event.color || '#2563EB',
+      categoryName: event.categoryName || 'Category #1'
     });
     setIsEditing(true);
     setEditingEventId(event.id);
@@ -196,6 +209,7 @@ export default function MyBigCalendar() {
       start: getCurrentDateTime(), 
       end: getOneHourFromNow(), 
       color: '#2563EB',
+      categoryName: 'Category #1',
     });
     setErrors({});
   }
@@ -215,6 +229,7 @@ export default function MyBigCalendar() {
         start: slotInfo.start,
         end: slotInfo.end,
         color: formEvent.color || '#2563EB',
+        categoryName: formEvent.categoryName?.trim() || 'Category #1',
       };
       
       setEvents(prev => [...prev, newEventObj]);
@@ -308,29 +323,51 @@ export default function MyBigCalendar() {
 
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-700">
-                Color
+                Categorie
               </label>
               <div className="flex flex-col gap-2">
                 <div className="flex flex-wrap gap-2">
-                  {['#2563EB','#DC2626','#059669','#F59E0B','#9333EA','#4B5563'].map(c => (
-                    <button
-                      type="button"
-                      key={c}
-                      aria-label={`Select color ${c}`}
-                      onClick={() => setFormEvent({ ...formEvent, color: c })}
-                      disabled={isSubmitting}
-                      style={{
-                        backgroundColor: c,
-                        width: '28px',
-                        height: '28px',
-                        borderRadius: '6px',
-                        border: formEvent.color === c ? '3px solid #00000040' : '2px solid #ffffff',
-                        boxShadow: formEvent.color === c ? '0 0 0 2px rgba(0,0,0,0.25)' : '0 0 0 1px rgba(0,0,0,0.1)',
-                        cursor: 'pointer'
-                      }}
-                    />
+                  {Object.keys(categories).map(c => (
+                    <div key={c} className="relative">
+                      {editingColor === c ? (
+                        <input
+                          type="text"
+                          autoFocus
+                          className="simple-input text-xs px-2 py-1 w-32"
+                          value={categories[c]}
+                          onChange={(e) => setCategories({ ...categories, [c]: e.target.value })}
+                          onBlur={() => setEditingColor(null)}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === 'Escape') {
+                              setEditingColor(null);
+                            }
+                          }}
+                        />
+                      ) : (
+                        <button
+                          type="button"
+                          aria-label={`Select ${categories[c]}`}
+                          onClick={() => {
+                            setFormEvent({ ...formEvent, color: c, categoryName: categories[c] });
+                          }}
+                          onDoubleClick={() => setEditingColor(c)}
+                          disabled={isSubmitting}
+                          title={`${categories[c]} (double-click to rename)`}
+                          style={{
+                            backgroundColor: c,
+                            width: '28px',
+                            height: '28px',
+                            borderRadius: '6px',
+                            border: formEvent.color === c ? '3px solid #00000040' : '2px solid #ffffff',
+                            boxShadow: formEvent.color === c ? '0 0 0 2px rgba(0,0,0,0.25)' : '0 0 0 1px rgba(0,0,0,0.1)',
+                            cursor: 'pointer'
+                          }}
+                        />
+                      )}
+                    </div>
                   ))}
                 </div>
+                <span className="text-xs text-gray-600">Selected: {formEvent.categoryName}</span>
               </div>
             </div>
 
