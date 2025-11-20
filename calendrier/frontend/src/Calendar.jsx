@@ -1,34 +1,30 @@
-// src/Calendar.jsx
-import { supabase } from "./supabaseClient";
-import { createEvent } from "./services/api";
-import { fetchUserGroups, fetchGroupEvents } from "./services/groups";
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import format from "date-fns/format";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
+import addDays from "date-fns/addDays";
+import addWeeks from "date-fns/addWeeks";
+import addMonths from "date-fns/addMonths";
+import subDays from "date-fns/subDays";
+import subWeeks from "date-fns/subWeeks";
+import subMonths from "date-fns/subMonths";
 import enUS from "date-fns/locale/en-US";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
-const locales = { "en-US": enUS };
-const localizer = dateFnsLocalizer({
-  format,
-  parse,
-  startOfWeek,
-  getDay,
-  locales,
-});
 
-export default function MyBigCalendar({ groupId = null }) {
-  // helper date factories
+const locales = { "en-US": enUS };
+const localizer = dateFnsLocalizer({ format, parse, startOfWeek, getDay, locales });
+
+export default function MyBigCalendar() {
   const getCurrentDateTime = () => {
     const now = new Date();
     const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, "0");
-    const day = String(now.getDate()).padStart(2, "0");
-    const hours = String(now.getHours()).padStart(2, "0");
-    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
     return `${year}-${month}-${day}T${hours}:${minutes}`;
   };
 
@@ -36,461 +32,286 @@ export default function MyBigCalendar({ groupId = null }) {
     const now = new Date();
     now.setHours(now.getHours() + 1);
     const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, "0");
-    const day = String(now.getDate()).padStart(2, "0");
-    const hours = String(now.getHours()).padStart(2, "0");
-    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
     return `${year}-${month}-${day}T${hours}:${minutes}`;
   };
 
   const formatDateTimeLocal = (date) => {
     const d = new Date(date);
     const year = d.getFullYear();
-    const month = String(d.getMonth() + 1).padStart(2, "0");
-    const day = String(d.getDate()).padStart(2, "0");
-    const hours = String(d.getHours()).padStart(2, "0");
-    const minutes = String(d.getMinutes()).padStart(2, "0");
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    const hours = String(d.getHours()).padStart(2, '0');
+    const minutes = String(d.getMinutes()).padStart(2, '0');
     return `${year}-${month}-${day}T${hours}:${minutes}`;
   };
 
-  // state
   const [events, setEvents] = useState([]);
-  const [newEvent, setNewEvent] = useState({
-    title: "",
-    start: getCurrentDateTime(),
-    end: getOneHourFromNow(),
-    allDay: false,
+  const [categories, setCategories] = useState({
+    '#2563EB': 'Category #1',
+    '#DC2626': 'Category #2',
+    '#059669': 'Category #3',
+    '#F59E0B': 'Category #4',
+    '#9333EA': 'Category #5',
+    '#4B5563': 'Category #6',
   });
-  const [editingEvent, setEditingEvent] = useState(null);
+  const [editingColor, setEditingColor] = useState(null);
+  const [formEvent, setFormEvent] = useState({ 
+    title: "", 
+    start: getCurrentDateTime(), 
+    end: getOneHourFromNow(),  
+    color: '#2563EB', // default blue
+    categoryName: 'Category #1',
+  });
+  const [isEditing, setIsEditing] = useState(false);
+  const [editingEventId, setEditingEventId] = useState(null);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [currentView, setCurrentView] = useState("week");
-
-  // Save-all states
-  const [isSavingAll, setIsSavingAll] = useState(false);
-  const [saveAllMessage, setSaveAllMessage] = useState(null);
+  const [currentView, setCurrentView] = useState('week');
+  const [currentDate, setCurrentDate] = useState(new Date());
 
   // Basic id generator for demo purposes
   const nextId = useMemo(() => {
-    return () =>
-      Math.max(0, ...events.map((e) => (typeof e.id === "number" ? e.id : 0))) +
-      1;
+    return () => Math.max(0, ...events.map((e) => e.id || 0)) + 1;
   }, [events]);
 
-  // --- helper: fetch personal events from "events" table
-  async function fetchPersonalEventsFromDb() {
-    const { data, error } = await supabase
-      .from("events")
-      .select("*")
-      .order("start", { ascending: true });
-
-    if (error) {
-      console.error("fetchPersonalEventsFromDb error:", error);
-      throw error;
-    }
-    return data || [];
-  }
-
-  // load events: if groupId => only that group; else => personal + all group events for user's groups
-  useEffect(() => {
-    console.debug("MyBigCalendar loading groupId=", groupId);
-    let mounted = true;
-
-    async function loadEvents() {
-      try {
-        if (groupId) {
-          // show only the selected group's events
-          const evs = await fetchGroupEvents(groupId);
-          const mapped = (evs || []).map((ev) => ({
-            id: `g-${ev.id}`,
-            title: ev.title,
-            start: new Date(ev.start_at),
-            end: new Date(ev.end_at),
-            allDay: !!ev.all_day,
-            isGroupEvent: true,
-            groupId: ev.group_id,
-          }));
-          if (!mounted) return;
-          setEvents(mapped);
-        } else {
-          // personal events first
-          const personal = await fetchPersonalEventsFromDb();
-          const personalMapped = (personal || []).map((ev) => ({
-            id: ev.id,
-            title: ev.title,
-            start: new Date(ev.start),
-            end: new Date(ev.end),
-            allDay: !!ev.all_day,
-            isGroupEvent: false,
-            userId: ev.user_id,
-          }));
-
-          // then fetch groups and merge their events
-          const groupsData = await fetchUserGroups();
-          let groupEvents = [];
-          if (groupsData && groupsData.length > 0) {
-            const promises = groupsData.map((g) =>
-              fetchGroupEvents(g.group.id)
-            );
-            const results = await Promise.all(promises);
-            groupEvents = results.flat().map((ev) => ({
-              id: `g-${ev.id}`,
-              title: `${ev.title} (G)`,
-              start: new Date(ev.start_at),
-              end: new Date(ev.end_at),
-              allDay: !!ev.all_day,
-              isGroupEvent: true,
-              groupId: ev.group_id,
-            }));
-          }
-
-          if (!mounted) return;
-          // merge: personal first, then group events
-          setEvents([...personalMapped, ...groupEvents]);
-        }
-      } catch (err) {
-        console.error("Failed loading events:", err);
-      }
-    }
-
-    loadEvents();
-    return () => {
-      mounted = false;
-    };
-  }, [groupId]);
-
-  // validation helper
   function validateEvent(event) {
     const newErrors = {};
-
-    if (!event.title || !event.title.trim()) {
+    
+    if (!event.title.trim()) {
       newErrors.title = "Event title is required";
     }
-
+    
     if (!event.start) {
       newErrors.start = "Start time is required";
     }
-
+    
     if (!event.end) {
       newErrors.end = "End time is required";
     }
-
+    
     if (event.start && event.end) {
       const startDate = new Date(event.start);
       const endDate = new Date(event.end);
-
+      
       if (isNaN(startDate.getTime())) {
         newErrors.start = "Invalid start date";
       }
-
+      
       if (isNaN(endDate.getTime())) {
         newErrors.end = "Invalid end date";
       }
-
+      
       if (startDate >= endDate) {
         newErrors.end = "End time must be after start time";
       }
     }
-
+    
     return newErrors;
   }
 
-  function eventPropGetter(event) {
-    if (event.isGroupEvent) {
-      return { style: { borderLeft: "4px solid #4f46e5" } }; // accent à gauche
-    }
-    return {};
-  }
-
-  async function handleAddEvent(e) {
+  async function handleFormSubmit(e) {
     e.preventDefault();
-
+    
     if (isSubmitting) return; // Prevent double submission
-
+    
     setIsSubmitting(true);
     setErrors({});
 
     try {
-      const validationErrors = validateEvent(newEvent);
-
+      const validationErrors = validateEvent(formEvent);
+      
       if (Object.keys(validationErrors).length > 0) {
         setErrors(validationErrors);
         return;
       }
 
-      const startDate = new Date(newEvent.start);
-      const endDate = new Date(newEvent.end);
+      const startDate = new Date(formEvent.start);
+      const endDate = new Date(formEvent.end);
 
-      const newEventObj = {
-        id: nextId(),
-        title: newEvent.title.trim(),
-        start: startDate,
-        end: endDate,
-        allDay: newEvent.allDay,
-      };
+      if (isEditing) {
+        // Update existing event
+        const updatedEvent = {
+          id: editingEventId,
+          title: formEvent.title.trim(),
+          start: startDate,
+          end: endDate,
+          color: formEvent.color || '#2563EB',
+          categoryName: formEvent.categoryName?.trim() || 'Category #1',
+        };
 
-      setEvents((prev) => [...prev, newEventObj]);
-      setNewEvent({
-        title: "",
-        start: getCurrentDateTime(),
-        end: getOneHourFromNow(),
-        allDay: false,
-      });
-    } catch (error) {
-      console.error("Error adding event:", error);
-      setErrors({ general: "Failed to add event. Please try again." });
-    } finally {
-      setIsSubmitting(false);
-    }
-  }
+        setEvents(prev => prev.map(event => 
+          event.id === editingEventId ? updatedEvent : event
+        ));
+        
+        // Reset to create mode
+        handleCancelEdit();
+      } else {
+        // Create new event
+        const newEventObj = {
+          id: nextId(),
+          title: formEvent.title.trim(),
+          start: startDate,
+          end: endDate,
+          color: formEvent.color || '#2563EB',
+          categoryName: formEvent.categoryName?.trim() || 'Category #1',
+        };
 
-  async function handleUpdateEvent(e) {
-    e.preventDefault();
-
-    if (isSubmitting || !editingEvent) return;
-
-    setIsSubmitting(true);
-    setErrors({});
-
-    try {
-      const validationErrors = validateEvent(editingEvent);
-
-      if (Object.keys(validationErrors).length > 0) {
-        setErrors(validationErrors);
-        return;
+        setEvents(prev => [...prev, newEventObj]);
+        setFormEvent({ 
+          title: "", 
+          start: getCurrentDateTime(), 
+          end: getOneHourFromNow(), 
+          color: '#2563EB',
+          categoryName: 'Category #1',
+        });
       }
-
-      const startDate = new Date(editingEvent.start);
-      const endDate = new Date(editingEvent.end);
-
-      const updatedEvent = {
-        ...editingEvent,
-        title: editingEvent.title.trim(),
-        start: startDate,
-        end: endDate,
-      };
-
-      setEvents((prev) =>
-        prev.map((event) =>
-          event.id === editingEvent.id ? updatedEvent : event
-        )
-      );
-
-      setEditingEvent(null);
+      
     } catch (error) {
-      console.error("Error updating event:", error);
-      setErrors({ general: "Failed to update event. Please try again." });
+      console.error("Error saving event:", error);
+      setErrors({ general: "Failed to save event. Please try again." });
     } finally {
       setIsSubmitting(false);
     }
   }
+
+
 
   function handleSelectEvent(event) {
-    setEditingEvent({
-      ...event,
+    // Populate the main form with the event data for editing
+    setFormEvent({
+      title: event.title,
       start: formatDateTimeLocal(event.start),
       end: formatDateTimeLocal(event.end),
+      color: event.color || '#2563EB',
+      categoryName: event.categoryName || 'Category #1'
     });
+    setIsEditing(true);
+    setEditingEventId(event.id);
+    setErrors({});
   }
 
-  async function handleDeleteEvent(eventId) {
-    if (!window.confirm("Are you sure you want to delete this event?")) return;
-
-    // Remove locally first
-    setEvents((prev) => prev.filter((event) => event.id !== eventId));
-    if (editingEvent && editingEvent.id === eventId) {
-      setEditingEvent(null);
+  function handleDeleteEvent() {
+    if (window.confirm("Are you sure you want to delete this event?")) {
+      setEvents(prev => prev.filter(event => event.id !== editingEventId));
+      handleCancelEdit();
     }
-    // NOTE: immediate delete in DB not implemented here (save-all pattern).
   }
 
   function handleCancelEdit() {
-    setEditingEvent(null);
+    setIsEditing(false);
+    setEditingEventId(null);
+    setFormEvent({ 
+      title: "", 
+      start: getCurrentDateTime(), 
+      end: getOneHourFromNow(), 
+      color: '#2563EB',
+      categoryName: 'Category #1',
+    });
     setErrors({});
   }
 
   function handleSelectSlot(slotInfo) {
     try {
-      const title = prompt("New event title for selected range:");
+      // Format the selected time range for display
+      const startTime = slotInfo.start.toLocaleString();
+      const endTime = slotInfo.end.toLocaleString();
+      
+      const title = prompt(`Enter event title for:\n${startTime} - ${endTime}`);
       if (!title || !title.trim()) return;
-
-      const isAllDay = slotInfo.slots && slotInfo.slots.length === 1;
-
+      
       const newEventObj = {
         id: nextId(),
         title: title.trim(),
         start: slotInfo.start,
         end: slotInfo.end,
-        allDay: isAllDay,
+        color: formEvent.color || '#2563EB',
+        categoryName: formEvent.categoryName?.trim() || 'Category #1',
       };
-
-      setEvents((prev) => [...prev, newEventObj]);
+      
+      setEvents(prev => [...prev, newEventObj]);
+      
+      // Show success message
+      console.log(`Event "${title.trim()}" created successfully!`);
+      
     } catch (error) {
       console.error("Error creating event from slot:", error);
+      console.error("SlotInfo:", slotInfo);
+      console.error("Events array:", events);
+      alert("Failed to create event. Please try again.");
     }
   }
 
-  // Save all events to server (calls createEvent for each event)
-  async function handleSaveAllToServer() {
-    if (isSavingAll) return;
-    if (!events || events.length === 0) {
-      setSaveAllMessage("No events to save.");
-      return;
-    }
+  // Navigation functions
+  function handleToday() {
+    setCurrentDate(new Date());
+  }
 
-    if (!window.confirm(`Save ${events.length} event(s) to the server?`))
-      return;
-
-    setIsSavingAll(true);
-    setSaveAllMessage(null);
-
-    try {
-      // fetch current authenticated user once
-      const {
-        data: { user },
-        error: userErr,
-      } = await supabase.auth.getUser();
-
-      if (userErr) {
-        console.error("Error fetching user:", userErr);
-        setSaveAllMessage("Failed to get authenticated user. Please sign in.");
-        setIsSavingAll(false);
-        return;
+  function handleNavigateBack() {
+    setCurrentDate(prevDate => {
+      switch (currentView) {
+        case 'day':
+          return subDays(prevDate, 1);
+        case 'week':
+          return subWeeks(prevDate, 1);
+        case 'month':
+          return subMonths(prevDate, 1);
+        case 'agenda':
+          return subWeeks(prevDate, 1);
+        default:
+          return subWeeks(prevDate, 1);
       }
+    });
+  }
 
-      if (!user || !user.id) {
-        setSaveAllMessage("You must be signed in to save events.");
-        setIsSavingAll(false);
-        return;
+  function handleNavigateNext() {
+    setCurrentDate(prevDate => {
+      switch (currentView) {
+        case 'day':
+          return addDays(prevDate, 1);
+        case 'week':
+          return addWeeks(prevDate, 1);
+        case 'month':
+          return addMonths(prevDate, 1);
+        case 'agenda':
+          return addWeeks(prevDate, 1);
+        default:
+          return addWeeks(prevDate, 1);
       }
-
-      const userId = user.id;
-
-      // Build promises; skip events from groups (id starts with 'g-')
-      const savePromises = events.map((ev) => {
-        if (String(ev.id).startsWith("g-")) return Promise.resolve(null);
-
-        return createEvent({
-          title: ev.title,
-          start:
-            ev.start instanceof Date
-              ? ev.start.toISOString()
-              : String(ev.start),
-          end: ev.end instanceof Date ? ev.end.toISOString() : String(ev.end),
-          allDay: !!ev.allDay,
-          userId,
-          category: ev.category ?? null,
-          color: ev.color ?? null,
-          groupId: groupId ?? undefined,
-        });
-      });
-
-      await Promise.all(savePromises);
-
-      // --- refresh local events after save ---
-      if (groupId) {
-        const evs = await fetchGroupEvents(groupId);
-        const mapped = (evs || []).map((ev) => ({
-          id: `g-${ev.id}`,
-          title: ev.title,
-          start: new Date(ev.start_at),
-          end: new Date(ev.end_at),
-          allDay: !!ev.all_day,
-          isGroupEvent: true,
-          groupId: ev.group_id,
-        }));
-        setEvents((prev) => {
-          // keep non-group events (personal) and append fresh group events
-          const nonGroup = prev.filter((e) => !String(e.id).startsWith("g-"));
-          return [...nonGroup, ...mapped];
-        });
-      } else {
-        // reload personal events and keep any group events currently present
-        const personal = await fetchPersonalEventsFromDb();
-        const personalMapped = (personal || []).map((ev) => ({
-          id: ev.id,
-          title: ev.title,
-          start: new Date(ev.start),
-          end: new Date(ev.end),
-          allDay: !!ev.all_day,
-          isGroupEvent: false,
-          userId: ev.user_id,
-        }));
-        setEvents((prev) => {
-          const groupOnly = prev.filter((e) => String(e.id).startsWith("g-"));
-          return [...personalMapped, ...groupOnly];
-        });
-      }
-
-      setSaveAllMessage("All events were successfully saved to the server.");
-    } catch (err) {
-      console.error("Failed to save events:", err);
-      console.error("supabase error details:", {
-        message: err?.message,
-        code: err?.code,
-        hint: err?.hint,
-        details: err?.details,
-        status: err?.status,
-      });
-      setSaveAllMessage("Failed to save events. See console for details.");
-    } finally {
-      setIsSavingAll(false);
-    }
+    });
   }
 
   return (
-    <div className="min-h-screen bg-black text-white p-6">
+    <div className="min-h-screen p-6 bg-gray-50 text-gray-900">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-4">
-          <h1 className="text-4xl font-bold text-white mb-2">Calendar</h1>
-          <p className="text-gray-400">Manage your events and schedule</p>
-        </div>
 
-        {/* Controls: Save all button + status */}
-        <div className="mb-6 flex items-center justify-between gap-4">
-          <div className="flex gap-2">
-            <button
-              onClick={handleSaveAllToServer}
-              className="simple-button"
-              disabled={isSavingAll}
-            >
-              {isSavingAll ? "Saving..." : "Save all to server"}
-            </button>
-          </div>
-
-          {saveAllMessage && (
-            <div className="text-sm text-gray-300">{saveAllMessage}</div>
-          )}
-        </div>
-
-        {/* Add event form */}
         <div className="simple-card mb-8">
-          <h2 className="text-xl font-semibold text-white mb-4">
-            Create New Event
+          <h2 className="text-xl font-semibold mb-4 text-gray-900">
+            {isEditing ? 'Edit Event' : 'Create New Event'}
           </h2>
-
+          
           {errors.general && (
-            <div className="mb-4 p-3 bg-red-900/20 border border-red-500 rounded text-red-300 text-sm">
+            <div className="mb-4 p-3 border border-red-500 rounded text-sm bg-red-50 text-red-700">
               {errors.general}
             </div>
           )}
-
-          <form
-            onSubmit={handleAddEvent}
-            className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end"
-          >
+          
+          <form onSubmit={handleFormSubmit} className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium mb-2 text-gray-700">
                 Title *
               </label>
               <input
-                className={`simple-input ${
-                  errors.title ? "border-red-500" : ""
-                }`}
-                value={newEvent.title}
+                className={`simple-input ${errors.title ? 'border-red-500' : ''}`}
+                value={formEvent.title}
                 onChange={(e) => {
-                  setNewEvent({ ...newEvent, title: e.target.value });
-                  if (errors.title) setErrors((p) => ({ ...p, title: null }));
+                  setFormEvent({ ...formEvent, title: e.target.value });
+                  if (errors.title) {
+                    setErrors(prev => ({ ...prev, title: null }));
+                  }
                 }}
                 placeholder="Enter event title"
                 disabled={isSubmitting}
@@ -501,18 +322,68 @@ export default function MyBigCalendar({ groupId = null }) {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium mb-2 text-gray-700">
+                Categorie
+              </label>
+              <div className="flex flex-col gap-2">
+                <div className="flex flex-wrap gap-2">
+                  {Object.keys(categories).map(c => (
+                    <div key={c} className="relative">
+                      {editingColor === c ? (
+                        <input
+                          type="text"
+                          autoFocus
+                          className="simple-input text-xs px-2 py-1 w-32"
+                          value={categories[c]}
+                          onChange={(e) => setCategories({ ...categories, [c]: e.target.value })}
+                          onBlur={() => setEditingColor(null)}
+                          onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === 'Escape') {
+                              setEditingColor(null);
+                            }
+                          }}
+                        />
+                      ) : (
+                        <button
+                          type="button"
+                          aria-label={`Select ${categories[c]}`}
+                          onClick={() => {
+                            setFormEvent({ ...formEvent, color: c, categoryName: categories[c] });
+                          }}
+                          onDoubleClick={() => setEditingColor(c)}
+                          disabled={isSubmitting}
+                          title={`${categories[c]} (double-click to rename)`}
+                          style={{
+                            backgroundColor: c,
+                            width: '28px',
+                            height: '28px',
+                            borderRadius: '6px',
+                            border: formEvent.color === c ? '3px solid #00000040' : '2px solid #ffffff',
+                            boxShadow: formEvent.color === c ? '0 0 0 2px rgba(0,0,0,0.25)' : '0 0 0 1px rgba(0,0,0,0.1)',
+                            cursor: 'pointer'
+                          }}
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
+                <span className="text-xs text-gray-600">Selected: {formEvent.categoryName}</span>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2 text-gray-700">
                 Start Time *
               </label>
               <input
                 type="datetime-local"
-                className={`simple-input ${
-                  errors.start ? "border-red-500" : ""
-                }`}
-                value={newEvent.start}
+                className={`simple-input ${errors.start ? 'border-red-500' : ''}`}
+                value={formEvent.start}
                 onChange={(e) => {
-                  setNewEvent({ ...newEvent, start: e.target.value });
-                  if (errors.start) setErrors((p) => ({ ...p, start: null }));
+                  setFormEvent({ ...formEvent, start: e.target.value });
+                  if (errors.start) {
+                    setErrors(prev => ({ ...prev, start: null }));
+                  }
                 }}
                 disabled={isSubmitting}
               />
@@ -522,16 +393,18 @@ export default function MyBigCalendar({ groupId = null }) {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-2">
+              <label className="block text-sm font-medium mb-2 text-gray-700">
                 End Time *
               </label>
               <input
                 type="datetime-local"
-                className={`simple-input ${errors.end ? "border-red-500" : ""}`}
-                value={newEvent.end}
+                className={`simple-input ${errors.end ? 'border-red-500' : ''}`}
+                value={formEvent.end}
                 onChange={(e) => {
-                  setNewEvent({ ...newEvent, end: e.target.value });
-                  if (errors.end) setErrors((p) => ({ ...p, end: null }));
+                  setFormEvent({ ...formEvent, end: e.target.value });
+                  if (errors.end) {
+                    setErrors(prev => ({ ...prev, end: null }));
+                  }
                 }}
                 disabled={isSubmitting}
               />
@@ -541,35 +414,51 @@ export default function MyBigCalendar({ groupId = null }) {
             </div>
 
             <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  id="allDay"
-                  checked={newEvent.allDay}
-                  onChange={(e) =>
-                    setNewEvent({ ...newEvent, allDay: e.target.checked })
-                  }
-                  className="simple-checkbox"
+              {isEditing ? (
+                <div className="flex gap-2">
+                  <button 
+                    type="submit" 
+                    className="simple-button flex-1"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Updating...' : 'Update Event'}
+                  </button>
+                  
+                  <button
+                    type="button"
+                    onClick={handleDeleteEvent}
+                    className="simple-button bg-red-600 hover:bg-red-700 flex-1"
+                    disabled={isSubmitting}
+                  >
+                    Delete Event
+                  </button>
+                  
+                  <button
+                    type="button"
+                    onClick={handleCancelEdit}
+                    className="simple-button bg-gray-600 hover:bg-gray-700 flex-1"
+                    disabled={isSubmitting}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              ) : (
+                <button 
+                  type="submit" 
+                  className="simple-button"
                   disabled={isSubmitting}
-                />
-                <label htmlFor="allDay" className="text-sm text-gray-300">
-                  All day event
-                </label>
-              </div>
-              <button
-                type="submit"
-                className="simple-button"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? "Creating..." : "Create Event"}
-              </button>
+                >
+                  {isSubmitting ? 'Creating...' : 'Create Event'}
+                </button>
+              )}
             </div>
           </form>
         </div>
 
         {/* Calendar */}
         <div className="simple-card">
-          <h3 className="text-xl font-semibold text-white mb-4">Calendar</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-900">Calendar</h3>
+          {/* Custom event component to show a small colored box + title */}
           <Calendar
             localizer={localizer}
             events={events}
@@ -581,127 +470,60 @@ export default function MyBigCalendar({ groupId = null }) {
             onSelectSlot={handleSelectSlot}
             view={currentView}
             onView={setCurrentView}
-            views={["month", "week", "day", "agenda"]}
+            views={['month', 'week', 'day', 'agenda']}
             popup
-            eventPropGetter={eventPropGetter}
+            eventPropGetter={(event) => {
+              const hex = (event.color || '#2563EB').replace('#','');
+              // Compute brightness for contrast (simple RGB average weighted)
+              const r = parseInt(hex.substring(0,2),16);
+              const g = parseInt(hex.substring(2,4),16);
+              const b = parseInt(hex.substring(4,6),16);
+              const brightness = (r * 299 + g * 587 + b * 114) / 1000; // 0-255
+              const textColor = brightness < 130 ? '#FFFFFF' : '#000000';
+              return {
+                style: {
+                  backgroundColor: '#' + hex,
+                  color: textColor,
+                  borderRadius: '6px',
+                  border: 'none',
+                  padding: '2px 6px',
+                  fontSize: '0.75rem',
+                  lineHeight: '1rem',
+                  fontWeight: 500,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  overflow: 'hidden',
+                  whiteSpace: 'normal'
+                }
+              };
+            }}
+            components={{
+              week: {
+                header: ({ date }) => (
+                  <div className="rbc-header-custom">
+                    <span className="rbc-header-day-number">{date.getDate()}</span>
+                    <span className="rbc-header-day-name">{format(date, 'EEE')}</span>
+                  </div>
+                )
+              },
+              day: {
+                header: ({ date }) => (
+                  <div className="rbc-header-custom">
+                    <span className="rbc-header-day-number">{date.getDate()}</span>
+                    <span className="rbc-header-day-name">{format(date, 'EEE')}</span>
+                  </div>
+                )
+              }
+            }}
+            date={currentDate}
+            onNavigate={setCurrentDate}
+            scrollToTime={new Date(1970, 1, 1, 8)}
           />
         </div>
 
-        {/* Edit panel */}
-        {editingEvent && (
-          <div className="simple-card">
-            <h3 className="text-xl font-semibold mb-4 text-white">
-              Edit Event
-            </h3>
 
-            <form onSubmit={handleUpdateEvent}>
-              <div className="space-y-4">
-                <div>
-                  <label
-                    htmlFor="edit-title"
-                    className="block text-sm font-medium text-gray-300 mb-1"
-                  >
-                    Event Title
-                  </label>
-                  <input
-                    type="text"
-                    id="edit-title"
-                    className="simple-input"
-                    placeholder="Enter event title..."
-                    value={editingEvent.title}
-                    onChange={(e) =>
-                      setEditingEvent((prev) => ({
-                        ...prev,
-                        title: e.target.value,
-                      }))
-                    }
-                  />
-                  {errors.title && (
-                    <p className="text-red-400 text-sm mt-1">{errors.title}</p>
-                  )}
-                </div>
 
-                <div>
-                  <label
-                    htmlFor="edit-start"
-                    className="block text-sm font-medium text-gray-300 mb-1"
-                  >
-                    Start Date & Time
-                  </label>
-                  <input
-                    type="datetime-local"
-                    id="edit-start"
-                    className="simple-input"
-                    value={editingEvent.start}
-                    onChange={(e) =>
-                      setEditingEvent((prev) => ({
-                        ...prev,
-                        start: e.target.value,
-                      }))
-                    }
-                  />
-                  {errors.start && (
-                    <p className="text-red-400 text-sm mt-1">{errors.start}</p>
-                  )}
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="edit-end"
-                    className="block text-sm font-medium text-gray-300 mb-1"
-                  >
-                    End Date & Time
-                  </label>
-                  <input
-                    type="datetime-local"
-                    id="edit-end"
-                    className="simple-input"
-                    value={editingEvent.end}
-                    onChange={(e) =>
-                      setEditingEvent((prev) => ({
-                        ...prev,
-                        end: e.target.value,
-                      }))
-                    }
-                  />
-                  {errors.end && (
-                    <p className="text-red-400 text-sm mt-1">{errors.end}</p>
-                  )}
-                </div>
-
-                {errors.general && (
-                  <div className="text-red-400 text-sm">{errors.general}</div>
-                )}
-
-                <div className="flex gap-2">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="simple-button flex-1"
-                  >
-                    {isSubmitting ? "Updating..." : "Update Event"}
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => handleDeleteEvent(editingEvent.id)}
-                    className="simple-button bg-red-600 hover:bg-red-700 flex-1"
-                  >
-                    Delete Event
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={handleCancelEdit}
-                    className="simple-button bg-gray-600 hover:bg-gray-700 flex-1"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        )}
       </div>
     </div>
   );
