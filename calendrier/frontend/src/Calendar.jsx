@@ -54,6 +54,7 @@ export default function MyBigCalendar() {
     title: "", 
     start: getCurrentDateTime(), 
     end: getOneHourFromNow(),  
+    color: '#2563EB', // default blue
   });
   const [isEditing, setIsEditing] = useState(false);
   const [editingEventId, setEditingEventId] = useState(null);
@@ -128,6 +129,7 @@ export default function MyBigCalendar() {
           title: formEvent.title.trim(),
           start: startDate,
           end: endDate,
+          color: formEvent.color || '#2563EB',
         };
 
         setEvents(prev => prev.map(event => 
@@ -143,6 +145,7 @@ export default function MyBigCalendar() {
           title: formEvent.title.trim(),
           start: startDate,
           end: endDate,
+          color: formEvent.color || '#2563EB',
         };
 
         setEvents(prev => [...prev, newEventObj]);
@@ -150,6 +153,7 @@ export default function MyBigCalendar() {
           title: "", 
           start: getCurrentDateTime(), 
           end: getOneHourFromNow(), 
+          color: '#2563EB',
         });
       }
       
@@ -169,6 +173,8 @@ export default function MyBigCalendar() {
       title: event.title,
       start: formatDateTimeLocal(event.start),
       end: formatDateTimeLocal(event.end)
+      ,
+      color: event.color || '#2563EB'
     });
     setIsEditing(true);
     setEditingEventId(event.id);
@@ -189,6 +195,7 @@ export default function MyBigCalendar() {
       title: "", 
       start: getCurrentDateTime(), 
       end: getOneHourFromNow(), 
+      color: '#2563EB',
     });
     setErrors({});
   }
@@ -207,6 +214,7 @@ export default function MyBigCalendar() {
         title: title.trim(),
         start: slotInfo.start,
         end: slotInfo.end,
+        color: formEvent.color || '#2563EB',
       };
       
       setEvents(prev => [...prev, newEventObj]);
@@ -300,6 +308,34 @@ export default function MyBigCalendar() {
 
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-700">
+                Color
+              </label>
+              <div className="flex flex-col gap-2">
+                <div className="flex flex-wrap gap-2">
+                  {['#2563EB','#DC2626','#059669','#F59E0B','#9333EA','#4B5563'].map(c => (
+                    <button
+                      type="button"
+                      key={c}
+                      aria-label={`Select color ${c}`}
+                      onClick={() => setFormEvent({ ...formEvent, color: c })}
+                      disabled={isSubmitting}
+                      style={{
+                        backgroundColor: c,
+                        width: '28px',
+                        height: '28px',
+                        borderRadius: '6px',
+                        border: formEvent.color === c ? '3px solid #00000040' : '2px solid #ffffff',
+                        boxShadow: formEvent.color === c ? '0 0 0 2px rgba(0,0,0,0.25)' : '0 0 0 1px rgba(0,0,0,0.1)',
+                        cursor: 'pointer'
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium mb-2 text-gray-700">
                 Start Time *
               </label>
               <input
@@ -385,6 +421,7 @@ export default function MyBigCalendar() {
         {/* Calendar */}
         <div className="simple-card">
           <h3 className="text-xl font-semibold mb-4 text-gray-900">Calendar</h3>
+          {/* Custom event component to show a small colored box + title */}
           <Calendar
             localizer={localizer}
             events={events}
@@ -398,6 +435,50 @@ export default function MyBigCalendar() {
             onView={setCurrentView}
             views={['month', 'week', 'day', 'agenda']}
             popup
+            eventPropGetter={(event) => {
+              const hex = (event.color || '#2563EB').replace('#','');
+              // Compute brightness for contrast (simple RGB average weighted)
+              const r = parseInt(hex.substring(0,2),16);
+              const g = parseInt(hex.substring(2,4),16);
+              const b = parseInt(hex.substring(4,6),16);
+              const brightness = (r * 299 + g * 587 + b * 114) / 1000; // 0-255
+              const textColor = brightness < 130 ? '#FFFFFF' : '#000000';
+              return {
+                style: {
+                  backgroundColor: '#' + hex,
+                  color: textColor,
+                  borderRadius: '6px',
+                  border: 'none',
+                  padding: '2px 6px',
+                  fontSize: '0.75rem',
+                  lineHeight: '1rem',
+                  fontWeight: 500,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  overflow: 'hidden',
+                  whiteSpace: 'normal'
+                }
+              };
+            }}
+            components={{
+              week: {
+                header: ({ date }) => (
+                  <div className="rbc-header-custom">
+                    <span className="rbc-header-day-number">{date.getDate()}</span>
+                    <span className="rbc-header-day-name">{format(date, 'EEE')}</span>
+                  </div>
+                )
+              },
+              day: {
+                header: ({ date }) => (
+                  <div className="rbc-header-custom">
+                    <span className="rbc-header-day-number">{date.getDate()}</span>
+                    <span className="rbc-header-day-name">{format(date, 'EEE')}</span>
+                  </div>
+                )
+              }
+            }}
             date={currentDate}
             onNavigate={setCurrentDate}
             scrollToTime={new Date(1970, 1, 1, 8)}

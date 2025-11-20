@@ -142,10 +142,12 @@ body.dark .rbc-today {
 }
 
 body.dark .rbc-event {
-  background-color: #606060 !important;
+  /* allow inline dynamic background via eventPropGetter (no forced !important bg) */
   border: none !important;
-  border-radius: 3px !important;
+  border-radius: 4px !important;
   color: white !important;
+  white-space: normal !important;
+  overflow: visible !important;
 }
 
 body.dark .rbc-btn-group > button {
@@ -221,10 +223,53 @@ body.light .rbc-today {
 }
 
 body.light .rbc-event {
-  background-color: #3b82f6 !important;
+  /* allow inline dynamic background via eventPropGetter (no forced !important bg) */
   border: none !important;
-  border-radius: 3px !important;
+  border-radius: 4px !important;
   color: white !important;
+  white-space: normal !important;
+  overflow: visible !important;
+}
+
+/* Wrap and show full event text */
+.rbc-event-content, .rbc-event-label {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+/* Let react-big-calendar control event vertical sizing to represent duration */
+.rbc-event {
+  display: block; /* default block; height comes from inline style (top/height) */
+  /* Remove forced auto height so multi-hour events span their full timeslot */
+}
+
+/* Custom header styling for combined date + weekday */
+.rbc-header-custom {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+}
+.rbc-header-day-number {
+  font-weight: 600;
+}
+.rbc-header-day-name {
+  opacity: 0.8;
+}
+
+/* Hide all-day events row (the box under headers) */
+.rbc-allday-cell, .rbc-row.rbc-allday-row, .rbc-allday-events {
+  display: none !important;
+  height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+.rbc-time-header .rbc-row.rbc-allday-row + .rbc-row {
+  border-top: 1px solid transparent !important;
 }
 
 body.light .rbc-btn-group > button {
