@@ -1,11 +1,12 @@
-// src/components/Groups.jsx
+// src/features/groups/Groups.jsx
 import React, { useEffect, useState } from "react";
 import {
   createGroup,
   fetchUserGroups,
   joinGroupByCode,
-} from "../services/groups";
-import { useAuth } from "./AuthContext";
+} from "../../services/groups";
+import { useAuth } from "../../context/AuthContext";
+import PropTypes from "prop-types";
 
 export default function Groups({ onShowGroupCalendar }) {
   const { user } = useAuth();
@@ -185,3 +186,8 @@ export default function Groups({ onShowGroupCalendar }) {
     </div>
   );
 }
+
+Groups.propTypes = {
+  onShowGroupCalendar: PropTypes.func,
+};
+

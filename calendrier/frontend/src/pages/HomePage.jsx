@@ -1,6 +1,10 @@
-import React from 'react';
+// src/pages/HomePage.jsx
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Home({ setCurrentPage }) {
+export default function HomePage() {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       
@@ -133,7 +137,7 @@ export default function Home({ setCurrentPage }) {
             Navigate to your Personal Calendar to start managing your events and schedule.
           </p>
           <button 
-            onClick={() => setCurrentPage && setCurrentPage('calendar')}
+            onClick={() => navigate('/calendar')}
             className="simple-button max-w-xs mx-auto"
           >
             Go to Personal Calendar
@@ -144,3 +148,4 @@ export default function Home({ setCurrentPage }) {
     </div>
   );
 }
+
