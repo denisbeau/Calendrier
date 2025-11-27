@@ -6,9 +6,9 @@
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
 <h3 style="margin-bottom: 0">export default defineConfig()</h3>
-<p style="margin-top: 4px">in <i>frontend/eslint.config.js [7:30]</i></p>
+<p style="margin-top: 4px">in <i>frontend/eslint.config.js [14:33]</i></p>
 <ul>
-    <li><b>22</b> lines of code</li>
+    <li><b>18</b> lines of code</li>
     <li><b>1</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
@@ -27,11 +27,7 @@ export default defineConfig([
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
-      parserOptions: {
-        ecmaVersion: &quot;latest&quot;,
-        ecmaFeatures: { jsx: true },
-        sourceType: &quot;module&quot;,
-      },
+      parserOptions: moduleParserOptions,
     },
     rules: {
       &quot;no-unused-vars&quot;: [&quot;error&quot;, { varsIgnorePattern: &quot;^[A-Z_]&quot; }],

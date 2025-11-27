@@ -12,7 +12,7 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">frontend/src/features/calendar/hooks/useCalendarEvents.js (<b>142</b> lines of code) (<a href="useCalendarEvents.js">raw</a>):</h3>
+<h3 style="margin-bottom: 0">frontend/src/features/calendar/hooks/useCalendarEvents.js (<b>136</b> lines of code) (<a href="useCalendarEvents.js">raw</a>):</h3>
 <div id="editor">// src/features/calendar/hooks/useCalendarEvents.js
 import { useState, useMemo } from &quot;react&quot;;
 import { getCurrentDateTime, getOneHourFromNow, formatDateTimeLocal } from &quot;../../../utils/dateUtils&quot;;
@@ -80,17 +80,19 @@ export function useCalendarEvents() {
       const startDate = new Date(formEvent.start);
       const endDate = new Date(formEvent.end);
 
+      // Helper to create event object
+      const createEventObject = (id) =&gt; ({
+        id,
+        title: formEvent.title.trim(),
+        start: startDate,
+        end: endDate,
+        color: formEvent.color || DEFAULT_EVENT_COLOR,
+        categoryName: formEvent.categoryName?.trim() || DEFAULT_CATEGORY_NAME,
+      });
+
       if (isEditing) {
         // Update existing event
-        const updatedEvent = {
-          id: editingEventId,
-          title: formEvent.title.trim(),
-          start: startDate,
-          end: endDate,
-          color: formEvent.color || DEFAULT_EVENT_COLOR,
-          categoryName: formEvent.categoryName?.trim() || DEFAULT_CATEGORY_NAME,
-        };
-
+        const updatedEvent = createEventObject(editingEventId);
         setEvents(prev =&gt; prev.map(event =&gt; 
           event.id === editingEventId ? updatedEvent : event
         ));
@@ -98,14 +100,7 @@ export function useCalendarEvents() {
         onSuccess?.();
       } else {
         // Create new event
-        const newEventObj = {
-          id: nextId(),
-          title: formEvent.title.trim(),
-          start: startDate,
-          end: endDate,
-          color: formEvent.color || DEFAULT_EVENT_COLOR,
-          categoryName: formEvent.categoryName?.trim() || DEFAULT_CATEGORY_NAME,
-        };
+        const newEventObj = createEventObject(nextId());
 
         setEvents(prev =&gt; [...prev, newEventObj]);
         onSuccess?.();

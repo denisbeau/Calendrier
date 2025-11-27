@@ -17,15 +17,6 @@ McCabe index: 14
 number of parameters: 1
 
 id: 3
-unit: async function handleFormSubmit()
-file: frontend/src/features/calendar/hooks/useCalendarEvents.js
-start line: 51
-end line: 105
-size: 44 LOC
-McCabe index: 10
-number of parameters: 4
-
-id: 4
 unit: export async function createGroup()
 file: frontend/src/services/groups.js
 start line: 18
@@ -33,6 +24,15 @@ end line: 69
 size: 40 LOC
 McCabe index: 6
 number of parameters: 2
+
+id: 4
+unit: async function handleFormSubmit()
+file: frontend/src/features/calendar/hooks/useCalendarEvents.js
+start line: 51
+end line: 100
+size: 38 LOC
+McCabe index: 8
+number of parameters: 4
 
 id: 5
 unit: function validateEvent()
@@ -46,8 +46,8 @@ number of parameters: 1
 id: 6
 unit: function handleSelectSlot()
 file: frontend/src/features/calendar/hooks/useCalendarEvents.js
-start line: 127
-end line: 156
+start line: 122
+end line: 151
 size: 23 LOC
 McCabe index: 6
 number of parameters: 3
@@ -55,13 +55,22 @@ number of parameters: 3
 id: 7
 unit: export default defineConfig()
 file: frontend/eslint.config.js
-start line: 7
-end line: 30
-size: 22 LOC
+start line: 14
+end line: 33
+size: 18 LOC
 McCabe index: 1
 number of parameters: 1
 
 id: 8
+unit: async function sendInviteEmail()
+file: frontend/src/server/index.js
+start line: 47
+end line: 66
+size: 18 LOC
+McCabe index: 5
+number of parameters: 5
+
+id: 9
 unit: export async function fetchUserGroups()
 file: frontend/src/services/groups.js
 start line: 74
@@ -70,7 +79,7 @@ size: 16 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 9
+id: 10
 unit: function createTransporter()
 file: frontend/src/server/index.js
 start line: 15
@@ -79,25 +88,25 @@ size: 15 LOC
 McCabe index: 5
 number of parameters: 0
 
-id: 10
+id: 11
 unit: function handleSelectEvent()
 file: frontend/src/features/calendar/hooks/useCalendarEvents.js
-start line: 107
-end line: 118
+start line: 102
+end line: 113
 size: 11 LOC
 McCabe index: 3
 number of parameters: 2
 
-id: 11
+id: 12
 unit: start: formatDateTimeLocal()
 file: frontend/src/features/calendar/hooks/useCalendarEvents.js
-start line: 111
-end line: 121
+start line: 106
+end line: 116
 size: 10 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 12
+id: 13
 unit: export async function fetchGroupEvents()
 file: frontend/src/services/groups.js
 start line: 162
@@ -106,20 +115,11 @@ size: 10 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 13
-unit: export function getOneHourFromNow()
-file: frontend/src/utils/dateUtils.js
-start line: 21
-end line: 30
-size: 10 LOC
-McCabe index: 1
-number of parameters: 0
-
 id: 14
 unit: end: formatDateTimeLocal()
 file: frontend/src/features/calendar/hooks/useCalendarEvents.js
-start line: 112
-end line: 121
+start line: 107
+end line: 116
 size: 9 LOC
 McCabe index: 4
 number of parameters: 1
@@ -127,31 +127,22 @@ number of parameters: 1
 id: 15
 unit: function getInitialFormState()
 file: frontend/src/features/calendar/hooks/useCalendarEvents.js
-start line: 158
-end line: 166
+start line: 153
+end line: 161
 size: 9 LOC
 McCabe index: 1
 number of parameters: 0
 
 id: 16
-unit: export function getCurrentDateTime()
+unit: function formatDateToLocal()
 file: frontend/src/utils/dateUtils.js
-start line: 7
+start line: 8
 end line: 15
-size: 9 LOC
-McCabe index: 1
-number of parameters: 0
-
-id: 17
-unit: export function formatDateTimeLocal()
-file: frontend/src/utils/dateUtils.js
-start line: 37
-end line: 45
-size: 9 LOC
+size: 8 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 18
+id: 17
 unit: function generate6CharCode()
 file: frontend/src/services/groups.js
 start line: 5
@@ -160,16 +151,16 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 19
+id: 18
 unit: function handleDeleteEvent()
 file: frontend/src/features/calendar/hooks/useCalendarEvents.js
-start line: 120
-end line: 125
+start line: 115
+end line: 120
 size: 6 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 20
+id: 19
 unit: setupNodeEvents()
 file: frontend/cypress.config.js
 start line: 10
@@ -177,6 +168,15 @@ end line: 18
 size: 5 LOC
 McCabe index: 1
 number of parameters: 2
+
+id: 20
+unit: export function getOneHourFromNow()
+file: frontend/src/utils/dateUtils.js
+start line: 29
+end line: 33
+size: 5 LOC
+McCabe index: 1
+number of parameters: 0
 
 id: 21
 unit: log()
@@ -188,6 +188,24 @@ McCabe index: 1
 number of parameters: 1
 
 id: 22
+unit: export function getCurrentDateTime()
+file: frontend/src/utils/dateUtils.js
+start line: 21
+end line: 23
+size: 3 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 23
+unit: export function formatDateTimeLocal()
+file: frontend/src/utils/dateUtils.js
+start line: 40
+end line: 42
+size: 3 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 24
 unit: export default defineConfig()
 file: frontend/vite.config.js
 start line: 6
@@ -196,11 +214,11 @@ size: 3 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 23
+id: 25
 unit: export function useCalendarEvents()
 file: frontend/src/features/calendar/hooks/useCalendarEvents.js
 start line: 6
-end line: 180
+end line: 175
 size: 1 LOC
 McCabe index: 1
 number of parameters: 0

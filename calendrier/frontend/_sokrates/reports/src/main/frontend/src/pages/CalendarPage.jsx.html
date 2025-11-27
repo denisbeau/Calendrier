@@ -12,16 +12,18 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">frontend/src/pages/CalendarPage.jsx (<b>90</b> lines of code) (<a href="CalendarPage.jsx">raw</a>):</h3>
+<h3 style="margin-bottom: 0">frontend/src/pages/CalendarPage.jsx (<b>92</b> lines of code) (<a href="CalendarPage.jsx">raw</a>):</h3>
 <div id="editor">// src/pages/CalendarPage.jsx
 import React, { useState } from &quot;react&quot;;
+import { useSearchParams } from &quot;react-router-dom&quot;;
 import { useCalendarEvents } from &quot;../features/calendar/hooks/useCalendarEvents&quot;;
 import EventForm from &quot;../features/calendar/components/EventForm&quot;;
 import CalendarView from &quot;../features/calendar/components/CalendarView&quot;;
 import { DEFAULT_CATEGORIES } from &quot;../utils/constants&quot;;
-import PropTypes from &quot;prop-types&quot;;
 
-export default function CalendarPage({ groupId }) {
+export default function CalendarPage() {
+  const [searchParams] = useSearchParams();
+  const groupId = searchParams.get(&quot;groupId&quot;);
   const {
     events,
     isSubmitting,

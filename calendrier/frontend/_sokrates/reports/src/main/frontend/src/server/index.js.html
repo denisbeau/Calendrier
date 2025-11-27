@@ -12,7 +12,7 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">frontend/src/server/index.js (<b>110</b> lines of code) (<a href="index.js">raw</a>):</h3>
+<h3 style="margin-bottom: 0">frontend/src/server/index.js (<b>105</b> lines of code) (<a href="index.js">raw</a>):</h3>
 <div id="editor">import express from &quot;express&quot;;
 import cors from &quot;cors&quot;;
 import dotenv from &quot;dotenv&quot;;
@@ -49,6 +49,37 @@ const transporter = createTransporter();
 
 app.get(&quot;/api/health&quot;, (req, res) =&gt; res.json({ ok: true }));
 
+/**
+ * Helper function to send an email invitation
+ * @param {Object} options - Email options
+ * @param {string} options.to - Recipient email
+ * @param {string} options.subject - Email subject
+ * @param {string} options.text - Plain text email body
+ * @param {string} options.html - HTML email body
+ * @param {string} options.acceptUrl - URL for accepting the invitation
+ * @returns {Promise&lt;Object&gt;} Response object
+ */
+async function sendInviteEmail({ to, subject, text, html, acceptUrl }) {
+  // If transporter is not configured, return created but with warning
+  if (!transporter) {
+    console.warn(
+      &quot;SMTP transporter not configured. Set SMTP_HOST and related env vars to actually send emails.&quot;
+    );
+    return { ok: true, warn: &quot;smtp-not-configured&quot;, acceptUrl };
+  }
+
+  try {
+    const from =
+      process.env.FROM_EMAIL ||
+      `no-reply@${process.env.SMTP_HOST || &quot;localhost&quot;}`;
+    await transporter.sendMail({ from, to, subject, text, html });
+    return { ok: true };
+  } catch (err) {
+    console.error(&quot;Failed to send invite email:&quot;, err);
+    throw new Error(&quot;failed-to-send&quot;);
+  }
+}
+
 // POST /api/invite
 // body: { groupId, email }
 app.post(&quot;/api/invite&quot;, async (req, res) =&gt; {
@@ -69,29 +100,15 @@ app.post(&quot;/api/invite&quot;, async (req, res) =&gt; {
   )}&amp;email=${encodeURIComponent(email)}`;
 
   // Compose email
-  const from =
-    process.env.FROM_EMAIL ||
-    `no-reply@${process.env.SMTP_HOST || &quot;localhost&quot;}`;
   const subject = `Invitation &agrave; rejoindre le groupe (${groupId})`;
   const text = `Vous &ecirc;tes invit&eacute;(e) &agrave; rejoindre le groupe. Acceptez l'invitation : ${acceptUrl}`;
   const html = `&lt;p&gt;Vous &ecirc;tes invit&eacute;(e) &agrave; rejoindre le groupe.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;${acceptUrl}&quot;&gt;Accepter l'invitation&lt;/a&gt;&lt;/p&gt;`;
 
-  // If transporter is not configured, return created but with warning
-  if (!transporter) {
-    console.warn(
-      &quot;SMTP transporter not configured. Set SMTP_HOST and related env vars to actually send emails.&quot;
-    );
-    return res
-      .status(201)
-      .json({ ok: true, warn: &quot;smtp-not-configured&quot;, acceptUrl });
-  }
-
   try {
-    await transporter.sendMail({ from, to: email, subject, text, html });
-    return res.status(201).json({ ok: true });
+    const result = await sendInviteEmail({ to: email, subject, text, html, acceptUrl });
+    return res.status(201).json(result);
   } catch (err) {
-    console.error(&quot;Failed to send invite email:&quot;, err);
-    return res.status(500).json({ error: &quot;failed-to-send&quot; });
+    return res.status(500).json({ error: err.message });
   }
 });
 
@@ -117,33 +134,21 @@ app.post(&quot;/api/send-invite&quot;, async (req, res) =&gt; {
     &quot;&quot;
   )}/accept-invite?token=${encodeURIComponent(token)}`;
 
-  const from =
-    process.env.FROM_EMAIL ||
-    `no-reply@${process.env.SMTP_HOST || &quot;localhost&quot;}`;
   const subject = `Invitation &agrave; rejoindre ${groupName || &quot;un groupe&quot;}`;
   const text = `Vous &ecirc;tes invit&eacute;(e) &agrave; rejoindre ${
     groupName || &quot;un groupe&quot;
   }. Acceptez : ${acceptUrl}`;
   const html = `&lt;p&gt;${
     inviterEmail ? `${inviterEmail} ` : &quot;&quot;
-  }vous invite &agrave; rejoindre &lt;strong&gt;$
-  {groupName || &quot;le groupe&quot;}&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;${acceptUrl}&quot;&gt;Accepter l'invitation&lt;/a&gt;&lt;/p&gt;`;
-
-  if (!transporter) {
-    console.warn(
-      &quot;SMTP transporter not configured. Set SMTP_HOST and related env vars to actually send emails.&quot;
-    );
-    return res
-      .status(201)
-      .json({ ok: true, warn: &quot;smtp-not-configured&quot;, acceptUrl });
-  }
+  }vous invite &agrave; rejoindre &lt;strong&gt;${
+    groupName || &quot;le groupe&quot;
+  }&lt;/strong&gt;.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;${acceptUrl}&quot;&gt;Accepter l'invitation&lt;/a&gt;&lt;/p&gt;`;
 
   try {
-    await transporter.sendMail({ from, to: email, subject, text, html });
-    return res.status(201).json({ ok: true });
+    const result = await sendInviteEmail({ to: email, subject, text, html, acceptUrl });
+    return res.status(201).json(result);
   } catch (err) {
-    console.error(&quot;Failed to send invite email:&quot;, err);
-    return res.status(500).json({ error: &quot;failed-to-send&quot; });
+    return res.status(500).json({ error: err.message });
   }
 });
 

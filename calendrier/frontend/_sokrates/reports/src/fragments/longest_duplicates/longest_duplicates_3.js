@@ -1,25 +1,25 @@
-frontend/eslint.config.js [21:27]:
+frontend/src/server/index.js [92:98]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      parserOptions: {
-        ecmaVersion: "latest",
-        ecmaFeatures: { jsx: true },
-        sourceType: "module",
-      },
-    },
-    rules: {
+  try {
+    const result = await sendInviteEmail({ to: email, subject, text, html, acceptUrl });
+    return res.status(201).json(result);
+  } catch (err) {
+    return res.status(500).json({ error: err.message });
+  }
+});
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-frontend/eslint.config.js [40:46]:
+frontend/src/server/index.js [132:138]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      parserOptions: {
-        ecmaVersion: "latest",
-        ecmaFeatures: { jsx: true },
-        sourceType: "module",
-      },
-    },
-    rules: {
+  try {
+    const result = await sendInviteEmail({ to: email, subject, text, html, acceptUrl });
+    return res.status(201).json(result);
+  } catch (err) {
+    return res.status(500).json({ error: err.message });
+  }
+});
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

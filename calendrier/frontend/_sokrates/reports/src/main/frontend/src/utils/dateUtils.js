@@ -1,17 +1,25 @@
 // src/utils/dateUtils.js
 
 /**
+ * Format a Date object to datetime-local format string
+ * @param {Date} date - Date object to format
+ * @returns {string} Formatted date-time string (YYYY-MM-DDTHH:mm)
+ */
+function formatDateToLocal(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  return `${year}-${month}-${day}T${hours}:${minutes}`;
+}
+
+/**
  * Get current date-time in datetime-local format
  * @returns {string} Formatted date-time string (YYYY-MM-DDTHH:mm)
  */
 export function getCurrentDateTime() {
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = String(now.getMonth() + 1).padStart(2, '0');
-  const day = String(now.getDate()).padStart(2, '0');
-  const hours = String(now.getHours()).padStart(2, '0');
-  const minutes = String(now.getMinutes()).padStart(2, '0');
-  return `${year}-${month}-${day}T${hours}:${minutes}`;
+  return formatDateToLocal(new Date());
 }
 
 /**
@@ -21,12 +29,7 @@ export function getCurrentDateTime() {
 export function getOneHourFromNow() {
   const now = new Date();
   now.setHours(now.getHours() + 1);
-  const year = now.getFullYear();
-  const month = String(now.getMonth() + 1).padStart(2, '0');
-  const day = String(now.getDate()).padStart(2, '0');
-  const hours = String(now.getHours()).padStart(2, '0');
-  const minutes = String(now.getMinutes()).padStart(2, '0');
-  return `${year}-${month}-${day}T${hours}:${minutes}`;
+  return formatDateToLocal(now);
 }
 
 /**
@@ -35,12 +38,6 @@ export function getOneHourFromNow() {
  * @returns {string} Formatted date-time string (YYYY-MM-DDTHH:mm)
  */
 export function formatDateTimeLocal(date) {
-  const d = new Date(date);
-  const year = d.getFullYear();
-  const month = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  const hours = String(d.getHours()).padStart(2, '0');
-  const minutes = String(d.getMinutes()).padStart(2, '0');
-  return `${year}-${month}-${day}T${hours}:${minutes}`;
+  return formatDateToLocal(new Date(date));
 }
 

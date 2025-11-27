@@ -1,29 +1,38 @@
 <html>
 <head>
-    <title>start: formatDateTimeLocal()</title>
+    <title>async function sendInviteEmail()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">start: formatDateTimeLocal()</h3>
-<p style="margin-top: 4px">in <i>frontend/src/features/calendar/hooks/useCalendarEvents.js [111:121]</i></p>
+<h3 style="margin-bottom: 0">async function sendInviteEmail()</h3>
+<p style="margin-top: 4px">in <i>frontend/src/server/index.js [47:66]</i></p>
 <ul>
-    <li><b>10</b> lines of code</li>
-    <li><b>4</b> McCabe index (conditional complexity)</li>
+    <li><b>18</b> lines of code</li>
+    <li><b>5</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="js">
-      start: formatDateTimeLocal(event.start),
-      end: formatDateTimeLocal(event.end),
-      color: event.color || DEFAULT_EVENT_COLOR,
-      categoryName: event.categoryName || DEFAULT_CATEGORY_NAME
-    };
-    onSelect?.(eventData, event.id);
-    setErrors({});
+async function sendInviteEmail({ to, subject, text, html, acceptUrl }) {
+  // If transporter is not configured, return created but with warning
+  if (!transporter) {
+    console.warn(
+      &quot;SMTP transporter not configured. Set SMTP_HOST and related env vars to actually send emails.&quot;
+    );
+    return { ok: true, warn: &quot;smtp-not-configured&quot;, acceptUrl };
   }
 
-  function handleDeleteEvent(editingEventId, onSuccess) {
-    if (window.confirm(&quot;Are you sure you want to delete this event?&quot;)) {
+  try {
+    const from =
+      process.env.FROM_EMAIL ||
+      `no-reply@${process.env.SMTP_HOST || &quot;localhost&quot;}`;
+    await transporter.sendMail({ from, to, subject, text, html });
+    return { ok: true };
+  } catch (err) {
+    console.error(&quot;Failed to send invite email:&quot;, err);
+    throw new Error(&quot;failed-to-send&quot;);
+  }
+}
 
 </code>
 </pre>

@@ -17,7 +17,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_MAIN",
-      "value" : 2387,
+      "value" : 2366,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_MAIN_EXT_JSX",
@@ -25,7 +25,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_MAIN_EXT_JSX",
-      "value" : 1371,
+      "value" : 1373,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_MAIN_EXT_JS",
@@ -33,7 +33,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_MAIN_EXT_JS",
-      "value" : 608,
+      "value" : 585,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_MAIN_EXT_CSS",
@@ -85,7 +85,7 @@
       "description" : null
     }, {
       "id" : "TEST_VS_MAIN_LINES_OF_CODE_PERCENTAGE",
-      "value" : 0.62,
+      "value" : 0.63,
       "description" : "Test / main code ratio"
     }, {
       "id" : "NUMBER_OF_FILES_GENERATED",
@@ -141,7 +141,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_FRONTEND",
-      "value" : 2387,
+      "value" : 2366,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_FRONTEND_EXT_JSX",
@@ -149,7 +149,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_FRONTEND_EXT_JSX",
-      "value" : 1371,
+      "value" : 1373,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_FRONTEND_EXT_JS",
@@ -157,7 +157,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_FRONTEND_EXT_JS",
-      "value" : 608,
+      "value" : 585,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_FRONTEND_EXT_CSS",
@@ -217,7 +217,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED",
-      "value" : 2387,
+      "value" : 2366,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_JSX",
@@ -225,7 +225,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED_EXT_JSX",
-      "value" : 1371,
+      "value" : 1373,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_JS",
@@ -233,7 +233,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED_EXT_JS",
-      "value" : 608,
+      "value" : 585,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_CSS",
@@ -289,11 +289,11 @@
       "description" : "Number of  files with more than 1000 lines of code"
     }, {
       "id" : "NEGLIGIBLE_RISK_FILE_SIZE_LOC",
-      "value" : 850,
+      "value" : 840,
       "description" : "Lines of code in  files with 100 or less lines of code"
     }, {
       "id" : "LOW_RISK_FILE_SIZE_LOC",
-      "value" : 1267,
+      "value" : 1256,
       "description" : "Lines of code in  files with 100 to 200 lines of code"
     }, {
       "id" : "MEDIUM_RISK_FILE_SIZE_LOC",
@@ -309,51 +309,51 @@
       "description" : "Lines of code in  files with more than 1000 lines of code"
     }, {
       "id" : "NUMBER_OF_UNITS",
-      "value" : 23,
+      "value" : 25,
       "description" : "Number of units"
     }, {
       "id" : "LINES_OF_CODE_IN_UNITS",
-      "value" : 391,
+      "value" : 390,
       "description" : "Lines of code in units"
     }, {
       "id" : "LINES_OF_CODE_OUTSIDE_UNITS",
-      "value" : 1996,
+      "value" : 1976,
       "description" : "Lines of code in units"
     }, {
       "id" : "UNIT_SIZE_NEGLIGIBLE_RISK_LOC",
-      "value" : 92,
+      "value" : 83,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 23.529411764705884,
+      "value" : 21.28205128205128,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_NEGLIGIBLE_RISK_COUNT",
-      "value" : 13,
+      "value" : 14,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_LOW_RISK_LOC",
-      "value" : 42,
+      "value" : 78,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_LOW_RISK_PERCENTAGE",
-      "value" : 10.741687979539641,
+      "value" : 20.0,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_LOW_RISK_COUNT",
-      "value" : 3,
+      "value" : 5,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_MEDIUM_RISK_LOC",
-      "value" : 201,
+      "value" : 173,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_MEDIUM_RISK_PERCENTAGE",
-      "value" : 51.406649616368284,
+      "value" : 44.35897435897436,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_MEDIUM_RISK_COUNT",
-      "value" : 6,
+      "value" : 5,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_HIGH_RISK_LOC",
@@ -361,7 +361,7 @@
       "description" : null
     }, {
       "id" : "UNIT_SIZE_HIGH_RISK_PERCENTAGE",
-      "value" : 14.322250639386189,
+      "value" : 14.35897435897436,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_HIGH_RISK_COUNT",
@@ -381,39 +381,39 @@
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_FRONTEND_NEGLIGIBLE_RISK_LOC",
-      "value" : 92,
+      "value" : 83,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_FRONTEND_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 23.529411764705884,
+      "value" : 21.28205128205128,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_FRONTEND_NEGLIGIBLE_RISK_COUNT",
-      "value" : 13,
+      "value" : 14,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_FRONTEND_LOW_RISK_LOC",
-      "value" : 42,
+      "value" : 78,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_FRONTEND_LOW_RISK_PERCENTAGE",
-      "value" : 10.741687979539641,
+      "value" : 20.0,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_FRONTEND_LOW_RISK_COUNT",
-      "value" : 3,
+      "value" : 5,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_FRONTEND_MEDIUM_RISK_LOC",
-      "value" : 201,
+      "value" : 173,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_FRONTEND_MEDIUM_RISK_PERCENTAGE",
-      "value" : 51.406649616368284,
+      "value" : 44.35897435897436,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_FRONTEND_MEDIUM_RISK_COUNT",
-      "value" : 6,
+      "value" : 5,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_FRONTEND_HIGH_RISK_LOC",
@@ -421,7 +421,7 @@
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_FRONTEND_HIGH_RISK_PERCENTAGE",
-      "value" : 14.322250639386189,
+      "value" : 14.35897435897436,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_FRONTEND_HIGH_RISK_COUNT",
@@ -441,39 +441,39 @@
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_NEGLIGIBLE_RISK_LOC",
-      "value" : 92,
+      "value" : 83,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 23.529411764705884,
+      "value" : 21.28205128205128,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_NEGLIGIBLE_RISK_COUNT",
-      "value" : 13,
+      "value" : 14,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_LOW_RISK_LOC",
-      "value" : 42,
+      "value" : 78,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_LOW_RISK_PERCENTAGE",
-      "value" : 10.741687979539641,
+      "value" : 20.0,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_LOW_RISK_COUNT",
-      "value" : 3,
+      "value" : 5,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_MEDIUM_RISK_LOC",
-      "value" : 201,
+      "value" : 173,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_MEDIUM_RISK_PERCENTAGE",
-      "value" : 51.406649616368284,
+      "value" : 44.35897435897436,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_MEDIUM_RISK_COUNT",
-      "value" : 6,
+      "value" : 5,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_HIGH_RISK_LOC",
@@ -481,7 +481,7 @@
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_HIGH_RISK_PERCENTAGE",
-      "value" : 14.322250639386189,
+      "value" : 14.35897435897436,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_HIGH_RISK_COUNT",
@@ -501,23 +501,23 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_NEGLIGIBLE_RISK_LOC",
-      "value" : 156,
+      "value" : 161,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 39.89769820971867,
+      "value" : 41.282051282051285,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_NEGLIGIBLE_RISK_COUNT",
-      "value" : 17,
+      "value" : 19,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_LOW_RISK_LOC",
-      "value" : 133,
+      "value" : 127,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_LOW_RISK_PERCENTAGE",
-      "value" : 34.0153452685422,
+      "value" : 32.56410256410256,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_LOW_RISK_COUNT",
@@ -529,7 +529,7 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_MEDIUM_RISK_PERCENTAGE",
-      "value" : 26.08695652173913,
+      "value" : 26.153846153846153,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_MEDIUM_RISK_COUNT",
@@ -569,23 +569,23 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_NEGLIGIBLE_RISK_LOC",
-      "value" : 156,
+      "value" : 161,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 39.89769820971867,
+      "value" : 41.282051282051285,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_NEGLIGIBLE_RISK_COUNT",
-      "value" : 17,
+      "value" : 19,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_LOW_RISK_LOC",
-      "value" : 133,
+      "value" : 127,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_LOW_RISK_PERCENTAGE",
-      "value" : 34.0153452685422,
+      "value" : 32.56410256410256,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_LOW_RISK_COUNT",
@@ -597,7 +597,7 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_MEDIUM_RISK_PERCENTAGE",
-      "value" : 26.08695652173913,
+      "value" : 26.153846153846153,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_MEDIUM_RISK_COUNT",
@@ -629,23 +629,23 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_NEGLIGIBLE_RISK_LOC",
-      "value" : 156,
+      "value" : 161,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 39.89769820971867,
+      "value" : 41.282051282051285,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_NEGLIGIBLE_RISK_COUNT",
-      "value" : 17,
+      "value" : 19,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_LOW_RISK_LOC",
-      "value" : 133,
+      "value" : 127,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_LOW_RISK_PERCENTAGE",
-      "value" : 34.0153452685422,
+      "value" : 32.56410256410256,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_LOW_RISK_COUNT",
@@ -657,7 +657,7 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_MEDIUM_RISK_PERCENTAGE",
-      "value" : 26.08695652173913,
+      "value" : 26.153846153846153,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_MEDIUM_RISK_COUNT",
@@ -689,23 +689,23 @@
       "description" : null
     }, {
       "id" : "DUPLICATION_NUMBER_OF_DUPLICATES",
-      "value" : 8,
+      "value" : 4,
       "description" : "Number of duplicates"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_FILES_WITH_DUPLICATES",
-      "value" : 6,
+      "value" : 4,
       "description" : "Number of files with duplicates"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES",
-      "value" : 115,
+      "value" : 52,
       "description" : "Number of duplicated lines"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES",
-      "value" : 2172,
+      "value" : 2149,
       "description" : "Number of lines after cleaning for duplication calculations"
     }, {
       "id" : "DUPLICATION_PERCENTAGE",
-      "value" : 5.294659300184162,
+      "value" : 2.419730107026524,
       "description" : "Duplication percentage"
     }, {
       "id" : "UNIT_DUPLICATES_COUNT",
@@ -713,11 +713,11 @@
       "description" : "Unit duplicates"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_PRIMARY_FRONTEND",
-      "value" : 115,
+      "value" : 52,
       "description" : "Number of duplicated lines"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_PRIMARY_FRONTEND",
-      "value" : 115,
+      "value" : 52,
       "description" : "Number of lines after cleaning for duplication calculations"
     }, {
       "id" : "DUPLICATION_PERCENTAGE_PRIMARY_FRONTEND",
@@ -725,15 +725,15 @@
       "description" : "Duplication percentage"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_JS",
-      "value" : 95,
+      "value" : 32,
       "description" : "Number of duplicated lines"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_JS",
-      "value" : 538,
+      "value" : 513,
       "description" : "Number of lines after cleaning for duplication calculations"
     }, {
       "id" : "DUPLICATION_PERCENTAGE_JS",
-      "value" : 17.65799256505576,
+      "value" : 6.237816764132553,
       "description" : "Duplication percentage"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_JSX",
@@ -741,11 +741,11 @@
       "description" : "Number of duplicated lines"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_JSX",
-      "value" : 1231,
+      "value" : 1233,
       "description" : "Number of lines after cleaning for duplication calculations"
     }, {
       "id" : "DUPLICATION_PERCENTAGE_JSX",
-      "value" : 0.6498781478472786,
+      "value" : 0.64882400648824,
       "description" : "Duplication percentage"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_CSS",
@@ -761,7 +761,7 @@
       "description" : "Duplication percentage"
     }, {
       "id" : "TOTAL_ANALYSIS_TIME_IN_MILLIS",
-      "value" : 12868,
+      "value" : 6234,
       "description" : "Total analysis time in milliseconds"
     } ]
   },
@@ -816,7 +816,7 @@
         },
         "metric" : {
           "id" : "LINES_OF_CODE_MAIN",
-          "value" : 2387,
+          "value" : 2366,
           "description" : null
         },
         "status" : "OK"
@@ -832,10 +832,10 @@
         },
         "metric" : {
           "id" : "DUPLICATION_PERCENTAGE",
-          "value" : 5.294659300184162,
+          "value" : 2.419730107026524,
           "description" : "Duplication percentage"
         },
-        "status" : "TOLERANT"
+        "status" : "OK"
       }, {
         "control" : {
           "metric" : "VERY_HIGH_RISK_FILE_SIZE_COUNT",
@@ -875,7 +875,7 @@
   "mainAspectAnalysisResults" : {
     "name" : null,
     "filesCount" : 35,
-    "linesOfCode" : 2387,
+    "linesOfCode" : 2366,
     "numberOfRegexLineMatches" : 0,
     "fileCountPerExtension" : [ {
       "name" : "  *.jsx",
@@ -904,11 +904,11 @@
     } ],
     "linesOfCodePerExtension" : [ {
       "name" : "  *.jsx",
-      "value" : 1371,
+      "value" : 1373,
       "description" : [ ]
     }, {
       "name" : "  *.js",
-      "value" : 608,
+      "value" : 585,
       "description" : [ ]
     }, {
       "name" : "  *.css",
@@ -997,7 +997,7 @@
     "components" : [ {
       "name" : "frontend",
       "filesCount" : 35,
-      "linesOfCode" : 2387,
+      "linesOfCode" : 2366,
       "numberOfRegexLineMatches" : 0,
       "fileCountPerExtension" : [ {
         "name" : "  *.jsx",
@@ -1026,11 +1026,11 @@
       } ],
       "linesOfCodePerExtension" : [ {
         "name" : "  *.jsx",
-        "value" : 1371,
+        "value" : 1373,
         "description" : [ ]
       }, {
         "name" : "  *.js",
-        "value" : 608,
+        "value" : 585,
         "description" : [ ]
       }, {
         "name" : "  *.css",
@@ -1090,14 +1090,14 @@
       "temporalLinkThreshold" : 1,
       "maxSearchDepthLines" : 200
     },
+    "linesOfCodePerComponent" : [ {
+      "name" : "frontend",
+      "value" : 2366,
+      "description" : [ ]
+    } ],
     "fileCountPerComponent" : [ {
       "name" : "frontend",
       "value" : 35,
-      "description" : [ ]
-    } ],
-    "linesOfCodePerComponent" : [ {
-      "name" : "frontend",
-      "value" : 2387,
       "description" : [ ]
     } ]
   } ],
@@ -1113,7 +1113,7 @@
     }, {
       "name" : "Unclassified",
       "filesCount" : 35,
-      "linesOfCode" : 2387,
+      "linesOfCode" : 2366,
       "numberOfRegexLineMatches" : 0,
       "fileCountPerExtension" : [ {
         "name" : "  *.jsx",
@@ -1142,11 +1142,11 @@
       } ],
       "linesOfCodePerExtension" : [ {
         "name" : "  *.jsx",
-        "value" : 1371,
+        "value" : 1373,
         "description" : [ ]
       }, {
         "name" : "  *.js",
-        "value" : 608,
+        "value" : 585,
         "description" : [ ]
       }, {
         "name" : "  *.css",
@@ -1173,7 +1173,7 @@
       "description" : [ ]
     }, {
       "name" : "Unclassified",
-      "value" : 2387,
+      "value" : 2366,
       "description" : [ ]
     } ],
     "fileCountPerConcern" : [ {
@@ -1258,8 +1258,8 @@
       "mediumRiskThreshold" : 200,
       "highRiskThreshold" : 500,
       "veryHighRiskThreshold" : 1000,
-      "negligibleRiskValue" : 850,
-      "lowRiskValue" : 1267,
+      "negligibleRiskValue" : 840,
+      "lowRiskValue" : 1256,
       "mediumRiskValue" : 270,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
@@ -1274,12 +1274,12 @@
       "highRiskLabel" : "501-1000",
       "veryHighRiskLabel" : "1001+",
       "highRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 53.0791788856305,
+      "lowRiskPercentage" : 53.08537616229924,
+      "mediumRiskPercentage" : 11.411665257819104,
       "veryHighRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 11.311269375785505,
-      "negligibleRiskPercentage" : 35.609551738583995,
-      "totalValue" : 2387,
-      "totalCount" : 35
+      "totalCount" : 35,
+      "totalValue" : 2366,
+      "negligibleRiskPercentage" : 35.50295857988166
     },
     "fileSizeDistributionPerExtension" : [ {
       "key" : "js",
@@ -1287,8 +1287,8 @@
       "mediumRiskThreshold" : 200,
       "highRiskThreshold" : 500,
       "veryHighRiskThreshold" : 1000,
-      "negligibleRiskValue" : 236,
-      "lowRiskValue" : 372,
+      "negligibleRiskValue" : 224,
+      "lowRiskValue" : 361,
       "mediumRiskValue" : 0,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
@@ -1303,12 +1303,12 @@
       "highRiskLabel" : "501-1000",
       "veryHighRiskLabel" : "1001+",
       "highRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 61.18421052631579,
-      "veryHighRiskPercentage" : 0.0,
+      "lowRiskPercentage" : 61.70940170940171,
       "mediumRiskPercentage" : 0.0,
-      "negligibleRiskPercentage" : 38.81578947368421,
-      "totalValue" : 608,
-      "totalCount" : 13
+      "veryHighRiskPercentage" : 0.0,
+      "totalCount" : 13,
+      "totalValue" : 585,
+      "negligibleRiskPercentage" : 38.29059829059829
     }, {
       "key" : "html",
       "lowRiskThreshold" : 100,
@@ -1332,11 +1332,11 @@
       "veryHighRiskLabel" : "1001+",
       "highRiskPercentage" : 0.0,
       "lowRiskPercentage" : 0.0,
-      "veryHighRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 0.0,
-      "negligibleRiskPercentage" : 100.0,
+      "veryHighRiskPercentage" : 0.0,
+      "totalCount" : 1,
       "totalValue" : 18,
-      "totalCount" : 1
+      "negligibleRiskPercentage" : 100.0
     }, {
       "key" : "sql",
       "lowRiskThreshold" : 100,
@@ -1360,11 +1360,11 @@
       "veryHighRiskLabel" : "1001+",
       "highRiskPercentage" : 0.0,
       "lowRiskPercentage" : 0.0,
-      "veryHighRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 0.0,
-      "negligibleRiskPercentage" : 100.0,
+      "veryHighRiskPercentage" : 0.0,
+      "totalCount" : 1,
       "totalValue" : 35,
-      "totalCount" : 1
+      "negligibleRiskPercentage" : 100.0
     }, {
       "key" : "py",
       "lowRiskThreshold" : 100,
@@ -1388,11 +1388,11 @@
       "veryHighRiskLabel" : "1001+",
       "highRiskPercentage" : 0.0,
       "lowRiskPercentage" : 0.0,
-      "veryHighRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 0.0,
-      "negligibleRiskPercentage" : 100.0,
+      "veryHighRiskPercentage" : 0.0,
+      "totalCount" : 1,
       "totalValue" : 48,
-      "totalCount" : 1
+      "negligibleRiskPercentage" : 100.0
     }, {
       "key" : "css",
       "lowRiskThreshold" : 100,
@@ -1416,18 +1416,18 @@
       "veryHighRiskLabel" : "1001+",
       "highRiskPercentage" : 0.0,
       "lowRiskPercentage" : 0.0,
-      "veryHighRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 87.94788273615636,
-      "negligibleRiskPercentage" : 12.052117263843648,
+      "veryHighRiskPercentage" : 0.0,
+      "totalCount" : 2,
       "totalValue" : 307,
-      "totalCount" : 2
+      "negligibleRiskPercentage" : 12.052117263843648
     }, {
       "key" : "jsx",
       "lowRiskThreshold" : 100,
       "mediumRiskThreshold" : 200,
       "highRiskThreshold" : 500,
       "veryHighRiskThreshold" : 1000,
-      "negligibleRiskValue" : 476,
+      "negligibleRiskValue" : 478,
       "lowRiskValue" : 895,
       "mediumRiskValue" : 0,
       "highRiskValue" : 0,
@@ -1443,12 +1443,12 @@
       "highRiskLabel" : "501-1000",
       "veryHighRiskLabel" : "1001+",
       "highRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 65.28081692195478,
-      "veryHighRiskPercentage" : 0.0,
+      "lowRiskPercentage" : 65.18572469045885,
       "mediumRiskPercentage" : 0.0,
-      "negligibleRiskPercentage" : 34.71918307804522,
-      "totalValue" : 1371,
-      "totalCount" : 17
+      "veryHighRiskPercentage" : 0.0,
+      "totalCount" : 17,
+      "totalValue" : 1373,
+      "negligibleRiskPercentage" : 34.81427530954115
     } ],
     "fileSizeDistributionPerLogicalDecomposition" : [ {
       "name" : "primary",
@@ -1458,8 +1458,8 @@
         "mediumRiskThreshold" : 200,
         "highRiskThreshold" : 500,
         "veryHighRiskThreshold" : 1000,
-        "negligibleRiskValue" : 850,
-        "lowRiskValue" : 1267,
+        "negligibleRiskValue" : 840,
+        "lowRiskValue" : 1256,
         "mediumRiskValue" : 270,
         "highRiskValue" : 0,
         "veryHighRiskValue" : 0,
@@ -1474,12 +1474,12 @@
         "highRiskLabel" : "501-1000",
         "veryHighRiskLabel" : "1001+",
         "highRiskPercentage" : 0.0,
-        "lowRiskPercentage" : 53.0791788856305,
+        "lowRiskPercentage" : 53.08537616229924,
+        "mediumRiskPercentage" : 11.411665257819104,
         "veryHighRiskPercentage" : 0.0,
-        "mediumRiskPercentage" : 11.311269375785505,
-        "negligibleRiskPercentage" : 35.609551738583995,
-        "totalValue" : 2387,
-        "totalCount" : 35
+        "totalCount" : 35,
+        "totalValue" : 2366,
+        "negligibleRiskPercentage" : 35.50295857988166
       } ]
     } ],
     "longestFiles" : [ {
@@ -1513,10 +1513,10 @@
     }, {
       "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
       "extension" : "js",
-      "linesOfCode" : 142,
+      "linesOfCode" : 136,
       "unitsCount" : 9,
-      "unitsMcCabeIndexSum" : 40,
-      "linesOfCodeInUnits" : 139
+      "unitsMcCabeIndexSum" : 38,
+      "linesOfCodeInUnits" : 133
     }, {
       "relativePath" : "frontend/src/pages/HomePage.jsx",
       "extension" : "jsx",
@@ -1532,19 +1532,19 @@
       "unitsMcCabeIndexSum" : 30,
       "linesOfCodeInUnits" : 119
     }, {
-      "relativePath" : "frontend/src/server/index.js",
-      "extension" : "js",
-      "linesOfCode" : 110,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 5,
-      "linesOfCodeInUnits" : 15
-    }, {
       "relativePath" : "frontend/src/context/AuthContext.jsx",
       "extension" : "jsx",
       "linesOfCode" : 109,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/src/server/index.js",
+      "extension" : "js",
+      "linesOfCode" : 105,
+      "unitsCount" : 2,
+      "unitsMcCabeIndexSum" : 10,
+      "linesOfCodeInUnits" : 33
     }, {
       "relativePath" : "frontend/src/features/auth/SignUp.jsx",
       "extension" : "jsx",
@@ -1562,7 +1562,7 @@
     }, {
       "relativePath" : "frontend/src/pages/CalendarPage.jsx",
       "extension" : "jsx",
-      "linesOfCode" : 90,
+      "linesOfCode" : 92,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
@@ -1574,19 +1574,19 @@
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "frontend/eslint.config.js",
-      "extension" : "js",
-      "linesOfCode" : 59,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 22
-    }, {
       "relativePath" : "frontend/src/services/api.js",
       "extension" : "js",
       "linesOfCode" : 57,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 14,
       "linesOfCodeInUnits" : 56
+    }, {
+      "relativePath" : "frontend/eslint.config.js",
+      "extension" : "js",
+      "linesOfCode" : 56,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 18
     }, {
       "relativePath" : "frontend/src/App.jsx",
       "extension" : "jsx",
@@ -1637,19 +1637,19 @@
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "frontend/src/utils/dateUtils.js",
-      "extension" : "js",
-      "linesOfCode" : 28,
-      "unitsCount" : 3,
-      "unitsMcCabeIndexSum" : 3,
-      "linesOfCodeInUnits" : 28
-    }, {
       "relativePath" : "frontend/src/supabaseClient.js",
       "extension" : "js",
       "linesOfCode" : 20,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/src/utils/dateUtils.js",
+      "extension" : "js",
+      "linesOfCode" : 19,
+      "unitsCount" : 4,
+      "unitsMcCabeIndexSum" : 4,
+      "linesOfCodeInUnits" : 19
     }, {
       "relativePath" : "frontend/index.html",
       "extension" : "html",
@@ -1731,10 +1731,10 @@
     "filesWithMostUnits" : [ {
       "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
       "extension" : "js",
-      "linesOfCode" : 142,
+      "linesOfCode" : 136,
       "unitsCount" : 9,
-      "unitsMcCabeIndexSum" : 40,
-      "linesOfCodeInUnits" : 139
+      "unitsMcCabeIndexSum" : 38,
+      "linesOfCodeInUnits" : 133
     }, {
       "relativePath" : "frontend/src/services/groups.js",
       "extension" : "js",
@@ -1745,10 +1745,10 @@
     }, {
       "relativePath" : "frontend/src/utils/dateUtils.js",
       "extension" : "js",
-      "linesOfCode" : 28,
-      "unitsCount" : 3,
-      "unitsMcCabeIndexSum" : 3,
-      "linesOfCodeInUnits" : 28
+      "linesOfCode" : 19,
+      "unitsCount" : 4,
+      "unitsMcCabeIndexSum" : 4,
+      "linesOfCodeInUnits" : 19
     }, {
       "relativePath" : "frontend/cypress.config.js",
       "extension" : "js",
@@ -1757,19 +1757,19 @@
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 9
     }, {
-      "relativePath" : "frontend/eslint.config.js",
-      "extension" : "js",
-      "linesOfCode" : 59,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 22
-    }, {
       "relativePath" : "frontend/src/server/index.js",
       "extension" : "js",
-      "linesOfCode" : 110,
+      "linesOfCode" : 105,
+      "unitsCount" : 2,
+      "unitsMcCabeIndexSum" : 10,
+      "linesOfCodeInUnits" : 33
+    }, {
+      "relativePath" : "frontend/eslint.config.js",
+      "extension" : "js",
+      "linesOfCode" : 56,
       "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 5,
-      "linesOfCodeInUnits" : 15
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 18
     }, {
       "relativePath" : "frontend/src/services/api.js",
       "extension" : "js",
@@ -1816,22 +1816,22 @@
     "historyPerExtensionPerYear" : [ ]
   },
   "unitsAnalysisResults" : {
-    "totalNumberOfUnits" : 23,
-    "linesOfCodeInUnits" : 391,
+    "totalNumberOfUnits" : 25,
+    "linesOfCodeInUnits" : 390,
     "unitSizeRiskDistribution" : {
       "key" : "",
       "lowRiskThreshold" : 10,
       "mediumRiskThreshold" : 20,
       "highRiskThreshold" : 50,
       "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 92,
-      "lowRiskValue" : 42,
-      "mediumRiskValue" : 201,
+      "negligibleRiskValue" : 83,
+      "lowRiskValue" : 78,
+      "mediumRiskValue" : 173,
       "highRiskValue" : 56,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 3,
-      "negligibleRiskCount" : 13,
-      "mediumRiskCount" : 6,
+      "lowRiskCount" : 5,
+      "negligibleRiskCount" : 14,
+      "mediumRiskCount" : 5,
       "highRiskCount" : 1,
       "veryHighRiskCount" : 0,
       "negligibleRiskLabel" : "1-10",
@@ -1839,13 +1839,13 @@
       "mediumRiskLabel" : "21-50",
       "highRiskLabel" : "51-100",
       "veryHighRiskLabel" : "101+",
-      "highRiskPercentage" : 14.322250639386189,
-      "lowRiskPercentage" : 10.741687979539641,
+      "highRiskPercentage" : 14.35897435897436,
+      "lowRiskPercentage" : 20.0,
+      "mediumRiskPercentage" : 44.35897435897436,
       "veryHighRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 51.406649616368284,
-      "negligibleRiskPercentage" : 23.529411764705884,
-      "totalValue" : 391,
-      "totalCount" : 23
+      "totalCount" : 25,
+      "totalValue" : 390,
+      "negligibleRiskPercentage" : 21.28205128205128
     },
     "conditionalComplexityRiskDistribution" : {
       "key" : "",
@@ -1853,13 +1853,13 @@
       "mediumRiskThreshold" : 10,
       "highRiskThreshold" : 25,
       "veryHighRiskThreshold" : 50,
-      "negligibleRiskValue" : 156,
-      "lowRiskValue" : 133,
+      "negligibleRiskValue" : 161,
+      "lowRiskValue" : 127,
       "mediumRiskValue" : 102,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
       "lowRiskCount" : 4,
-      "negligibleRiskCount" : 17,
+      "negligibleRiskCount" : 19,
       "mediumRiskCount" : 2,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -1869,12 +1869,12 @@
       "highRiskLabel" : "26-50",
       "veryHighRiskLabel" : "51+",
       "highRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 34.0153452685422,
+      "lowRiskPercentage" : 32.56410256410256,
+      "mediumRiskPercentage" : 26.153846153846153,
       "veryHighRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 26.08695652173913,
-      "negligibleRiskPercentage" : 39.89769820971867,
-      "totalValue" : 391,
-      "totalCount" : 23
+      "totalCount" : 25,
+      "totalValue" : 390,
+      "negligibleRiskPercentage" : 41.282051282051285
     },
     "unitSizeRiskDistributionPerExtension" : [ {
       "key" : "js",
@@ -1882,14 +1882,14 @@
       "mediumRiskThreshold" : 20,
       "highRiskThreshold" : 50,
       "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 92,
-      "lowRiskValue" : 42,
-      "mediumRiskValue" : 201,
+      "negligibleRiskValue" : 83,
+      "lowRiskValue" : 78,
+      "mediumRiskValue" : 173,
       "highRiskValue" : 56,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 3,
-      "negligibleRiskCount" : 13,
-      "mediumRiskCount" : 6,
+      "lowRiskCount" : 5,
+      "negligibleRiskCount" : 14,
+      "mediumRiskCount" : 5,
       "highRiskCount" : 1,
       "veryHighRiskCount" : 0,
       "negligibleRiskLabel" : "1-10",
@@ -1897,13 +1897,13 @@
       "mediumRiskLabel" : "21-50",
       "highRiskLabel" : "51-100",
       "veryHighRiskLabel" : "101+",
-      "highRiskPercentage" : 14.322250639386189,
-      "lowRiskPercentage" : 10.741687979539641,
+      "highRiskPercentage" : 14.35897435897436,
+      "lowRiskPercentage" : 20.0,
+      "mediumRiskPercentage" : 44.35897435897436,
       "veryHighRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 51.406649616368284,
-      "negligibleRiskPercentage" : 23.529411764705884,
-      "totalValue" : 391,
-      "totalCount" : 23
+      "totalCount" : 25,
+      "totalValue" : 390,
+      "negligibleRiskPercentage" : 21.28205128205128
     } ],
     "unitSizeRiskDistributionPerComponent" : [ [ {
       "key" : "frontend",
@@ -1911,14 +1911,14 @@
       "mediumRiskThreshold" : 20,
       "highRiskThreshold" : 50,
       "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 92,
-      "lowRiskValue" : 42,
-      "mediumRiskValue" : 201,
+      "negligibleRiskValue" : 83,
+      "lowRiskValue" : 78,
+      "mediumRiskValue" : 173,
       "highRiskValue" : 56,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 3,
-      "negligibleRiskCount" : 13,
-      "mediumRiskCount" : 6,
+      "lowRiskCount" : 5,
+      "negligibleRiskCount" : 14,
+      "mediumRiskCount" : 5,
       "highRiskCount" : 1,
       "veryHighRiskCount" : 0,
       "negligibleRiskLabel" : "1-10",
@@ -1926,13 +1926,13 @@
       "mediumRiskLabel" : "21-50",
       "highRiskLabel" : "51-100",
       "veryHighRiskLabel" : "101+",
-      "highRiskPercentage" : 14.322250639386189,
-      "lowRiskPercentage" : 10.741687979539641,
+      "highRiskPercentage" : 14.35897435897436,
+      "lowRiskPercentage" : 20.0,
+      "mediumRiskPercentage" : 44.35897435897436,
       "veryHighRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 51.406649616368284,
-      "negligibleRiskPercentage" : 23.529411764705884,
-      "totalValue" : 391,
-      "totalCount" : 23
+      "totalCount" : 25,
+      "totalValue" : 390,
+      "negligibleRiskPercentage" : 21.28205128205128
     } ] ],
     "longestUnits" : [ {
       "shortName" : "export async function createEvent()",
@@ -1975,26 +1975,6 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
-      "shortName" : "async function handleFormSubmit()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
-        "extension" : "js",
-        "linesOfCode" : 142,
-        "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
-      },
-      "startLine" : 51,
-      "endLine" : 105,
-      "linesOfCode" : 44,
-      "mcCabeIndex" : 10,
-      "numberOfParameters" : 4,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
-    }, {
       "shortName" : "export async function createGroup()",
       "longName" : "",
       "sourceFile" : {
@@ -2015,15 +1995,35 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "async function handleFormSubmit()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 136,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
+      },
+      "startLine" : 51,
+      "endLine" : 100,
+      "linesOfCode" : 38,
+      "mcCabeIndex" : 8,
+      "numberOfParameters" : 4,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "function validateEvent()",
       "longName" : "",
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
       "startLine" : 16,
       "endLine" : 49,
@@ -2040,13 +2040,13 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
-      "startLine" : 127,
-      "endLine" : 156,
+      "startLine" : 122,
+      "endLine" : 151,
       "linesOfCode" : 23,
       "mcCabeIndex" : 6,
       "numberOfParameters" : 3,
@@ -2060,16 +2060,36 @@
       "sourceFile" : {
         "relativePath" : "frontend/eslint.config.js",
         "extension" : "js",
-        "linesOfCode" : 59,
+        "linesOfCode" : 56,
         "unitsCount" : 1,
         "unitsMcCabeIndexSum" : 1,
-        "linesOfCodeInUnits" : 22
+        "linesOfCodeInUnits" : 18
       },
-      "startLine" : 7,
-      "endLine" : 30,
-      "linesOfCode" : 22,
+      "startLine" : 14,
+      "endLine" : 33,
+      "linesOfCode" : 18,
       "mcCabeIndex" : 1,
       "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "async function sendInviteEmail()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/server/index.js",
+        "extension" : "js",
+        "linesOfCode" : 105,
+        "unitsCount" : 2,
+        "unitsMcCabeIndexSum" : 10,
+        "linesOfCodeInUnits" : 33
+      },
+      "startLine" : 47,
+      "endLine" : 66,
+      "linesOfCode" : 18,
+      "mcCabeIndex" : 5,
+      "numberOfParameters" : 5,
       "numberOfLiterals" : 0,
       "numberOfStatements" : 0,
       "numberOfExpressions" : 0,
@@ -2100,10 +2120,10 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/server/index.js",
         "extension" : "js",
-        "linesOfCode" : 110,
-        "unitsCount" : 1,
-        "unitsMcCabeIndexSum" : 5,
-        "linesOfCodeInUnits" : 15
+        "linesOfCode" : 105,
+        "unitsCount" : 2,
+        "unitsMcCabeIndexSum" : 10,
+        "linesOfCodeInUnits" : 33
       },
       "startLine" : 15,
       "endLine" : 31,
@@ -2120,13 +2140,13 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
-      "startLine" : 107,
-      "endLine" : 118,
+      "startLine" : 102,
+      "endLine" : 113,
       "linesOfCode" : 11,
       "mcCabeIndex" : 3,
       "numberOfParameters" : 2,
@@ -2140,13 +2160,13 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
-      "startLine" : 111,
-      "endLine" : 121,
+      "startLine" : 106,
+      "endLine" : 116,
       "linesOfCode" : 10,
       "mcCabeIndex" : 4,
       "numberOfParameters" : 1,
@@ -2175,38 +2195,18 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
-      "shortName" : "export function getOneHourFromNow()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "frontend/src/utils/dateUtils.js",
-        "extension" : "js",
-        "linesOfCode" : 28,
-        "unitsCount" : 3,
-        "unitsMcCabeIndexSum" : 3,
-        "linesOfCodeInUnits" : 28
-      },
-      "startLine" : 21,
-      "endLine" : 30,
-      "linesOfCode" : 10,
-      "mcCabeIndex" : 1,
-      "numberOfParameters" : 0,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
-    }, {
       "shortName" : "end: formatDateTimeLocal()",
       "longName" : "",
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
-      "startLine" : 112,
-      "endLine" : 121,
+      "startLine" : 107,
+      "endLine" : 116,
       "linesOfCode" : 9,
       "mcCabeIndex" : 4,
       "numberOfParameters" : 1,
@@ -2220,13 +2220,13 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
-      "startLine" : 158,
-      "endLine" : 166,
+      "startLine" : 153,
+      "endLine" : 161,
       "linesOfCode" : 9,
       "mcCabeIndex" : 1,
       "numberOfParameters" : 0,
@@ -2235,39 +2235,19 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
-      "shortName" : "export function getCurrentDateTime()",
+      "shortName" : "function formatDateToLocal()",
       "longName" : "",
       "sourceFile" : {
         "relativePath" : "frontend/src/utils/dateUtils.js",
         "extension" : "js",
-        "linesOfCode" : 28,
-        "unitsCount" : 3,
-        "unitsMcCabeIndexSum" : 3,
-        "linesOfCodeInUnits" : 28
+        "linesOfCode" : 19,
+        "unitsCount" : 4,
+        "unitsMcCabeIndexSum" : 4,
+        "linesOfCodeInUnits" : 19
       },
-      "startLine" : 7,
+      "startLine" : 8,
       "endLine" : 15,
-      "linesOfCode" : 9,
-      "mcCabeIndex" : 1,
-      "numberOfParameters" : 0,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
-    }, {
-      "shortName" : "export function formatDateTimeLocal()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "frontend/src/utils/dateUtils.js",
-        "extension" : "js",
-        "linesOfCode" : 28,
-        "unitsCount" : 3,
-        "unitsMcCabeIndexSum" : 3,
-        "linesOfCodeInUnits" : 28
-      },
-      "startLine" : 37,
-      "endLine" : 45,
-      "linesOfCode" : 9,
+      "linesOfCode" : 8,
       "mcCabeIndex" : 1,
       "numberOfParameters" : 1,
       "numberOfLiterals" : 0,
@@ -2300,13 +2280,13 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
-      "startLine" : 120,
-      "endLine" : 125,
+      "startLine" : 115,
+      "endLine" : 120,
       "linesOfCode" : 6,
       "mcCabeIndex" : 2,
       "numberOfParameters" : 2,
@@ -2355,6 +2335,26 @@
         "children" : [ ]
       } ]
     }, {
+      "shortName" : "export function getOneHourFromNow()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/utils/dateUtils.js",
+        "extension" : "js",
+        "linesOfCode" : 19,
+        "unitsCount" : 4,
+        "unitsMcCabeIndexSum" : 4,
+        "linesOfCodeInUnits" : 19
+      },
+      "startLine" : 29,
+      "endLine" : 33,
+      "linesOfCode" : 5,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "log()",
       "longName" : "",
       "sourceFile" : {
@@ -2368,6 +2368,46 @@
       "startLine" : 12,
       "endLine" : 15,
       "linesOfCode" : 4,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export function getCurrentDateTime()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/utils/dateUtils.js",
+        "extension" : "js",
+        "linesOfCode" : 19,
+        "unitsCount" : 4,
+        "unitsMcCabeIndexSum" : 4,
+        "linesOfCodeInUnits" : 19
+      },
+      "startLine" : 21,
+      "endLine" : 23,
+      "linesOfCode" : 3,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export function formatDateTimeLocal()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/utils/dateUtils.js",
+        "extension" : "js",
+        "linesOfCode" : 19,
+        "unitsCount" : 4,
+        "unitsMcCabeIndexSum" : 4,
+        "linesOfCodeInUnits" : 19
+      },
+      "startLine" : 40,
+      "endLine" : 42,
+      "linesOfCode" : 3,
       "mcCabeIndex" : 1,
       "numberOfParameters" : 1,
       "numberOfLiterals" : 0,
@@ -2400,13 +2440,13 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
       "startLine" : 6,
-      "endLine" : 180,
+      "endLine" : 175,
       "linesOfCode" : 1,
       "mcCabeIndex" : 1,
       "numberOfParameters" : 0,
@@ -2419,10 +2459,10 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
         "startLine" : 16,
         "endLine" : 49,
@@ -2439,15 +2479,15 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
         "startLine" : 51,
-        "endLine" : 105,
-        "linesOfCode" : 44,
-        "mcCabeIndex" : 10,
+        "endLine" : 100,
+        "linesOfCode" : 38,
+        "mcCabeIndex" : 8,
         "numberOfParameters" : 4,
         "numberOfLiterals" : 0,
         "numberOfStatements" : 0,
@@ -2459,13 +2499,13 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
-        "startLine" : 107,
-        "endLine" : 118,
+        "startLine" : 102,
+        "endLine" : 113,
         "linesOfCode" : 11,
         "mcCabeIndex" : 3,
         "numberOfParameters" : 2,
@@ -2479,13 +2519,13 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
-        "startLine" : 111,
-        "endLine" : 121,
+        "startLine" : 106,
+        "endLine" : 116,
         "linesOfCode" : 10,
         "mcCabeIndex" : 4,
         "numberOfParameters" : 1,
@@ -2499,13 +2539,13 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
-        "startLine" : 112,
-        "endLine" : 121,
+        "startLine" : 107,
+        "endLine" : 116,
         "linesOfCode" : 9,
         "mcCabeIndex" : 4,
         "numberOfParameters" : 1,
@@ -2519,13 +2559,13 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
-        "startLine" : 120,
-        "endLine" : 125,
+        "startLine" : 115,
+        "endLine" : 120,
         "linesOfCode" : 6,
         "mcCabeIndex" : 2,
         "numberOfParameters" : 2,
@@ -2539,13 +2579,13 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
-        "startLine" : 127,
-        "endLine" : 156,
+        "startLine" : 122,
+        "endLine" : 151,
         "linesOfCode" : 23,
         "mcCabeIndex" : 6,
         "numberOfParameters" : 3,
@@ -2559,13 +2599,13 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
-        "startLine" : 158,
-        "endLine" : 166,
+        "startLine" : 153,
+        "endLine" : 161,
         "linesOfCode" : 9,
         "mcCabeIndex" : 1,
         "numberOfParameters" : 0,
@@ -2581,13 +2621,13 @@
       "mediumRiskThreshold" : 10,
       "highRiskThreshold" : 25,
       "veryHighRiskThreshold" : 50,
-      "negligibleRiskValue" : 156,
-      "lowRiskValue" : 133,
+      "negligibleRiskValue" : 161,
+      "lowRiskValue" : 127,
       "mediumRiskValue" : 102,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
       "lowRiskCount" : 4,
-      "negligibleRiskCount" : 17,
+      "negligibleRiskCount" : 19,
       "mediumRiskCount" : 2,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -2597,12 +2637,12 @@
       "highRiskLabel" : "26-50",
       "veryHighRiskLabel" : "51+",
       "highRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 34.0153452685422,
+      "lowRiskPercentage" : 32.56410256410256,
+      "mediumRiskPercentage" : 26.153846153846153,
       "veryHighRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 26.08695652173913,
-      "negligibleRiskPercentage" : 39.89769820971867,
-      "totalValue" : 391,
-      "totalCount" : 23
+      "totalCount" : 25,
+      "totalValue" : 390,
+      "negligibleRiskPercentage" : 41.282051282051285
     } ],
     "conditionalComplexityRiskDistributionPerComponent" : [ [ {
       "key" : "frontend",
@@ -2610,13 +2650,13 @@
       "mediumRiskThreshold" : 10,
       "highRiskThreshold" : 25,
       "veryHighRiskThreshold" : 50,
-      "negligibleRiskValue" : 156,
-      "lowRiskValue" : 133,
+      "negligibleRiskValue" : 161,
+      "lowRiskValue" : 127,
       "mediumRiskValue" : 102,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
       "lowRiskCount" : 4,
-      "negligibleRiskCount" : 17,
+      "negligibleRiskCount" : 19,
       "mediumRiskCount" : 2,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -2626,12 +2666,12 @@
       "highRiskLabel" : "26-50",
       "veryHighRiskLabel" : "51+",
       "highRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 34.0153452685422,
+      "lowRiskPercentage" : 32.56410256410256,
+      "mediumRiskPercentage" : 26.153846153846153,
       "veryHighRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 26.08695652173913,
-      "negligibleRiskPercentage" : 39.89769820971867,
-      "totalValue" : 391,
-      "totalCount" : 23
+      "totalCount" : 25,
+      "totalValue" : 390,
+      "negligibleRiskPercentage" : 41.282051282051285
     } ] ],
     "mostComplexUnits" : [ {
       "shortName" : "export async function createEvent()",
@@ -2674,35 +2714,15 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
-      "shortName" : "async function handleFormSubmit()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
-        "extension" : "js",
-        "linesOfCode" : 142,
-        "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
-      },
-      "startLine" : 51,
-      "endLine" : 105,
-      "linesOfCode" : 44,
-      "mcCabeIndex" : 10,
-      "numberOfParameters" : 4,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
-    }, {
       "shortName" : "function validateEvent()",
       "longName" : "",
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
       "startLine" : 16,
       "endLine" : 49,
@@ -2714,18 +2734,38 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "async function handleFormSubmit()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 136,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
+      },
+      "startLine" : 51,
+      "endLine" : 100,
+      "linesOfCode" : 38,
+      "mcCabeIndex" : 8,
+      "numberOfParameters" : 4,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "function handleSelectSlot()",
       "longName" : "",
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
-      "startLine" : 127,
-      "endLine" : 156,
+      "startLine" : 122,
+      "endLine" : 151,
       "linesOfCode" : 23,
       "mcCabeIndex" : 6,
       "numberOfParameters" : 3,
@@ -2759,10 +2799,10 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/server/index.js",
         "extension" : "js",
-        "linesOfCode" : 110,
-        "unitsCount" : 1,
-        "unitsMcCabeIndexSum" : 5,
-        "linesOfCodeInUnits" : 15
+        "linesOfCode" : 105,
+        "unitsCount" : 2,
+        "unitsMcCabeIndexSum" : 10,
+        "linesOfCodeInUnits" : 33
       },
       "startLine" : 15,
       "endLine" : 31,
@@ -2774,18 +2814,38 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "async function sendInviteEmail()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/server/index.js",
+        "extension" : "js",
+        "linesOfCode" : 105,
+        "unitsCount" : 2,
+        "unitsMcCabeIndexSum" : 10,
+        "linesOfCodeInUnits" : 33
+      },
+      "startLine" : 47,
+      "endLine" : 66,
+      "linesOfCode" : 18,
+      "mcCabeIndex" : 5,
+      "numberOfParameters" : 5,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "start: formatDateTimeLocal()",
       "longName" : "",
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
-      "startLine" : 111,
-      "endLine" : 121,
+      "startLine" : 106,
+      "endLine" : 116,
       "linesOfCode" : 10,
       "mcCabeIndex" : 4,
       "numberOfParameters" : 1,
@@ -2799,13 +2859,13 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
-      "startLine" : 112,
-      "endLine" : 121,
+      "startLine" : 107,
+      "endLine" : 116,
       "linesOfCode" : 9,
       "mcCabeIndex" : 4,
       "numberOfParameters" : 1,
@@ -2859,13 +2919,13 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
-      "startLine" : 107,
-      "endLine" : 118,
+      "startLine" : 102,
+      "endLine" : 113,
       "linesOfCode" : 11,
       "mcCabeIndex" : 3,
       "numberOfParameters" : 2,
@@ -2879,13 +2939,13 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
-      "startLine" : 120,
-      "endLine" : 125,
+      "startLine" : 115,
+      "endLine" : 120,
       "linesOfCode" : 6,
       "mcCabeIndex" : 2,
       "numberOfParameters" : 2,
@@ -2979,14 +3039,14 @@
       "sourceFile" : {
         "relativePath" : "frontend/eslint.config.js",
         "extension" : "js",
-        "linesOfCode" : 59,
+        "linesOfCode" : 56,
         "unitsCount" : 1,
         "unitsMcCabeIndexSum" : 1,
-        "linesOfCodeInUnits" : 22
+        "linesOfCodeInUnits" : 18
       },
-      "startLine" : 7,
-      "endLine" : 30,
-      "linesOfCode" : 22,
+      "startLine" : 14,
+      "endLine" : 33,
+      "linesOfCode" : 18,
       "mcCabeIndex" : 1,
       "numberOfParameters" : 1,
       "numberOfLiterals" : 0,
@@ -2999,13 +3059,13 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
       "startLine" : 6,
-      "endLine" : 180,
+      "endLine" : 175,
       "linesOfCode" : 1,
       "mcCabeIndex" : 1,
       "numberOfParameters" : 0,
@@ -3018,10 +3078,10 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
         "startLine" : 16,
         "endLine" : 49,
@@ -3038,15 +3098,15 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
         "startLine" : 51,
-        "endLine" : 105,
-        "linesOfCode" : 44,
-        "mcCabeIndex" : 10,
+        "endLine" : 100,
+        "linesOfCode" : 38,
+        "mcCabeIndex" : 8,
         "numberOfParameters" : 4,
         "numberOfLiterals" : 0,
         "numberOfStatements" : 0,
@@ -3058,13 +3118,13 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
-        "startLine" : 107,
-        "endLine" : 118,
+        "startLine" : 102,
+        "endLine" : 113,
         "linesOfCode" : 11,
         "mcCabeIndex" : 3,
         "numberOfParameters" : 2,
@@ -3078,13 +3138,13 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
-        "startLine" : 111,
-        "endLine" : 121,
+        "startLine" : 106,
+        "endLine" : 116,
         "linesOfCode" : 10,
         "mcCabeIndex" : 4,
         "numberOfParameters" : 1,
@@ -3098,13 +3158,13 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
-        "startLine" : 112,
-        "endLine" : 121,
+        "startLine" : 107,
+        "endLine" : 116,
         "linesOfCode" : 9,
         "mcCabeIndex" : 4,
         "numberOfParameters" : 1,
@@ -3118,13 +3178,13 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
-        "startLine" : 120,
-        "endLine" : 125,
+        "startLine" : 115,
+        "endLine" : 120,
         "linesOfCode" : 6,
         "mcCabeIndex" : 2,
         "numberOfParameters" : 2,
@@ -3138,13 +3198,13 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
-        "startLine" : 127,
-        "endLine" : 156,
+        "startLine" : 122,
+        "endLine" : 151,
         "linesOfCode" : 23,
         "mcCabeIndex" : 6,
         "numberOfParameters" : 3,
@@ -3158,13 +3218,13 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
-        "startLine" : 158,
-        "endLine" : 166,
+        "startLine" : 153,
+        "endLine" : 161,
         "linesOfCode" : 9,
         "mcCabeIndex" : 1,
         "numberOfParameters" : 0,
@@ -3179,16 +3239,36 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
         "extension" : "js",
-        "linesOfCode" : 142,
+        "linesOfCode" : 136,
         "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 40,
-        "linesOfCodeInUnits" : 139
+        "unitsMcCabeIndexSum" : 38,
+        "linesOfCodeInUnits" : 133
       },
-      "startLine" : 158,
-      "endLine" : 166,
+      "startLine" : 153,
+      "endLine" : 161,
       "linesOfCode" : 9,
       "mcCabeIndex" : 1,
       "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "function formatDateToLocal()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/utils/dateUtils.js",
+        "extension" : "js",
+        "linesOfCode" : 19,
+        "unitsCount" : 4,
+        "unitsMcCabeIndexSum" : 4,
+        "linesOfCodeInUnits" : 19
+      },
+      "startLine" : 8,
+      "endLine" : 15,
+      "linesOfCode" : 8,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 1,
       "numberOfLiterals" : 0,
       "numberOfStatements" : 0,
       "numberOfExpressions" : 0,
@@ -3199,14 +3279,14 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/utils/dateUtils.js",
         "extension" : "js",
-        "linesOfCode" : 28,
-        "unitsCount" : 3,
-        "unitsMcCabeIndexSum" : 3,
-        "linesOfCodeInUnits" : 28
+        "linesOfCode" : 19,
+        "unitsCount" : 4,
+        "unitsMcCabeIndexSum" : 4,
+        "linesOfCodeInUnits" : 19
       },
-      "startLine" : 7,
-      "endLine" : 15,
-      "linesOfCode" : 9,
+      "startLine" : 21,
+      "endLine" : 23,
+      "linesOfCode" : 3,
       "mcCabeIndex" : 1,
       "numberOfParameters" : 0,
       "numberOfLiterals" : 0,
@@ -3219,14 +3299,14 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/utils/dateUtils.js",
         "extension" : "js",
-        "linesOfCode" : 28,
-        "unitsCount" : 3,
-        "unitsMcCabeIndexSum" : 3,
-        "linesOfCodeInUnits" : 28
+        "linesOfCode" : 19,
+        "unitsCount" : 4,
+        "unitsMcCabeIndexSum" : 4,
+        "linesOfCodeInUnits" : 19
       },
-      "startLine" : 21,
-      "endLine" : 30,
-      "linesOfCode" : 10,
+      "startLine" : 29,
+      "endLine" : 33,
+      "linesOfCode" : 5,
       "mcCabeIndex" : 1,
       "numberOfParameters" : 0,
       "numberOfLiterals" : 0,
@@ -3239,14 +3319,14 @@
       "sourceFile" : {
         "relativePath" : "frontend/src/utils/dateUtils.js",
         "extension" : "js",
-        "linesOfCode" : 28,
-        "unitsCount" : 3,
-        "unitsMcCabeIndexSum" : 3,
-        "linesOfCodeInUnits" : 28
+        "linesOfCode" : 19,
+        "unitsCount" : 4,
+        "unitsMcCabeIndexSum" : 4,
+        "linesOfCodeInUnits" : 19
       },
-      "startLine" : 37,
-      "endLine" : 45,
-      "linesOfCode" : 9,
+      "startLine" : 40,
+      "endLine" : 42,
+      "linesOfCode" : 3,
       "mcCabeIndex" : 1,
       "numberOfParameters" : 1,
       "numberOfLiterals" : 0,
@@ -3278,35 +3358,35 @@
   "duplicationAnalysisResults" : {
     "overallDuplication" : {
       "key" : "system",
-      "numberOfDuplicates" : 8,
-      "cleanedLinesOfCode" : 2172,
-      "duplicatedLinesOfCode" : 115,
-      "numberOfFilesWithDuplicates" : 6,
-      "duplicationPercentage" : 5.294659300184162
+      "numberOfDuplicates" : 4,
+      "cleanedLinesOfCode" : 2149,
+      "duplicatedLinesOfCode" : 52,
+      "numberOfFilesWithDuplicates" : 4,
+      "duplicationPercentage" : 2.419730107026524
     },
     "duplicationPerComponent" : [ [ {
       "key" : "frontend",
       "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 2172,
-      "duplicatedLinesOfCode" : 115,
+      "cleanedLinesOfCode" : 2149,
+      "duplicatedLinesOfCode" : 52,
       "numberOfFilesWithDuplicates" : 0,
-      "duplicationPercentage" : 5.294659300184162
+      "duplicationPercentage" : 2.419730107026524
     } ] ],
     "duplicationPerConcern" : [ ],
     "duplicationPerExtension" : [ {
       "key" : "js",
       "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 538,
-      "duplicatedLinesOfCode" : 95,
+      "cleanedLinesOfCode" : 513,
+      "duplicatedLinesOfCode" : 32,
       "numberOfFilesWithDuplicates" : 0,
-      "duplicationPercentage" : 17.65799256505576
+      "duplicationPercentage" : 6.237816764132553
     }, {
       "key" : "jsx",
       "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 1231,
+      "cleanedLinesOfCode" : 1233,
       "duplicatedLinesOfCode" : 8,
       "numberOfFilesWithDuplicates" : 0,
-      "duplicationPercentage" : 0.6498781478472786
+      "duplicationPercentage" : 0.64882400648824
     }, {
       "key" : "css",
       "numberOfDuplicates" : 0,
@@ -3319,218 +3399,38 @@
       "displayContent" : "",
       "duplicatedFileBlocks" : [ {
         "sourceFile" : {
-          "relativePath" : "frontend/src/server/index.js",
-          "extension" : "js",
-          "linesOfCode" : 110,
-          "unitsCount" : 1,
-          "unitsMcCabeIndexSum" : 5,
-          "linesOfCodeInUnits" : 15
-        },
-        "sourceFileCleanedLinesOfCode" : 99,
-        "startLine" : 65,
-        "endLine" : 81,
-        "cleanedStartLine" : 42,
-        "cleanedEndLine" : 55,
-        "percentage" : 14.141414141414142,
-        "blockSize" : 14
-      }, {
-        "sourceFile" : {
-          "relativePath" : "frontend/src/server/index.js",
-          "extension" : "js",
-          "linesOfCode" : 110,
-          "unitsCount" : 1,
-          "unitsMcCabeIndexSum" : 5,
-          "linesOfCodeInUnits" : 15
-        },
-        "sourceFileCleanedLinesOfCode" : 99,
-        "startLine" : 117,
-        "endLine" : 133,
-        "cleanedStartLine" : 83,
-        "cleanedEndLine" : 96,
-        "percentage" : 14.141414141414142,
-        "blockSize" : 14
-      } ],
-      "blockSize" : 14
-    }, {
-      "displayContent" : "",
-      "duplicatedFileBlocks" : [ {
-        "sourceFile" : {
           "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
           "extension" : "js",
-          "linesOfCode" : 142,
+          "linesOfCode" : 136,
           "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
+          "unitsMcCabeIndexSum" : 38,
+          "linesOfCodeInUnits" : 133
         },
-        "sourceFileCleanedLinesOfCode" : 120,
-        "startLine" : 171,
-        "endLine" : 178,
-        "cleanedStartLine" : 112,
-        "cleanedEndLine" : 119,
-        "percentage" : 6.666666666666667,
+        "sourceFileCleanedLinesOfCode" : 114,
+        "startLine" : 166,
+        "endLine" : 173,
+        "cleanedStartLine" : 106,
+        "cleanedEndLine" : 113,
+        "percentage" : 7.017543859649122,
         "blockSize" : 8
       }, {
         "sourceFile" : {
           "relativePath" : "frontend/src/pages/CalendarPage.jsx",
           "extension" : "jsx",
-          "linesOfCode" : 90,
+          "linesOfCode" : 92,
           "unitsCount" : 0,
           "unitsMcCabeIndexSum" : 0,
           "linesOfCodeInUnits" : 0
         },
-        "sourceFileCleanedLinesOfCode" : 88,
-        "startLine" : 12,
-        "endLine" : 19,
-        "cleanedStartLine" : 11,
-        "cleanedEndLine" : 18,
-        "percentage" : 9.090909090909092,
+        "sourceFileCleanedLinesOfCode" : 90,
+        "startLine" : 14,
+        "endLine" : 21,
+        "cleanedStartLine" : 13,
+        "cleanedEndLine" : 20,
+        "percentage" : 8.88888888888889,
         "blockSize" : 8
       } ],
       "blockSize" : 8
-    }, {
-      "displayContent" : "",
-      "duplicatedFileBlocks" : [ {
-        "sourceFile" : {
-          "relativePath" : "frontend/eslint.config.js",
-          "extension" : "js",
-          "linesOfCode" : 59,
-          "unitsCount" : 1,
-          "unitsMcCabeIndexSum" : 1,
-          "linesOfCodeInUnits" : 22
-        },
-        "sourceFileCleanedLinesOfCode" : 51,
-        "startLine" : 21,
-        "endLine" : 27,
-        "cleanedStartLine" : 12,
-        "cleanedEndLine" : 18,
-        "percentage" : 13.72549019607843,
-        "blockSize" : 7
-      }, {
-        "sourceFile" : {
-          "relativePath" : "frontend/eslint.config.js",
-          "extension" : "js",
-          "linesOfCode" : 59,
-          "unitsCount" : 1,
-          "unitsMcCabeIndexSum" : 1,
-          "linesOfCodeInUnits" : 22
-        },
-        "sourceFileCleanedLinesOfCode" : 51,
-        "startLine" : 40,
-        "endLine" : 46,
-        "cleanedStartLine" : 27,
-        "cleanedEndLine" : 33,
-        "percentage" : 13.72549019607843,
-        "blockSize" : 7
-      } ],
-      "blockSize" : 7
-    }, {
-      "displayContent" : "",
-      "duplicatedFileBlocks" : [ {
-        "sourceFile" : {
-          "relativePath" : "frontend/eslint.config.js",
-          "extension" : "js",
-          "linesOfCode" : 59,
-          "unitsCount" : 1,
-          "unitsMcCabeIndexSum" : 1,
-          "linesOfCodeInUnits" : 22
-        },
-        "sourceFileCleanedLinesOfCode" : 51,
-        "startLine" : 44,
-        "endLine" : 50,
-        "cleanedStartLine" : 31,
-        "cleanedEndLine" : 36,
-        "percentage" : 11.764705882352942,
-        "blockSize" : 6
-      }, {
-        "sourceFile" : {
-          "relativePath" : "frontend/eslint.config.js",
-          "extension" : "js",
-          "linesOfCode" : 59,
-          "unitsCount" : 1,
-          "unitsMcCabeIndexSum" : 1,
-          "linesOfCodeInUnits" : 22
-        },
-        "sourceFileCleanedLinesOfCode" : 51,
-        "startLine" : 62,
-        "endLine" : 68,
-        "cleanedStartLine" : 45,
-        "cleanedEndLine" : 50,
-        "percentage" : 11.764705882352942,
-        "blockSize" : 6
-      } ],
-      "blockSize" : 6
-    }, {
-      "displayContent" : "",
-      "duplicatedFileBlocks" : [ {
-        "sourceFile" : {
-          "relativePath" : "frontend/src/utils/dateUtils.js",
-          "extension" : "js",
-          "linesOfCode" : 28,
-          "unitsCount" : 3,
-          "unitsMcCabeIndexSum" : 3,
-          "linesOfCodeInUnits" : 28
-        },
-        "sourceFileCleanedLinesOfCode" : 25,
-        "startLine" : 9,
-        "endLine" : 14,
-        "cleanedStartLine" : 3,
-        "cleanedEndLine" : 8,
-        "percentage" : 24.0,
-        "blockSize" : 6
-      }, {
-        "sourceFile" : {
-          "relativePath" : "frontend/src/utils/dateUtils.js",
-          "extension" : "js",
-          "linesOfCode" : 28,
-          "unitsCount" : 3,
-          "unitsMcCabeIndexSum" : 3,
-          "linesOfCodeInUnits" : 28
-        },
-        "sourceFileCleanedLinesOfCode" : 25,
-        "startLine" : 24,
-        "endLine" : 29,
-        "cleanedStartLine" : 12,
-        "cleanedEndLine" : 17,
-        "percentage" : 24.0,
-        "blockSize" : 6
-      } ],
-      "blockSize" : 6
-    }, {
-      "displayContent" : "",
-      "duplicatedFileBlocks" : [ {
-        "sourceFile" : {
-          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
-          "extension" : "js",
-          "linesOfCode" : 142,
-          "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
-        },
-        "sourceFileCleanedLinesOfCode" : 120,
-        "startLine" : 72,
-        "endLine" : 77,
-        "cleanedStartLine" : 40,
-        "cleanedEndLine" : 45,
-        "percentage" : 5.0,
-        "blockSize" : 6
-      }, {
-        "sourceFile" : {
-          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
-          "extension" : "js",
-          "linesOfCode" : 142,
-          "unitsCount" : 9,
-          "unitsMcCabeIndexSum" : 40,
-          "linesOfCodeInUnits" : 139
-        },
-        "sourceFileCleanedLinesOfCode" : 120,
-        "startLine" : 88,
-        "endLine" : 93,
-        "cleanedStartLine" : 53,
-        "cleanedEndLine" : 58,
-        "percentage" : 5.0,
-        "blockSize" : 6
-      } ],
-      "blockSize" : 6
     }, {
       "displayContent" : "",
       "duplicatedFileBlocks" : [ {
@@ -3573,33 +3473,69 @@
         "sourceFile" : {
           "relativePath" : "frontend/src/server/index.js",
           "extension" : "js",
-          "linesOfCode" : 110,
-          "unitsCount" : 1,
-          "unitsMcCabeIndexSum" : 5,
-          "linesOfCodeInUnits" : 15
+          "linesOfCode" : 105,
+          "unitsCount" : 2,
+          "unitsMcCabeIndexSum" : 10,
+          "linesOfCodeInUnits" : 33
         },
-        "sourceFileCleanedLinesOfCode" : 99,
-        "startLine" : 46,
-        "endLine" : 51,
-        "cleanedStartLine" : 27,
-        "cleanedEndLine" : 32,
-        "percentage" : 6.0606060606060606,
+        "sourceFileCleanedLinesOfCode" : 93,
+        "startLine" : 92,
+        "endLine" : 98,
+        "cleanedStartLine" : 54,
+        "cleanedEndLine" : 59,
+        "percentage" : 6.451612903225806,
         "blockSize" : 6
       }, {
         "sourceFile" : {
           "relativePath" : "frontend/src/server/index.js",
           "extension" : "js",
-          "linesOfCode" : 110,
-          "unitsCount" : 1,
-          "unitsMcCabeIndexSum" : 5,
-          "linesOfCodeInUnits" : 15
+          "linesOfCode" : 105,
+          "unitsCount" : 2,
+          "unitsMcCabeIndexSum" : 10,
+          "linesOfCodeInUnits" : 33
         },
-        "sourceFileCleanedLinesOfCode" : 99,
-        "startLine" : 96,
-        "endLine" : 102,
-        "cleanedStartLine" : 65,
-        "cleanedEndLine" : 70,
-        "percentage" : 6.0606060606060606,
+        "sourceFileCleanedLinesOfCode" : 93,
+        "startLine" : 132,
+        "endLine" : 138,
+        "cleanedStartLine" : 85,
+        "cleanedEndLine" : 90,
+        "percentage" : 6.451612903225806,
+        "blockSize" : 6
+      } ],
+      "blockSize" : 6
+    }, {
+      "displayContent" : "",
+      "duplicatedFileBlocks" : [ {
+        "sourceFile" : {
+          "relativePath" : "frontend/src/server/index.js",
+          "extension" : "js",
+          "linesOfCode" : 105,
+          "unitsCount" : 2,
+          "unitsMcCabeIndexSum" : 10,
+          "linesOfCodeInUnits" : 33
+        },
+        "sourceFileCleanedLinesOfCode" : 93,
+        "startLine" : 77,
+        "endLine" : 82,
+        "cleanedStartLine" : 42,
+        "cleanedEndLine" : 47,
+        "percentage" : 6.451612903225806,
+        "blockSize" : 6
+      }, {
+        "sourceFile" : {
+          "relativePath" : "frontend/src/server/index.js",
+          "extension" : "js",
+          "linesOfCode" : 105,
+          "unitsCount" : 2,
+          "unitsMcCabeIndexSum" : 10,
+          "linesOfCodeInUnits" : 33
+        },
+        "sourceFileCleanedLinesOfCode" : 93,
+        "startLine" : 113,
+        "endLine" : 119,
+        "cleanedStartLine" : 69,
+        "cleanedEndLine" : 74,
+        "percentage" : 6.451612903225806,
         "blockSize" : 6
       } ],
       "blockSize" : 6
@@ -3686,7 +3622,7 @@
     "snap" : 1,
     "prettierignore" : 1
   },
-  "analysisStartTimeMs" : 1764219944768,
-  "maxFileCount" : 35,
-  "maxLinesOfCode" : 3620
+  "analysisStartTimeMs" : 1764220452971,
+  "maxLinesOfCode" : 3620,
+  "maxFileCount" : 35
 }

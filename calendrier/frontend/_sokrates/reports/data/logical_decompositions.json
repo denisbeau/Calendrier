@@ -3,7 +3,7 @@
   "components" : [ {
     "name" : "frontend",
     "filesCount" : 35,
-    "linesOfCode" : 2387,
+    "linesOfCode" : 2366,
     "numberOfRegexLineMatches" : 0,
     "fileCountPerExtension" : [ {
       "name" : "  *.jsx",
@@ -32,11 +32,11 @@
     } ],
     "linesOfCodePerExtension" : [ {
       "name" : "  *.jsx",
-      "value" : 1371,
+      "value" : 1373,
       "description" : [ ]
     }, {
       "name" : "  *.js",
-      "value" : 608,
+      "value" : 585,
       "description" : [ ]
     }, {
       "name" : "  *.css",
@@ -96,14 +96,14 @@
     "temporalLinkThreshold" : 1,
     "maxSearchDepthLines" : 200
   },
+  "linesOfCodePerComponent" : [ {
+    "name" : "frontend",
+    "value" : 2366,
+    "description" : [ ]
+  } ],
   "fileCountPerComponent" : [ {
     "name" : "frontend",
     "value" : 35,
-    "description" : [ ]
-  } ],
-  "linesOfCodePerComponent" : [ {
-    "name" : "frontend",
-    "value" : 2387,
     "description" : [ ]
   } ]
 } ]

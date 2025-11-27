@@ -65,17 +65,19 @@ export function useCalendarEvents() {
       const startDate = new Date(formEvent.start);
       const endDate = new Date(formEvent.end);
 
+      // Helper to create event object
+      const createEventObject = (id) => ({
+        id,
+        title: formEvent.title.trim(),
+        start: startDate,
+        end: endDate,
+        color: formEvent.color || DEFAULT_EVENT_COLOR,
+        categoryName: formEvent.categoryName?.trim() || DEFAULT_CATEGORY_NAME,
+      });
+
       if (isEditing) {
         // Update existing event
-        const updatedEvent = {
-          id: editingEventId,
-          title: formEvent.title.trim(),
-          start: startDate,
-          end: endDate,
-          color: formEvent.color || DEFAULT_EVENT_COLOR,
-          categoryName: formEvent.categoryName?.trim() || DEFAULT_CATEGORY_NAME,
-        };
-
+        const updatedEvent = createEventObject(editingEventId);
         setEvents(prev => prev.map(event => 
           event.id === editingEventId ? updatedEvent : event
         ));
@@ -83,14 +85,7 @@ export function useCalendarEvents() {
         onSuccess?.();
       } else {
         // Create new event
-        const newEventObj = {
-          id: nextId(),
-          title: formEvent.title.trim(),
-          start: startDate,
-          end: endDate,
-          color: formEvent.color || DEFAULT_EVENT_COLOR,
-          categoryName: formEvent.categoryName?.trim() || DEFAULT_CATEGORY_NAME,
-        };
+        const newEventObj = createEventObject(nextId());
 
         setEvents(prev => [...prev, newEventObj]);
         onSuccess?.();

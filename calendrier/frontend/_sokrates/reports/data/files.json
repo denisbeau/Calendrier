@@ -25,7 +25,7 @@
 }, {
   "relativePath" : "frontend/eslint.config.js",
   "extension" : "js",
-  "linesOfCode" : 59,
+  "linesOfCode" : 56,
   "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -103,7 +103,7 @@
 }, {
   "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
   "extension" : "js",
-  "linesOfCode" : 142,
+  "linesOfCode" : 136,
   "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -133,7 +133,7 @@
 }, {
   "relativePath" : "frontend/src/pages/CalendarPage.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 90,
+  "linesOfCode" : 92,
   "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -163,7 +163,7 @@
 }, {
   "relativePath" : "frontend/src/server/index.js",
   "extension" : "js",
-  "linesOfCode" : 110,
+  "linesOfCode" : 105,
   "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -199,7 +199,7 @@
 }, {
   "relativePath" : "frontend/src/utils/dateUtils.js",
   "extension" : "js",
-  "linesOfCode" : 28,
+  "linesOfCode" : 19,
   "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {

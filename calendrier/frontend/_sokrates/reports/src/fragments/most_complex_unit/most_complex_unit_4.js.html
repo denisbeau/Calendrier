@@ -1,51 +1,67 @@
 <html>
 <head>
-    <title>function validateEvent()</title>
+    <title>async function handleFormSubmit()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">function validateEvent()</h3>
-<p style="margin-top: 4px">in <i>frontend/src/features/calendar/hooks/useCalendarEvents.js [16:49]</i></p>
+<h3 style="margin-bottom: 0">async function handleFormSubmit()</h3>
+<p style="margin-top: 4px">in <i>frontend/src/features/calendar/hooks/useCalendarEvents.js [51:100]</i></p>
 <ul>
-    <li><b>26</b> lines of code</li>
-    <li><b>9</b> McCabe index (conditional complexity)</li>
+    <li><b>38</b> lines of code</li>
+    <li><b>8</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="js">
-  function validateEvent(event) {
-    const newErrors = {};
+  async function handleFormSubmit(formEvent, isEditing, editingEventId, onSuccess) {
+    if (isSubmitting) return; // Prevent double submission
     
-    if (!event.title.trim()) {
-      newErrors.title = &quot;Event title is required&quot;;
-    }
-    
-    if (!event.start) {
-      newErrors.start = &quot;Start time is required&quot;;
-    }
-    
-    if (!event.end) {
-      newErrors.end = &quot;End time is required&quot;;
-    }
-    
-    if (event.start &amp;&amp; event.end) {
-      const startDate = new Date(event.start);
-      const endDate = new Date(event.end);
+    setIsSubmitting(true);
+    setErrors({});
+
+    try {
+      const validationErrors = validateEvent(formEvent);
       
-      if (isNaN(startDate.getTime())) {
-        newErrors.start = &quot;Invalid start date&quot;;
+      if (Object.keys(validationErrors).length &gt; 0) {
+        setErrors(validationErrors);
+        return;
+      }
+
+      const startDate = new Date(formEvent.start);
+      const endDate = new Date(formEvent.end);
+
+      // Helper to create event object
+      const createEventObject = (id) =&gt; ({
+        id,
+        title: formEvent.title.trim(),
+        start: startDate,
+        end: endDate,
+        color: formEvent.color || DEFAULT_EVENT_COLOR,
+        categoryName: formEvent.categoryName?.trim() || DEFAULT_CATEGORY_NAME,
+      });
+
+      if (isEditing) {
+        // Update existing event
+        const updatedEvent = createEventObject(editingEventId);
+        setEvents(prev =&gt; prev.map(event =&gt; 
+          event.id === editingEventId ? updatedEvent : event
+        ));
+        
+        onSuccess?.();
+      } else {
+        // Create new event
+        const newEventObj = createEventObject(nextId());
+
+        setEvents(prev =&gt; [...prev, newEventObj]);
+        onSuccess?.();
       }
       
-      if (isNaN(endDate.getTime())) {
-        newErrors.end = &quot;Invalid end date&quot;;
-      }
-      
-      if (startDate &gt;= endDate) {
-        newErrors.end = &quot;End time must be after start time&quot;;
-      }
+    } catch (error) {
+      console.error(&quot;Error saving event:&quot;, error);
+      setErrors({ general: &quot;Failed to save event. Please try again.&quot; });
+    } finally {
+      setIsSubmitting(false);
     }
-    
-    return newErrors;
   }
 
 </code>
