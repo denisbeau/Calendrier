@@ -1,2 +1,2 @@
 Path	Lines of Code
-jest.config.js	15
+frontend/jest.config.js	15

@@ -34,6 +34,37 @@ const transporter = createTransporter();
 
 app.get("/api/health", (req, res) => res.json({ ok: true }));
 
+/**
+ * Helper function to send an email invitation
+ * @param {Object} options - Email options
+ * @param {string} options.to - Recipient email
+ * @param {string} options.subject - Email subject
+ * @param {string} options.text - Plain text email body
+ * @param {string} options.html - HTML email body
+ * @param {string} options.acceptUrl - URL for accepting the invitation
+ * @returns {Promise<Object>} Response object
+ */
+async function sendInviteEmail({ to, subject, text, html, acceptUrl }) {
+  // If transporter is not configured, return created but with warning
+  if (!transporter) {
+    console.warn(
+      "SMTP transporter not configured. Set SMTP_HOST and related env vars to actually send emails."
+    );
+    return { ok: true, warn: "smtp-not-configured", acceptUrl };
+  }
+
+  try {
+    const from =
+      process.env.FROM_EMAIL ||
+      `no-reply@${process.env.SMTP_HOST || "localhost"}`;
+    await transporter.sendMail({ from, to, subject, text, html });
+    return { ok: true };
+  } catch (err) {
+    console.error("Failed to send invite email:", err);
+    throw new Error("failed-to-send");
+  }
+}
+
 // POST /api/invite
 // body: { groupId, email }
 app.post("/api/invite", async (req, res) => {
@@ -54,29 +85,15 @@ app.post("/api/invite", async (req, res) => {
   )}&email=${encodeURIComponent(email)}`;
 
   // Compose email
-  const from =
-    process.env.FROM_EMAIL ||
-    `no-reply@${process.env.SMTP_HOST || "localhost"}`;
   const subject = `Invitation à rejoindre le groupe (${groupId})`;
   const text = `Vous êtes invité(e) à rejoindre le groupe. Acceptez l'invitation : ${acceptUrl}`;
   const html = `<p>Vous êtes invité(e) à rejoindre le groupe.</p><p><a href="${acceptUrl}">Accepter l'invitation</a></p>`;
 
-  // If transporter is not configured, return created but with warning
-  if (!transporter) {
-    console.warn(
-      "SMTP transporter not configured. Set SMTP_HOST and related env vars to actually send emails."
-    );
-    return res
-      .status(201)
-      .json({ ok: true, warn: "smtp-not-configured", acceptUrl });
-  }
-
   try {
-    await transporter.sendMail({ from, to: email, subject, text, html });
-    return res.status(201).json({ ok: true });
+    const result = await sendInviteEmail({ to: email, subject, text, html, acceptUrl });
+    return res.status(201).json(result);
   } catch (err) {
-    console.error("Failed to send invite email:", err);
-    return res.status(500).json({ error: "failed-to-send" });
+    return res.status(500).json({ error: err.message });
   }
 });
 
@@ -102,33 +119,21 @@ app.post("/api/send-invite", async (req, res) => {
     ""
   )}/accept-invite?token=${encodeURIComponent(token)}`;
 
-  const from =
-    process.env.FROM_EMAIL ||
-    `no-reply@${process.env.SMTP_HOST || "localhost"}`;
   const subject = `Invitation à rejoindre ${groupName || "un groupe"}`;
   const text = `Vous êtes invité(e) à rejoindre ${
     groupName || "un groupe"
   }. Acceptez : ${acceptUrl}`;
   const html = `<p>${
     inviterEmail ? `${inviterEmail} ` : ""
-  }vous invite à rejoindre <strong>$
-  {groupName || "le groupe"}</strong>.</p><p><a href="${acceptUrl}">Accepter l'invitation</a></p>`;
-
-  if (!transporter) {
-    console.warn(
-      "SMTP transporter not configured. Set SMTP_HOST and related env vars to actually send emails."
-    );
-    return res
-      .status(201)
-      .json({ ok: true, warn: "smtp-not-configured", acceptUrl });
-  }
+  }vous invite à rejoindre <strong>${
+    groupName || "le groupe"
+  }</strong>.</p><p><a href="${acceptUrl}">Accepter l'invitation</a></p>`;
 
   try {
-    await transporter.sendMail({ from, to: email, subject, text, html });
-    return res.status(201).json({ ok: true });
+    const result = await sendInviteEmail({ to: email, subject, text, html, acceptUrl });
+    return res.status(201).json(result);
   } catch (err) {
-    console.error("Failed to send invite email:", err);
-    return res.status(500).json({ error: "failed-to-send" });
+    return res.status(500).json({ error: err.message });
   }
 });
 

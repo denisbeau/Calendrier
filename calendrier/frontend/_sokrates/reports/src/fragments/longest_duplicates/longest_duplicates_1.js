@@ -1,4 +1,4 @@
-src/server/index.js [65:81]:
+frontend/src/server/index.js [65:81]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   if (!transporter) {
     console.warn(
@@ -21,7 +21,7 @@ src/server/index.js [65:81]:
 
 
 
-src/server/index.js [117:133]:
+frontend/src/server/index.js [117:133]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   if (!transporter) {
     console.warn(

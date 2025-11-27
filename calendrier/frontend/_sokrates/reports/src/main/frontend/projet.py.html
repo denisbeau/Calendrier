@@ -1,0 +1,98 @@
+<html>
+<head>
+    <title>frontend/projet.py</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/projet.py (<b>48</b> lines of code) (<a href="projet.py">raw</a>):</h3>
+<div id="editor">import os
+
+# Folder to scan
+root_folder = r&quot;C:\Users\Tech\Calendrier-1\calendrier\frontend&quot;
+
+# Output file (inside the scanned folder)
+output_file = os.path.join(root_folder, &quot;all_files_content.txt&quot;)
+
+# File extensions to include
+TEXT_EXTENSIONS = (
+    '.php', '.html', '.js', '.jsx', '.ts', '.tsx',
+    '.css', '.scss', '.json', '.xml', '.md', '.txt', '.yml', '.yaml'
+)
+
+# Folders to skip completely
+EXCLUDED_FOLDERS = {&quot;.git&quot;, &quot;node_modules&quot;, &quot;_sokrates&quot;, &quot;_sokrates-explorer&quot;, &quot;dist&quot;}
+
+# Specific files to skip (only by filename, not full path)
+EXCLUDED_FILES = {
+    &quot;analysis_conventions.json&quot;,
+    &quot;.eslintrc.json&quot;,
+    &quot;eslint-config.json&quot;,
+    &quot;eslint.config.js&quot;,
+    &quot;git-history.txt&quot;,
+    &quot;jest.config.js&quot;,
+    &quot;package.json&quot;
+}
+
+with open(output_file, &quot;w&quot;, encoding=&quot;utf-8&quot;) as out:
+    for foldername, subfolders, filenames in os.walk(root_folder):
+        # Skip unwanted folders
+        subfolders[:] = [d for d in subfolders if d not in EXCLUDED_FOLDERS]
+
+        out.write(f&quot;\n📂 Directory: {foldername}\n&quot;)
+        out.write(&quot;=&quot; * 80 + &quot;\n&quot;)
+
+        for filename in filenames:
+            file_path = os.path.join(foldername, filename)
+
+            # Skip the output file itself
+            if os.path.abspath(file_path) == os.path.abspath(output_file):
+                continue
+
+            # Skip excluded files
+            if filename in EXCLUDED_FILES:
+                continue
+
+            # Skip package-lock.json at the root folder
+            if (
+                filename == &quot;package-lock.json&quot;
+                and os.path.dirname(file_path) == os.path.abspath(root_folder)
+            ):
+                continue
+
+            # Skip non-text files
+            if not filename.lower().endswith(TEXT_EXTENSIONS):
+                continue
+
+            out.write(f&quot;\n📝 File: {filename}\nPath: {file_path}\n&quot;)
+            out.write(&quot;-&quot; * 80 + &quot;\n&quot;)
+            try:
+                with open(file_path, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
+                    content = f.read().strip()
+                    if content:
+                        out.write(content + &quot;\n&quot;)
+                    else:
+                        out.write(&quot;⚠️ File is empty\n&quot;)
+            except Exception as e:
+                out.write(f&quot;⚠️ Could not read file: {e}\n&quot;)
+        out.write(&quot;\n&quot; + &quot;=&quot; * 80 + &quot;\n&quot;)
+
+print(f&quot;✅ Done. Output saved to: {output_file}&quot;)
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/python");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

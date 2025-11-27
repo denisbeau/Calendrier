@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>frontend/src/App.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/src/App.jsx (<b>55</b> lines of code) (<a href="App.jsx">raw</a>):</h3>
+<div id="editor">// src/App.jsx
+import React from &quot;react&quot;;
+import { BrowserRouter, Routes, Route, Navigate } from &quot;react-router-dom&quot;;
+import { AuthProvider } from &quot;./context/AuthContext&quot;;
+import { ThemeProvider } from &quot;./theme/ThemeProvider&quot;;
+import MainLayout from &quot;./layouts/MainLayout&quot;;
+import ProtectedRoute from &quot;./components/ProtectedRoute&quot;;
+import HomePage from &quot;./pages/HomePage&quot;;
+import LoginPage from &quot;./pages/LoginPage&quot;;
+import SignUpPage from &quot;./pages/SignUpPage&quot;;
+import CalendarPage from &quot;./pages/CalendarPage&quot;;
+import GroupsPage from &quot;./pages/GroupsPage&quot;;
+
+export default function App() {
+  return (
+    &lt;ThemeProvider&gt;
+      &lt;AuthProvider&gt;
+        &lt;BrowserRouter&gt;
+          &lt;Routes&gt;
+            {/* Public routes */}
+            &lt;Route path=&quot;/login&quot; element={&lt;LoginPage /&gt;} /&gt;
+            &lt;Route path=&quot;/signup&quot; element={&lt;SignUpPage /&gt;} /&gt;
+
+            {/* Protected routes */}
+            &lt;Route
+              path=&quot;/*&quot;
+              element={
+                &lt;MainLayout&gt;
+                  &lt;Routes&gt;
+                    &lt;Route path=&quot;/&quot; element={&lt;HomePage /&gt;} /&gt;
+                    &lt;Route
+                      path=&quot;/calendar&quot;
+                      element={
+                        &lt;ProtectedRoute&gt;
+                          &lt;CalendarPage /&gt;
+                        &lt;/ProtectedRoute&gt;
+                      }
+                    /&gt;
+                    &lt;Route
+                      path=&quot;/groups&quot;
+                      element={
+                        &lt;ProtectedRoute&gt;
+                          &lt;GroupsPage /&gt;
+                        &lt;/ProtectedRoute&gt;
+                      }
+                    /&gt;
+                    &lt;Route path=&quot;*&quot; element={&lt;Navigate to=&quot;/&quot; replace /&gt;} /&gt;
+                  &lt;/Routes&gt;
+                &lt;/MainLayout&gt;
+              }
+            /&gt;
+          &lt;/Routes&gt;
+        &lt;/BrowserRouter&gt;
+      &lt;/AuthProvider&gt;
+    &lt;/ThemeProvider&gt;
+  );
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

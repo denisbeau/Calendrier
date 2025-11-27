@@ -1,0 +1,128 @@
+<html>
+<head>
+    <title>frontend/src/features/calendar/components/CalendarView.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/src/features/calendar/components/CalendarView.jsx (<b>98</b> lines of code) (<a href="CalendarView.jsx">raw</a>):</h3>
+<div id="editor">// src/features/calendar/components/CalendarView.jsx
+import React from &quot;react&quot;;
+import { Calendar, dateFnsLocalizer } from &quot;react-big-calendar&quot;;
+import format from &quot;date-fns/format&quot;;
+import parse from &quot;date-fns/parse&quot;;
+import startOfWeek from &quot;date-fns/startOfWeek&quot;;
+import getDay from &quot;date-fns/getDay&quot;;
+import enUS from &quot;date-fns/locale/en-US&quot;;
+import &quot;react-big-calendar/lib/css/react-big-calendar.css&quot;;
+import PropTypes from &quot;prop-types&quot;;
+import { DEFAULT_EVENT_COLOR } from &quot;../../../utils/constants&quot;;
+
+const locales = { &quot;en-US&quot;: enUS };
+const localizer = dateFnsLocalizer({ format, parse, startOfWeek, getDay, locales });
+
+export default function CalendarView({
+  events,
+  currentView,
+  setCurrentView,
+  currentDate,
+  setCurrentDate,
+  onSelectEvent,
+  onSelectSlot,
+}) {
+  return (
+    &lt;div className=&quot;simple-card&quot;&gt;
+      &lt;h3 className=&quot;text-xl font-semibold mb-4 text-gray-900&quot;&gt;Calendar&lt;/h3&gt;
+      &lt;Calendar
+        localizer={localizer}
+        events={events}
+        startAccessor=&quot;start&quot;
+        endAccessor=&quot;end&quot;
+        style={{ height: 600 }}
+        selectable
+        onSelectEvent={onSelectEvent}
+        onSelectSlot={onSelectSlot}
+        view={currentView}
+        onView={setCurrentView}
+        views={['month', 'week', 'day', 'agenda']}
+        popup
+        eventPropGetter={(event) =&gt; {
+          const hex = (event.color || DEFAULT_EVENT_COLOR).replace('#','');
+          // Compute brightness for contrast (simple RGB average weighted)
+          const r = parseInt(hex.substring(0,2),16);
+          const g = parseInt(hex.substring(2,4),16);
+          const b = parseInt(hex.substring(4,6),16);
+          const brightness = (r * 299 + g * 587 + b * 114) / 1000; // 0-255
+          const textColor = brightness &lt; 130 ? '#FFFFFF' : '#000000';
+          return {
+            style: {
+              backgroundColor: '#' + hex,
+              color: textColor,
+              borderRadius: '6px',
+              border: 'none',
+              padding: '2px 6px',
+              fontSize: '0.75rem',
+              lineHeight: '1rem',
+              fontWeight: 500,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              overflow: 'hidden',
+              whiteSpace: 'normal'
+            }
+          };
+        }}
+        components={{
+          week: {
+            header: ({ date }) =&gt; (
+              &lt;div className=&quot;rbc-header-custom&quot;&gt;
+                &lt;span className=&quot;rbc-header-day-number&quot;&gt;{date.getDate()}&lt;/span&gt;
+                &lt;span className=&quot;rbc-header-day-name&quot;&gt;{format(date, 'EEE')}&lt;/span&gt;
+              &lt;/div&gt;
+            )
+          },
+          day: {
+            header: ({ date }) =&gt; (
+              &lt;div className=&quot;rbc-header-custom&quot;&gt;
+                &lt;span className=&quot;rbc-header-day-number&quot;&gt;{date.getDate()}&lt;/span&gt;
+                &lt;span className=&quot;rbc-header-day-name&quot;&gt;{format(date, 'EEE')}&lt;/span&gt;
+              &lt;/div&gt;
+            )
+          }
+        }}
+        date={currentDate}
+        onNavigate={setCurrentDate}
+        scrollToTime={new Date(1970, 1, 1, 8)}
+      /&gt;
+    &lt;/div&gt;
+  );
+}
+
+CalendarView.propTypes = {
+  events: PropTypes.array.isRequired,
+  currentView: PropTypes.string.isRequired,
+  setCurrentView: PropTypes.func.isRequired,
+  currentDate: PropTypes.instanceOf(Date).isRequired,
+  setCurrentDate: PropTypes.func.isRequired,
+  onSelectEvent: PropTypes.func.isRequired,
+  onSelectSlot: PropTypes.func.isRequired,
+};
+
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

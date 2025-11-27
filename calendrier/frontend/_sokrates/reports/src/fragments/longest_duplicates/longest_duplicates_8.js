@@ -1,25 +1,24 @@
-eslint.config.js [44:50]:
+frontend/src/server/index.js [46:51]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      },
-    },
-    rules: {
-      // allow console in Cypress support if you want
-      "no-console": "off",
-    },
-  },
+    process.env.FRONTEND_URL ||
+    process.env.VITE_FRONTEND_URL ||
+    "http://localhost:5173";
+  const acceptUrl = `${frontend.replace(
+    /\/$/,
+    ""
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-eslint.config.js [62:68]:
+frontend/src/server/index.js [96:102]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-      },
-    },
-    rules: {
-      // allow console in config files
-      "no-console": "off",
-    },
-  },
+    process.env.FRONTEND_URL ||
+    process.env.VITE_FRONTEND_URL ||
+    "http://localhost:5173";
+
+  const acceptUrl = `${frontend.replace(
+    /\/$/,
+    ""
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

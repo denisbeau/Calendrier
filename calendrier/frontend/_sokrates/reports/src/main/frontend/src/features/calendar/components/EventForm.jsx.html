@@ -1,0 +1,230 @@
+<html>
+<head>
+    <title>frontend/src/features/calendar/components/EventForm.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/src/features/calendar/components/EventForm.jsx (<b>192</b> lines of code) (<a href="EventForm.jsx">raw</a>):</h3>
+<div id="editor">// src/features/calendar/components/EventForm.jsx
+import React, { useState } from &quot;react&quot;;
+import PropTypes from &quot;prop-types&quot;;
+import { DEFAULT_CATEGORIES, DEFAULT_EVENT_COLOR, DEFAULT_CATEGORY_NAME } from &quot;../../../utils/constants&quot;;
+
+export default function EventForm({
+  formEvent,
+  setFormEvent,
+  categories,
+  setCategories,
+  isEditing,
+  isSubmitting,
+  errors,
+  setErrors,
+  onSubmit,
+  onDelete,
+  onCancel,
+}) {
+  const [editingColor, setEditingColor] = useState(null);
+
+  return (
+    &lt;div className=&quot;simple-card mb-8&quot;&gt;
+      &lt;h2 className=&quot;text-xl font-semibold mb-4 text-gray-900&quot;&gt;
+        {isEditing ? 'Edit Event' : 'Create New Event'}
+      &lt;/h2&gt;
+      
+      {errors.general &amp;&amp; (
+        &lt;div className=&quot;mb-4 p-3 border border-red-500 rounded text-sm bg-red-50 text-red-700&quot;&gt;
+          {errors.general}
+        &lt;/div&gt;
+      )}
+      
+      &lt;form onSubmit={onSubmit} className=&quot;grid grid-cols-1 md:grid-cols-4 gap-4 items-end&quot;&gt;
+        &lt;div&gt;
+          &lt;label className=&quot;block text-sm font-medium mb-2 text-gray-700&quot;&gt;
+            Title *
+          &lt;/label&gt;
+          &lt;input
+            className={`simple-input ${errors.title ? 'border-red-500' : ''}`}
+            value={formEvent.title}
+            onChange={(e) =&gt; {
+              setFormEvent({ ...formEvent, title: e.target.value });
+              if (errors.title) {
+                setErrors(prev =&gt; ({ ...prev, title: null }));
+              }
+            }}
+            placeholder=&quot;Enter event title&quot;
+            disabled={isSubmitting}
+          /&gt;
+          {errors.title &amp;&amp; (
+            &lt;p className=&quot;text-red-400 text-xs mt-1&quot;&gt;{errors.title}&lt;/p&gt;
+          )}
+        &lt;/div&gt;
+
+        &lt;div&gt;
+          &lt;label className=&quot;block text-sm font-medium mb-2 text-gray-700&quot;&gt;
+            Categorie
+          &lt;/label&gt;
+          &lt;div className=&quot;flex flex-col gap-2&quot;&gt;
+            &lt;div className=&quot;flex flex-wrap gap-2&quot;&gt;
+              {Object.keys(categories).map(c =&gt; (
+                &lt;div key={c} className=&quot;relative&quot;&gt;
+                  {editingColor === c ? (
+                    &lt;input
+                      type=&quot;text&quot;
+                      autoFocus
+                      className=&quot;simple-input text-xs px-2 py-1 w-32&quot;
+                      value={categories[c]}
+                      onChange={(e) =&gt; setCategories({ ...categories, [c]: e.target.value })}
+                      onBlur={() =&gt; setEditingColor(null)}
+                      onKeyDown={(e) =&gt; {
+                        if (e.key === 'Enter' || e.key === 'Escape') {
+                          setEditingColor(null);
+                        }
+                      }}
+                    /&gt;
+                  ) : (
+                    &lt;button
+                      type=&quot;button&quot;
+                      aria-label={`Select ${categories[c]}`}
+                      onClick={() =&gt; {
+                        setFormEvent({ ...formEvent, color: c, categoryName: categories[c] });
+                      }}
+                      onDoubleClick={() =&gt; setEditingColor(c)}
+                      disabled={isSubmitting}
+                      title={`${categories[c]} (double-click to rename)`}
+                      style={{
+                        backgroundColor: c,
+                        width: '28px',
+                        height: '28px',
+                        borderRadius: '6px',
+                        border: formEvent.color === c ? '3px solid #00000040' : '2px solid #ffffff',
+                        boxShadow: formEvent.color === c ? '0 0 0 2px rgba(0,0,0,0.25)' : '0 0 0 1px rgba(0,0,0,0.1)',
+                        cursor: 'pointer'
+                      }}
+                    /&gt;
+                  )}
+                &lt;/div&gt;
+              ))}
+            &lt;/div&gt;
+            &lt;span className=&quot;text-xs text-gray-600&quot;&gt;Selected: {formEvent.categoryName}&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div&gt;
+          &lt;label className=&quot;block text-sm font-medium mb-2 text-gray-700&quot;&gt;
+            Start Time *
+          &lt;/label&gt;
+          &lt;input
+            type=&quot;datetime-local&quot;
+            className={`simple-input ${errors.start ? 'border-red-500' : ''}`}
+            value={formEvent.start}
+            onChange={(e) =&gt; {
+              setFormEvent({ ...formEvent, start: e.target.value });
+              if (errors.start) {
+                setErrors(prev =&gt; ({ ...prev, start: null }));
+              }
+            }}
+            disabled={isSubmitting}
+          /&gt;
+          {errors.start &amp;&amp; (
+            &lt;p className=&quot;text-red-400 text-xs mt-1&quot;&gt;{errors.start}&lt;/p&gt;
+          )}
+        &lt;/div&gt;
+
+        &lt;div&gt;
+          &lt;label className=&quot;block text-sm font-medium mb-2 text-gray-700&quot;&gt;
+            End Time *
+          &lt;/label&gt;
+          &lt;input
+            type=&quot;datetime-local&quot;
+            className={`simple-input ${errors.end ? 'border-red-500' : ''}`}
+            value={formEvent.end}
+            onChange={(e) =&gt; {
+              setFormEvent({ ...formEvent, end: e.target.value });
+              if (errors.end) {
+                setErrors(prev =&gt; ({ ...prev, end: null }));
+              }
+            }}
+            disabled={isSubmitting}
+          /&gt;
+          {errors.end &amp;&amp; (
+            &lt;p className=&quot;text-red-400 text-xs mt-1&quot;&gt;{errors.end}&lt;/p&gt;
+          )}
+        &lt;/div&gt;
+
+        &lt;div className=&quot;flex flex-col gap-4&quot;&gt;
+          {isEditing ? (
+            &lt;div className=&quot;flex gap-2&quot;&gt;
+              &lt;button 
+                type=&quot;submit&quot; 
+                className=&quot;simple-button flex-1&quot;
+                disabled={isSubmitting}
+              &gt;
+                {isSubmitting ? 'Updating...' : 'Update Event'}
+              &lt;/button&gt;
+              
+              &lt;button
+                type=&quot;button&quot;
+                onClick={onDelete}
+                className=&quot;simple-button bg-red-600 hover:bg-red-700 flex-1&quot;
+                disabled={isSubmitting}
+              &gt;
+                Delete Event
+              &lt;/button&gt;
+              
+              &lt;button
+                type=&quot;button&quot;
+                onClick={onCancel}
+                className=&quot;simple-button bg-gray-600 hover:bg-gray-700 flex-1&quot;
+                disabled={isSubmitting}
+              &gt;
+                Cancel
+              &lt;/button&gt;
+            &lt;/div&gt;
+          ) : (
+            &lt;button 
+              type=&quot;submit&quot; 
+              className=&quot;simple-button&quot;
+              disabled={isSubmitting}
+            &gt;
+              {isSubmitting ? 'Creating...' : 'Create Event'}
+            &lt;/button&gt;
+          )}
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  );
+}
+
+EventForm.propTypes = {
+  formEvent: PropTypes.object.isRequired,
+  setFormEvent: PropTypes.func.isRequired,
+  categories: PropTypes.object.isRequired,
+  setCategories: PropTypes.func.isRequired,
+  isEditing: PropTypes.bool.isRequired,
+  isSubmitting: PropTypes.bool.isRequired,
+  errors: PropTypes.object.isRequired,
+  setErrors: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  onDelete: PropTypes.func,
+  onCancel: PropTypes.func.isRequired,
+};
+
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

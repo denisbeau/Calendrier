@@ -1,54 +1,48 @@
 duplicated block id: 1
 size: 14 cleaned lines of code
 in 2 files:
- - src/server/index.js (65:81)
- - src/server/index.js (117:133)
+ - frontend/src/server/index.js (65:81)
+ - frontend/src/server/index.js (117:133)
 
 duplicated block id: 2
-size: 10 cleaned lines of code
+size: 8 cleaned lines of code
 in 2 files:
- - src/Calendar.jsx (103:112)
- - src/Calendar.jsx (392:401)
+ - frontend/src/features/calendar/hooks/useCalendarEvents.js (171:178)
+ - frontend/src/pages/CalendarPage.jsx (12:19)
 
 duplicated block id: 3
-size: 10 cleaned lines of code
+size: 7 cleaned lines of code
 in 2 files:
- - src/Calendar.jsx (117:126)
- - src/Calendar.jsx (409:418)
+ - frontend/eslint.config.js (21:27)
+ - frontend/eslint.config.js (40:46)
 
 duplicated block id: 4
-size: 7 cleaned lines of code
+size: 6 cleaned lines of code
 in 2 files:
- - src/Calendar.jsx (27:33)
- - src/Calendar.jsx (38:44)
+ - frontend/eslint.config.js (44:50)
+ - frontend/eslint.config.js (62:68)
 
 duplicated block id: 5
-size: 7 cleaned lines of code
+size: 6 cleaned lines of code
 in 2 files:
- - eslint.config.js (21:27)
- - eslint.config.js (40:46)
+ - frontend/src/utils/dateUtils.js (9:14)
+ - frontend/src/utils/dateUtils.js (24:29)
 
 duplicated block id: 6
 size: 6 cleaned lines of code
 in 2 files:
- - src/server/index.js (46:51)
- - src/server/index.js (96:102)
+ - frontend/src/features/calendar/hooks/useCalendarEvents.js (72:77)
+ - frontend/src/features/calendar/hooks/useCalendarEvents.js (88:93)
 
 duplicated block id: 7
 size: 6 cleaned lines of code
 in 2 files:
- - src/Calendar.jsx (139:144)
- - src/Calendar.jsx (396:401)
+ - frontend/src/index.css (146:151)
+ - frontend/src/index.css (227:232)
 
 duplicated block id: 8
 size: 6 cleaned lines of code
 in 2 files:
- - eslint.config.js (44:50)
- - eslint.config.js (62:68)
-
-duplicated block id: 9
-size: 6 cleaned lines of code
-in 2 files:
- - src/Calendar.jsx (107:112)
- - src/Calendar.jsx (139:144)
+ - frontend/src/server/index.js (46:51)
+ - frontend/src/server/index.js (96:102)
 

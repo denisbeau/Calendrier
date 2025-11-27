@@ -1,5 +1,5 @@
 [ {
-  "relativePath" : "jest.config.js",
+  "relativePath" : "frontend/jest.config.js",
   "extension" : "js",
   "linesOfCode" : 15,
   "unitsCount" : 0,

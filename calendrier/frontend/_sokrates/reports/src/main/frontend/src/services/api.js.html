@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>frontend/src/services/api.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/src/services/api.js (<b>57</b> lines of code) (<a href="api.js">raw</a>):</h3>
+<div id="editor">// src/services/api.js
+import { supabase } from &quot;../supabaseClient&quot;;
+
+/**
+ * createEvent(payload)
+ * payload fields:
+ *  - title (string) (required)
+ *  - start (ISO string or Date)  // for personal events -&gt; inserted into events.start
+ *  - end (ISO string or Date)    // for personal events -&gt; events.end
+ *  - groupId (uuid) (optional)   // if provided -&gt; insert into group_events (start_at/end_at)
+ *  - userId (uuid) (optional)
+ *  - allDay (boolean) (optional)
+ *  - category, color (optional)
+ */
+export async function createEvent(payload) {
+  if (!payload || !payload.title) {
+    throw new Error(&quot;createEvent: payload.title is required&quot;);
+  }
+
+  const startIso =
+    payload.start instanceof Date
+      ? payload.start.toISOString()
+      : String(payload.start);
+  const endIso =
+    payload.end instanceof Date
+      ? payload.end.toISOString()
+      : String(payload.end);
+
+  if (payload.groupId) {
+    const insertObj = {
+      title: payload.title,
+      start_at: startIso,
+      end_at: endIso,
+      group_id: payload.groupId,
+    };
+
+    if (typeof payload.userId !== &quot;undefined&quot;)
+      insertObj.created_by = payload.userId;
+    if (typeof payload.allDay !== &quot;undefined&quot;)
+      insertObj.all_day = payload.allDay;
+    if (payload.category) insertObj.category = payload.category;
+    if (payload.color) insertObj.color = payload.color;
+
+    const { data, error } = await supabase
+      .from(&quot;group_events&quot;)
+      .insert([insertObj]);
+    // debug: &eacute;vite .select() si PostgREST a un souci de sch&eacute;ma
+    if (error) {
+      console.error(&quot;createEvent group_events insert error:&quot;, error);
+      throw error;
+    }
+    return data;
+  } else {
+    // insert into personal events table
+    const insertObj = {
+      title: payload.title,
+      start: startIso,
+      end: endIso,
+      user_id: payload.userId ?? undefined,
+      all_day: payload.allDay ?? undefined,
+      category: payload.category ?? undefined,
+      color: payload.color ?? undefined,
+    };
+
+    Object.keys(insertObj).forEach((k) =&gt; {
+      if (insertObj[k] === undefined || insertObj[k] === null)
+        delete insertObj[k];
+    });
+
+    const { data, error } = await supabase
+      .from(&quot;events&quot;)
+      .insert([insertObj])
+      .select()
+      .single();
+
+    if (error) throw error;
+    return data;
+  }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

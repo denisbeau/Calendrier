@@ -1,12 +1,14 @@
 // src/pages/CalendarPage.jsx
 import React, { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { useCalendarEvents } from "../features/calendar/hooks/useCalendarEvents";
 import EventForm from "../features/calendar/components/EventForm";
 import CalendarView from "../features/calendar/components/CalendarView";
 import { DEFAULT_CATEGORIES } from "../utils/constants";
-import PropTypes from "prop-types";
 
-export default function CalendarPage({ groupId }) {
+export default function CalendarPage() {
+  const [searchParams] = useSearchParams();
+  const groupId = searchParams.get("groupId");
   const {
     events,
     isSubmitting,

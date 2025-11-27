@@ -1,24 +1,36 @@
 <html>
 <head>
-    <title>function generate6CharCode()</title>
+    <title>export async function fetchUserGroups()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">function generate6CharCode()</h3>
-<p style="margin-top: 4px">in <i>src/services/groups.js [5:11]</i></p>
+<h3 style="margin-bottom: 0">export async function fetchUserGroups()</h3>
+<p style="margin-top: 4px">in <i>frontend/src/services/groups.js [74:92]</i></p>
 <ul>
-    <li><b>7</b> lines of code</li>
-    <li><b>2</b> McCabe index (conditional complexity)</li>
+    <li><b>16</b> lines of code</li>
+    <li><b>4</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="js">
-function generate6CharCode() {
-  const letters = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
-  let s = &quot;&quot;;
-  for (let i = 0; i &lt; 6; i++)
-    s += letters[Math.floor(Math.random() * letters.length)];
-  return s;
+export async function fetchUserGroups() {
+  const { data: userData } = await supabase.auth.getUser();
+  const user = userData?.user;
+  if (!user) return [];
+
+  const { data, error } = await supabase
+    .from(&quot;group_members&quot;)
+    .select(
+      &quot;group_id, role, groups(id, name, description, owner_id, created_at, invite_code)&quot;
+    )
+    .eq(&quot;user_id&quot;, user.id);
+
+  if (error) throw error;
+
+  return (data || []).map((row) =&gt; ({
+    group: row.groups,
+    role: row.role,
+  }));
 }
 
 </code>

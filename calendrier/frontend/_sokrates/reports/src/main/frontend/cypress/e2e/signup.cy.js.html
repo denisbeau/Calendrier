@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>frontend/cypress/e2e/signup.cy.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/cypress/e2e/signup.cy.js (<b>35</b> lines of code) (<a href="signup.cy.js">raw</a>):</h3>
+<div id="editor">// cypress/e2e/signup.cy.js
+
+describe(&quot;Sign Up Flow&quot;, () =&gt; {
+  beforeEach(() =&gt; {
+    cy.visit(&quot;/&quot;);
+    // Open Sign Up view
+    cy.contains(&quot;button&quot;, &quot;Sign up&quot;).click();
+  });
+
+  it(&quot;shows validation errors if required fields are empty&quot;, () =&gt; {
+    // Click sign up without filling fields
+    cy.contains(&quot;button&quot;, &quot;Sign up&quot;).click();
+
+    // Wait for error message to appear
+    cy.contains(&quot;Email and password are required.&quot;, { timeout: 5000 }).should(
+      &quot;be.visible&quot;
+    );
+  });
+
+  it(&quot;allows a user to enter name, email, password and submit&quot;, () =&gt; {
+    const testName = &quot;Cypress Test User&quot;;
+    const testEmail = `cypress${Date.now()}@example.com`;
+    const testPassword = &quot;Test1234!&quot;;
+
+    cy.get('input[placeholder=&quot;Your full name&quot;]').type(testName);
+    cy.get('input[placeholder=&quot;you@example.com&quot;]').type(testEmail);
+    cy.get('input[placeholder=&quot;At least 6 characters&quot;]').type(testPassword);
+
+    cy.contains(&quot;button&quot;, &quot;Sign up&quot;).click();
+
+    // Wait for success message (async from Supabase)
+    cy.contains(
+      &quot;Sign-up succeeded &mdash; check your email for a confirmation link.&quot;,
+      { timeout: 10000 }
+    ).should(&quot;be.visible&quot;);
+  });
+
+  it(&quot;displays error if signup fails (e.g., duplicate email)&quot;, () =&gt; {
+    const existingEmail = &quot;existinguser@example.com&quot;;
+
+    cy.get('input[placeholder=&quot;you@example.com&quot;]').type(existingEmail);
+    cy.get('input[placeholder=&quot;At least 6 characters&quot;]').type(&quot;Test1234!&quot;);
+
+    cy.contains(&quot;button&quot;, &quot;Sign up&quot;).click();
+
+    // Supabase error message may vary; check for &quot;already registered&quot;
+    cy.get(&quot;.text-sm.text-red-300&quot;, { timeout: 10000 }).should(
+      &quot;contain.text&quot;,
+      &quot;already registered&quot;
+    );
+  });
+});
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

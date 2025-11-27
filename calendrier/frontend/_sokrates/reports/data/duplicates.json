@@ -1,14 +1,14 @@
 {
   "title" : "Duplication",
-  "timestamp" : "2025-11-04 13:37:57",
+  "timestamp" : "2025-11-27 00:05:57",
   "duplicates" : [ {
     "blockSize" : 14,
     "duplicatedFileBlocks" : [ {
       "file" : {
-        "relativePath" : "src/server/index.js",
+        "relativePath" : "frontend/src/server/index.js",
         "extension" : "js",
         "linesOfCode" : 110,
-        "components" : [ "primary::src" ],
+        "components" : [ "primary::frontend" ],
         "concerns" : [ "::Unclassified" ]
       },
       "sourceFileCleanedLinesOfCode" : 99,
@@ -18,10 +18,10 @@
       "cleanedEndLine" : 55
     }, {
       "file" : {
-        "relativePath" : "src/server/index.js",
+        "relativePath" : "frontend/src/server/index.js",
         "extension" : "js",
         "linesOfCode" : 110,
-        "components" : [ "primary::src" ],
+        "components" : [ "primary::frontend" ],
         "concerns" : [ "::Unclassified" ]
       },
       "sourceFileCleanedLinesOfCode" : 99,
@@ -31,100 +31,42 @@
       "cleanedEndLine" : 96
     } ]
   }, {
-    "blockSize" : 10,
+    "blockSize" : 8,
     "duplicatedFileBlocks" : [ {
       "file" : {
-        "relativePath" : "src/Calendar.jsx",
-        "extension" : "jsx",
-        "linesOfCode" : 629,
-        "components" : [ "primary::src" ],
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "components" : [ "primary::frontend" ],
         "concerns" : [ "::Unclassified" ]
       },
-      "sourceFileCleanedLinesOfCode" : 594,
-      "startLine" : 103,
-      "endLine" : 112,
-      "cleanedStartLine" : 92,
-      "cleanedEndLine" : 101
+      "sourceFileCleanedLinesOfCode" : 120,
+      "startLine" : 171,
+      "endLine" : 178,
+      "cleanedStartLine" : 112,
+      "cleanedEndLine" : 119
     }, {
       "file" : {
-        "relativePath" : "src/Calendar.jsx",
+        "relativePath" : "frontend/src/pages/CalendarPage.jsx",
         "extension" : "jsx",
-        "linesOfCode" : 629,
-        "components" : [ "primary::src" ],
+        "linesOfCode" : 90,
+        "components" : [ "primary::frontend" ],
         "concerns" : [ "::Unclassified" ]
       },
-      "sourceFileCleanedLinesOfCode" : 594,
-      "startLine" : 392,
-      "endLine" : 401,
-      "cleanedStartLine" : 332,
-      "cleanedEndLine" : 341
-    } ]
-  }, {
-    "blockSize" : 10,
-    "duplicatedFileBlocks" : [ {
-      "file" : {
-        "relativePath" : "src/Calendar.jsx",
-        "extension" : "jsx",
-        "linesOfCode" : 629,
-        "components" : [ "primary::src" ],
-        "concerns" : [ "::Unclassified" ]
-      },
-      "sourceFileCleanedLinesOfCode" : 594,
-      "startLine" : 117,
-      "endLine" : 126,
-      "cleanedStartLine" : 106,
-      "cleanedEndLine" : 115
-    }, {
-      "file" : {
-        "relativePath" : "src/Calendar.jsx",
-        "extension" : "jsx",
-        "linesOfCode" : 629,
-        "components" : [ "primary::src" ],
-        "concerns" : [ "::Unclassified" ]
-      },
-      "sourceFileCleanedLinesOfCode" : 594,
-      "startLine" : 409,
-      "endLine" : 418,
-      "cleanedStartLine" : 349,
-      "cleanedEndLine" : 358
+      "sourceFileCleanedLinesOfCode" : 88,
+      "startLine" : 12,
+      "endLine" : 19,
+      "cleanedStartLine" : 11,
+      "cleanedEndLine" : 18
     } ]
   }, {
     "blockSize" : 7,
     "duplicatedFileBlocks" : [ {
       "file" : {
-        "relativePath" : "src/Calendar.jsx",
-        "extension" : "jsx",
-        "linesOfCode" : 629,
-        "components" : [ "primary::src" ],
-        "concerns" : [ "::Unclassified" ]
-      },
-      "sourceFileCleanedLinesOfCode" : 594,
-      "startLine" : 27,
-      "endLine" : 33,
-      "cleanedStartLine" : 25,
-      "cleanedEndLine" : 31
-    }, {
-      "file" : {
-        "relativePath" : "src/Calendar.jsx",
-        "extension" : "jsx",
-        "linesOfCode" : 629,
-        "components" : [ "primary::src" ],
-        "concerns" : [ "::Unclassified" ]
-      },
-      "sourceFileCleanedLinesOfCode" : 594,
-      "startLine" : 38,
-      "endLine" : 44,
-      "cleanedStartLine" : 35,
-      "cleanedEndLine" : 41
-    } ]
-  }, {
-    "blockSize" : 7,
-    "duplicatedFileBlocks" : [ {
-      "file" : {
-        "relativePath" : "eslint.config.js",
+        "relativePath" : "frontend/eslint.config.js",
         "extension" : "js",
         "linesOfCode" : 59,
-        "components" : [ "primary::ROOT" ],
+        "components" : [ "primary::frontend" ],
         "concerns" : [ "::Unclassified" ]
       },
       "sourceFileCleanedLinesOfCode" : 51,
@@ -134,10 +76,10 @@
       "cleanedEndLine" : 18
     }, {
       "file" : {
-        "relativePath" : "eslint.config.js",
+        "relativePath" : "frontend/eslint.config.js",
         "extension" : "js",
         "linesOfCode" : 59,
-        "components" : [ "primary::ROOT" ],
+        "components" : [ "primary::frontend" ],
         "concerns" : [ "::Unclassified" ]
       },
       "sourceFileCleanedLinesOfCode" : 51,
@@ -150,68 +92,10 @@
     "blockSize" : 6,
     "duplicatedFileBlocks" : [ {
       "file" : {
-        "relativePath" : "src/server/index.js",
-        "extension" : "js",
-        "linesOfCode" : 110,
-        "components" : [ "primary::src" ],
-        "concerns" : [ "::Unclassified" ]
-      },
-      "sourceFileCleanedLinesOfCode" : 99,
-      "startLine" : 46,
-      "endLine" : 51,
-      "cleanedStartLine" : 27,
-      "cleanedEndLine" : 32
-    }, {
-      "file" : {
-        "relativePath" : "src/server/index.js",
-        "extension" : "js",
-        "linesOfCode" : 110,
-        "components" : [ "primary::src" ],
-        "concerns" : [ "::Unclassified" ]
-      },
-      "sourceFileCleanedLinesOfCode" : 99,
-      "startLine" : 96,
-      "endLine" : 102,
-      "cleanedStartLine" : 65,
-      "cleanedEndLine" : 70
-    } ]
-  }, {
-    "blockSize" : 6,
-    "duplicatedFileBlocks" : [ {
-      "file" : {
-        "relativePath" : "src/Calendar.jsx",
-        "extension" : "jsx",
-        "linesOfCode" : 629,
-        "components" : [ "primary::src" ],
-        "concerns" : [ "::Unclassified" ]
-      },
-      "sourceFileCleanedLinesOfCode" : 594,
-      "startLine" : 139,
-      "endLine" : 144,
-      "cleanedStartLine" : 127,
-      "cleanedEndLine" : 132
-    }, {
-      "file" : {
-        "relativePath" : "src/Calendar.jsx",
-        "extension" : "jsx",
-        "linesOfCode" : 629,
-        "components" : [ "primary::src" ],
-        "concerns" : [ "::Unclassified" ]
-      },
-      "sourceFileCleanedLinesOfCode" : 594,
-      "startLine" : 396,
-      "endLine" : 401,
-      "cleanedStartLine" : 336,
-      "cleanedEndLine" : 341
-    } ]
-  }, {
-    "blockSize" : 6,
-    "duplicatedFileBlocks" : [ {
-      "file" : {
-        "relativePath" : "eslint.config.js",
+        "relativePath" : "frontend/eslint.config.js",
         "extension" : "js",
         "linesOfCode" : 59,
-        "components" : [ "primary::ROOT" ],
+        "components" : [ "primary::frontend" ],
         "concerns" : [ "::Unclassified" ]
       },
       "sourceFileCleanedLinesOfCode" : 51,
@@ -221,10 +105,10 @@
       "cleanedEndLine" : 36
     }, {
       "file" : {
-        "relativePath" : "eslint.config.js",
+        "relativePath" : "frontend/eslint.config.js",
         "extension" : "js",
         "linesOfCode" : 59,
-        "components" : [ "primary::ROOT" ],
+        "components" : [ "primary::frontend" ],
         "concerns" : [ "::Unclassified" ]
       },
       "sourceFileCleanedLinesOfCode" : 51,
@@ -237,30 +121,117 @@
     "blockSize" : 6,
     "duplicatedFileBlocks" : [ {
       "file" : {
-        "relativePath" : "src/Calendar.jsx",
-        "extension" : "jsx",
-        "linesOfCode" : 629,
-        "components" : [ "primary::src" ],
+        "relativePath" : "frontend/src/utils/dateUtils.js",
+        "extension" : "js",
+        "linesOfCode" : 28,
+        "components" : [ "primary::frontend" ],
         "concerns" : [ "::Unclassified" ]
       },
-      "sourceFileCleanedLinesOfCode" : 594,
-      "startLine" : 107,
-      "endLine" : 112,
-      "cleanedStartLine" : 96,
-      "cleanedEndLine" : 101
+      "sourceFileCleanedLinesOfCode" : 25,
+      "startLine" : 9,
+      "endLine" : 14,
+      "cleanedStartLine" : 3,
+      "cleanedEndLine" : 8
     }, {
       "file" : {
-        "relativePath" : "src/Calendar.jsx",
-        "extension" : "jsx",
-        "linesOfCode" : 629,
-        "components" : [ "primary::src" ],
+        "relativePath" : "frontend/src/utils/dateUtils.js",
+        "extension" : "js",
+        "linesOfCode" : 28,
+        "components" : [ "primary::frontend" ],
         "concerns" : [ "::Unclassified" ]
       },
-      "sourceFileCleanedLinesOfCode" : 594,
-      "startLine" : 139,
-      "endLine" : 144,
-      "cleanedStartLine" : 127,
-      "cleanedEndLine" : 132
+      "sourceFileCleanedLinesOfCode" : 25,
+      "startLine" : 24,
+      "endLine" : 29,
+      "cleanedStartLine" : 12,
+      "cleanedEndLine" : 17
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 120,
+      "startLine" : 72,
+      "endLine" : 77,
+      "cleanedStartLine" : 40,
+      "cleanedEndLine" : 45
+    }, {
+      "file" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 120,
+      "startLine" : 88,
+      "endLine" : 93,
+      "cleanedStartLine" : 53,
+      "cleanedEndLine" : 58
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "frontend/src/index.css",
+        "extension" : "css",
+        "linesOfCode" : 270,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 270,
+      "startLine" : 146,
+      "endLine" : 151,
+      "cleanedStartLine" : 118,
+      "cleanedEndLine" : 123
+    }, {
+      "file" : {
+        "relativePath" : "frontend/src/index.css",
+        "extension" : "css",
+        "linesOfCode" : 270,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 270,
+      "startLine" : 227,
+      "endLine" : 232,
+      "cleanedStartLine" : 184,
+      "cleanedEndLine" : 189
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "frontend/src/server/index.js",
+        "extension" : "js",
+        "linesOfCode" : 110,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 99,
+      "startLine" : 46,
+      "endLine" : 51,
+      "cleanedStartLine" : 27,
+      "cleanedEndLine" : 32
+    }, {
+      "file" : {
+        "relativePath" : "frontend/src/server/index.js",
+        "extension" : "js",
+        "linesOfCode" : 110,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 99,
+      "startLine" : 96,
+      "endLine" : 102,
+      "cleanedStartLine" : 65,
+      "cleanedEndLine" : 70
     } ]
   } ],
   "overallDuplication" : null

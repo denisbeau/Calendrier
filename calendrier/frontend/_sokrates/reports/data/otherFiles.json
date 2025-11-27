@@ -1,42 +1,56 @@
 [ {
-  "relativePath" : "all_files_content.txt",
+  "relativePath" : "frontend/all_files_content.txt",
   "extension" : "txt",
-  "linesOfCode" : 1481,
+  "linesOfCode" : 2059,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
-  "relativePath" : "analysis_conventions.json",
+  "relativePath" : "frontend/analysis_conventions.json",
   "extension" : "json",
   "linesOfCode" : 26,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
-  "relativePath" : "cypress/fixtures/example.json",
+  "relativePath" : "frontend/cypress/fixtures/example.json",
   "extension" : "json",
   "linesOfCode" : 5,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
-  "relativePath" : "eslint-config.json",
+  "relativePath" : "frontend/eslint-config.json",
   "extension" : "json",
   "linesOfCode" : 1449,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
-  "relativePath" : "package.json",
+  "relativePath" : "frontend/package.json",
   "extension" : "json",
-  "linesOfCode" : 57,
+  "linesOfCode" : 60,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
-  "relativePath" : "README.md",
+  "relativePath" : "frontend/README.md",
   "extension" : "md",
   "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/src/server/README.md",
+  "extension" : "md",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "vercel.json",
+  "extension" : "json",
+  "linesOfCode" : 1,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0

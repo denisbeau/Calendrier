@@ -1,37 +1,52 @@
 <html>
 <head>
-    <title>export async function fetchUserGroups()</title>
+    <title>function validateEvent()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">export async function fetchUserGroups()</h3>
-<p style="margin-top: 4px">in <i>src/services/groups.js [74:92]</i></p>
+<h3 style="margin-bottom: 0">function validateEvent()</h3>
+<p style="margin-top: 4px">in <i>frontend/src/features/calendar/hooks/useCalendarEvents.js [16:49]</i></p>
 <ul>
-    <li><b>16</b> lines of code</li>
-    <li><b>4</b> McCabe index (conditional complexity)</li>
+    <li><b>26</b> lines of code</li>
+    <li><b>9</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="js">
-export async function fetchUserGroups() {
-  const { data: userData } = await supabase.auth.getUser();
-  const user = userData?.user;
-  if (!user) return [];
-
-  const { data, error } = await supabase
-    .from(&quot;group_members&quot;)
-    .select(
-      &quot;group_id, role, groups(id, name, description, owner_id, created_at, invite_code)&quot;
-    )
-    .eq(&quot;user_id&quot;, user.id);
-
-  if (error) throw error;
-
-  return (data || []).map((row) =&gt; ({
-    group: row.groups,
-    role: row.role,
-  }));
-}
+  function validateEvent(event) {
+    const newErrors = {};
+    
+    if (!event.title.trim()) {
+      newErrors.title = &quot;Event title is required&quot;;
+    }
+    
+    if (!event.start) {
+      newErrors.start = &quot;Start time is required&quot;;
+    }
+    
+    if (!event.end) {
+      newErrors.end = &quot;End time is required&quot;;
+    }
+    
+    if (event.start &amp;&amp; event.end) {
+      const startDate = new Date(event.start);
+      const endDate = new Date(event.end);
+      
+      if (isNaN(startDate.getTime())) {
+        newErrors.start = &quot;Invalid start date&quot;;
+      }
+      
+      if (isNaN(endDate.getTime())) {
+        newErrors.end = &quot;Invalid end date&quot;;
+      }
+      
+      if (startDate &gt;= endDate) {
+        newErrors.end = &quot;End time must be after start time&quot;;
+      }
+    }
+    
+    return newErrors;
+  }
 
 </code>
 </pre>

@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>frontend/src/pages/LoginPage.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/src/pages/LoginPage.jsx (<b>34</b> lines of code) (<a href="LoginPage.jsx">raw</a>):</h3>
+<div id="editor">// src/pages/LoginPage.jsx
+import React, { useState } from &quot;react&quot;;
+import { useNavigate, Link } from &quot;react-router-dom&quot;;
+import Login from &quot;../features/auth/Login&quot;;
+import SignUp from &quot;../features/auth/SignUp&quot;;
+
+export default function LoginPage() {
+  const navigate = useNavigate();
+  const [mode, setMode] = useState(&quot;login&quot;);
+
+  return (
+    &lt;div className=&quot;min-h-screen bg-black text-white&quot;&gt;
+      &lt;div className=&quot;max-w-3xl mx-auto p-6&quot;&gt;
+        &lt;div className=&quot;flex gap-2 mb-4&quot;&gt;
+          &lt;button
+            className={`view-btn ${mode === &quot;login&quot; ? &quot;active&quot; : &quot;&quot;}`}
+            onClick={() =&gt; setMode(&quot;login&quot;)}
+          &gt;
+            Login
+          &lt;/button&gt;
+          &lt;button
+            className={`view-btn ${mode === &quot;signup&quot; ? &quot;active&quot; : &quot;&quot;}`}
+            onClick={() =&gt; setMode(&quot;signup&quot;)}
+          &gt;
+            Sign up
+          &lt;/button&gt;
+        &lt;/div&gt;
+
+        {mode === &quot;login&quot; ? (
+          &lt;Login onLoggedIn={() =&gt; navigate(&quot;/calendar&quot;)} /&gt;
+        ) : (
+          &lt;SignUp onSignedUp={() =&gt; setMode(&quot;login&quot;)} /&gt;
+        )}
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

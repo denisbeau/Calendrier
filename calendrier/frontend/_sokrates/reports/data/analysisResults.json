@@ -9,31 +9,31 @@
   "metricsList" : {
     "metrics" : [ {
       "id" : "TOTAL_NUMBER_OF_FILES",
-      "value" : 28554,
+      "value" : 28270,
       "description" : "Total number of files in the source folder"
     }, {
       "id" : "NUMBER_OF_FILES_MAIN",
-      "value" : 21,
+      "value" : 35,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_MAIN",
-      "value" : 1938,
+      "value" : 2387,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_MAIN_EXT_JSX",
-      "value" : 7,
+      "value" : 17,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_MAIN_EXT_JSX",
-      "value" : 1226,
+      "value" : 1371,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_MAIN_EXT_JS",
-      "value" : 9,
+      "value" : 13,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_MAIN_EXT_JS",
-      "value" : 393,
+      "value" : 608,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_MAIN_EXT_CSS",
@@ -41,7 +41,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_MAIN_EXT_CSS",
-      "value" : 223,
+      "value" : 307,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_MAIN_EXT_PY",
@@ -65,7 +65,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_MAIN_EXT_HTML",
-      "value" : 13,
+      "value" : 18,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_TEST",
@@ -85,7 +85,7 @@
       "description" : null
     }, {
       "id" : "TEST_VS_MAIN_LINES_OF_CODE_PERCENTAGE",
-      "value" : 0.77,
+      "value" : 0.62,
       "description" : "Test / main code ratio"
     }, {
       "id" : "NUMBER_OF_FILES_GENERATED",
@@ -105,19 +105,11 @@
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_OTHER",
-      "value" : 6,
+      "value" : 8,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_OTHER",
-      "value" : 3025,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_OTHER_EXT_JSON",
-      "value" : 4,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_OTHER_EXT_JSON",
-      "value" : 1537,
+      "value" : 3620,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_OTHER_EXT_TXT",
@@ -125,111 +117,79 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_OTHER_EXT_TXT",
-      "value" : 1481,
+      "value" : 2059,
       "description" : null
     }, {
-      "id" : "NUMBER_OF_FILES_OTHER_EXT_MD",
-      "value" : 1,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_OTHER_EXT_MD",
-      "value" : 7,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_CYPRESS",
-      "value" : 2,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_CYPRESS",
-      "value" : 6,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_CYPRESS_EXT_JS",
-      "value" : 2,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_CYPRESS_EXT_JS",
-      "value" : 6,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_ROOT",
+      "id" : "NUMBER_OF_FILES_OTHER_EXT_JSON",
       "value" : 5,
       "description" : null
     }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_ROOT",
-      "value" : 141,
+      "id" : "LINES_OF_CODE_OTHER_EXT_JSON",
+      "value" : 1541,
       "description" : null
     }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_ROOT_EXT_JS",
-      "value" : 3,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_ROOT_EXT_JS",
-      "value" : 80,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_ROOT_EXT_PY",
-      "value" : 1,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_ROOT_EXT_PY",
-      "value" : 48,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_ROOT_EXT_HTML",
-      "value" : 1,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_ROOT_EXT_HTML",
-      "value" : 13,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_MIGRATIONS",
-      "value" : 1,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_MIGRATIONS",
-      "value" : 35,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_MIGRATIONS_EXT_SQL",
-      "value" : 1,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_MIGRATIONS_EXT_SQL",
-      "value" : 35,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_SRC",
-      "value" : 13,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_SRC",
-      "value" : 1756,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_SRC_EXT_JSX",
-      "value" : 7,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_SRC_EXT_JSX",
-      "value" : 1226,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_SRC_EXT_JS",
-      "value" : 4,
-      "description" : null
-    }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_SRC_EXT_JS",
-      "value" : 307,
-      "description" : null
-    }, {
-      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_SRC_EXT_CSS",
+      "id" : "NUMBER_OF_FILES_OTHER_EXT_MD",
       "value" : 2,
       "description" : null
     }, {
-      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_SRC_EXT_CSS",
-      "value" : 223,
+      "id" : "LINES_OF_CODE_OTHER_EXT_MD",
+      "value" : 20,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_FRONTEND",
+      "value" : 35,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_FRONTEND",
+      "value" : 2387,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_FRONTEND_EXT_JSX",
+      "value" : 17,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_FRONTEND_EXT_JSX",
+      "value" : 1371,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_FRONTEND_EXT_JS",
+      "value" : 13,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_FRONTEND_EXT_JS",
+      "value" : 608,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_FRONTEND_EXT_CSS",
+      "value" : 2,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_FRONTEND_EXT_CSS",
+      "value" : 307,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_FRONTEND_EXT_PY",
+      "value" : 1,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_FRONTEND_EXT_PY",
+      "value" : 48,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_FRONTEND_EXT_SQL",
+      "value" : 1,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_FRONTEND_EXT_SQL",
+      "value" : 35,
+      "description" : null
+    }, {
+      "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_FRONTEND_EXT_HTML",
+      "value" : 1,
+      "description" : null
+    }, {
+      "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_FRONTEND_EXT_HTML",
+      "value" : 18,
       "description" : null
     }, {
       "id" : "NUMBER_OF_DEPENDENCY_LINKS_DECOMPOSITION_PRIMARY",
@@ -253,27 +213,27 @@
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED",
-      "value" : 21,
+      "value" : 35,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED",
-      "value" : 1938,
+      "value" : 2387,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_JSX",
-      "value" : 7,
+      "value" : 17,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED_EXT_JSX",
-      "value" : 1226,
+      "value" : 1371,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_JS",
-      "value" : 9,
+      "value" : 13,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED_EXT_JS",
-      "value" : 393,
+      "value" : 608,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_CSS",
@@ -281,7 +241,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED_EXT_CSS",
-      "value" : 223,
+      "value" : 307,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_PY",
@@ -305,23 +265,23 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED_EXT_HTML",
-      "value" : 13,
+      "value" : 18,
       "description" : null
     }, {
       "id" : "NEGLIGIBLE_RISK_FILE_SIZE_COUNT",
-      "value" : 14,
+      "value" : 25,
       "description" : "Number of  files with 100 or less lines of code"
     }, {
       "id" : "LOW_RISK_FILE_SIZE_COUNT",
-      "value" : 6,
+      "value" : 9,
       "description" : "Number of  files with 100 to 200 lines of code"
     }, {
       "id" : "MEDIUM_RISK_FILE_SIZE_COUNT",
-      "value" : 0,
+      "value" : 1,
       "description" : "Number of  files with 200 to 500 lines of code"
     }, {
       "id" : "HIGH_RISK_FILE_SIZE_COUNT",
-      "value" : 1,
+      "value" : 0,
       "description" : "Number of  files with 500 to 1000 lines of code"
     }, {
       "id" : "VERY_HIGH_RISK_FILE_SIZE_COUNT",
@@ -329,19 +289,19 @@
       "description" : "Number of  files with more than 1000 lines of code"
     }, {
       "id" : "NEGLIGIBLE_RISK_FILE_SIZE_LOC",
-      "value" : 437,
+      "value" : 850,
       "description" : "Lines of code in  files with 100 or less lines of code"
     }, {
       "id" : "LOW_RISK_FILE_SIZE_LOC",
-      "value" : 872,
+      "value" : 1267,
       "description" : "Lines of code in  files with 100 to 200 lines of code"
     }, {
       "id" : "MEDIUM_RISK_FILE_SIZE_LOC",
-      "value" : 0,
+      "value" : 270,
       "description" : "Lines of code in  files with 200 to 500 lines of code"
     }, {
       "id" : "HIGH_RISK_FILE_SIZE_LOC",
-      "value" : 629,
+      "value" : 0,
       "description" : "Lines of code in  files with 500 to 1000 lines of code"
     }, {
       "id" : "VERY_HIGH_RISK_FILE_SIZE_LOC",
@@ -349,51 +309,51 @@
       "description" : "Lines of code in  files with more than 1000 lines of code"
     }, {
       "id" : "NUMBER_OF_UNITS",
-      "value" : 11,
+      "value" : 23,
       "description" : "Number of units"
     }, {
       "id" : "LINES_OF_CODE_IN_UNITS",
-      "value" : 224,
+      "value" : 391,
       "description" : "Lines of code in units"
     }, {
       "id" : "LINES_OF_CODE_OUTSIDE_UNITS",
-      "value" : 1714,
+      "value" : 1996,
       "description" : "Lines of code in units"
     }, {
       "id" : "UNIT_SIZE_NEGLIGIBLE_RISK_LOC",
-      "value" : 29,
+      "value" : 92,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 12.946428571428571,
+      "value" : 23.529411764705884,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_NEGLIGIBLE_RISK_COUNT",
-      "value" : 5,
+      "value" : 13,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_LOW_RISK_LOC",
-      "value" : 31,
+      "value" : 42,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_LOW_RISK_PERCENTAGE",
-      "value" : 13.839285714285714,
+      "value" : 10.741687979539641,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_LOW_RISK_COUNT",
-      "value" : 2,
+      "value" : 3,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_MEDIUM_RISK_LOC",
-      "value" : 108,
+      "value" : 201,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_MEDIUM_RISK_PERCENTAGE",
-      "value" : 48.214285714285715,
+      "value" : 51.406649616368284,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_MEDIUM_RISK_COUNT",
-      "value" : 3,
+      "value" : 6,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_HIGH_RISK_LOC",
@@ -401,7 +361,7 @@
       "description" : null
     }, {
       "id" : "UNIT_SIZE_HIGH_RISK_PERCENTAGE",
-      "value" : 25.0,
+      "value" : 14.322250639386189,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_HIGH_RISK_COUNT",
@@ -420,160 +380,100 @@
       "value" : 0,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_NEGLIGIBLE_RISK_LOC",
-      "value" : 12,
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_NEGLIGIBLE_RISK_LOC",
+      "value" : 92,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 35.294117647058826,
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_NEGLIGIBLE_RISK_PERCENTAGE",
+      "value" : 23.529411764705884,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_NEGLIGIBLE_RISK_COUNT",
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_NEGLIGIBLE_RISK_COUNT",
+      "value" : 13,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_LOW_RISK_LOC",
+      "value" : 42,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_LOW_RISK_PERCENTAGE",
+      "value" : 10.741687979539641,
+      "description" : null
+    }, {
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_LOW_RISK_COUNT",
       "value" : 3,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_LOW_RISK_LOC",
-      "value" : 0,
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_MEDIUM_RISK_LOC",
+      "value" : 201,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_LOW_RISK_PERCENTAGE",
-      "value" : 0.0,
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_MEDIUM_RISK_PERCENTAGE",
+      "value" : 51.406649616368284,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_LOW_RISK_COUNT",
-      "value" : 0,
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_MEDIUM_RISK_COUNT",
+      "value" : 6,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_MEDIUM_RISK_LOC",
-      "value" : 22,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_MEDIUM_RISK_PERCENTAGE",
-      "value" : 64.70588235294117,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_MEDIUM_RISK_COUNT",
-      "value" : 1,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_HIGH_RISK_LOC",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_HIGH_RISK_PERCENTAGE",
-      "value" : 0.0,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_HIGH_RISK_COUNT",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_VERY_HIGH_RISK_LOC",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_VERY_HIGH_RISK_PERCENTAGE",
-      "value" : 0.0,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_ROOT_VERY_HIGH_RISK_COUNT",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_NEGLIGIBLE_RISK_LOC",
-      "value" : 17,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 8.947368421052632,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_NEGLIGIBLE_RISK_COUNT",
-      "value" : 2,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_LOW_RISK_LOC",
-      "value" : 31,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_LOW_RISK_PERCENTAGE",
-      "value" : 16.31578947368421,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_LOW_RISK_COUNT",
-      "value" : 2,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_MEDIUM_RISK_LOC",
-      "value" : 86,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_MEDIUM_RISK_PERCENTAGE",
-      "value" : 45.26315789473684,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_MEDIUM_RISK_COUNT",
-      "value" : 2,
-      "description" : null
-    }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_HIGH_RISK_LOC",
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_HIGH_RISK_LOC",
       "value" : 56,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_HIGH_RISK_PERCENTAGE",
-      "value" : 29.473684210526315,
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_HIGH_RISK_PERCENTAGE",
+      "value" : 14.322250639386189,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_HIGH_RISK_COUNT",
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_HIGH_RISK_COUNT",
       "value" : 1,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_VERY_HIGH_RISK_LOC",
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_VERY_HIGH_RISK_LOC",
       "value" : 0,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_VERY_HIGH_RISK_PERCENTAGE",
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_VERY_HIGH_RISK_PERCENTAGE",
       "value" : 0.0,
       "description" : null
     }, {
-      "id" : "UNIT_SIZE_COMPONENT_SRC_VERY_HIGH_RISK_COUNT",
+      "id" : "UNIT_SIZE_COMPONENT_FRONTEND_VERY_HIGH_RISK_COUNT",
       "value" : 0,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_NEGLIGIBLE_RISK_LOC",
-      "value" : 29,
+      "value" : 92,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 12.946428571428571,
+      "value" : 23.529411764705884,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_NEGLIGIBLE_RISK_COUNT",
-      "value" : 5,
+      "value" : 13,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_LOW_RISK_LOC",
-      "value" : 31,
+      "value" : 42,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_LOW_RISK_PERCENTAGE",
-      "value" : 13.839285714285714,
+      "value" : 10.741687979539641,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_LOW_RISK_COUNT",
-      "value" : 2,
+      "value" : 3,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_MEDIUM_RISK_LOC",
-      "value" : 108,
+      "value" : 201,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_MEDIUM_RISK_PERCENTAGE",
-      "value" : 48.214285714285715,
+      "value" : 51.406649616368284,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_MEDIUM_RISK_COUNT",
-      "value" : 3,
+      "value" : 6,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_HIGH_RISK_LOC",
@@ -581,7 +481,7 @@
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_HIGH_RISK_PERCENTAGE",
-      "value" : 25.0,
+      "value" : 14.322250639386189,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_JS_HIGH_RISK_COUNT",
@@ -601,27 +501,27 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_NEGLIGIBLE_RISK_LOC",
-      "value" : 82,
+      "value" : 156,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 36.607142857142854,
+      "value" : 39.89769820971867,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_NEGLIGIBLE_RISK_COUNT",
-      "value" : 8,
+      "value" : 17,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_LOW_RISK_LOC",
-      "value" : 40,
+      "value" : 133,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_LOW_RISK_PERCENTAGE",
-      "value" : 17.857142857142858,
+      "value" : 34.0153452685422,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_LOW_RISK_COUNT",
-      "value" : 1,
+      "value" : 4,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_MEDIUM_RISK_LOC",
@@ -629,7 +529,7 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_MEDIUM_RISK_PERCENTAGE",
-      "value" : 45.535714285714285,
+      "value" : 26.08695652173913,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_MEDIUM_RISK_COUNT",
@@ -668,148 +568,88 @@
       "value" : 0,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_NEGLIGIBLE_RISK_LOC",
-      "value" : 34,
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_NEGLIGIBLE_RISK_LOC",
+      "value" : 156,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 100.0,
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_NEGLIGIBLE_RISK_PERCENTAGE",
+      "value" : 39.89769820971867,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_NEGLIGIBLE_RISK_COUNT",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_NEGLIGIBLE_RISK_COUNT",
+      "value" : 17,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_LOW_RISK_LOC",
+      "value" : 133,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_LOW_RISK_PERCENTAGE",
+      "value" : 34.0153452685422,
+      "description" : null
+    }, {
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_LOW_RISK_COUNT",
       "value" : 4,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_LOW_RISK_LOC",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_LOW_RISK_PERCENTAGE",
-      "value" : 0.0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_LOW_RISK_COUNT",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_MEDIUM_RISK_LOC",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_MEDIUM_RISK_PERCENTAGE",
-      "value" : 0.0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_MEDIUM_RISK_COUNT",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_HIGH_RISK_LOC",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_HIGH_RISK_PERCENTAGE",
-      "value" : 0.0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_HIGH_RISK_COUNT",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_VERY_HIGH_RISK_LOC",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_VERY_HIGH_RISK_PERCENTAGE",
-      "value" : 0.0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ROOT_VERY_HIGH_RISK_COUNT",
-      "value" : 0,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_NEGLIGIBLE_RISK_LOC",
-      "value" : 48,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 25.263157894736842,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_NEGLIGIBLE_RISK_COUNT",
-      "value" : 4,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_LOW_RISK_LOC",
-      "value" : 40,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_LOW_RISK_PERCENTAGE",
-      "value" : 21.05263157894737,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_LOW_RISK_COUNT",
-      "value" : 1,
-      "description" : null
-    }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_MEDIUM_RISK_LOC",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_MEDIUM_RISK_LOC",
       "value" : 102,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_MEDIUM_RISK_PERCENTAGE",
-      "value" : 53.68421052631579,
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_MEDIUM_RISK_PERCENTAGE",
+      "value" : 26.08695652173913,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_MEDIUM_RISK_COUNT",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_MEDIUM_RISK_COUNT",
       "value" : 2,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_HIGH_RISK_LOC",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_HIGH_RISK_LOC",
       "value" : 0,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_HIGH_RISK_PERCENTAGE",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_HIGH_RISK_PERCENTAGE",
       "value" : 0.0,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_HIGH_RISK_COUNT",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_HIGH_RISK_COUNT",
       "value" : 0,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_VERY_HIGH_RISK_LOC",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_VERY_HIGH_RISK_LOC",
       "value" : 0,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_VERY_HIGH_RISK_PERCENTAGE",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_VERY_HIGH_RISK_PERCENTAGE",
       "value" : 0.0,
       "description" : null
     }, {
-      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_SRC_VERY_HIGH_RISK_COUNT",
+      "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_FRONTEND_VERY_HIGH_RISK_COUNT",
       "value" : 0,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_NEGLIGIBLE_RISK_LOC",
-      "value" : 82,
+      "value" : 156,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 36.607142857142854,
+      "value" : 39.89769820971867,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_NEGLIGIBLE_RISK_COUNT",
-      "value" : 8,
+      "value" : 17,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_LOW_RISK_LOC",
-      "value" : 40,
+      "value" : 133,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_LOW_RISK_PERCENTAGE",
-      "value" : 17.857142857142858,
+      "value" : 34.0153452685422,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_LOW_RISK_COUNT",
-      "value" : 1,
+      "value" : 4,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_MEDIUM_RISK_LOC",
@@ -817,7 +657,7 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_MEDIUM_RISK_PERCENTAGE",
-      "value" : 45.535714285714285,
+      "value" : 26.08695652173913,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_JS_MEDIUM_RISK_COUNT",
@@ -849,103 +689,79 @@
       "description" : null
     }, {
       "id" : "DUPLICATION_NUMBER_OF_DUPLICATES",
-      "value" : 9,
+      "value" : 8,
       "description" : "Number of duplicates"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_FILES_WITH_DUPLICATES",
-      "value" : 3,
+      "value" : 6,
       "description" : "Number of files with duplicates"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES",
-      "value" : 123,
+      "value" : 115,
       "description" : "Number of duplicated lines"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES",
-      "value" : 1799,
+      "value" : 2172,
       "description" : "Number of lines after cleaning for duplication calculations"
     }, {
       "id" : "DUPLICATION_PERCENTAGE",
-      "value" : 6.837131739855475,
+      "value" : 5.294659300184162,
       "description" : "Duplication percentage"
     }, {
       "id" : "UNIT_DUPLICATES_COUNT",
       "value" : 0,
       "description" : "Unit duplicates"
     }, {
-      "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_PRIMARY_SRC",
-      "value" : 100,
+      "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_PRIMARY_FRONTEND",
+      "value" : 115,
       "description" : "Number of duplicated lines"
     }, {
-      "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_PRIMARY_SRC",
-      "value" : 100,
+      "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_PRIMARY_FRONTEND",
+      "value" : 115,
       "description" : "Number of lines after cleaning for duplication calculations"
     }, {
-      "id" : "DUPLICATION_PERCENTAGE_PRIMARY_SRC",
+      "id" : "DUPLICATION_PERCENTAGE_PRIMARY_FRONTEND",
       "value" : 100.0,
-      "description" : "Duplication percentage"
-    }, {
-      "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_PRIMARY_ROOT",
-      "value" : 23,
-      "description" : "Number of duplicated lines"
-    }, {
-      "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_PRIMARY_ROOT",
-      "value" : 23,
-      "description" : "Number of lines after cleaning for duplication calculations"
-    }, {
-      "id" : "DUPLICATION_PERCENTAGE_PRIMARY_ROOT",
-      "value" : 100.0,
-      "description" : "Duplication percentage"
-    }, {
-      "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_PRIMARY_CYPRESS",
-      "value" : 0,
-      "description" : "Number of duplicated lines"
-    }, {
-      "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_PRIMARY_CYPRESS",
-      "value" : 0,
-      "description" : "Number of lines after cleaning for duplication calculations"
-    }, {
-      "id" : "DUPLICATION_PERCENTAGE_PRIMARY_CYPRESS",
-      "value" : "NaN",
-      "description" : "Duplication percentage"
-    }, {
-      "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_PRIMARY_MIGRATIONS",
-      "value" : 0,
-      "description" : "Number of duplicated lines"
-    }, {
-      "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_PRIMARY_MIGRATIONS",
-      "value" : 0,
-      "description" : "Number of lines after cleaning for duplication calculations"
-    }, {
-      "id" : "DUPLICATION_PERCENTAGE_PRIMARY_MIGRATIONS",
-      "value" : "NaN",
       "description" : "Duplication percentage"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_JS",
-      "value" : 63,
+      "value" : 95,
       "description" : "Number of duplicated lines"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_JS",
-      "value" : 348,
+      "value" : 538,
       "description" : "Number of lines after cleaning for duplication calculations"
     }, {
       "id" : "DUPLICATION_PERCENTAGE_JS",
-      "value" : 18.103448275862068,
+      "value" : 17.65799256505576,
       "description" : "Duplication percentage"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_JSX",
-      "value" : 60,
+      "value" : 8,
       "description" : "Number of duplicated lines"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_JSX",
-      "value" : 1136,
+      "value" : 1231,
       "description" : "Number of lines after cleaning for duplication calculations"
     }, {
       "id" : "DUPLICATION_PERCENTAGE_JSX",
-      "value" : 5.28169014084507,
+      "value" : 0.6498781478472786,
+      "description" : "Duplication percentage"
+    }, {
+      "id" : "DUPLICATION_NUMBER_OF_DUPLICATED_LINES_CSS",
+      "value" : 12,
+      "description" : "Number of duplicated lines"
+    }, {
+      "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES_CSS",
+      "value" : 307,
+      "description" : "Number of lines after cleaning for duplication calculations"
+    }, {
+      "id" : "DUPLICATION_PERCENTAGE_CSS",
+      "value" : 3.9087947882736156,
       "description" : "Duplication percentage"
     }, {
       "id" : "TOTAL_ANALYSIS_TIME_IN_MILLIS",
-      "value" : 8356,
+      "value" : 12868,
       "description" : "Total analysis time in milliseconds"
     } ]
   },
@@ -1000,7 +816,7 @@
         },
         "metric" : {
           "id" : "LINES_OF_CODE_MAIN",
-          "value" : 1938,
+          "value" : 2387,
           "description" : null
         },
         "status" : "OK"
@@ -1016,10 +832,10 @@
         },
         "metric" : {
           "id" : "DUPLICATION_PERCENTAGE",
-          "value" : 6.837131739855475,
+          "value" : 5.294659300184162,
           "description" : "Duplication percentage"
         },
-        "status" : "FAILED"
+        "status" : "TOLERANT"
       }, {
         "control" : {
           "metric" : "VERY_HIGH_RISK_FILE_SIZE_COUNT",
@@ -1055,19 +871,19 @@
       } ]
     } ]
   },
-  "totalNumberOfFilesInScope" : 28554,
+  "totalNumberOfFilesInScope" : 28270,
   "mainAspectAnalysisResults" : {
     "name" : null,
-    "filesCount" : 21,
-    "linesOfCode" : 1938,
+    "filesCount" : 35,
+    "linesOfCode" : 2387,
     "numberOfRegexLineMatches" : 0,
     "fileCountPerExtension" : [ {
       "name" : "  *.jsx",
-      "value" : 7,
+      "value" : 17,
       "description" : [ ]
     }, {
       "name" : "  *.js",
-      "value" : 9,
+      "value" : 13,
       "description" : [ ]
     }, {
       "name" : "  *.css",
@@ -1088,15 +904,15 @@
     } ],
     "linesOfCodePerExtension" : [ {
       "name" : "  *.jsx",
-      "value" : 1226,
+      "value" : 1371,
       "description" : [ ]
     }, {
       "name" : "  *.js",
-      "value" : 393,
+      "value" : 608,
       "description" : [ ]
     }, {
       "name" : "  *.css",
-      "value" : 223,
+      "value" : 307,
       "description" : [ ]
     }, {
       "name" : "  *.py",
@@ -1108,7 +924,7 @@
       "description" : [ ]
     }, {
       "name" : "  *.html",
-      "value" : 13,
+      "value" : 18,
       "description" : [ ]
     } ]
   },
@@ -1146,64 +962,61 @@
   },
   "otherAspectAnalysisResults" : {
     "name" : null,
-    "filesCount" : 6,
-    "linesOfCode" : 3025,
+    "filesCount" : 8,
+    "linesOfCode" : 3620,
     "numberOfRegexLineMatches" : 0,
     "fileCountPerExtension" : [ {
-      "name" : "  *.json",
-      "value" : 4,
-      "description" : [ ]
-    }, {
       "name" : "  *.txt",
       "value" : 1,
       "description" : [ ]
     }, {
+      "name" : "  *.json",
+      "value" : 5,
+      "description" : [ ]
+    }, {
       "name" : "  *.md",
-      "value" : 1,
+      "value" : 2,
       "description" : [ ]
     } ],
     "linesOfCodePerExtension" : [ {
-      "name" : "  *.json",
-      "value" : 1537,
+      "name" : "  *.txt",
+      "value" : 2059,
       "description" : [ ]
     }, {
-      "name" : "  *.txt",
-      "value" : 1481,
+      "name" : "  *.json",
+      "value" : 1541,
       "description" : [ ]
     }, {
       "name" : "  *.md",
-      "value" : 7,
+      "value" : 20,
       "description" : [ ]
     } ]
   },
   "logicalDecompositionsAnalysisResults" : [ {
     "key" : "primary",
     "components" : [ {
-      "name" : "cypress",
-      "filesCount" : 2,
-      "linesOfCode" : 6,
+      "name" : "frontend",
+      "filesCount" : 35,
+      "linesOfCode" : 2387,
       "numberOfRegexLineMatches" : 0,
       "fileCountPerExtension" : [ {
+        "name" : "  *.jsx",
+        "value" : 17,
+        "description" : [ ]
+      }, {
         "name" : "  *.js",
+        "value" : 13,
+        "description" : [ ]
+      }, {
+        "name" : "  *.css",
         "value" : 2,
-        "description" : [ ]
-      } ],
-      "linesOfCodePerExtension" : [ {
-        "name" : "  *.js",
-        "value" : 6,
-        "description" : [ ]
-      } ]
-    }, {
-      "name" : "ROOT",
-      "filesCount" : 5,
-      "linesOfCode" : 141,
-      "numberOfRegexLineMatches" : 0,
-      "fileCountPerExtension" : [ {
-        "name" : "  *.js",
-        "value" : 3,
         "description" : [ ]
       }, {
         "name" : "  *.py",
+        "value" : 1,
+        "description" : [ ]
+      }, {
+        "name" : "  *.sql",
         "value" : 1,
         "description" : [ ]
       }, {
@@ -1212,62 +1025,28 @@
         "description" : [ ]
       } ],
       "linesOfCodePerExtension" : [ {
+        "name" : "  *.jsx",
+        "value" : 1371,
+        "description" : [ ]
+      }, {
         "name" : "  *.js",
-        "value" : 80,
+        "value" : 608,
+        "description" : [ ]
+      }, {
+        "name" : "  *.css",
+        "value" : 307,
         "description" : [ ]
       }, {
         "name" : "  *.py",
         "value" : 48,
         "description" : [ ]
       }, {
-        "name" : "  *.html",
-        "value" : 13,
-        "description" : [ ]
-      } ]
-    }, {
-      "name" : "migrations",
-      "filesCount" : 1,
-      "linesOfCode" : 35,
-      "numberOfRegexLineMatches" : 0,
-      "fileCountPerExtension" : [ {
-        "name" : "  *.sql",
-        "value" : 1,
-        "description" : [ ]
-      } ],
-      "linesOfCodePerExtension" : [ {
         "name" : "  *.sql",
         "value" : 35,
         "description" : [ ]
-      } ]
-    }, {
-      "name" : "src",
-      "filesCount" : 13,
-      "linesOfCode" : 1756,
-      "numberOfRegexLineMatches" : 0,
-      "fileCountPerExtension" : [ {
-        "name" : "  *.jsx",
-        "value" : 7,
-        "description" : [ ]
       }, {
-        "name" : "  *.js",
-        "value" : 4,
-        "description" : [ ]
-      }, {
-        "name" : "  *.css",
-        "value" : 2,
-        "description" : [ ]
-      } ],
-      "linesOfCodePerExtension" : [ {
-        "name" : "  *.jsx",
-        "value" : 1226,
-        "description" : [ ]
-      }, {
-        "name" : "  *.js",
-        "value" : 307,
-        "description" : [ ]
-      }, {
-        "name" : "  *.css",
-        "value" : 223,
+        "name" : "  *.html",
+        "value" : 18,
         "description" : [ ]
       } ]
     } ],
@@ -1280,51 +1059,9 @@
       "componentsFolderDepth" : 1,
       "minComponentsCount" : 0,
       "components" : [ {
-        "name" : "cypress",
+        "name" : "frontend",
         "sourceFileFilters" : [ {
-          "pathPattern" : "./cypress/.*",
-          "contentPattern" : "",
-          "exception" : false,
-          "note" : ""
-        } ],
-        "files" : [ ]
-      }, {
-        "name" : "ROOT",
-        "sourceFileFilters" : [ {
-          "pathPattern" : "./.*",
-          "contentPattern" : "",
-          "exception" : false,
-          "note" : ""
-        }, {
-          "pathPattern" : "./cypress/.*",
-          "contentPattern" : "",
-          "exception" : true,
-          "note" : ""
-        }, {
-          "pathPattern" : "./migrations/.*",
-          "contentPattern" : "",
-          "exception" : true,
-          "note" : ""
-        }, {
-          "pathPattern" : "./src/.*",
-          "contentPattern" : "",
-          "exception" : true,
-          "note" : ""
-        } ],
-        "files" : [ ]
-      }, {
-        "name" : "migrations",
-        "sourceFileFilters" : [ {
-          "pathPattern" : "./migrations/.*",
-          "contentPattern" : "",
-          "exception" : false,
-          "note" : ""
-        } ],
-        "files" : [ ]
-      }, {
-        "name" : "src",
-        "sourceFileFilters" : [ {
-          "pathPattern" : "./src/.*",
+          "pathPattern" : "../frontend/.*",
           "contentPattern" : "",
           "exception" : false,
           "note" : ""
@@ -1354,37 +1091,13 @@
       "maxSearchDepthLines" : 200
     },
     "fileCountPerComponent" : [ {
-      "name" : "cypress",
-      "value" : 2,
-      "description" : [ ]
-    }, {
-      "name" : "ROOT",
-      "value" : 5,
-      "description" : [ ]
-    }, {
-      "name" : "migrations",
-      "value" : 1,
-      "description" : [ ]
-    }, {
-      "name" : "src",
-      "value" : 13,
+      "name" : "frontend",
+      "value" : 35,
       "description" : [ ]
     } ],
     "linesOfCodePerComponent" : [ {
-      "name" : "cypress",
-      "value" : 6,
-      "description" : [ ]
-    }, {
-      "name" : "ROOT",
-      "value" : 141,
-      "description" : [ ]
-    }, {
-      "name" : "migrations",
-      "value" : 35,
-      "description" : [ ]
-    }, {
-      "name" : "src",
-      "value" : 1756,
+      "name" : "frontend",
+      "value" : 2387,
       "description" : [ ]
     } ]
   } ],
@@ -1399,16 +1112,16 @@
       "linesOfCodePerExtension" : [ ]
     }, {
       "name" : "Unclassified",
-      "filesCount" : 21,
-      "linesOfCode" : 1938,
+      "filesCount" : 35,
+      "linesOfCode" : 2387,
       "numberOfRegexLineMatches" : 0,
       "fileCountPerExtension" : [ {
         "name" : "  *.jsx",
-        "value" : 7,
+        "value" : 17,
         "description" : [ ]
       }, {
         "name" : "  *.js",
-        "value" : 9,
+        "value" : 13,
         "description" : [ ]
       }, {
         "name" : "  *.css",
@@ -1429,15 +1142,15 @@
       } ],
       "linesOfCodePerExtension" : [ {
         "name" : "  *.jsx",
-        "value" : 1226,
+        "value" : 1371,
         "description" : [ ]
       }, {
         "name" : "  *.js",
-        "value" : 393,
+        "value" : 608,
         "description" : [ ]
       }, {
         "name" : "  *.css",
-        "value" : 223,
+        "value" : 307,
         "description" : [ ]
       }, {
         "name" : "  *.py",
@@ -1449,27 +1162,27 @@
         "description" : [ ]
       }, {
         "name" : "  *.html",
-        "value" : 13,
+        "value" : 18,
         "description" : [ ]
       } ]
     } ],
     "concernsGroup" : null,
-    "fileCountPerConcern" : [ {
-      "name" : "TODOs",
-      "value" : 0,
-      "description" : [ ]
-    }, {
-      "name" : "Unclassified",
-      "value" : 21,
-      "description" : [ ]
-    } ],
     "linesOfCodePerConcern" : [ {
       "name" : "TODOs",
       "value" : 0,
       "description" : [ ]
     }, {
       "name" : "Unclassified",
-      "value" : 1938,
+      "value" : 2387,
+      "description" : [ ]
+    } ],
+    "fileCountPerConcern" : [ {
+      "name" : "TODOs",
+      "value" : 0,
+      "description" : [ ]
+    }, {
+      "name" : "Unclassified",
+      "value" : 35,
       "description" : [ ]
     } ]
   } ],
@@ -1480,7 +1193,7 @@
       "pathPatterns" : [ "(|.*/)Jenkinsfile", "(|.*/)Jenkinsfile[.][a-z0-9_]+" ],
       "excludePathPatterns" : [ ]
     },
-    "evidence" : "node_modules/asn1/Jenkinsfile\nnode_modules/sshpk/Jenkinsfile"
+    "evidence" : "frontend/node_modules/asn1/Jenkinsfile\nfrontend/node_modules/sshpk/Jenkinsfile"
   }, {
     "tagRule" : {
       "tag" : "travis",
@@ -1488,7 +1201,7 @@
       "pathPatterns" : [ "(|.*/)[.]travis[.]ya?ml" ],
       "excludePathPatterns" : [ ]
     },
-    "evidence" : "node_modules/cachedir/.travis.yml\nnode_modules/concat-map/.travis.yml\nnode_modules/deep-is/.travis.yml\nnode_modules/extend/.travis.yml\nnode_modules/fast-json-stable-stringify/.travis.yml\nnode_modules/fd-slicer/.travis.yml\nnode_modules/getpass/.travis.yml\nnode_modules/is-arrayish/.travis.yml\nnode_modules/isstream/.travis.yml\nnode_modules/json-buffer/.travis.yml\nnode_modules/json-schema-traverse/.travis.yml\nnode_modules/json-stable-stringify-without-jsonify/.travis.yml\nnode_modules/makeerror/.travis.yml\nnode_modules/performance-now/.travis.yml\nnode_modules/proxy-from-env/.travis.yml\nnode_modules/pump/.travis.yml\nnode_modules/request-progress/.travis.yml\nnode_modules/require-directory/.travis.yml\nnode_modules/siginfo/.travis.yml\nnode_modules/sshpk/.travis.yml\n...\n(found 4 more files)"
+    "evidence" : "frontend/node_modules/cachedir/.travis.yml\nfrontend/node_modules/concat-map/.travis.yml\nfrontend/node_modules/deep-is/.travis.yml\nfrontend/node_modules/extend/.travis.yml\nfrontend/node_modules/fast-json-stable-stringify/.travis.yml\nfrontend/node_modules/fd-slicer/.travis.yml\nfrontend/node_modules/getpass/.travis.yml\nfrontend/node_modules/is-arrayish/.travis.yml\nfrontend/node_modules/isstream/.travis.yml\nfrontend/node_modules/json-buffer/.travis.yml\nfrontend/node_modules/json-schema-traverse/.travis.yml\nfrontend/node_modules/json-stable-stringify-without-jsonify/.travis.yml\nfrontend/node_modules/makeerror/.travis.yml\nfrontend/node_modules/performance-now/.travis.yml\nfrontend/node_modules/proxy-from-env/.travis.yml\nfrontend/node_modules/pump/.travis.yml\nfrontend/node_modules/request-progress/.travis.yml\nfrontend/node_modules/require-directory/.travis.yml\nfrontend/node_modules/siginfo/.travis.yml\nfrontend/node_modules/sshpk/.travis.yml\n...\n(found 4 more files)"
   }, {
     "tagRule" : {
       "tag" : "github actions",
@@ -1496,7 +1209,7 @@
       "pathPatterns" : [ "(|.*/)[.]github[/]workflows[/].*" ],
       "excludePathPatterns" : [ ]
     },
-    "evidence" : "node_modules/@ungap/structured-clone/.github/workflows/node.js.yml\nnode_modules/babel-preset-current-node-syntax/.github/workflows/nodejs.yml\nnode_modules/exit-x/.github/workflows/test.yml\nnode_modules/fastq/.github/workflows/ci.yml\nnode_modules/jest-fixed-jsdom/.github/workflows/ci.yml\nnode_modules/jest-fixed-jsdom/.github/workflows/release.yml\nnode_modules/reusify/.github/workflows/ci.yml\nnode_modules/rfdc/.github/workflows/ci.yml"
+    "evidence" : "frontend/node_modules/@ungap/structured-clone/.github/workflows/node.js.yml\nfrontend/node_modules/babel-preset-current-node-syntax/.github/workflows/nodejs.yml\nfrontend/node_modules/exit-x/.github/workflows/test.yml\nfrontend/node_modules/jest-fixed-jsdom/.github/workflows/ci.yml\nfrontend/node_modules/jest-fixed-jsdom/.github/workflows/release.yml\nfrontend/node_modules/rfdc/.github/workflows/ci.yml"
   }, {
     "tagRule" : {
       "tag" : "npm",
@@ -1504,7 +1217,7 @@
       "pathPatterns" : [ "(|.*/)package[.]json" ],
       "excludePathPatterns" : [ ]
     },
-    "evidence" : "node_modules/.vite/deps/package.json\nnode_modules/@adobe/css-tools/package.json\nnode_modules/@asamuzakjp/css-color/node_modules/lru-cache/dist/commonjs/package.json\nnode_modules/@asamuzakjp/css-color/node_modules/lru-cache/dist/esm/package.json\nnode_modules/@asamuzakjp/css-color/node_modules/lru-cache/package.json\nnode_modules/@asamuzakjp/css-color/package.json\nnode_modules/@babel/code-frame/package.json\nnode_modules/@babel/compat-data/package.json\nnode_modules/@babel/core/package.json\nnode_modules/@babel/generator/package.json\nnode_modules/@babel/helper-compilation-targets/package.json\nnode_modules/@babel/helper-globals/package.json\nnode_modules/@babel/helper-module-imports/package.json\nnode_modules/@babel/helper-module-transforms/package.json\nnode_modules/@babel/helper-plugin-utils/package.json\nnode_modules/@babel/helper-string-parser/package.json\nnode_modules/@babel/helper-validator-identifier/package.json\nnode_modules/@babel/helper-validator-option/package.json\nnode_modules/@babel/helpers/package.json\nnode_modules/@babel/parser/package.json\n...\n(found 1012 more files)"
+    "evidence" : "frontend/node_modules/.vite/deps/package.json\nfrontend/node_modules/@adobe/css-tools/package.json\nfrontend/node_modules/@asamuzakjp/css-color/node_modules/lru-cache/dist/commonjs/package.json\nfrontend/node_modules/@asamuzakjp/css-color/node_modules/lru-cache/dist/esm/package.json\nfrontend/node_modules/@asamuzakjp/css-color/node_modules/lru-cache/package.json\nfrontend/node_modules/@asamuzakjp/css-color/package.json\nfrontend/node_modules/@babel/code-frame/package.json\nfrontend/node_modules/@babel/compat-data/package.json\nfrontend/node_modules/@babel/core/package.json\nfrontend/node_modules/@babel/generator/package.json\nfrontend/node_modules/@babel/helper-compilation-targets/package.json\nfrontend/node_modules/@babel/helper-globals/package.json\nfrontend/node_modules/@babel/helper-module-imports/package.json\nfrontend/node_modules/@babel/helper-module-transforms/package.json\nfrontend/node_modules/@babel/helper-plugin-utils/package.json\nfrontend/node_modules/@babel/helper-string-parser/package.json\nfrontend/node_modules/@babel/helper-validator-identifier/package.json\nfrontend/node_modules/@babel/helper-validator-option/package.json\nfrontend/node_modules/@babel/helpers/package.json\nfrontend/node_modules/@babel/parser/package.json\n...\n(found 973 more files)"
   }, {
     "tagRule" : {
       "tag" : "yarn",
@@ -1512,7 +1225,7 @@
       "pathPatterns" : [ "(|.*/)[.]yarnrc", "(|.*/)yarn[.]lock" ],
       "excludePathPatterns" : [ ]
     },
-    "evidence" : "node_modules/combined-stream/yarn.lock\nnode_modules/uri-js/yarn.lock"
+    "evidence" : "frontend/node_modules/combined-stream/yarn.lock\nfrontend/node_modules/uri-js/yarn.lock"
   }, {
     "tagRule" : {
       "tag" : "jest",
@@ -1520,7 +1233,7 @@
       "pathPatterns" : [ "(|.*/)jest[.].*" ],
       "excludePathPatterns" : [ ]
     },
-    "evidence" : "jest.config.js\nnode_modules/.bin/jest.cmd\nnode_modules/.bin/jest.ps1\nnode_modules/@testing-library/jest-dom/types/jest.d.ts\nnode_modules/jest-cli/bin/jest.js\nnode_modules/jest-fixed-jsdom/jest.config.js\nnode_modules/jest/bin/jest.js"
+    "evidence" : "frontend/jest.config.js\nfrontend/node_modules/.bin/jest.cmd\nfrontend/node_modules/.bin/jest.ps1\nfrontend/node_modules/@testing-library/jest-dom/types/jest.d.ts\nfrontend/node_modules/jest-cli/bin/jest.js\nfrontend/node_modules/jest-fixed-jsdom/jest.config.js\nfrontend/node_modules/jest/bin/jest.js"
   }, {
     "tagRule" : {
       "tag" : "dependabot",
@@ -1528,7 +1241,7 @@
       "pathPatterns" : [ "(|.*/)dependabot[.]ya?ml" ],
       "excludePathPatterns" : [ ]
     },
-    "evidence" : "node_modules/fastq/.github/dependabot.yml\nnode_modules/iconv-lite/.github/dependabot.yml\nnode_modules/reusify/.github/dependabot.yml"
+    "evidence" : "frontend/node_modules/whatwg-encoding/node_modules/iconv-lite/.github/dependabot.yml"
   }, {
     "tagRule" : {
       "tag" : "make",
@@ -1536,7 +1249,7 @@
       "pathPatterns" : [ "(|.*/)Makefile" ],
       "excludePathPatterns" : [ ]
     },
-    "evidence" : "node_modules/delayed-stream/Makefile\nnode_modules/extsprintf/Makefile\nnode_modules/json-stringify-safe/Makefile\nnode_modules/throttleit/Makefile"
+    "evidence" : "frontend/node_modules/delayed-stream/Makefile\nfrontend/node_modules/extsprintf/Makefile\nfrontend/node_modules/json-stringify-safe/Makefile\nfrontend/node_modules/throttleit/Makefile"
   } ],
   "filesAnalysisResults" : {
     "overallFileSizeDistribution" : {
@@ -1545,28 +1258,28 @@
       "mediumRiskThreshold" : 200,
       "highRiskThreshold" : 500,
       "veryHighRiskThreshold" : 1000,
-      "negligibleRiskValue" : 437,
-      "lowRiskValue" : 872,
-      "mediumRiskValue" : 0,
-      "highRiskValue" : 629,
+      "negligibleRiskValue" : 850,
+      "lowRiskValue" : 1267,
+      "mediumRiskValue" : 270,
+      "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 6,
-      "negligibleRiskCount" : 14,
-      "mediumRiskCount" : 0,
-      "highRiskCount" : 1,
+      "lowRiskCount" : 9,
+      "negligibleRiskCount" : 25,
+      "mediumRiskCount" : 1,
+      "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
       "negligibleRiskLabel" : "1-100",
       "lowRiskLabel" : "101-200",
       "mediumRiskLabel" : "201-500",
       "highRiskLabel" : "501-1000",
       "veryHighRiskLabel" : "1001+",
+      "highRiskPercentage" : 0.0,
+      "lowRiskPercentage" : 53.0791788856305,
       "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 32.45614035087719,
-      "lowRiskPercentage" : 44.99484004127967,
-      "mediumRiskPercentage" : 0.0,
-      "totalValue" : 1938,
-      "totalCount" : 21,
-      "negligibleRiskPercentage" : 22.54901960784314
+      "mediumRiskPercentage" : 11.311269375785505,
+      "negligibleRiskPercentage" : 35.609551738583995,
+      "totalValue" : 2387,
+      "totalCount" : 35
     },
     "fileSizeDistributionPerExtension" : [ {
       "key" : "js",
@@ -1574,13 +1287,13 @@
       "mediumRiskThreshold" : 200,
       "highRiskThreshold" : 500,
       "veryHighRiskThreshold" : 1000,
-      "negligibleRiskValue" : 163,
-      "lowRiskValue" : 230,
+      "negligibleRiskValue" : 236,
+      "lowRiskValue" : 372,
       "mediumRiskValue" : 0,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 2,
-      "negligibleRiskCount" : 7,
+      "lowRiskCount" : 3,
+      "negligibleRiskCount" : 10,
       "mediumRiskCount" : 0,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -1589,20 +1302,20 @@
       "mediumRiskLabel" : "201-500",
       "highRiskLabel" : "501-1000",
       "veryHighRiskLabel" : "1001+",
-      "veryHighRiskPercentage" : 0.0,
       "highRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 58.524173027989825,
+      "lowRiskPercentage" : 61.18421052631579,
+      "veryHighRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 0.0,
-      "totalValue" : 393,
-      "totalCount" : 9,
-      "negligibleRiskPercentage" : 41.475826972010175
+      "negligibleRiskPercentage" : 38.81578947368421,
+      "totalValue" : 608,
+      "totalCount" : 13
     }, {
       "key" : "html",
       "lowRiskThreshold" : 100,
       "mediumRiskThreshold" : 200,
       "highRiskThreshold" : 500,
       "veryHighRiskThreshold" : 1000,
-      "negligibleRiskValue" : 13,
+      "negligibleRiskValue" : 18,
       "lowRiskValue" : 0,
       "mediumRiskValue" : 0,
       "highRiskValue" : 0,
@@ -1617,13 +1330,13 @@
       "mediumRiskLabel" : "201-500",
       "highRiskLabel" : "501-1000",
       "veryHighRiskLabel" : "1001+",
-      "veryHighRiskPercentage" : 0.0,
       "highRiskPercentage" : 0.0,
       "lowRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 0.0,
-      "totalValue" : 13,
-      "totalCount" : 1,
-      "negligibleRiskPercentage" : 100.0
+      "negligibleRiskPercentage" : 100.0,
+      "totalValue" : 18,
+      "totalCount" : 1
     }, {
       "key" : "sql",
       "lowRiskThreshold" : 100,
@@ -1645,13 +1358,13 @@
       "mediumRiskLabel" : "201-500",
       "highRiskLabel" : "501-1000",
       "veryHighRiskLabel" : "1001+",
-      "veryHighRiskPercentage" : 0.0,
       "highRiskPercentage" : 0.0,
       "lowRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 0.0,
+      "negligibleRiskPercentage" : 100.0,
       "totalValue" : 35,
-      "totalCount" : 1,
-      "negligibleRiskPercentage" : 100.0
+      "totalCount" : 1
     }, {
       "key" : "py",
       "lowRiskThreshold" : 100,
@@ -1673,13 +1386,13 @@
       "mediumRiskLabel" : "201-500",
       "highRiskLabel" : "501-1000",
       "veryHighRiskLabel" : "1001+",
-      "veryHighRiskPercentage" : 0.0,
       "highRiskPercentage" : 0.0,
       "lowRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 0.0,
+      "negligibleRiskPercentage" : 100.0,
       "totalValue" : 48,
-      "totalCount" : 1,
-      "negligibleRiskPercentage" : 100.0
+      "totalCount" : 1
     }, {
       "key" : "css",
       "lowRiskThreshold" : 100,
@@ -1687,12 +1400,40 @@
       "highRiskThreshold" : 500,
       "veryHighRiskThreshold" : 1000,
       "negligibleRiskValue" : 37,
-      "lowRiskValue" : 186,
+      "lowRiskValue" : 0,
+      "mediumRiskValue" : 270,
+      "highRiskValue" : 0,
+      "veryHighRiskValue" : 0,
+      "lowRiskCount" : 0,
+      "negligibleRiskCount" : 1,
+      "mediumRiskCount" : 1,
+      "highRiskCount" : 0,
+      "veryHighRiskCount" : 0,
+      "negligibleRiskLabel" : "1-100",
+      "lowRiskLabel" : "101-200",
+      "mediumRiskLabel" : "201-500",
+      "highRiskLabel" : "501-1000",
+      "veryHighRiskLabel" : "1001+",
+      "highRiskPercentage" : 0.0,
+      "lowRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0,
+      "mediumRiskPercentage" : 87.94788273615636,
+      "negligibleRiskPercentage" : 12.052117263843648,
+      "totalValue" : 307,
+      "totalCount" : 2
+    }, {
+      "key" : "jsx",
+      "lowRiskThreshold" : 100,
+      "mediumRiskThreshold" : 200,
+      "highRiskThreshold" : 500,
+      "veryHighRiskThreshold" : 1000,
+      "negligibleRiskValue" : 476,
+      "lowRiskValue" : 895,
       "mediumRiskValue" : 0,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 1,
-      "negligibleRiskCount" : 1,
+      "lowRiskCount" : 6,
+      "negligibleRiskCount" : 11,
       "mediumRiskCount" : 0,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -1701,58 +1442,30 @@
       "mediumRiskLabel" : "201-500",
       "highRiskLabel" : "501-1000",
       "veryHighRiskLabel" : "1001+",
-      "veryHighRiskPercentage" : 0.0,
       "highRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 83.40807174887892,
-      "mediumRiskPercentage" : 0.0,
-      "totalValue" : 223,
-      "totalCount" : 2,
-      "negligibleRiskPercentage" : 16.591928251121075
-    }, {
-      "key" : "jsx",
-      "lowRiskThreshold" : 100,
-      "mediumRiskThreshold" : 200,
-      "highRiskThreshold" : 500,
-      "veryHighRiskThreshold" : 1000,
-      "negligibleRiskValue" : 141,
-      "lowRiskValue" : 456,
-      "mediumRiskValue" : 0,
-      "highRiskValue" : 629,
-      "veryHighRiskValue" : 0,
-      "lowRiskCount" : 3,
-      "negligibleRiskCount" : 3,
-      "mediumRiskCount" : 0,
-      "highRiskCount" : 1,
-      "veryHighRiskCount" : 0,
-      "negligibleRiskLabel" : "1-100",
-      "lowRiskLabel" : "101-200",
-      "mediumRiskLabel" : "201-500",
-      "highRiskLabel" : "501-1000",
-      "veryHighRiskLabel" : "1001+",
+      "lowRiskPercentage" : 65.28081692195478,
       "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 51.305057096247964,
-      "lowRiskPercentage" : 37.19412724306689,
       "mediumRiskPercentage" : 0.0,
-      "totalValue" : 1226,
-      "totalCount" : 7,
-      "negligibleRiskPercentage" : 11.500815660685156
+      "negligibleRiskPercentage" : 34.71918307804522,
+      "totalValue" : 1371,
+      "totalCount" : 17
     } ],
     "fileSizeDistributionPerLogicalDecomposition" : [ {
       "name" : "primary",
       "fileSizeDistributionPerComponent" : [ {
-        "key" : "cypress",
+        "key" : "frontend",
         "lowRiskThreshold" : 100,
         "mediumRiskThreshold" : 200,
         "highRiskThreshold" : 500,
         "veryHighRiskThreshold" : 1000,
-        "negligibleRiskValue" : 6,
-        "lowRiskValue" : 0,
-        "mediumRiskValue" : 0,
+        "negligibleRiskValue" : 850,
+        "lowRiskValue" : 1267,
+        "mediumRiskValue" : 270,
         "highRiskValue" : 0,
         "veryHighRiskValue" : 0,
-        "lowRiskCount" : 0,
-        "negligibleRiskCount" : 2,
-        "mediumRiskCount" : 0,
+        "lowRiskCount" : 9,
+        "negligibleRiskCount" : 25,
+        "mediumRiskCount" : 1,
         "highRiskCount" : 0,
         "veryHighRiskCount" : 0,
         "negligibleRiskLabel" : "1-100",
@@ -1760,241 +1473,255 @@
         "mediumRiskLabel" : "201-500",
         "highRiskLabel" : "501-1000",
         "veryHighRiskLabel" : "1001+",
-        "veryHighRiskPercentage" : 0.0,
         "highRiskPercentage" : 0.0,
-        "lowRiskPercentage" : 0.0,
-        "mediumRiskPercentage" : 0.0,
-        "totalValue" : 6,
-        "totalCount" : 2,
-        "negligibleRiskPercentage" : 100.0
-      }, {
-        "key" : "ROOT",
-        "lowRiskThreshold" : 100,
-        "mediumRiskThreshold" : 200,
-        "highRiskThreshold" : 500,
-        "veryHighRiskThreshold" : 1000,
-        "negligibleRiskValue" : 141,
-        "lowRiskValue" : 0,
-        "mediumRiskValue" : 0,
-        "highRiskValue" : 0,
-        "veryHighRiskValue" : 0,
-        "lowRiskCount" : 0,
-        "negligibleRiskCount" : 5,
-        "mediumRiskCount" : 0,
-        "highRiskCount" : 0,
-        "veryHighRiskCount" : 0,
-        "negligibleRiskLabel" : "1-100",
-        "lowRiskLabel" : "101-200",
-        "mediumRiskLabel" : "201-500",
-        "highRiskLabel" : "501-1000",
-        "veryHighRiskLabel" : "1001+",
+        "lowRiskPercentage" : 53.0791788856305,
         "veryHighRiskPercentage" : 0.0,
-        "highRiskPercentage" : 0.0,
-        "lowRiskPercentage" : 0.0,
-        "mediumRiskPercentage" : 0.0,
-        "totalValue" : 141,
-        "totalCount" : 5,
-        "negligibleRiskPercentage" : 100.0
-      }, {
-        "key" : "migrations",
-        "lowRiskThreshold" : 100,
-        "mediumRiskThreshold" : 200,
-        "highRiskThreshold" : 500,
-        "veryHighRiskThreshold" : 1000,
-        "negligibleRiskValue" : 35,
-        "lowRiskValue" : 0,
-        "mediumRiskValue" : 0,
-        "highRiskValue" : 0,
-        "veryHighRiskValue" : 0,
-        "lowRiskCount" : 0,
-        "negligibleRiskCount" : 1,
-        "mediumRiskCount" : 0,
-        "highRiskCount" : 0,
-        "veryHighRiskCount" : 0,
-        "negligibleRiskLabel" : "1-100",
-        "lowRiskLabel" : "101-200",
-        "mediumRiskLabel" : "201-500",
-        "highRiskLabel" : "501-1000",
-        "veryHighRiskLabel" : "1001+",
-        "veryHighRiskPercentage" : 0.0,
-        "highRiskPercentage" : 0.0,
-        "lowRiskPercentage" : 0.0,
-        "mediumRiskPercentage" : 0.0,
-        "totalValue" : 35,
-        "totalCount" : 1,
-        "negligibleRiskPercentage" : 100.0
-      }, {
-        "key" : "src",
-        "lowRiskThreshold" : 100,
-        "mediumRiskThreshold" : 200,
-        "highRiskThreshold" : 500,
-        "veryHighRiskThreshold" : 1000,
-        "negligibleRiskValue" : 255,
-        "lowRiskValue" : 872,
-        "mediumRiskValue" : 0,
-        "highRiskValue" : 629,
-        "veryHighRiskValue" : 0,
-        "lowRiskCount" : 6,
-        "negligibleRiskCount" : 6,
-        "mediumRiskCount" : 0,
-        "highRiskCount" : 1,
-        "veryHighRiskCount" : 0,
-        "negligibleRiskLabel" : "1-100",
-        "lowRiskLabel" : "101-200",
-        "mediumRiskLabel" : "201-500",
-        "highRiskLabel" : "501-1000",
-        "veryHighRiskLabel" : "1001+",
-        "veryHighRiskPercentage" : 0.0,
-        "highRiskPercentage" : 35.82004555808656,
-        "lowRiskPercentage" : 49.65831435079727,
-        "mediumRiskPercentage" : 0.0,
-        "totalValue" : 1756,
-        "totalCount" : 13,
-        "negligibleRiskPercentage" : 14.521640091116174
+        "mediumRiskPercentage" : 11.311269375785505,
+        "negligibleRiskPercentage" : 35.609551738583995,
+        "totalValue" : 2387,
+        "totalCount" : 35
       } ]
     } ],
     "longestFiles" : [ {
-      "relativePath" : "src/Calendar.jsx",
-      "extension" : "jsx",
-      "linesOfCode" : 629,
-      "unitsCount" : 0,
-      "unitsMcCabeIndexSum" : 0,
-      "linesOfCodeInUnits" : 0
-    }, {
-      "relativePath" : "src/index.css",
+      "relativePath" : "frontend/src/index.css",
       "extension" : "css",
-      "linesOfCode" : 186,
+      "linesOfCode" : 270,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "src/components/Login.jsx",
+      "relativePath" : "frontend/src/features/calendar/components/EventForm.jsx",
       "extension" : "jsx",
-      "linesOfCode" : 180,
+      "linesOfCode" : 192,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "src/components/Groups.jsx",
+      "relativePath" : "frontend/src/features/auth/Login.jsx",
       "extension" : "jsx",
-      "linesOfCode" : 173,
+      "linesOfCode" : 184,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "src/services/groups.js",
+      "relativePath" : "frontend/src/features/groups/Groups.jsx",
+      "extension" : "jsx",
+      "linesOfCode" : 177,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+      "extension" : "js",
+      "linesOfCode" : 142,
+      "unitsCount" : 9,
+      "unitsMcCabeIndexSum" : 40,
+      "linesOfCodeInUnits" : 139
+    }, {
+      "relativePath" : "frontend/src/pages/HomePage.jsx",
+      "extension" : "jsx",
+      "linesOfCode" : 131,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/src/services/groups.js",
       "extension" : "js",
       "linesOfCode" : 120,
       "unitsCount" : 5,
       "unitsMcCabeIndexSum" : 30,
       "linesOfCodeInUnits" : 119
     }, {
-      "relativePath" : "src/server/index.js",
+      "relativePath" : "frontend/src/server/index.js",
       "extension" : "js",
       "linesOfCode" : 110,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 5,
       "linesOfCodeInUnits" : 15
     }, {
-      "relativePath" : "src/App.jsx",
+      "relativePath" : "frontend/src/context/AuthContext.jsx",
       "extension" : "jsx",
-      "linesOfCode" : 103,
+      "linesOfCode" : 109,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "src/components/SignUp.jsx",
+      "relativePath" : "frontend/src/features/auth/SignUp.jsx",
+      "extension" : "jsx",
+      "linesOfCode" : 102,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/src/features/calendar/components/CalendarView.jsx",
       "extension" : "jsx",
       "linesOfCode" : 98,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "eslint.config.js",
+      "relativePath" : "frontend/src/pages/CalendarPage.jsx",
+      "extension" : "jsx",
+      "linesOfCode" : 90,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/src/components/NavBar.jsx",
+      "extension" : "jsx",
+      "linesOfCode" : 86,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/eslint.config.js",
       "extension" : "js",
       "linesOfCode" : 59,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 22
     }, {
-      "relativePath" : "src/services/api.js",
+      "relativePath" : "frontend/src/services/api.js",
       "extension" : "js",
       "linesOfCode" : 57,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 14,
       "linesOfCodeInUnits" : 56
     }, {
-      "relativePath" : "projet.py",
+      "relativePath" : "frontend/src/App.jsx",
+      "extension" : "jsx",
+      "linesOfCode" : 55,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/projet.py",
       "extension" : "py",
       "linesOfCode" : 48,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "src/App.css",
+      "relativePath" : "frontend/src/App.css",
       "extension" : "css",
       "linesOfCode" : 37,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "migrations/001_create_groups.sql",
+      "relativePath" : "frontend/cypress/e2e/signup.cy.js",
+      "extension" : "js",
+      "linesOfCode" : 35,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/migrations/001_create_groups.sql",
       "extension" : "sql",
       "linesOfCode" : 35,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "src/components/AuthContext.jsx",
+      "relativePath" : "frontend/src/theme/ThemeProvider.jsx",
+      "extension" : "jsx",
+      "linesOfCode" : 35,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/src/pages/LoginPage.jsx",
       "extension" : "jsx",
       "linesOfCode" : 34,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "src/supabaseClient.js",
+      "relativePath" : "frontend/src/utils/dateUtils.js",
+      "extension" : "js",
+      "linesOfCode" : 28,
+      "unitsCount" : 3,
+      "unitsMcCabeIndexSum" : 3,
+      "linesOfCodeInUnits" : 28
+    }, {
+      "relativePath" : "frontend/src/supabaseClient.js",
       "extension" : "js",
       "linesOfCode" : 20,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "cypress.config.js",
+      "relativePath" : "frontend/index.html",
+      "extension" : "html",
+      "linesOfCode" : 18,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/src/components/ProtectedRoute.jsx",
+      "extension" : "jsx",
+      "linesOfCode" : 18,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/src/layouts/MainLayout.jsx",
+      "extension" : "jsx",
+      "linesOfCode" : 17,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/src/pages/GroupsPage.jsx",
+      "extension" : "jsx",
+      "linesOfCode" : 17,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/cypress.config.js",
       "extension" : "js",
       "linesOfCode" : 15,
       "unitsCount" : 2,
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 9
     }, {
-      "relativePath" : "index.html",
-      "extension" : "html",
-      "linesOfCode" : 13,
-      "unitsCount" : 0,
-      "unitsMcCabeIndexSum" : 0,
-      "linesOfCodeInUnits" : 0
-    }, {
-      "relativePath" : "src/main.jsx",
+      "relativePath" : "frontend/src/pages/SignUpPage.jsx",
       "extension" : "jsx",
-      "linesOfCode" : 9,
+      "linesOfCode" : 14,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "vite.config.js",
+      "relativePath" : "frontend/src/main.jsx",
+      "extension" : "jsx",
+      "linesOfCode" : 12,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/src/utils/constants.js",
+      "extension" : "js",
+      "linesOfCode" : 10,
+      "unitsCount" : 0,
+      "unitsMcCabeIndexSum" : 0,
+      "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "frontend/vite.config.js",
       "extension" : "js",
       "linesOfCode" : 6,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 3
     }, {
-      "relativePath" : "cypress/support/e2e.js",
+      "relativePath" : "frontend/cypress/support/e2e.js",
       "extension" : "js",
       "linesOfCode" : 5,
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "cypress/support/commands.js",
+      "relativePath" : "frontend/cypress/support/commands.js",
       "extension" : "js",
       "linesOfCode" : 1,
       "unitsCount" : 0,
@@ -2002,42 +1729,56 @@
       "linesOfCodeInUnits" : 0
     } ],
     "filesWithMostUnits" : [ {
-      "relativePath" : "src/services/groups.js",
+      "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+      "extension" : "js",
+      "linesOfCode" : 142,
+      "unitsCount" : 9,
+      "unitsMcCabeIndexSum" : 40,
+      "linesOfCodeInUnits" : 139
+    }, {
+      "relativePath" : "frontend/src/services/groups.js",
       "extension" : "js",
       "linesOfCode" : 120,
       "unitsCount" : 5,
       "unitsMcCabeIndexSum" : 30,
       "linesOfCodeInUnits" : 119
     }, {
-      "relativePath" : "cypress.config.js",
+      "relativePath" : "frontend/src/utils/dateUtils.js",
+      "extension" : "js",
+      "linesOfCode" : 28,
+      "unitsCount" : 3,
+      "unitsMcCabeIndexSum" : 3,
+      "linesOfCodeInUnits" : 28
+    }, {
+      "relativePath" : "frontend/cypress.config.js",
       "extension" : "js",
       "linesOfCode" : 15,
       "unitsCount" : 2,
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 9
     }, {
-      "relativePath" : "eslint.config.js",
+      "relativePath" : "frontend/eslint.config.js",
       "extension" : "js",
       "linesOfCode" : 59,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 22
     }, {
-      "relativePath" : "src/server/index.js",
+      "relativePath" : "frontend/src/server/index.js",
       "extension" : "js",
       "linesOfCode" : 110,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 5,
       "linesOfCodeInUnits" : 15
     }, {
-      "relativePath" : "src/services/api.js",
+      "relativePath" : "frontend/src/services/api.js",
       "extension" : "js",
       "linesOfCode" : 57,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 14,
       "linesOfCodeInUnits" : 56
     }, {
-      "relativePath" : "vite.config.js",
+      "relativePath" : "frontend/vite.config.js",
       "extension" : "js",
       "linesOfCode" : 6,
       "unitsCount" : 1,
@@ -2075,22 +1816,22 @@
     "historyPerExtensionPerYear" : [ ]
   },
   "unitsAnalysisResults" : {
-    "totalNumberOfUnits" : 11,
-    "linesOfCodeInUnits" : 224,
+    "totalNumberOfUnits" : 23,
+    "linesOfCodeInUnits" : 391,
     "unitSizeRiskDistribution" : {
       "key" : "",
       "lowRiskThreshold" : 10,
       "mediumRiskThreshold" : 20,
       "highRiskThreshold" : 50,
       "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 29,
-      "lowRiskValue" : 31,
-      "mediumRiskValue" : 108,
+      "negligibleRiskValue" : 92,
+      "lowRiskValue" : 42,
+      "mediumRiskValue" : 201,
       "highRiskValue" : 56,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 2,
-      "negligibleRiskCount" : 5,
-      "mediumRiskCount" : 3,
+      "lowRiskCount" : 3,
+      "negligibleRiskCount" : 13,
+      "mediumRiskCount" : 6,
       "highRiskCount" : 1,
       "veryHighRiskCount" : 0,
       "negligibleRiskLabel" : "1-10",
@@ -2098,13 +1839,13 @@
       "mediumRiskLabel" : "21-50",
       "highRiskLabel" : "51-100",
       "veryHighRiskLabel" : "101+",
+      "highRiskPercentage" : 14.322250639386189,
+      "lowRiskPercentage" : 10.741687979539641,
       "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 25.0,
-      "lowRiskPercentage" : 13.839285714285714,
-      "mediumRiskPercentage" : 48.214285714285715,
-      "totalValue" : 224,
-      "totalCount" : 11,
-      "negligibleRiskPercentage" : 12.946428571428571
+      "mediumRiskPercentage" : 51.406649616368284,
+      "negligibleRiskPercentage" : 23.529411764705884,
+      "totalValue" : 391,
+      "totalCount" : 23
     },
     "conditionalComplexityRiskDistribution" : {
       "key" : "",
@@ -2112,13 +1853,13 @@
       "mediumRiskThreshold" : 10,
       "highRiskThreshold" : 25,
       "veryHighRiskThreshold" : 50,
-      "negligibleRiskValue" : 82,
-      "lowRiskValue" : 40,
+      "negligibleRiskValue" : 156,
+      "lowRiskValue" : 133,
       "mediumRiskValue" : 102,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 1,
-      "negligibleRiskCount" : 8,
+      "lowRiskCount" : 4,
+      "negligibleRiskCount" : 17,
       "mediumRiskCount" : 2,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -2127,13 +1868,13 @@
       "mediumRiskLabel" : "11-25",
       "highRiskLabel" : "26-50",
       "veryHighRiskLabel" : "51+",
-      "veryHighRiskPercentage" : 0.0,
       "highRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 17.857142857142858,
-      "mediumRiskPercentage" : 45.535714285714285,
-      "totalValue" : 224,
-      "totalCount" : 11,
-      "negligibleRiskPercentage" : 36.607142857142854
+      "lowRiskPercentage" : 34.0153452685422,
+      "veryHighRiskPercentage" : 0.0,
+      "mediumRiskPercentage" : 26.08695652173913,
+      "negligibleRiskPercentage" : 39.89769820971867,
+      "totalValue" : 391,
+      "totalCount" : 23
     },
     "unitSizeRiskDistributionPerExtension" : [ {
       "key" : "js",
@@ -2141,14 +1882,14 @@
       "mediumRiskThreshold" : 20,
       "highRiskThreshold" : 50,
       "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 29,
-      "lowRiskValue" : 31,
-      "mediumRiskValue" : 108,
+      "negligibleRiskValue" : 92,
+      "lowRiskValue" : 42,
+      "mediumRiskValue" : 201,
       "highRiskValue" : 56,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 2,
-      "negligibleRiskCount" : 5,
-      "mediumRiskCount" : 3,
+      "lowRiskCount" : 3,
+      "negligibleRiskCount" : 13,
+      "mediumRiskCount" : 6,
       "highRiskCount" : 1,
       "veryHighRiskCount" : 0,
       "negligibleRiskLabel" : "1-10",
@@ -2156,56 +1897,28 @@
       "mediumRiskLabel" : "21-50",
       "highRiskLabel" : "51-100",
       "veryHighRiskLabel" : "101+",
+      "highRiskPercentage" : 14.322250639386189,
+      "lowRiskPercentage" : 10.741687979539641,
       "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 25.0,
-      "lowRiskPercentage" : 13.839285714285714,
-      "mediumRiskPercentage" : 48.214285714285715,
-      "totalValue" : 224,
-      "totalCount" : 11,
-      "negligibleRiskPercentage" : 12.946428571428571
+      "mediumRiskPercentage" : 51.406649616368284,
+      "negligibleRiskPercentage" : 23.529411764705884,
+      "totalValue" : 391,
+      "totalCount" : 23
     } ],
     "unitSizeRiskDistributionPerComponent" : [ [ {
-      "key" : "ROOT",
+      "key" : "frontend",
       "lowRiskThreshold" : 10,
       "mediumRiskThreshold" : 20,
       "highRiskThreshold" : 50,
       "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 12,
-      "lowRiskValue" : 0,
-      "mediumRiskValue" : 22,
-      "highRiskValue" : 0,
-      "veryHighRiskValue" : 0,
-      "lowRiskCount" : 0,
-      "negligibleRiskCount" : 3,
-      "mediumRiskCount" : 1,
-      "highRiskCount" : 0,
-      "veryHighRiskCount" : 0,
-      "negligibleRiskLabel" : "1-10",
-      "lowRiskLabel" : "11-20",
-      "mediumRiskLabel" : "21-50",
-      "highRiskLabel" : "51-100",
-      "veryHighRiskLabel" : "101+",
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 64.70588235294117,
-      "totalValue" : 34,
-      "totalCount" : 4,
-      "negligibleRiskPercentage" : 35.294117647058826
-    }, {
-      "key" : "src",
-      "lowRiskThreshold" : 10,
-      "mediumRiskThreshold" : 20,
-      "highRiskThreshold" : 50,
-      "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 17,
-      "lowRiskValue" : 31,
-      "mediumRiskValue" : 86,
+      "negligibleRiskValue" : 92,
+      "lowRiskValue" : 42,
+      "mediumRiskValue" : 201,
       "highRiskValue" : 56,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 2,
-      "negligibleRiskCount" : 2,
-      "mediumRiskCount" : 2,
+      "lowRiskCount" : 3,
+      "negligibleRiskCount" : 13,
+      "mediumRiskCount" : 6,
       "highRiskCount" : 1,
       "veryHighRiskCount" : 0,
       "negligibleRiskLabel" : "1-10",
@@ -2213,19 +1926,19 @@
       "mediumRiskLabel" : "21-50",
       "highRiskLabel" : "51-100",
       "veryHighRiskLabel" : "101+",
+      "highRiskPercentage" : 14.322250639386189,
+      "lowRiskPercentage" : 10.741687979539641,
       "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 29.473684210526315,
-      "lowRiskPercentage" : 16.31578947368421,
-      "mediumRiskPercentage" : 45.26315789473684,
-      "totalValue" : 190,
-      "totalCount" : 7,
-      "negligibleRiskPercentage" : 8.947368421052632
+      "mediumRiskPercentage" : 51.406649616368284,
+      "negligibleRiskPercentage" : 23.529411764705884,
+      "totalValue" : 391,
+      "totalCount" : 23
     } ] ],
     "longestUnits" : [ {
       "shortName" : "export async function createEvent()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "src/services/api.js",
+        "relativePath" : "frontend/src/services/api.js",
         "extension" : "js",
         "linesOfCode" : 57,
         "unitsCount" : 1,
@@ -2245,7 +1958,7 @@
       "shortName" : "export async function joinGroupByCode()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "src/services/groups.js",
+        "relativePath" : "frontend/src/services/groups.js",
         "extension" : "js",
         "linesOfCode" : 120,
         "unitsCount" : 5,
@@ -2262,10 +1975,30 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "async function handleFormSubmit()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 51,
+      "endLine" : 105,
+      "linesOfCode" : 44,
+      "mcCabeIndex" : 10,
+      "numberOfParameters" : 4,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "export async function createGroup()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "src/services/groups.js",
+        "relativePath" : "frontend/src/services/groups.js",
         "extension" : "js",
         "linesOfCode" : 120,
         "unitsCount" : 5,
@@ -2282,10 +2015,50 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "function validateEvent()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 16,
+      "endLine" : 49,
+      "linesOfCode" : 26,
+      "mcCabeIndex" : 9,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "function handleSelectSlot()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 127,
+      "endLine" : 156,
+      "linesOfCode" : 23,
+      "mcCabeIndex" : 6,
+      "numberOfParameters" : 3,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "export default defineConfig()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "eslint.config.js",
+        "relativePath" : "frontend/eslint.config.js",
         "extension" : "js",
         "linesOfCode" : 59,
         "unitsCount" : 1,
@@ -2305,7 +2078,7 @@
       "shortName" : "export async function fetchUserGroups()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "src/services/groups.js",
+        "relativePath" : "frontend/src/services/groups.js",
         "extension" : "js",
         "linesOfCode" : 120,
         "unitsCount" : 5,
@@ -2325,7 +2098,7 @@
       "shortName" : "function createTransporter()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "src/server/index.js",
+        "relativePath" : "frontend/src/server/index.js",
         "extension" : "js",
         "linesOfCode" : 110,
         "unitsCount" : 1,
@@ -2342,10 +2115,50 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "function handleSelectEvent()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 107,
+      "endLine" : 118,
+      "linesOfCode" : 11,
+      "mcCabeIndex" : 3,
+      "numberOfParameters" : 2,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "start: formatDateTimeLocal()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 111,
+      "endLine" : 121,
+      "linesOfCode" : 10,
+      "mcCabeIndex" : 4,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "export async function fetchGroupEvents()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "src/services/groups.js",
+        "relativePath" : "frontend/src/services/groups.js",
         "extension" : "js",
         "linesOfCode" : 120,
         "unitsCount" : 5,
@@ -2362,10 +2175,110 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "export function getOneHourFromNow()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/utils/dateUtils.js",
+        "extension" : "js",
+        "linesOfCode" : 28,
+        "unitsCount" : 3,
+        "unitsMcCabeIndexSum" : 3,
+        "linesOfCodeInUnits" : 28
+      },
+      "startLine" : 21,
+      "endLine" : 30,
+      "linesOfCode" : 10,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "end: formatDateTimeLocal()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 112,
+      "endLine" : 121,
+      "linesOfCode" : 9,
+      "mcCabeIndex" : 4,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "function getInitialFormState()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 158,
+      "endLine" : 166,
+      "linesOfCode" : 9,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export function getCurrentDateTime()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/utils/dateUtils.js",
+        "extension" : "js",
+        "linesOfCode" : 28,
+        "unitsCount" : 3,
+        "unitsMcCabeIndexSum" : 3,
+        "linesOfCodeInUnits" : 28
+      },
+      "startLine" : 7,
+      "endLine" : 15,
+      "linesOfCode" : 9,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export function formatDateTimeLocal()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/utils/dateUtils.js",
+        "extension" : "js",
+        "linesOfCode" : 28,
+        "unitsCount" : 3,
+        "unitsMcCabeIndexSum" : 3,
+        "linesOfCodeInUnits" : 28
+      },
+      "startLine" : 37,
+      "endLine" : 45,
+      "linesOfCode" : 9,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "function generate6CharCode()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "src/services/groups.js",
+        "relativePath" : "frontend/src/services/groups.js",
         "extension" : "js",
         "linesOfCode" : 120,
         "unitsCount" : 5,
@@ -2382,10 +2295,30 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "function handleDeleteEvent()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 120,
+      "endLine" : 125,
+      "linesOfCode" : 6,
+      "mcCabeIndex" : 2,
+      "numberOfParameters" : 2,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "setupNodeEvents()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "cypress.config.js",
+        "relativePath" : "frontend/cypress.config.js",
         "extension" : "js",
         "linesOfCode" : 15,
         "unitsCount" : 2,
@@ -2404,7 +2337,7 @@
         "shortName" : "log()",
         "longName" : "",
         "sourceFile" : {
-          "relativePath" : "cypress.config.js",
+          "relativePath" : "frontend/cypress.config.js",
           "extension" : "js",
           "linesOfCode" : 15,
           "unitsCount" : 2,
@@ -2425,7 +2358,7 @@
       "shortName" : "log()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "cypress.config.js",
+        "relativePath" : "frontend/cypress.config.js",
         "extension" : "js",
         "linesOfCode" : 15,
         "unitsCount" : 2,
@@ -2445,7 +2378,7 @@
       "shortName" : "export default defineConfig()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "vite.config.js",
+        "relativePath" : "frontend/vite.config.js",
         "extension" : "js",
         "linesOfCode" : 6,
         "unitsCount" : 1,
@@ -2461,6 +2394,186 @@
       "numberOfStatements" : 0,
       "numberOfExpressions" : 0,
       "children" : [ ]
+    }, {
+      "shortName" : "export function useCalendarEvents()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 6,
+      "endLine" : 180,
+      "linesOfCode" : 1,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ {
+        "shortName" : "function validateEvent()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 16,
+        "endLine" : 49,
+        "linesOfCode" : 26,
+        "mcCabeIndex" : 9,
+        "numberOfParameters" : 1,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      }, {
+        "shortName" : "async function handleFormSubmit()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 51,
+        "endLine" : 105,
+        "linesOfCode" : 44,
+        "mcCabeIndex" : 10,
+        "numberOfParameters" : 4,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      }, {
+        "shortName" : "function handleSelectEvent()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 107,
+        "endLine" : 118,
+        "linesOfCode" : 11,
+        "mcCabeIndex" : 3,
+        "numberOfParameters" : 2,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      }, {
+        "shortName" : "start: formatDateTimeLocal()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 111,
+        "endLine" : 121,
+        "linesOfCode" : 10,
+        "mcCabeIndex" : 4,
+        "numberOfParameters" : 1,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      }, {
+        "shortName" : "end: formatDateTimeLocal()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 112,
+        "endLine" : 121,
+        "linesOfCode" : 9,
+        "mcCabeIndex" : 4,
+        "numberOfParameters" : 1,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      }, {
+        "shortName" : "function handleDeleteEvent()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 120,
+        "endLine" : 125,
+        "linesOfCode" : 6,
+        "mcCabeIndex" : 2,
+        "numberOfParameters" : 2,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      }, {
+        "shortName" : "function handleSelectSlot()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 127,
+        "endLine" : 156,
+        "linesOfCode" : 23,
+        "mcCabeIndex" : 6,
+        "numberOfParameters" : 3,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      }, {
+        "shortName" : "function getInitialFormState()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 158,
+        "endLine" : 166,
+        "linesOfCode" : 9,
+        "mcCabeIndex" : 1,
+        "numberOfParameters" : 0,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      } ]
     } ],
     "conditionalComplexityRiskDistributionPerExtension" : [ {
       "key" : "js",
@@ -2468,13 +2581,13 @@
       "mediumRiskThreshold" : 10,
       "highRiskThreshold" : 25,
       "veryHighRiskThreshold" : 50,
-      "negligibleRiskValue" : 82,
-      "lowRiskValue" : 40,
+      "negligibleRiskValue" : 156,
+      "lowRiskValue" : 133,
       "mediumRiskValue" : 102,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 1,
-      "negligibleRiskCount" : 8,
+      "lowRiskCount" : 4,
+      "negligibleRiskCount" : 17,
       "mediumRiskCount" : 2,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -2483,55 +2596,27 @@
       "mediumRiskLabel" : "11-25",
       "highRiskLabel" : "26-50",
       "veryHighRiskLabel" : "51+",
-      "veryHighRiskPercentage" : 0.0,
       "highRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 17.857142857142858,
-      "mediumRiskPercentage" : 45.535714285714285,
-      "totalValue" : 224,
-      "totalCount" : 11,
-      "negligibleRiskPercentage" : 36.607142857142854
+      "lowRiskPercentage" : 34.0153452685422,
+      "veryHighRiskPercentage" : 0.0,
+      "mediumRiskPercentage" : 26.08695652173913,
+      "negligibleRiskPercentage" : 39.89769820971867,
+      "totalValue" : 391,
+      "totalCount" : 23
     } ],
     "conditionalComplexityRiskDistributionPerComponent" : [ [ {
-      "key" : "ROOT",
+      "key" : "frontend",
       "lowRiskThreshold" : 5,
       "mediumRiskThreshold" : 10,
       "highRiskThreshold" : 25,
       "veryHighRiskThreshold" : 50,
-      "negligibleRiskValue" : 34,
-      "lowRiskValue" : 0,
-      "mediumRiskValue" : 0,
-      "highRiskValue" : 0,
-      "veryHighRiskValue" : 0,
-      "lowRiskCount" : 0,
-      "negligibleRiskCount" : 4,
-      "mediumRiskCount" : 0,
-      "highRiskCount" : 0,
-      "veryHighRiskCount" : 0,
-      "negligibleRiskLabel" : "1-5",
-      "lowRiskLabel" : "6-10",
-      "mediumRiskLabel" : "11-25",
-      "highRiskLabel" : "26-50",
-      "veryHighRiskLabel" : "51+",
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 0.0,
-      "totalValue" : 34,
-      "totalCount" : 4,
-      "negligibleRiskPercentage" : 100.0
-    }, {
-      "key" : "src",
-      "lowRiskThreshold" : 5,
-      "mediumRiskThreshold" : 10,
-      "highRiskThreshold" : 25,
-      "veryHighRiskThreshold" : 50,
-      "negligibleRiskValue" : 48,
-      "lowRiskValue" : 40,
+      "negligibleRiskValue" : 156,
+      "lowRiskValue" : 133,
       "mediumRiskValue" : 102,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 1,
-      "negligibleRiskCount" : 4,
+      "lowRiskCount" : 4,
+      "negligibleRiskCount" : 17,
       "mediumRiskCount" : 2,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -2540,19 +2625,19 @@
       "mediumRiskLabel" : "11-25",
       "highRiskLabel" : "26-50",
       "veryHighRiskLabel" : "51+",
-      "veryHighRiskPercentage" : 0.0,
       "highRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 21.05263157894737,
-      "mediumRiskPercentage" : 53.68421052631579,
-      "totalValue" : 190,
-      "totalCount" : 7,
-      "negligibleRiskPercentage" : 25.263157894736842
+      "lowRiskPercentage" : 34.0153452685422,
+      "veryHighRiskPercentage" : 0.0,
+      "mediumRiskPercentage" : 26.08695652173913,
+      "negligibleRiskPercentage" : 39.89769820971867,
+      "totalValue" : 391,
+      "totalCount" : 23
     } ] ],
     "mostComplexUnits" : [ {
       "shortName" : "export async function createEvent()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "src/services/api.js",
+        "relativePath" : "frontend/src/services/api.js",
         "extension" : "js",
         "linesOfCode" : 57,
         "unitsCount" : 1,
@@ -2572,7 +2657,7 @@
       "shortName" : "export async function joinGroupByCode()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "src/services/groups.js",
+        "relativePath" : "frontend/src/services/groups.js",
         "extension" : "js",
         "linesOfCode" : 120,
         "unitsCount" : 5,
@@ -2589,10 +2674,70 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "async function handleFormSubmit()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 51,
+      "endLine" : 105,
+      "linesOfCode" : 44,
+      "mcCabeIndex" : 10,
+      "numberOfParameters" : 4,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "function validateEvent()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 16,
+      "endLine" : 49,
+      "linesOfCode" : 26,
+      "mcCabeIndex" : 9,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "function handleSelectSlot()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 127,
+      "endLine" : 156,
+      "linesOfCode" : 23,
+      "mcCabeIndex" : 6,
+      "numberOfParameters" : 3,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "export async function createGroup()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "src/services/groups.js",
+        "relativePath" : "frontend/src/services/groups.js",
         "extension" : "js",
         "linesOfCode" : 120,
         "unitsCount" : 5,
@@ -2612,7 +2757,7 @@
       "shortName" : "function createTransporter()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "src/server/index.js",
+        "relativePath" : "frontend/src/server/index.js",
         "extension" : "js",
         "linesOfCode" : 110,
         "unitsCount" : 1,
@@ -2629,10 +2774,50 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "start: formatDateTimeLocal()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 111,
+      "endLine" : 121,
+      "linesOfCode" : 10,
+      "mcCabeIndex" : 4,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "end: formatDateTimeLocal()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 112,
+      "endLine" : 121,
+      "linesOfCode" : 9,
+      "mcCabeIndex" : 4,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "export async function fetchUserGroups()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "src/services/groups.js",
+        "relativePath" : "frontend/src/services/groups.js",
         "extension" : "js",
         "linesOfCode" : 120,
         "unitsCount" : 5,
@@ -2652,7 +2837,7 @@
       "shortName" : "export async function fetchGroupEvents()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "src/services/groups.js",
+        "relativePath" : "frontend/src/services/groups.js",
         "extension" : "js",
         "linesOfCode" : 120,
         "unitsCount" : 5,
@@ -2669,10 +2854,50 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "function handleSelectEvent()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 107,
+      "endLine" : 118,
+      "linesOfCode" : 11,
+      "mcCabeIndex" : 3,
+      "numberOfParameters" : 2,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "function handleDeleteEvent()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 120,
+      "endLine" : 125,
+      "linesOfCode" : 6,
+      "mcCabeIndex" : 2,
+      "numberOfParameters" : 2,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "function generate6CharCode()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "src/services/groups.js",
+        "relativePath" : "frontend/src/services/groups.js",
         "extension" : "js",
         "linesOfCode" : 120,
         "unitsCount" : 5,
@@ -2692,7 +2917,7 @@
       "shortName" : "setupNodeEvents()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "cypress.config.js",
+        "relativePath" : "frontend/cypress.config.js",
         "extension" : "js",
         "linesOfCode" : 15,
         "unitsCount" : 2,
@@ -2711,7 +2936,7 @@
         "shortName" : "log()",
         "longName" : "",
         "sourceFile" : {
-          "relativePath" : "cypress.config.js",
+          "relativePath" : "frontend/cypress.config.js",
           "extension" : "js",
           "linesOfCode" : 15,
           "unitsCount" : 2,
@@ -2732,7 +2957,7 @@
       "shortName" : "log()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "cypress.config.js",
+        "relativePath" : "frontend/cypress.config.js",
         "extension" : "js",
         "linesOfCode" : 15,
         "unitsCount" : 2,
@@ -2752,7 +2977,7 @@
       "shortName" : "export default defineConfig()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "eslint.config.js",
+        "relativePath" : "frontend/eslint.config.js",
         "extension" : "js",
         "linesOfCode" : 59,
         "unitsCount" : 1,
@@ -2769,10 +2994,270 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "export function useCalendarEvents()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 6,
+      "endLine" : 180,
+      "linesOfCode" : 1,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ {
+        "shortName" : "function validateEvent()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 16,
+        "endLine" : 49,
+        "linesOfCode" : 26,
+        "mcCabeIndex" : 9,
+        "numberOfParameters" : 1,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      }, {
+        "shortName" : "async function handleFormSubmit()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 51,
+        "endLine" : 105,
+        "linesOfCode" : 44,
+        "mcCabeIndex" : 10,
+        "numberOfParameters" : 4,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      }, {
+        "shortName" : "function handleSelectEvent()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 107,
+        "endLine" : 118,
+        "linesOfCode" : 11,
+        "mcCabeIndex" : 3,
+        "numberOfParameters" : 2,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      }, {
+        "shortName" : "start: formatDateTimeLocal()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 111,
+        "endLine" : 121,
+        "linesOfCode" : 10,
+        "mcCabeIndex" : 4,
+        "numberOfParameters" : 1,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      }, {
+        "shortName" : "end: formatDateTimeLocal()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 112,
+        "endLine" : 121,
+        "linesOfCode" : 9,
+        "mcCabeIndex" : 4,
+        "numberOfParameters" : 1,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      }, {
+        "shortName" : "function handleDeleteEvent()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 120,
+        "endLine" : 125,
+        "linesOfCode" : 6,
+        "mcCabeIndex" : 2,
+        "numberOfParameters" : 2,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      }, {
+        "shortName" : "function handleSelectSlot()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 127,
+        "endLine" : 156,
+        "linesOfCode" : 23,
+        "mcCabeIndex" : 6,
+        "numberOfParameters" : 3,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      }, {
+        "shortName" : "function getInitialFormState()",
+        "longName" : "",
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "startLine" : 158,
+        "endLine" : 166,
+        "linesOfCode" : 9,
+        "mcCabeIndex" : 1,
+        "numberOfParameters" : 0,
+        "numberOfLiterals" : 0,
+        "numberOfStatements" : 0,
+        "numberOfExpressions" : 0,
+        "children" : [ ]
+      } ]
+    }, {
+      "shortName" : "function getInitialFormState()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+        "extension" : "js",
+        "linesOfCode" : 142,
+        "unitsCount" : 9,
+        "unitsMcCabeIndexSum" : 40,
+        "linesOfCodeInUnits" : 139
+      },
+      "startLine" : 158,
+      "endLine" : 166,
+      "linesOfCode" : 9,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export function getCurrentDateTime()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/utils/dateUtils.js",
+        "extension" : "js",
+        "linesOfCode" : 28,
+        "unitsCount" : 3,
+        "unitsMcCabeIndexSum" : 3,
+        "linesOfCodeInUnits" : 28
+      },
+      "startLine" : 7,
+      "endLine" : 15,
+      "linesOfCode" : 9,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export function getOneHourFromNow()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/utils/dateUtils.js",
+        "extension" : "js",
+        "linesOfCode" : 28,
+        "unitsCount" : 3,
+        "unitsMcCabeIndexSum" : 3,
+        "linesOfCodeInUnits" : 28
+      },
+      "startLine" : 21,
+      "endLine" : 30,
+      "linesOfCode" : 10,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "export function formatDateTimeLocal()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "frontend/src/utils/dateUtils.js",
+        "extension" : "js",
+        "linesOfCode" : 28,
+        "unitsCount" : 3,
+        "unitsMcCabeIndexSum" : 3,
+        "linesOfCodeInUnits" : 28
+      },
+      "startLine" : 37,
+      "endLine" : 45,
+      "linesOfCode" : 9,
+      "mcCabeIndex" : 1,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "export default defineConfig()",
       "longName" : "",
       "sourceFile" : {
-        "relativePath" : "vite.config.js",
+        "relativePath" : "frontend/vite.config.js",
         "extension" : "js",
         "linesOfCode" : 6,
         "unitsCount" : 1,
@@ -2793,62 +3278,48 @@
   "duplicationAnalysisResults" : {
     "overallDuplication" : {
       "key" : "system",
-      "numberOfDuplicates" : 9,
-      "cleanedLinesOfCode" : 1799,
-      "duplicatedLinesOfCode" : 123,
-      "numberOfFilesWithDuplicates" : 3,
-      "duplicationPercentage" : 6.837131739855475
+      "numberOfDuplicates" : 8,
+      "cleanedLinesOfCode" : 2172,
+      "duplicatedLinesOfCode" : 115,
+      "numberOfFilesWithDuplicates" : 6,
+      "duplicationPercentage" : 5.294659300184162
     },
     "duplicationPerComponent" : [ [ {
-      "key" : "src",
+      "key" : "frontend",
       "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 1633,
-      "duplicatedLinesOfCode" : 100,
+      "cleanedLinesOfCode" : 2172,
+      "duplicatedLinesOfCode" : 115,
       "numberOfFilesWithDuplicates" : 0,
-      "duplicationPercentage" : 6.12369871402327
-    }, {
-      "key" : "ROOT",
-      "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 126,
-      "duplicatedLinesOfCode" : 23,
-      "numberOfFilesWithDuplicates" : 0,
-      "duplicationPercentage" : 18.253968253968253
-    }, {
-      "key" : "cypress",
-      "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 5,
-      "duplicatedLinesOfCode" : 0,
-      "numberOfFilesWithDuplicates" : 0,
-      "duplicationPercentage" : 0.0
-    }, {
-      "key" : "migrations",
-      "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 35,
-      "duplicatedLinesOfCode" : 0,
-      "numberOfFilesWithDuplicates" : 0,
-      "duplicationPercentage" : 0.0
+      "duplicationPercentage" : 5.294659300184162
     } ] ],
     "duplicationPerConcern" : [ ],
     "duplicationPerExtension" : [ {
       "key" : "js",
       "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 348,
-      "duplicatedLinesOfCode" : 63,
+      "cleanedLinesOfCode" : 538,
+      "duplicatedLinesOfCode" : 95,
       "numberOfFilesWithDuplicates" : 0,
-      "duplicationPercentage" : 18.103448275862068
+      "duplicationPercentage" : 17.65799256505576
     }, {
       "key" : "jsx",
       "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 1136,
-      "duplicatedLinesOfCode" : 60,
+      "cleanedLinesOfCode" : 1231,
+      "duplicatedLinesOfCode" : 8,
       "numberOfFilesWithDuplicates" : 0,
-      "duplicationPercentage" : 5.28169014084507
+      "duplicationPercentage" : 0.6498781478472786
+    }, {
+      "key" : "css",
+      "numberOfDuplicates" : 0,
+      "cleanedLinesOfCode" : 307,
+      "duplicatedLinesOfCode" : 12,
+      "numberOfFilesWithDuplicates" : 0,
+      "duplicationPercentage" : 3.9087947882736156
     } ],
     "longestDuplicates" : [ {
       "displayContent" : "",
       "duplicatedFileBlocks" : [ {
         "sourceFile" : {
-          "relativePath" : "src/server/index.js",
+          "relativePath" : "frontend/src/server/index.js",
           "extension" : "js",
           "linesOfCode" : 110,
           "unitsCount" : 1,
@@ -2864,7 +3335,7 @@
         "blockSize" : 14
       }, {
         "sourceFile" : {
-          "relativePath" : "src/server/index.js",
+          "relativePath" : "frontend/src/server/index.js",
           "extension" : "js",
           "linesOfCode" : 110,
           "unitsCount" : 1,
@@ -2884,115 +3355,43 @@
       "displayContent" : "",
       "duplicatedFileBlocks" : [ {
         "sourceFile" : {
-          "relativePath" : "src/Calendar.jsx",
-          "extension" : "jsx",
-          "linesOfCode" : 629,
-          "unitsCount" : 0,
-          "unitsMcCabeIndexSum" : 0,
-          "linesOfCodeInUnits" : 0
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
         },
-        "sourceFileCleanedLinesOfCode" : 594,
-        "startLine" : 103,
-        "endLine" : 112,
-        "cleanedStartLine" : 92,
-        "cleanedEndLine" : 101,
-        "percentage" : 1.6835016835016836,
-        "blockSize" : 10
+        "sourceFileCleanedLinesOfCode" : 120,
+        "startLine" : 171,
+        "endLine" : 178,
+        "cleanedStartLine" : 112,
+        "cleanedEndLine" : 119,
+        "percentage" : 6.666666666666667,
+        "blockSize" : 8
       }, {
         "sourceFile" : {
-          "relativePath" : "src/Calendar.jsx",
+          "relativePath" : "frontend/src/pages/CalendarPage.jsx",
           "extension" : "jsx",
-          "linesOfCode" : 629,
+          "linesOfCode" : 90,
           "unitsCount" : 0,
           "unitsMcCabeIndexSum" : 0,
           "linesOfCodeInUnits" : 0
         },
-        "sourceFileCleanedLinesOfCode" : 594,
-        "startLine" : 392,
-        "endLine" : 401,
-        "cleanedStartLine" : 332,
-        "cleanedEndLine" : 341,
-        "percentage" : 1.6835016835016836,
-        "blockSize" : 10
+        "sourceFileCleanedLinesOfCode" : 88,
+        "startLine" : 12,
+        "endLine" : 19,
+        "cleanedStartLine" : 11,
+        "cleanedEndLine" : 18,
+        "percentage" : 9.090909090909092,
+        "blockSize" : 8
       } ],
-      "blockSize" : 10
+      "blockSize" : 8
     }, {
       "displayContent" : "",
       "duplicatedFileBlocks" : [ {
         "sourceFile" : {
-          "relativePath" : "src/Calendar.jsx",
-          "extension" : "jsx",
-          "linesOfCode" : 629,
-          "unitsCount" : 0,
-          "unitsMcCabeIndexSum" : 0,
-          "linesOfCodeInUnits" : 0
-        },
-        "sourceFileCleanedLinesOfCode" : 594,
-        "startLine" : 117,
-        "endLine" : 126,
-        "cleanedStartLine" : 106,
-        "cleanedEndLine" : 115,
-        "percentage" : 1.6835016835016836,
-        "blockSize" : 10
-      }, {
-        "sourceFile" : {
-          "relativePath" : "src/Calendar.jsx",
-          "extension" : "jsx",
-          "linesOfCode" : 629,
-          "unitsCount" : 0,
-          "unitsMcCabeIndexSum" : 0,
-          "linesOfCodeInUnits" : 0
-        },
-        "sourceFileCleanedLinesOfCode" : 594,
-        "startLine" : 409,
-        "endLine" : 418,
-        "cleanedStartLine" : 349,
-        "cleanedEndLine" : 358,
-        "percentage" : 1.6835016835016836,
-        "blockSize" : 10
-      } ],
-      "blockSize" : 10
-    }, {
-      "displayContent" : "",
-      "duplicatedFileBlocks" : [ {
-        "sourceFile" : {
-          "relativePath" : "src/Calendar.jsx",
-          "extension" : "jsx",
-          "linesOfCode" : 629,
-          "unitsCount" : 0,
-          "unitsMcCabeIndexSum" : 0,
-          "linesOfCodeInUnits" : 0
-        },
-        "sourceFileCleanedLinesOfCode" : 594,
-        "startLine" : 27,
-        "endLine" : 33,
-        "cleanedStartLine" : 25,
-        "cleanedEndLine" : 31,
-        "percentage" : 1.1784511784511784,
-        "blockSize" : 7
-      }, {
-        "sourceFile" : {
-          "relativePath" : "src/Calendar.jsx",
-          "extension" : "jsx",
-          "linesOfCode" : 629,
-          "unitsCount" : 0,
-          "unitsMcCabeIndexSum" : 0,
-          "linesOfCodeInUnits" : 0
-        },
-        "sourceFileCleanedLinesOfCode" : 594,
-        "startLine" : 38,
-        "endLine" : 44,
-        "cleanedStartLine" : 35,
-        "cleanedEndLine" : 41,
-        "percentage" : 1.1784511784511784,
-        "blockSize" : 7
-      } ],
-      "blockSize" : 7
-    }, {
-      "displayContent" : "",
-      "duplicatedFileBlocks" : [ {
-        "sourceFile" : {
-          "relativePath" : "eslint.config.js",
+          "relativePath" : "frontend/eslint.config.js",
           "extension" : "js",
           "linesOfCode" : 59,
           "unitsCount" : 1,
@@ -3008,7 +3407,7 @@
         "blockSize" : 7
       }, {
         "sourceFile" : {
-          "relativePath" : "eslint.config.js",
+          "relativePath" : "frontend/eslint.config.js",
           "extension" : "js",
           "linesOfCode" : 59,
           "unitsCount" : 1,
@@ -3028,79 +3427,7 @@
       "displayContent" : "",
       "duplicatedFileBlocks" : [ {
         "sourceFile" : {
-          "relativePath" : "src/server/index.js",
-          "extension" : "js",
-          "linesOfCode" : 110,
-          "unitsCount" : 1,
-          "unitsMcCabeIndexSum" : 5,
-          "linesOfCodeInUnits" : 15
-        },
-        "sourceFileCleanedLinesOfCode" : 99,
-        "startLine" : 46,
-        "endLine" : 51,
-        "cleanedStartLine" : 27,
-        "cleanedEndLine" : 32,
-        "percentage" : 6.0606060606060606,
-        "blockSize" : 6
-      }, {
-        "sourceFile" : {
-          "relativePath" : "src/server/index.js",
-          "extension" : "js",
-          "linesOfCode" : 110,
-          "unitsCount" : 1,
-          "unitsMcCabeIndexSum" : 5,
-          "linesOfCodeInUnits" : 15
-        },
-        "sourceFileCleanedLinesOfCode" : 99,
-        "startLine" : 96,
-        "endLine" : 102,
-        "cleanedStartLine" : 65,
-        "cleanedEndLine" : 70,
-        "percentage" : 6.0606060606060606,
-        "blockSize" : 6
-      } ],
-      "blockSize" : 6
-    }, {
-      "displayContent" : "",
-      "duplicatedFileBlocks" : [ {
-        "sourceFile" : {
-          "relativePath" : "src/Calendar.jsx",
-          "extension" : "jsx",
-          "linesOfCode" : 629,
-          "unitsCount" : 0,
-          "unitsMcCabeIndexSum" : 0,
-          "linesOfCodeInUnits" : 0
-        },
-        "sourceFileCleanedLinesOfCode" : 594,
-        "startLine" : 139,
-        "endLine" : 144,
-        "cleanedStartLine" : 127,
-        "cleanedEndLine" : 132,
-        "percentage" : 1.0101010101010102,
-        "blockSize" : 6
-      }, {
-        "sourceFile" : {
-          "relativePath" : "src/Calendar.jsx",
-          "extension" : "jsx",
-          "linesOfCode" : 629,
-          "unitsCount" : 0,
-          "unitsMcCabeIndexSum" : 0,
-          "linesOfCodeInUnits" : 0
-        },
-        "sourceFileCleanedLinesOfCode" : 594,
-        "startLine" : 396,
-        "endLine" : 401,
-        "cleanedStartLine" : 336,
-        "cleanedEndLine" : 341,
-        "percentage" : 1.0101010101010102,
-        "blockSize" : 6
-      } ],
-      "blockSize" : 6
-    }, {
-      "displayContent" : "",
-      "duplicatedFileBlocks" : [ {
-        "sourceFile" : {
-          "relativePath" : "eslint.config.js",
+          "relativePath" : "frontend/eslint.config.js",
           "extension" : "js",
           "linesOfCode" : 59,
           "unitsCount" : 1,
@@ -3116,7 +3443,7 @@
         "blockSize" : 6
       }, {
         "sourceFile" : {
-          "relativePath" : "eslint.config.js",
+          "relativePath" : "frontend/eslint.config.js",
           "extension" : "js",
           "linesOfCode" : 59,
           "unitsCount" : 1,
@@ -3136,92 +3463,148 @@
       "displayContent" : "",
       "duplicatedFileBlocks" : [ {
         "sourceFile" : {
-          "relativePath" : "src/Calendar.jsx",
-          "extension" : "jsx",
-          "linesOfCode" : 629,
-          "unitsCount" : 0,
-          "unitsMcCabeIndexSum" : 0,
-          "linesOfCodeInUnits" : 0
+          "relativePath" : "frontend/src/utils/dateUtils.js",
+          "extension" : "js",
+          "linesOfCode" : 28,
+          "unitsCount" : 3,
+          "unitsMcCabeIndexSum" : 3,
+          "linesOfCodeInUnits" : 28
         },
-        "sourceFileCleanedLinesOfCode" : 594,
-        "startLine" : 107,
-        "endLine" : 112,
-        "cleanedStartLine" : 96,
-        "cleanedEndLine" : 101,
-        "percentage" : 1.0101010101010102,
+        "sourceFileCleanedLinesOfCode" : 25,
+        "startLine" : 9,
+        "endLine" : 14,
+        "cleanedStartLine" : 3,
+        "cleanedEndLine" : 8,
+        "percentage" : 24.0,
         "blockSize" : 6
       }, {
         "sourceFile" : {
-          "relativePath" : "src/Calendar.jsx",
-          "extension" : "jsx",
-          "linesOfCode" : 629,
+          "relativePath" : "frontend/src/utils/dateUtils.js",
+          "extension" : "js",
+          "linesOfCode" : 28,
+          "unitsCount" : 3,
+          "unitsMcCabeIndexSum" : 3,
+          "linesOfCodeInUnits" : 28
+        },
+        "sourceFileCleanedLinesOfCode" : 25,
+        "startLine" : 24,
+        "endLine" : 29,
+        "cleanedStartLine" : 12,
+        "cleanedEndLine" : 17,
+        "percentage" : 24.0,
+        "blockSize" : 6
+      } ],
+      "blockSize" : 6
+    }, {
+      "displayContent" : "",
+      "duplicatedFileBlocks" : [ {
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "sourceFileCleanedLinesOfCode" : 120,
+        "startLine" : 72,
+        "endLine" : 77,
+        "cleanedStartLine" : 40,
+        "cleanedEndLine" : 45,
+        "percentage" : 5.0,
+        "blockSize" : 6
+      }, {
+        "sourceFile" : {
+          "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+          "extension" : "js",
+          "linesOfCode" : 142,
+          "unitsCount" : 9,
+          "unitsMcCabeIndexSum" : 40,
+          "linesOfCodeInUnits" : 139
+        },
+        "sourceFileCleanedLinesOfCode" : 120,
+        "startLine" : 88,
+        "endLine" : 93,
+        "cleanedStartLine" : 53,
+        "cleanedEndLine" : 58,
+        "percentage" : 5.0,
+        "blockSize" : 6
+      } ],
+      "blockSize" : 6
+    }, {
+      "displayContent" : "",
+      "duplicatedFileBlocks" : [ {
+        "sourceFile" : {
+          "relativePath" : "frontend/src/index.css",
+          "extension" : "css",
+          "linesOfCode" : 270,
           "unitsCount" : 0,
           "unitsMcCabeIndexSum" : 0,
           "linesOfCodeInUnits" : 0
         },
-        "sourceFileCleanedLinesOfCode" : 594,
-        "startLine" : 139,
-        "endLine" : 144,
-        "cleanedStartLine" : 127,
-        "cleanedEndLine" : 132,
-        "percentage" : 1.0101010101010102,
+        "sourceFileCleanedLinesOfCode" : 270,
+        "startLine" : 146,
+        "endLine" : 151,
+        "cleanedStartLine" : 118,
+        "cleanedEndLine" : 123,
+        "percentage" : 2.2222222222222223,
+        "blockSize" : 6
+      }, {
+        "sourceFile" : {
+          "relativePath" : "frontend/src/index.css",
+          "extension" : "css",
+          "linesOfCode" : 270,
+          "unitsCount" : 0,
+          "unitsMcCabeIndexSum" : 0,
+          "linesOfCodeInUnits" : 0
+        },
+        "sourceFileCleanedLinesOfCode" : 270,
+        "startLine" : 227,
+        "endLine" : 232,
+        "cleanedStartLine" : 184,
+        "cleanedEndLine" : 189,
+        "percentage" : 2.2222222222222223,
+        "blockSize" : 6
+      } ],
+      "blockSize" : 6
+    }, {
+      "displayContent" : "",
+      "duplicatedFileBlocks" : [ {
+        "sourceFile" : {
+          "relativePath" : "frontend/src/server/index.js",
+          "extension" : "js",
+          "linesOfCode" : 110,
+          "unitsCount" : 1,
+          "unitsMcCabeIndexSum" : 5,
+          "linesOfCodeInUnits" : 15
+        },
+        "sourceFileCleanedLinesOfCode" : 99,
+        "startLine" : 46,
+        "endLine" : 51,
+        "cleanedStartLine" : 27,
+        "cleanedEndLine" : 32,
+        "percentage" : 6.0606060606060606,
+        "blockSize" : 6
+      }, {
+        "sourceFile" : {
+          "relativePath" : "frontend/src/server/index.js",
+          "extension" : "js",
+          "linesOfCode" : 110,
+          "unitsCount" : 1,
+          "unitsMcCabeIndexSum" : 5,
+          "linesOfCodeInUnits" : 15
+        },
+        "sourceFileCleanedLinesOfCode" : 99,
+        "startLine" : 96,
+        "endLine" : 102,
+        "cleanedStartLine" : 65,
+        "cleanedEndLine" : 70,
+        "percentage" : 6.0606060606060606,
         "blockSize" : 6
       } ],
       "blockSize" : 6
     } ],
-    "mostFrequentDuplicates" : [ {
-      "displayContent" : "",
-      "duplicatedFileBlocks" : [ {
-        "sourceFile" : {
-          "relativePath" : "src/Calendar.jsx",
-          "extension" : "jsx",
-          "linesOfCode" : 629,
-          "unitsCount" : 0,
-          "unitsMcCabeIndexSum" : 0,
-          "linesOfCodeInUnits" : 0
-        },
-        "sourceFileCleanedLinesOfCode" : 594,
-        "startLine" : 107,
-        "endLine" : 112,
-        "cleanedStartLine" : 96,
-        "cleanedEndLine" : 101,
-        "percentage" : 1.0101010101010102,
-        "blockSize" : 6
-      }, {
-        "sourceFile" : {
-          "relativePath" : "src/Calendar.jsx",
-          "extension" : "jsx",
-          "linesOfCode" : 629,
-          "unitsCount" : 0,
-          "unitsMcCabeIndexSum" : 0,
-          "linesOfCodeInUnits" : 0
-        },
-        "sourceFileCleanedLinesOfCode" : 594,
-        "startLine" : 139,
-        "endLine" : 144,
-        "cleanedStartLine" : 127,
-        "cleanedEndLine" : 132,
-        "percentage" : 1.0101010101010102,
-        "blockSize" : 6
-      }, {
-        "sourceFile" : {
-          "relativePath" : "src/Calendar.jsx",
-          "extension" : "jsx",
-          "linesOfCode" : 629,
-          "unitsCount" : 0,
-          "unitsMcCabeIndexSum" : 0,
-          "linesOfCodeInUnits" : 0
-        },
-        "sourceFileCleanedLinesOfCode" : 594,
-        "startLine" : 396,
-        "endLine" : 401,
-        "cleanedStartLine" : 336,
-        "cleanedEndLine" : 341,
-        "percentage" : 1.0101010101010102,
-        "blockSize" : 6
-      } ],
-      "blockSize" : 6
-    } ]
+    "mostFrequentDuplicates" : [ ]
   },
   "contributorsAnalysisResults" : {
     "latestCommitDate" : "",
@@ -3232,80 +3615,78 @@
     "contributorsPerWeek" : [ ],
     "commitsPerExtensions" : [ ]
   },
-  "numberOfExcludedFiles" : 28526,
+  "numberOfExcludedFiles" : 28226,
   "excludedExtensions" : {
-    "" : 763,
-    "css" : 13,
+    "" : 739,
+    "css" : 12,
     "eslintcache" : 1,
-    "npmignore" : 22,
+    "npmignore" : 21,
     "def" : 5,
     "scss" : 10,
     "py" : 1,
     "project" : 1,
     "conf" : 1,
     "jscsrc" : 1,
-    "ps1" : 45,
+    "ps1" : 44,
     "patch" : 1,
-    "exe" : 2,
+    "exe" : 1,
     "opts" : 2,
     "xml" : 5,
-    "md" : 1093,
+    "md" : 1052,
     "tm_properties" : 1,
     "editorconfig" : 13,
     "lock" : 4,
-    "html" : 8,
+    "html" : 7,
     "jar" : 1,
-    "bnf" : 6,
+    "bnf" : 5,
     "nix" : 2,
     "jshintrc" : 6,
     "flow" : 80,
-    "yaml" : 68,
+    "yaml" : 64,
     "mdown" : 1,
-    "cts" : 1283,
+    "cts" : 1285,
     "in" : 1,
     "babelrc" : 4,
-    "png" : 4,
+    "png" : 5,
     "eslintrc" : 26,
     "prettierrc" : 1,
-    "mts" : 452,
-    "node" : 9,
+    "mts" : 473,
+    "node" : 6,
     "1" : 4,
     "license" : 1,
     "bsd" : 3,
-    "gitkeep" : 1,
     "gitmodules" : 1,
-    "cmd" : 45,
+    "cmd" : 44,
     "apache2" : 1,
     "log" : 1,
-    "js" : 12687,
+    "js" : 12529,
     "iml" : 1,
     "gitattributes" : 3,
     "jst" : 25,
-    "local" : 1,
     "nvmrc" : 1,
     "targ" : 1,
     "browserslistrc" : 1,
     "sh" : 1,
     "markdown" : 6,
     "tsx" : 1,
-    "json" : 1195,
+    "json" : 1154,
     "mit" : 1,
-    "tsbuildinfo" : 8,
-    "map" : 2637,
-    "svg" : 5,
+    "tsbuildinfo" : 17,
+    "map" : 2600,
+    "svg" : 3,
     "gitignore" : 1,
     "env" : 1,
     "cjs" : 1297,
     "nycrc" : 18,
-    "txt" : 58,
-    "mjs" : 695,
+    "txt" : 49,
+    "mjs" : 712,
     "coffee" : 7,
     "php" : 1,
-    "ts" : 5879,
+    "ts" : 5857,
     "snap" : 1,
     "prettierignore" : 1
   },
-  "analysisStartTimeMs" : 1762281468794,
-  "maxFileCount" : 21,
-  "maxLinesOfCode" : 3025
+  "analysisStartTimeMs" : 1764219944768,
+  "maxFileCount" : 35,
+  "maxLinesOfCode" : 3620
 }

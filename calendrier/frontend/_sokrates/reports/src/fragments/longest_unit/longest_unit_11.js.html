@@ -1,21 +1,29 @@
 <html>
 <head>
-    <title>export default defineConfig()</title>
+    <title>start: formatDateTimeLocal()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">export default defineConfig()</h3>
-<p style="margin-top: 4px">in <i>vite.config.js [6:8]</i></p>
+<h3 style="margin-bottom: 0">start: formatDateTimeLocal()</h3>
+<p style="margin-top: 4px">in <i>frontend/src/features/calendar/hooks/useCalendarEvents.js [111:121]</i></p>
 <ul>
-    <li><b>3</b> lines of code</li>
-    <li><b>1</b> McCabe index (conditional complexity)</li>
+    <li><b>10</b> lines of code</li>
+    <li><b>4</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="js">
-export default defineConfig({
-  plugins: [react(), tailwindcss()],
-})
+      start: formatDateTimeLocal(event.start),
+      end: formatDateTimeLocal(event.end),
+      color: event.color || DEFAULT_EVENT_COLOR,
+      categoryName: event.categoryName || DEFAULT_CATEGORY_NAME
+    };
+    onSelect?.(eventData, event.id);
+    setErrors({});
+  }
+
+  function handleDeleteEvent(editingEventId, onSuccess) {
+    if (window.confirm(&quot;Are you sure you want to delete this event?&quot;)) {
 
 </code>
 </pre>

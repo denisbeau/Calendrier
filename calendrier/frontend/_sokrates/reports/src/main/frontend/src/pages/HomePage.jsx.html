@@ -1,0 +1,177 @@
+<html>
+<head>
+    <title>frontend/src/pages/HomePage.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/src/pages/HomePage.jsx (<b>131</b> lines of code) (<a href="HomePage.jsx">raw</a>):</h3>
+<div id="editor">// src/pages/HomePage.jsx
+import React from &quot;react&quot;;
+import { useNavigate } from &quot;react-router-dom&quot;;
+
+export default function HomePage() {
+  const navigate = useNavigate();
+
+  return (
+    &lt;div className=&quot;min-h-screen bg-gray-50 text-gray-900&quot;&gt;
+      
+      {/* Hero Section */}
+      &lt;div className=&quot;max-w-6xl mx-auto px-6 py-16&quot;&gt;
+        &lt;div className=&quot;text-center mb-16&quot;&gt;
+          &lt;h1 className=&quot;text-5xl font-bold mb-6&quot;&gt;Calendar App&lt;/h1&gt;
+          &lt;p className=&quot;text-xl max-w-2xl mx-auto text-gray-600&quot;&gt;
+            A simple and powerful calendar application to manage your events and schedule efficiently.
+          &lt;/p&gt;
+        &lt;/div&gt;
+
+        {/* Features Section */}
+        &lt;div className=&quot;grid md:grid-cols-3 gap-8 mb-16&quot;&gt;
+          
+          {/* Feature 1 */}
+          &lt;div className=&quot;simple-card text-center&quot;&gt;
+            &lt;div className=&quot;mb-4&quot;&gt;
+              &lt;div className=&quot;w-12 h-12 rounded-lg mx-auto flex items-center justify-center bg-gray-200&quot;&gt;
+                &lt;span className=&quot;text-2xl&quot;&gt;📅&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;h3 className=&quot;text-xl font-semibold mb-3&quot;&gt;Event Management&lt;/h3&gt;
+            &lt;p className=&quot;text-gray-600&quot;&gt;
+              Create, edit, and delete events easily. Click on any time slot or event to manage your schedule.
+            &lt;/p&gt;
+          &lt;/div&gt;
+
+          {/* Feature 2 */}
+          &lt;div className=&quot;simple-card text-center&quot;&gt;
+            &lt;div className=&quot;mb-4&quot;&gt;
+              &lt;div className=&quot;w-12 h-12 rounded-lg mx-auto flex items-center justify-center bg-gray-200&quot;&gt;
+                &lt;span className=&quot;text-2xl&quot;&gt;👁️&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;h3 className=&quot;text-xl font-semibold mb-3&quot;&gt;Multiple Views&lt;/h3&gt;
+            &lt;p className=&quot;text-gray-600&quot;&gt;
+              Switch between month, week, day, and agenda views to see your schedule in different formats.
+            &lt;/p&gt;
+          &lt;/div&gt;
+
+          {/* Feature 3 */}
+          &lt;div className=&quot;simple-card text-center&quot;&gt;
+            &lt;div className=&quot;mb-4&quot;&gt;
+              &lt;div className=&quot;w-12 h-12 rounded-lg mx-auto flex items-center justify-center bg-gray-200&quot;&gt;
+                &lt;span className=&quot;text-2xl&quot;&gt;✏️&lt;/span&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;h3 className=&quot;text-xl font-semibold mb-3&quot;&gt;Quick Editing&lt;/h3&gt;
+            &lt;p className=&quot;text-gray-600&quot;&gt;
+              Edit events inline with our unified form. Update, delete, or cancel changes with simple buttons.
+            &lt;/p&gt;
+          &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        {/* How It Works Section */}
+        &lt;div className=&quot;mb-16&quot;&gt;
+          &lt;h2 className=&quot;text-3xl font-bold text-center mb-12&quot;&gt;How It Works&lt;/h2&gt;
+          
+          &lt;div className=&quot;grid md:grid-cols-2 gap-12 items-center&quot;&gt;
+            
+            {/* Instructions */}
+            &lt;div&gt;
+              &lt;div className=&quot;space-y-6&quot;&gt;
+                
+                &lt;div className=&quot;flex items-start space-x-4&quot;&gt;
+                  &lt;div className=&quot;w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1&quot;&gt;
+                    &lt;span className=&quot;text-sm font-bold&quot;&gt;1&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div&gt;
+                    &lt;h4 className=&quot;font-semibold mb-2&quot;&gt;Create Events&lt;/h4&gt;
+                    &lt;p className=&quot;text-gray-600&quot;&gt;Use the form at the top or click and drag on the calendar to select a time range.&lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div className=&quot;flex items-start space-x-4&quot;&gt;
+                  &lt;div className=&quot;w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1&quot;&gt;
+                    &lt;span className=&quot;text-sm font-bold&quot;&gt;2&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div&gt;
+                    &lt;h4 className=&quot;font-semibold mb-2&quot;&gt;Edit Events&lt;/h4&gt;
+                    &lt;p className=&quot;text-gray-600&quot;&gt;Click on any existing event to edit it. The form will populate with the event details.&lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div className=&quot;flex items-start space-x-4&quot;&gt;
+                  &lt;div className=&quot;w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1&quot;&gt;
+                    &lt;span className=&quot;text-sm font-bold&quot;&gt;3&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;div&gt;
+                    &lt;h4 className=&quot;font-semibold mb-2&quot;&gt;Manage Views&lt;/h4&gt;
+                    &lt;p className=&quot;text-gray-600&quot;&gt;Switch between different calendar views to see your schedule the way you prefer.&lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            {/* Visual Representation */}
+            &lt;div className=&quot;simple-card&quot;&gt;
+              &lt;h4 className=&quot;font-semibold mb-4 text-center&quot;&gt;Calendar Features&lt;/h4&gt;
+              &lt;div className=&quot;space-y-3&quot;&gt;
+                &lt;div className=&quot;flex items-center space-x-3&quot;&gt;
+                  &lt;div className=&quot;w-4 h-4 bg-green-500 rounded&quot;&gt;&lt;/div&gt;
+                  &lt;span className=&quot;text-sm&quot;&gt;Personal Calendar Management&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div className=&quot;flex items-center space-x-3&quot;&gt;
+                  &lt;div className=&quot;w-4 h-4 bg-blue-500 rounded&quot;&gt;&lt;/div&gt;
+                  &lt;span className=&quot;text-sm&quot;&gt;Team Collaboration (Coming Soon)&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div className=&quot;flex items-center space-x-3&quot;&gt;
+                  &lt;div className=&quot;w-4 h-4 bg-purple-500 rounded&quot;&gt;&lt;/div&gt;
+                  &lt;span className=&quot;text-sm&quot;&gt;Multiple View Options&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div className=&quot;flex items-center space-x-3&quot;&gt;
+                  &lt;div className=&quot;w-4 h-4 bg-orange-500 rounded&quot;&gt;&lt;/div&gt;
+                  &lt;span className=&quot;text-sm&quot;&gt;Quick Event Creation&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        {/* Call to Action */}
+        &lt;div className=&quot;text-center&quot;&gt;
+          &lt;h2 className=&quot;text-2xl font-bold mb-4&quot;&gt;Ready to Get Started?&lt;/h2&gt;
+          &lt;p className=&quot;mb-8 text-gray-600&quot;&gt;
+            Navigate to your Personal Calendar to start managing your events and schedule.
+          &lt;/p&gt;
+          &lt;button 
+            onClick={() =&gt; navigate('/calendar')}
+            className=&quot;simple-button max-w-xs mx-auto&quot;
+          &gt;
+            Go to Personal Calendar
+          &lt;/button&gt;
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

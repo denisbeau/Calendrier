@@ -1,127 +1,211 @@
 [ {
-  "relativePath" : "cypress/support/commands.js",
+  "relativePath" : "frontend/cypress/e2e/signup.cy.js",
+  "extension" : "js",
+  "linesOfCode" : 35,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/cypress/support/commands.js",
   "extension" : "js",
   "linesOfCode" : 1,
-  "components" : [ "primary::cypress" ],
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "cypress/support/e2e.js",
+  "relativePath" : "frontend/cypress/support/e2e.js",
   "extension" : "js",
   "linesOfCode" : 5,
-  "components" : [ "primary::cypress" ],
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "cypress.config.js",
+  "relativePath" : "frontend/cypress.config.js",
   "extension" : "js",
   "linesOfCode" : 15,
-  "components" : [ "primary::ROOT" ],
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "eslint.config.js",
+  "relativePath" : "frontend/eslint.config.js",
   "extension" : "js",
   "linesOfCode" : 59,
-  "components" : [ "primary::ROOT" ],
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "index.html",
+  "relativePath" : "frontend/index.html",
   "extension" : "html",
-  "linesOfCode" : 13,
-  "components" : [ "primary::ROOT" ],
+  "linesOfCode" : 18,
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "migrations/001_create_groups.sql",
+  "relativePath" : "frontend/migrations/001_create_groups.sql",
   "extension" : "sql",
   "linesOfCode" : 35,
-  "components" : [ "primary::migrations" ],
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "projet.py",
+  "relativePath" : "frontend/projet.py",
   "extension" : "py",
   "linesOfCode" : 48,
-  "components" : [ "primary::ROOT" ],
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "src/App.css",
+  "relativePath" : "frontend/src/App.css",
   "extension" : "css",
   "linesOfCode" : 37,
-  "components" : [ "primary::src" ],
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "src/App.jsx",
+  "relativePath" : "frontend/src/App.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 103,
-  "components" : [ "primary::src" ],
+  "linesOfCode" : 55,
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "src/Calendar.jsx",
+  "relativePath" : "frontend/src/components/NavBar.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 629,
-  "components" : [ "primary::src" ],
+  "linesOfCode" : 86,
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "src/components/AuthContext.jsx",
+  "relativePath" : "frontend/src/components/ProtectedRoute.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 34,
-  "components" : [ "primary::src" ],
+  "linesOfCode" : 18,
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "src/components/Groups.jsx",
+  "relativePath" : "frontend/src/context/AuthContext.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 173,
-  "components" : [ "primary::src" ],
+  "linesOfCode" : 109,
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "src/components/Login.jsx",
+  "relativePath" : "frontend/src/features/auth/Login.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 180,
-  "components" : [ "primary::src" ],
+  "linesOfCode" : 184,
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "src/components/SignUp.jsx",
+  "relativePath" : "frontend/src/features/auth/SignUp.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 102,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/src/features/calendar/components/CalendarView.jsx",
   "extension" : "jsx",
   "linesOfCode" : 98,
-  "components" : [ "primary::src" ],
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "src/index.css",
-  "extension" : "css",
-  "linesOfCode" : 186,
-  "components" : [ "primary::src" ],
-  "concerns" : [ "::Unclassified" ]
-}, {
-  "relativePath" : "src/main.jsx",
+  "relativePath" : "frontend/src/features/calendar/components/EventForm.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 9,
-  "components" : [ "primary::src" ],
+  "linesOfCode" : 192,
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "src/server/index.js",
+  "relativePath" : "frontend/src/features/calendar/hooks/useCalendarEvents.js",
+  "extension" : "js",
+  "linesOfCode" : 142,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/src/features/groups/Groups.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 177,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/src/index.css",
+  "extension" : "css",
+  "linesOfCode" : 270,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/src/layouts/MainLayout.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 17,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/src/main.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 12,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/src/pages/CalendarPage.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 90,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/src/pages/GroupsPage.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 17,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/src/pages/HomePage.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 131,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/src/pages/LoginPage.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 34,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/src/pages/SignUpPage.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 14,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/src/server/index.js",
   "extension" : "js",
   "linesOfCode" : 110,
-  "components" : [ "primary::src" ],
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "src/services/api.js",
+  "relativePath" : "frontend/src/services/api.js",
   "extension" : "js",
   "linesOfCode" : 57,
-  "components" : [ "primary::src" ],
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "src/services/groups.js",
+  "relativePath" : "frontend/src/services/groups.js",
   "extension" : "js",
   "linesOfCode" : 120,
-  "components" : [ "primary::src" ],
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "src/supabaseClient.js",
+  "relativePath" : "frontend/src/supabaseClient.js",
   "extension" : "js",
   "linesOfCode" : 20,
-  "components" : [ "primary::src" ],
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
-  "relativePath" : "vite.config.js",
+  "relativePath" : "frontend/src/theme/ThemeProvider.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 35,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/src/utils/constants.js",
+  "extension" : "js",
+  "linesOfCode" : 10,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/src/utils/dateUtils.js",
+  "extension" : "js",
+  "linesOfCode" : 28,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/vite.config.js",
   "extension" : "js",
   "linesOfCode" : 6,
-  "components" : [ "primary::ROOT" ],
+  "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 } ]

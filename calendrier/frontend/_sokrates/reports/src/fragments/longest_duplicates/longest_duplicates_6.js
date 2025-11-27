@@ -1,24 +1,23 @@
-src/server/index.js [46:51]:
+frontend/src/features/calendar/hooks/useCalendarEvents.js [72:77]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    process.env.FRONTEND_URL ||
-    process.env.VITE_FRONTEND_URL ||
-    "http://localhost:5173";
-  const acceptUrl = `${frontend.replace(
-    /\/$/,
-    ""
+          title: formEvent.title.trim(),
+          start: startDate,
+          end: endDate,
+          color: formEvent.color || DEFAULT_EVENT_COLOR,
+          categoryName: formEvent.categoryName?.trim() || DEFAULT_CATEGORY_NAME,
+        };
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-src/server/index.js [96:102]:
+frontend/src/features/calendar/hooks/useCalendarEvents.js [88:93]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    process.env.FRONTEND_URL ||
-    process.env.VITE_FRONTEND_URL ||
-    "http://localhost:5173";
-
-  const acceptUrl = `${frontend.replace(
-    /\/$/,
-    ""
+          title: formEvent.title.trim(),
+          start: startDate,
+          end: endDate,
+          color: formEvent.color || DEFAULT_EVENT_COLOR,
+          categoryName: formEvent.categoryName?.trim() || DEFAULT_CATEGORY_NAME,
+        };
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
