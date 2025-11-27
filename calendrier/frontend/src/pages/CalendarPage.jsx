@@ -98,7 +98,3 @@ export default function CalendarPage({ groupId }) {
   );
 }
 
-CalendarPage.propTypes = {
-  groupId: PropTypes.string,
-};
-
