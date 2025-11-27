@@ -1,4 +1,4 @@
-// src/components/AuthContext.jsx
+// src/context/AuthContext.jsx
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
 
@@ -106,7 +106,7 @@ export function AuthProvider({ children }) {
             </pre>
           </div>
 
-          <p style={{ marginTop: 12, fontSize: 12, opacity: 0.85 }}>Hint: check for typos in <code>src/components/AuthContext.jsx</code> — a common mistake is a misspelled <code>getSession</code> or <code>setInitializing</code>.</p>
+          <p style={{ marginTop: 12, fontSize: 12, opacity: 0.85 }}>Hint: check for typos in <code>src/context/AuthContext.jsx</code> — a common mistake is a misspelled <code>getSession</code> or <code>setInitializing</code>.</p>
         </div>
       </div>
     );
@@ -120,3 +120,4 @@ export function AuthProvider({ children }) {
 }
 
 export const useAuth = () => useContext(AuthContext);
+

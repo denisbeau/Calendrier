@@ -1,6 +1,7 @@
-// src/components/SignUp.jsx
+// src/features/auth/SignUp.jsx
 import React, { useState } from "react";
-import { supabase } from "../supabaseClient"; // adjust path if needed
+import { supabase } from "../../supabaseClient"; // adjust path if needed
+import PropTypes from "prop-types";
 
 export default function SignUp({ onSignedUp }) {
   const [name, setName] = useState("");
@@ -105,3 +106,8 @@ export default function SignUp({ onSignedUp }) {
     </div>
   );
 }
+
+SignUp.propTypes = {
+  onSignedUp: PropTypes.func,
+};
+

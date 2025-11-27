@@ -1,7 +1,8 @@
 /* global process */
-// src/components/Login.jsx
+// src/features/auth/Login.jsx
 import React, { useState } from "react";
-import { supabase } from "../supabaseClient";
+import { supabase } from "../../supabaseClient";
+import PropTypes from "prop-types";
 
 // safe helper (if not already imported from a shared helper)
 function getViteEnv(name, defaultValue = undefined) {
@@ -198,3 +199,8 @@ export default function Login({ onLoggedIn }) {
     </div>
   );
 }
+
+Login.propTypes = {
+  onLoggedIn: PropTypes.func,
+};
+
