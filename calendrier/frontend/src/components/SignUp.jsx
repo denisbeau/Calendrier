@@ -54,51 +54,123 @@ export default function SignUp({ onSignedUp }) {
   }
 
   return (
-    <div className="space-y-4">
+    <div>
+      <h2 style={{
+        fontSize: '24px',
+        fontWeight: '700',
+        marginBottom: '24px',
+        color: 'var(--text-primary)'
+      }}>
+        Create Account
+      </h2>
+
       {errorMsg && (
-        <div className="text-sm text-red-300 bg-red-900/10 p-2 rounded">
+        <div style={{
+          marginBottom: '16px',
+          padding: '12px 16px',
+          backgroundColor: 'rgba(239, 68, 68, 0.1)',
+          border: '1px solid var(--error)',
+          borderRadius: '8px',
+          color: 'var(--error)',
+          fontSize: '14px',
+          fontWeight: '500'
+        }}>
           {errorMsg}
         </div>
       )}
       {successMsg && (
-        <div className="text-sm text-green-300 bg-green-900/10 p-2 rounded">
+        <div style={{
+          marginBottom: '16px',
+          padding: '12px 16px',
+          backgroundColor: 'rgba(16, 185, 129, 0.1)',
+          border: '1px solid var(--success)',
+          borderRadius: '8px',
+          color: 'var(--success)',
+          fontSize: '14px',
+          fontWeight: '500'
+        }}>
           {successMsg}
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          placeholder="Your full name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="simple-input"
-        />
-        <input
-          placeholder="you@example.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="simple-input"
-        />
-        <input
-          placeholder="At least 6 characters"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="simple-input"
-        />
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <div>
+          <label style={{
+            display: 'block',
+            fontSize: '14px',
+            fontWeight: '500',
+            color: 'var(--text-secondary)',
+            marginBottom: '8px'
+          }}>
+            Full Name
+          </label>
+          <input
+            placeholder="Your full name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="simple-input"
+          />
+        </div>
 
-        <div className="flex gap-2">
+        <div>
+          <label style={{
+            display: 'block',
+            fontSize: '14px',
+            fontWeight: '500',
+            color: 'var(--text-secondary)',
+            marginBottom: '8px'
+          }}>
+            Email
+          </label>
+          <input
+            type="email"
+            placeholder="you@example.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="simple-input"
+            required
+          />
+        </div>
+
+        <div>
+          <label style={{
+            display: 'block',
+            fontSize: '14px',
+            fontWeight: '500',
+            color: 'var(--text-secondary)',
+            marginBottom: '8px'
+          }}>
+            Password
+          </label>
+          <input
+            placeholder="At least 6 characters"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="simple-input"
+            required
+          />
+          <p style={{
+            fontSize: '12px',
+            color: 'var(--text-tertiary)',
+            marginTop: '6px'
+          }}>
+            Must be at least 6 characters long
+          </p>
+        </div>
+
+        <div style={{ display: 'flex', gap: '8px', flexDirection: 'column' }}>
           <button type="submit" disabled={loading} className="simple-button">
-            {loading ? "Signing up..." : "Sign up"}
+            {loading ? "Creating account..." : "Sign up"}
           </button>
 
           {/* allow user to go back to login view */}
           <button
             type="button"
             onClick={() => typeof onSignedUp === "function" && onSignedUp()}
-            className="simple-button bg-gray-600 hover:bg-gray-700"
+            className="simple-button simple-button-secondary"
           >
-            Back to login
+            ← Back to login
           </button>
         </div>
       </form>

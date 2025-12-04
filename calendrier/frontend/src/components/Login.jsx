@@ -134,13 +134,29 @@ export default function Login({ onLoggedIn }) {
   }
 
   return (
-    <div className="simple-card max-w-md mx-auto">
-      <h2 className="text-2xl font-semibold mb-4">Log in</h2>
+    <div>
+      <h2 style={{
+        fontSize: '24px',
+        fontWeight: '700',
+        marginBottom: '24px',
+        color: 'var(--text-primary)'
+      }}>
+        Log in
+      </h2>
 
-      {/* bigger red error text, accessible */}
+      {/* Error message */}
       {error && (
         <div
-          className="mb-3 text-red-500 text-lg font-semibold"
+          style={{
+            marginBottom: '16px',
+            padding: '12px 16px',
+            backgroundColor: 'rgba(239, 68, 68, 0.1)',
+            border: '1px solid var(--error)',
+            borderRadius: '8px',
+            color: 'var(--error)',
+            fontSize: '14px',
+            fontWeight: '500'
+          }}
           role="alert"
           aria-live="assertive"
         >
@@ -148,11 +164,32 @@ export default function Login({ onLoggedIn }) {
         </div>
       )}
 
-      {info && <div className="mb-3 text-green-300">{info}</div>}
+      {info && (
+        <div style={{
+          marginBottom: '16px',
+          padding: '12px 16px',
+          backgroundColor: 'rgba(16, 185, 129, 0.1)',
+          border: '1px solid var(--success)',
+          borderRadius: '8px',
+          color: 'var(--success)',
+          fontSize: '14px',
+          fontWeight: '500'
+        }}>
+          {info}
+        </div>
+      )}
 
-      <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }} noValidate>
         <div>
-          <label className="block text-sm text-gray-300 mb-1">Email</label>
+          <label style={{
+            display: 'block',
+            fontSize: '14px',
+            fontWeight: '500',
+            color: 'var(--text-secondary)',
+            marginBottom: '8px'
+          }}>
+            Email
+          </label>
           <input
             type="email"
             className="simple-input"
@@ -165,8 +202,14 @@ export default function Login({ onLoggedIn }) {
         </div>
 
         <div>
-          <label className="block text-sm text-gray-300 mb-1">
-            Password (leave blank to send magic link)
+          <label style={{
+            display: 'block',
+            fontSize: '14px',
+            fontWeight: '500',
+            color: 'var(--text-secondary)',
+            marginBottom: '8px'
+          }}>
+            Password
           </label>
           <input
             type="password"
@@ -174,25 +217,21 @@ export default function Login({ onLoggedIn }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             disabled={loading}
+            placeholder="Leave blank for magic link"
           />
+          <p style={{
+            fontSize: '12px',
+            color: 'var(--text-tertiary)',
+            marginTop: '6px'
+          }}>
+            Leave blank to receive a magic link via email
+          </p>
         </div>
 
-        <div className="flex gap-2">
+        <div>
           <button type="submit" className="simple-button" disabled={loading}>
             {loading ? "Signing in..." : "Sign in"}
           </button>
-
-          {/* Visible only in dev to avoid leaking test helpers in production */}
-          {import.meta.env?.DEV && (
-            <button
-              type="button"
-              className="simple-button"
-              onClick={fillTestCreds}
-              disabled={loading}
-            >
-              Use test credentials
-            </button>
-          )}
         </div>
       </form>
     </div>

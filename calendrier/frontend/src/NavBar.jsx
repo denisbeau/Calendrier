@@ -5,43 +5,102 @@ export default function NavBar({ currentPage, setCurrentPage }) {
   const { isDark, toggleTheme } = useTheme();
 
   return (
-    <nav className={`border-b ${isDark ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-300'}`}>
-      <div className="max-w-6xl mx-auto px-6">
+    <nav style={{
+      backgroundColor: 'var(--bg-primary)',
+      borderBottom: '1px solid var(--border-primary)',
+      boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)'
+    }}>
+      <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center select-none">
-            <span className={`font-semibold text-lg tracking-wide ${isDark ? 'text-white' : 'text-gray-900'}`}>WeSchedule</span>
+            <span style={{
+              fontSize: '20px',
+              fontWeight: '700',
+              color: 'var(--text-primary)',
+              letterSpacing: '-0.5px'
+            }}>
+              📅 WeSchedule
+            </span>
           </div>
 
           {/* Navigation Links */}
-          <div className="flex space-x-12 ml-12">
+          <div className="flex space-x-1 ml-12">
             <button 
               onClick={() => setCurrentPage('home')}
-              className={`px-4 py-2 text-sm font-medium ${
-                currentPage === 'home' 
-                  ? 'text-blue-400' 
-                  : 'text-gray-900 hover:text-gray-600'
-              }`}
+              style={{
+                padding: '8px 16px',
+                fontSize: '14px',
+                fontWeight: '500',
+                color: currentPage === 'home' ? 'var(--accent-primary)' : 'var(--text-secondary)',
+                backgroundColor: currentPage === 'home' ? 'var(--accent-light)' : 'transparent',
+                borderRadius: '8px',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseOver={(e) => {
+                if (currentPage !== 'home') {
+                  e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)';
+                }
+              }}
+              onMouseOut={(e) => {
+                if (currentPage !== 'home') {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                }
+              }}
             >
               Home
             </button>
             <button 
               onClick={() => setCurrentPage('calendar')}
-              className={`px-4 py-2 text-sm font-medium ${
-                currentPage === 'calendar' 
-                  ? 'text-blue-400' 
-                  : 'text-gray-900 hover:text-gray-600'
-              }`}
+              style={{
+                padding: '8px 16px',
+                fontSize: '14px',
+                fontWeight: '500',
+                color: currentPage === 'calendar' ? 'var(--accent-primary)' : 'var(--text-secondary)',
+                backgroundColor: currentPage === 'calendar' ? 'var(--accent-light)' : 'transparent',
+                borderRadius: '8px',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseOver={(e) => {
+                if (currentPage !== 'calendar') {
+                  e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)';
+                }
+              }}
+              onMouseOut={(e) => {
+                if (currentPage !== 'calendar') {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                }
+              }}
             >
               Personal Calendar
             </button>
             <button 
               onClick={() => setCurrentPage('teams')}
-              className={`px-4 py-2 text-sm font-medium ${
-                currentPage === 'teams' 
-                  ? 'text-blue-400' 
-                  : 'text-gray-900 hover:text-gray-600'
-              }`}
+              style={{
+                padding: '8px 16px',
+                fontSize: '14px',
+                fontWeight: '500',
+                color: currentPage === 'teams' ? 'var(--accent-primary)' : 'var(--text-secondary)',
+                backgroundColor: currentPage === 'teams' ? 'var(--accent-light)' : 'transparent',
+                borderRadius: '8px',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseOver={(e) => {
+                if (currentPage !== 'teams') {
+                  e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)';
+                }
+              }}
+              onMouseOut={(e) => {
+                if (currentPage !== 'teams') {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                }
+              }}
             >
               Teams
             </button>
@@ -51,7 +110,24 @@ export default function NavBar({ currentPage, setCurrentPage }) {
           <div className="flex items-center">
             <button
               onClick={toggleTheme}
-              className={`p-2 rounded-lg mr-2 ${isDark ? 'bg-gray-700 hover:bg-gray-600 text-yellow-400' : 'bg-gray-200 hover:bg-gray-300 text-gray-800'}`}
+              style={{
+                padding: '8px',
+                borderRadius: '8px',
+                backgroundColor: 'var(--bg-tertiary)',
+                border: '1px solid var(--border-primary)',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+                fontSize: '18px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = 'scale(1.05)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
               title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
             >
               {isDark ? '☀️' : '🌙'}

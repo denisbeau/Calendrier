@@ -82,105 +82,240 @@ export default function Groups({ onShowGroupCalendar }) {
   }
 
   return (
-    <div className="simple-card max-w-4xl mx-auto p-4 space-y-4">
-      <h2 className="text-2xl font-semibold">Mes groupes</h2>
+    <div className="simple-card" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <h2 style={{
+        fontSize: '28px',
+        fontWeight: '700',
+        marginBottom: '24px',
+        color: 'var(--text-primary)'
+      }}>
+        👥 My Groups
+      </h2>
 
       {msg && (
-        <div className="text-sm text-gray-300 p-2 bg-gray-900/20 rounded">
+        <div style={{
+          fontSize: '14px',
+          padding: '12px 16px',
+          backgroundColor: 'var(--bg-tertiary)',
+          border: '1px solid var(--border-primary)',
+          borderRadius: '8px',
+          marginBottom: '24px',
+          color: 'var(--text-secondary)'
+        }}>
           {msg}
         </div>
       )}
 
-      <div className="grid md:grid-cols-2 gap-4">
-        <div>
-          <h3 className="font-medium">Créer un groupe</h3>
-          <form onSubmit={handleCreate} className="space-y-2">
+      <div className="grid md:grid-cols-2 gap-6" style={{ marginBottom: '32px' }}>
+        <div className="simple-card" style={{
+          backgroundColor: 'var(--bg-tertiary)',
+          padding: '20px'
+        }}>
+          <h3 style={{
+            fontWeight: '600',
+            fontSize: '18px',
+            marginBottom: '16px',
+            color: 'var(--text-primary)'
+          }}>
+            ✨ Create a Group
+          </h3>
+          <form onSubmit={handleCreate} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <input
-              placeholder="Nom du groupe"
+              placeholder="Group name"
               className="simple-input"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
             <input
-              placeholder="Description (facultatif)"
+              placeholder="Description (optional)"
               className="simple-input"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
             <button className="simple-button" disabled={loading}>
-              {loading ? "Création..." : "Créer"}
+              {loading ? "Creating..." : "Create Group"}
             </button>
           </form>
 
           {createdCode && (
-            <div className="mt-2 text-sm">
-              Code d'invitation généré :{" "}
-              <strong className="font-mono text-lg">{createdCode}</strong>
-              <div className="text-xs text-gray-400 mt-1">
-                Partagez ce code (6 lettres) avec les personnes que vous voulez
-                inviter.
+            <div style={{
+              marginTop: '16px',
+              padding: '12px',
+              backgroundColor: 'var(--bg-primary)',
+              border: '2px solid var(--accent-primary)',
+              borderRadius: '8px'
+            }}>
+              <div style={{
+                fontSize: '13px',
+                color: 'var(--text-secondary)',
+                marginBottom: '6px',
+                fontWeight: '500'
+              }}>
+                🎉 Invitation code generated:
+              </div>
+              <div style={{
+                fontFamily: 'monospace',
+                fontSize: '24px',
+                fontWeight: '700',
+                color: 'var(--accent-primary)',
+                letterSpacing: '2px',
+                marginBottom: '8px'
+              }}>
+                {createdCode}
+              </div>
+              <div style={{
+                fontSize: '12px',
+                color: 'var(--text-tertiary)'
+              }}>
+                Share this 6-letter code with people you want to invite.
               </div>
             </div>
           )}
         </div>
 
-        <div>
-          <h3 className="font-medium">Rejoindre un groupe (par code)</h3>
+        <div className="simple-card" style={{
+          backgroundColor: 'var(--bg-tertiary)',
+          padding: '20px'
+        }}>
+          <h3 style={{
+            fontWeight: '600',
+            fontSize: '18px',
+            marginBottom: '16px',
+            color: 'var(--text-primary)'
+          }}>
+            🔗 Join a Group
+          </h3>
 
-          <form onSubmit={handleJoin} className="mt-2 flex gap-2 items-center">
-            <input
-              placeholder="Entrez le code (6 lettres)"
-              className="simple-input flex-1"
-              value={joinCode}
-              onChange={(e) => setJoinCode(e.target.value)}
-              maxLength={6}
-            />
-            <button className="simple-button" disabled={loading}>
-              {loading ? "..." : "Rejoindre"}
+          <form onSubmit={handleJoin} style={{
+            display: 'flex',
+            gap: '8px',
+            alignItems: 'flex-start',
+            marginBottom: '12px'
+          }}>
+            <div style={{ flex: 1 }}>
+              <input
+                placeholder="Enter 6-letter code"
+                className="simple-input"
+                value={joinCode}
+                onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
+                maxLength={6}
+                style={{
+                  fontFamily: 'monospace',
+                  fontSize: '16px',
+                  letterSpacing: '2px',
+                  textTransform: 'uppercase'
+                }}
+              />
+            </div>
+            <button
+              className="simple-button"
+              disabled={loading}
+              style={{ width: 'auto', padding: '12px 24px' }}
+            >
+              {loading ? "..." : "Join"}
             </button>
           </form>
 
-          <p className="text-xs text-gray-400 mt-2">
-            Entrez le code à 6 lettres du groupe. Si le code est valide, vous
-            serez ajouté directement au groupe.
+          <p style={{
+            fontSize: '12px',
+            color: 'var(--text-tertiary)',
+            lineHeight: '1.5'
+          }}>
+            Enter the 6-letter group code. If valid, you'll be added to the group immediately.
           </p>
         </div>
       </div>
 
       <div>
-        <h3 className="font-medium">Groupes dont vous faites partie</h3>
-        <ul className="space-y-2">
+        <h3 style={{
+          fontWeight: '600',
+          fontSize: '20px',
+          marginBottom: '16px',
+          color: 'var(--text-primary)'
+        }}>
+          Your Groups
+        </h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           {groups.length === 0 && (
-            <li className="text-sm text-gray-400">Aucun groupe</li>
+            <div style={{
+              padding: '32px',
+              textAlign: 'center',
+              color: 'var(--text-tertiary)',
+              fontSize: '14px',
+              backgroundColor: 'var(--bg-tertiary)',
+              borderRadius: '8px',
+              border: '1px dashed var(--border-primary)'
+            }}>
+              No groups yet. Create one or join using an invite code!
+            </div>
           )}
           {groups.map((g) => (
-            <li
+            <div
               key={g.group.id}
-              className="p-2 border rounded bg-gray-900/40 flex items-center justify-between"
+              style={{
+                padding: '20px',
+                border: '1px solid var(--border-primary)',
+                borderRadius: '12px',
+                backgroundColor: 'var(--bg-primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '16px',
+                flexWrap: 'wrap',
+                transition: 'all 0.2s ease'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.borderColor = 'var(--accent-primary)';
+                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.borderColor = 'var(--border-primary)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
             >
-              <div>
-                <div className="font-semibold">{g.group.name}</div>
-                <div className="text-sm text-gray-400">
-                  {g.group.description}
+              <div style={{ flex: 1, minWidth: '200px' }}>
+                <div style={{
+                  fontWeight: '600',
+                  fontSize: '18px',
+                  marginBottom: '4px',
+                  color: 'var(--text-primary)'
+                }}>
+                  {g.group.name}
+                </div>
+                {g.group.description && (
+                  <div style={{
+                    fontSize: '14px',
+                    color: 'var(--text-secondary)',
+                    marginBottom: '8px'
+                  }}>
+                    {g.group.description}
+                  </div>
+                )}
+                <div style={{
+                  fontSize: '12px',
+                  color: 'var(--text-tertiary)',
+                  fontWeight: '500',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px'
+                }}>
+                  {g.role === 'owner' ? '👑 Owner' : g.role === 'admin' ? '⭐ Admin' : '👤 Member'}
                 </div>
               </div>
 
-              <div className="flex gap-2">
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                 <button
                   className="simple-button"
                   onClick={() =>
                     onShowGroupCalendar && onShowGroupCalendar(g.group.id)
                   }
+                  style={{ width: 'auto', padding: '10px 20px' }}
                 >
-                  Voir calendrier
+                  📅 View Calendar
                 </button>
-                <div className="text-sm text-gray-300 self-center">
-                  {g.role}
-                </div>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
