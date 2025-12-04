@@ -267,11 +267,6 @@ export default function HomePage() {
 
               </div>
             </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
 
             {/* Visual Representation */}
             <div className="simple-card">
