@@ -3,86 +3,103 @@
 @tailwind utilities;
 
 :root {
-  font-family: system-ui, -apple-system, sans-serif;
-  line-height: 1.5;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
   font-weight: 400;
+  
+  /* Light theme colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e1;
+  --accent-primary: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-light: #dbeafe;
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-}
-
-body.dark {
-  background-color: #111111;
-  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.light {
-  background-color: #f8fafc;
-  color: #1f2937;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+body.dark {
+  background-color: #0f172a;
+  color: #f1f5f9;
+  --bg-primary: #1e293b;
+  --bg-secondary: #0f172a;
+  --bg-tertiary: #334155;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --border-primary: #334155;
+  --border-secondary: #475569;
+  --accent-primary: #60a5fa;
+  --accent-hover: #3b82f6;
+  --accent-light: #1e3a8a;
 }
 
 /* Simple Card */
-body.dark .simple-card {
-  background-color: #1f1f1f;
-  border: 1px solid #404040;
-  border-radius: 6px;
+.simple-card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: 12px;
   padding: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
 }
 
-body.light .simple-card {
-  background-color: #ffffff;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  padding: 24px;
+.simple-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Simple Input */
-body.dark .simple-input {
+.simple-input {
   width: 100%;
-  padding: 10px 14px;
-  background-color: #1f1f1f;
-  border: 1px solid #404040;
-  border-radius: 4px;
-  color: white;
+  padding: 12px 16px;
+  background-color: var(--bg-primary);
+  border: 2px solid var(--border-primary);
+  border-radius: 8px;
+  color: var(--text-primary);
   outline: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
 }
 
-body.light .simple-input {
-  width: 100%;
-  padding: 10px 14px;
-  background-color: #ffffff;
-  border: 1px solid #d1d5db;
-  border-radius: 4px;
-  color: #1f2937;
-  outline: none;
-}
-
-body.dark .simple-input:focus {
-  border-color: #606060;
-}
-
-body.light .simple-input:focus {
-  border-color: #3b82f6;
+.simple-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-light);
 }
 
 .simple-input:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  background-color: var(--bg-tertiary);
 }
 
-body.dark .simple-input::placeholder {
-  color: #888888;
-}
-
-body.light .simple-input::placeholder {
-  color: #6b7280;
+.simple-input::placeholder {
+  color: var(--text-tertiary);
 }
 
 .simple-input.border-red-500 {
-  border-color: #dc2626;
+  border-color: var(--error);
+}
+
+.simple-input.border-red-500:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
 }
 
 /* Simple Button */
