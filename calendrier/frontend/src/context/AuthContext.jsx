@@ -11,13 +11,29 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     try {
+      // Add timeout to prevent infinite loading
+      const timeout = setTimeout(() => {
+        console.warn("Auth initialization timeout - proceeding without auth");
+        setInitializing(false);
+      }, 3000); // 3 second timeout
+
       const session = supabase.auth.getSession();
 
       // supabase.getSession returns a promise in v2, handle it:
-      session.then(({ data }) => {
-        setUser(data?.session?.user ?? null);
-        setInitializing(false);
-      });
+      session
+        .then(({ data, error: sessionError }) => {
+          if (sessionError) {
+            console.error("Auth session error:", sessionError);
+          }
+          setUser(data?.session?.user ?? null);
+          setInitializing(false);
+          clearTimeout(timeout);
+        })
+        .catch((err) => {
+          console.error("Auth initialization error:", err);
+          setInitializing(false);
+          clearTimeout(timeout);
+        });
 
       // subscribe to auth changes
       const { data: listener } = supabase.auth.onAuthStateChange(
@@ -25,6 +41,7 @@ export function AuthProvider({ children }) {
       );
 
       return () => {
+        clearTimeout(timeout);
         // best-effort unsubscribe (safe optional chaining)
         listener?.subscription?.unsubscribe?.();
       };
