@@ -10,7 +10,7 @@ describe("Responsive Design", () => {
     it(`should display correctly on ${name}`, () => {
       cy.viewport(width, height);
       cy.visit("/");
-      cy.contains("Calendar App").should("be.visible");
+      cy.contains("WeSchedule").should("be.visible");
     });
   });
 
@@ -23,40 +23,24 @@ describe("Responsive Design", () => {
   });
 
   it("should display calendar page correctly on tablet", () => {
-    // Mock authentication
-    cy.intercept("POST", "**/auth/v1/token", {
-      statusCode: 200,
-      body: { access_token: "token", user: { id: "user-1" } },
-    });
-
     cy.viewport(768, 1024);
-    cy.visit("/login");
-    cy.get('input[type="email"]').type("test@example.com");
-    cy.get('input[type="password"]').type("password123");
-    cy.get('button[type="submit"]').click();
-    cy.url({ timeout: 5000 }).should("include", "/calendar");
-
-    // Verify calendar is visible
+    cy.login("test@example.com", "password123");
+    cy.visitCalendar();
     cy.get(".rbc-calendar", { timeout: 5000 }).should("be.visible");
   });
 
   it("should display groups page correctly on desktop", () => {
-    // Mock authentication
-    cy.intercept("POST", "**/auth/v1/token", {
+    cy.viewport(1920, 1080);
+    cy.login("test@example.com", "password123");
+    
+    // Mock groups API
+    cy.intercept("GET", "**/rest/v1/group_members*user_id=eq.*", {
       statusCode: 200,
-      body: { access_token: "token", user: { id: "user-1" } },
+      body: [],
     });
 
-    cy.viewport(1920, 1080);
-    cy.visit("/login");
-    cy.get('input[type="email"]').type("test@example.com");
-    cy.get('input[type="password"]').type("password123");
-    cy.get('button[type="submit"]').click();
-    cy.url({ timeout: 5000 }).should("include", "/calendar");
-
-    // Navigate to groups
     cy.visit("/groups");
-    cy.contains("Mes groupes").should("be.visible");
+    cy.contains("Mes groupes", { timeout: 5000 }).should("be.visible");
   });
 
   it("should allow form interaction on mobile viewport", () => {

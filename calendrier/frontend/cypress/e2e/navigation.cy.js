@@ -11,43 +11,17 @@ describe("Protected Routes", () => {
   });
 
   it("should allow access to protected routes after login", () => {
-    // Mock successful login
-    cy.intercept("POST", "**/auth/v1/token", {
-      statusCode: 200,
-      body: {
-        access_token: "test-token",
-        user: { id: "user-1", email: "test@example.com" },
-      },
-    }).as("login");
-
-    cy.visit("/login");
-    cy.get('input[type="email"]').type("test@example.com");
-    cy.get('input[type="password"]').type("password123");
-    cy.get('button[type="submit"]').click();
-    cy.wait("@login");
+    // Use custom login command
+    cy.login("test@example.com", "password123");
+    cy.visitCalendar();
     cy.url({ timeout: 5000 }).should("include", "/calendar");
   });
 
   it("should allow access to /groups after login", () => {
-    // Mock successful login
-    cy.intercept("POST", "**/auth/v1/token", {
-      statusCode: 200,
-      body: {
-        access_token: "test-token",
-        user: { id: "user-1", email: "test@example.com" },
-      },
-    }).as("login");
-
-    cy.visit("/login");
-    cy.get('input[type="email"]').type("test@example.com");
-    cy.get('input[type="password"]').type("password123");
-    cy.get('button[type="submit"]').click();
-    cy.wait("@login");
-    cy.url({ timeout: 5000 }).should("include", "/calendar");
-
-    // Navigate to groups
+    // Use custom login command
+    cy.login("test@example.com", "password123");
     cy.visit("/groups");
-    cy.url().should("include", "/groups");
+    cy.url({ timeout: 5000 }).should("include", "/groups");
   });
 });
 
