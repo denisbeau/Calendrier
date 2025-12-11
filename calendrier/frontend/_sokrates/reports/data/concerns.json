@@ -10,18 +10,22 @@
   }, {
     "name" : "Unclassified",
     "filesCount" : 35,
-    "linesOfCode" : 2366,
+    "linesOfCode" : 2890,
     "numberOfRegexLineMatches" : 0,
     "fileCountPerExtension" : [ {
       "name" : "  *.jsx",
-      "value" : 17,
+      "value" : 18,
       "description" : [ ]
     }, {
       "name" : "  *.js",
-      "value" : 13,
+      "value" : 11,
       "description" : [ ]
     }, {
       "name" : "  *.css",
+      "value" : 2,
+      "description" : [ ]
+    }, {
+      "name" : "  *.html",
       "value" : 2,
       "description" : [ ]
     }, {
@@ -32,22 +36,22 @@
       "name" : "  *.sql",
       "value" : 1,
       "description" : [ ]
-    }, {
-      "name" : "  *.html",
-      "value" : 1,
-      "description" : [ ]
     } ],
     "linesOfCodePerExtension" : [ {
       "name" : "  *.jsx",
-      "value" : 1373,
+      "value" : 1700,
       "description" : [ ]
     }, {
       "name" : "  *.js",
-      "value" : 585,
+      "value" : 582,
       "description" : [ ]
     }, {
       "name" : "  *.css",
-      "value" : 307,
+      "value" : 361,
+      "description" : [ ]
+    }, {
+      "name" : "  *.html",
+      "value" : 164,
       "description" : [ ]
     }, {
       "name" : "  *.py",
@@ -56,10 +60,6 @@
     }, {
       "name" : "  *.sql",
       "value" : 35,
-      "description" : [ ]
-    }, {
-      "name" : "  *.html",
-      "value" : 18,
       "description" : [ ]
     } ]
   } ],
@@ -70,7 +70,7 @@
     "description" : [ ]
   }, {
     "name" : "Unclassified",
-    "value" : 2366,
+    "value" : 2890,
     "description" : [ ]
   } ],
   "fileCountPerConcern" : [ {

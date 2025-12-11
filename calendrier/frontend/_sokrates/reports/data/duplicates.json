@@ -1,7 +1,65 @@
 {
   "title" : "Duplication",
-  "timestamp" : "2025-11-27 00:14:19",
+  "timestamp" : "2025-12-11 14:03:36",
   "duplicates" : [ {
+    "blockSize" : 11,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "frontend/src/components/ErrorBoundary.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 105,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 93,
+      "startLine" : 73,
+      "endLine" : 83,
+      "cleanedStartLine" : 62,
+      "cleanedEndLine" : 72
+    }, {
+      "file" : {
+        "relativePath" : "frontend/src/components/ErrorBoundary.jsx",
+        "extension" : "jsx",
+        "linesOfCode" : 105,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 93,
+      "startLine" : 88,
+      "endLine" : 98,
+      "cleanedStartLine" : 76,
+      "cleanedEndLine" : 86
+    } ]
+  }, {
+    "blockSize" : 9,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "frontend/src/index.css",
+        "extension" : "css",
+        "linesOfCode" : 324,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 324,
+      "startLine" : 182,
+      "endLine" : 190,
+      "cleanedStartLine" : 151,
+      "cleanedEndLine" : 159
+    }, {
+      "file" : {
+        "relativePath" : "frontend/src/index.css",
+        "extension" : "css",
+        "linesOfCode" : 324,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 324,
+      "startLine" : 321,
+      "endLine" : 329,
+      "cleanedStartLine" : 264,
+      "cleanedEndLine" : 272
+    } ]
+  }, {
     "blockSize" : 8,
     "duplicatedFileBlocks" : [ {
       "file" : {
@@ -29,35 +87,6 @@
       "endLine" : 21,
       "cleanedStartLine" : 13,
       "cleanedEndLine" : 20
-    } ]
-  }, {
-    "blockSize" : 6,
-    "duplicatedFileBlocks" : [ {
-      "file" : {
-        "relativePath" : "frontend/src/index.css",
-        "extension" : "css",
-        "linesOfCode" : 270,
-        "components" : [ "primary::frontend" ],
-        "concerns" : [ "::Unclassified" ]
-      },
-      "sourceFileCleanedLinesOfCode" : 270,
-      "startLine" : 146,
-      "endLine" : 151,
-      "cleanedStartLine" : 118,
-      "cleanedEndLine" : 123
-    }, {
-      "file" : {
-        "relativePath" : "frontend/src/index.css",
-        "extension" : "css",
-        "linesOfCode" : 270,
-        "components" : [ "primary::frontend" ],
-        "concerns" : [ "::Unclassified" ]
-      },
-      "sourceFileCleanedLinesOfCode" : 270,
-      "startLine" : 227,
-      "endLine" : 232,
-      "cleanedStartLine" : 184,
-      "cleanedEndLine" : 189
     } ]
   }, {
     "blockSize" : 6,
@@ -116,6 +145,64 @@
       "endLine" : 119,
       "cleanedStartLine" : 69,
       "cleanedEndLine" : 74
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "frontend/src/index.css",
+        "extension" : "css",
+        "linesOfCode" : 324,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 324,
+      "startLine" : 172,
+      "endLine" : 177,
+      "cleanedStartLine" : 142,
+      "cleanedEndLine" : 147
+    }, {
+      "file" : {
+        "relativePath" : "frontend/src/index.css",
+        "extension" : "css",
+        "linesOfCode" : 324,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 324,
+      "startLine" : 270,
+      "endLine" : 275,
+      "cleanedStartLine" : 223,
+      "cleanedEndLine" : 228
+    } ]
+  }, {
+    "blockSize" : 6,
+    "duplicatedFileBlocks" : [ {
+      "file" : {
+        "relativePath" : "frontend/src/index.css",
+        "extension" : "css",
+        "linesOfCode" : 324,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 324,
+      "startLine" : 160,
+      "endLine" : 165,
+      "cleanedStartLine" : 132,
+      "cleanedEndLine" : 137
+    }, {
+      "file" : {
+        "relativePath" : "frontend/src/index.css",
+        "extension" : "css",
+        "linesOfCode" : 324,
+        "components" : [ "primary::frontend" ],
+        "concerns" : [ "::Unclassified" ]
+      },
+      "sourceFileCleanedLinesOfCode" : 324,
+      "startLine" : 258,
+      "endLine" : 263,
+      "cleanedStartLine" : 213,
+      "cleanedEndLine" : 218
     } ]
   } ],
   "overallDuplication" : null

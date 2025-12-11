@@ -1,34 +1,41 @@
 <html>
 <head>
-    <title>function createTransporter()</title>
+    <title>async function setupNodeEvents()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">function createTransporter()</h3>
-<p style="margin-top: 4px">in <i>frontend/src/server/index.js [15:31]</i></p>
+<h3 style="margin-bottom: 0">async function setupNodeEvents()</h3>
+<p style="margin-top: 4px">in <i>frontend/cypress.config.js [8:31]</i></p>
 <ul>
     <li><b>15</b> lines of code</li>
-    <li><b>5</b> McCabe index (conditional complexity)</li>
+    <li><b>1</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="js">
-function createTransporter() {
-  const host = process.env.SMTP_HOST;
-  const port = process.env.SMTP_PORT
-    ? Number(process.env.SMTP_PORT)
-    : undefined;
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
+async function setupNodeEvents(on, config) {
+  await addCucumberPreprocessorPlugin(on, config);
+  
+  // Configure preprocessor for both .feature (Cucumber) and .js/.jsx files
+  // The createEsbuildPlugin handles .feature files specially
+  on(
+    &quot;file:preprocessor&quot;,
+    createBundler({
+      plugins: [createEsbuildPlugin(config)],
+      define: {
+        &quot;process.env.NODE_ENV&quot;: '&quot;test&quot;',
+      },
+    })
+  );
 
-  if (!host) return null;
-
-  return nodemailer.createTransport({
-    host,
-    port,
-    secure: port === 465, // true for 465, false for other ports
-    auth: user &amp;&amp; pass ? { user, pass } : undefined,
+  on(&quot;task&quot;, {
+    log(message) {
+      console.log(&quot;[cypress task log]&quot;, message);
+      return null;
+    },
   });
+  
+  return config;
 }
 
 </code>

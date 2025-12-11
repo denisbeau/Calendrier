@@ -6,15 +6,25 @@
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
 <h3 style="margin-bottom: 0">export default defineConfig()</h3>
-<p style="margin-top: 4px">in <i>frontend/vite.config.js [6:8]</i></p>
+<p style="margin-top: 4px">in <i>frontend/vite.config.js [6:18]</i></p>
 <ul>
-    <li><b>3</b> lines of code</li>
+    <li><b>11</b> lines of code</li>
     <li><b>1</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="js">
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  // Configure preview server to handle SPA routing
+  preview: {
+    port: 4173,
+    strictPort: true,
+  },
+  // Ensure proper handling of client-side routing in development
+  server: {
+    port: 5173,
+    strictPort: true,
+  },
 })
 
 </code>

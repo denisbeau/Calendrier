@@ -1,70 +1,48 @@
 <html>
 <head>
-    <title>export async function createGroup()</title>
+    <title>function handleSelectSlot()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">export async function createGroup()</h3>
-<p style="margin-top: 4px">in <i>frontend/src/services/groups.js [18:69]</i></p>
+<h3 style="margin-bottom: 0">function handleSelectSlot()</h3>
+<p style="margin-top: 4px">in <i>frontend/src/features/calendar/hooks/useCalendarEvents.js [122:151]</i></p>
 <ul>
-    <li><b>40</b> lines of code</li>
+    <li><b>23</b> lines of code</li>
     <li><b>6</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="js">
-export async function createGroup({ name, description }) {
-  const { data: userData } = await supabase.auth.getUser();
-  const user = userData?.user;
-  if (!user) throw new Error(&quot;Not authenticated&quot;);
-
-  // generate code (naive loop to avoid collision in the VERY rare case)
-  let invite_code = generate6CharCode();
-  // attempt up to a few times to avoid unique constraint collision
-  let attempts = 0;
-  let group = null;
-  while (attempts &lt; 5) {
-    const { data: inserted, error } = await supabase
-      .from(&quot;groups&quot;)
-      .insert([
-        {
-          name,
-          description,
-          owner_id: user.id,
-          invite_code,
-        },
-      ])
-      .select()
-      .single();
-
-    if (!error) {
-      group = inserted;
-      break;
+  function handleSelectSlot(slotInfo, defaultColor, defaultCategoryName) {
+    try {
+      // Format the selected time range for display
+      const startTime = slotInfo.start.toLocaleString();
+      const endTime = slotInfo.end.toLocaleString();
+      
+      const title = prompt(`Enter event title for:\n${startTime} - ${endTime}`);
+      if (!title || !title.trim()) return;
+      
+      const newEventObj = {
+        id: nextId(),
+        title: title.trim(),
+        start: slotInfo.start,
+        end: slotInfo.end,
+        color: defaultColor || DEFAULT_EVENT_COLOR,
+        categoryName: defaultCategoryName?.trim() || DEFAULT_CATEGORY_NAME,
+      };
+      
+      setEvents(prev =&gt; [...prev, newEventObj]);
+      
+      // Show success message
+      console.log(`Event &quot;${title.trim()}&quot; created successfully!`);
+      
+    } catch (error) {
+      console.error(&quot;Error creating event from slot:&quot;, error);
+      console.error(&quot;SlotInfo:&quot;, slotInfo);
+      console.error(&quot;Events array:&quot;, events);
+      alert(&quot;Failed to create event. Please try again.&quot;);
     }
-
-    // If unique index collision on invite_code, generate a new code and retry
-    // Supabase returns constraint errors with message including 'duplicate key' or similar.
-    attempts += 1;
-    invite_code = generate6CharCode();
   }
-
-  if (!group) {
-    throw new Error(&quot;Failed to create group (code generation collision?)&quot;);
-  }
-
-  // add creator as admin in group_members
-  const { error: memberErr } = await supabase.from(&quot;group_members&quot;).insert([
-    {
-      group_id: group.id,
-      user_id: user.id,
-      role: &quot;admin&quot;,
-    },
-  ]);
-
-  if (memberErr) throw memberErr;
-
-  return group;
-}
 
 </code>
 </pre>

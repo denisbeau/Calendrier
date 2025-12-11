@@ -3,7 +3,7 @@ describe("Performance and Loading", () => {
   it("should load homepage within reasonable time", () => {
     const startTime = Date.now();
     cy.visit("/");
-    cy.contains("Calendar App").should("be.visible");
+    cy.contains("WeSchedule").should("be.visible");
     const loadTime = Date.now() - startTime;
 
     // Homepage should load within 3 seconds
@@ -21,19 +21,10 @@ describe("Performance and Loading", () => {
   });
 
   it("should load calendar page within reasonable time after authentication", () => {
-    // Mock authentication
-    cy.intercept("POST", "**/auth/v1/token", {
-      statusCode: 200,
-      body: { access_token: "token", user: { id: "user-1" } },
-    });
-
-    cy.visit("/login");
-    cy.get('input[type="email"]').type("test@example.com");
-    cy.get('input[type="password"]').type("password123");
-
+    // Use custom login command
     const startTime = Date.now();
-    cy.get('button[type="submit"]').click();
-    cy.url({ timeout: 5000 }).should("include", "/calendar");
+    cy.login("test@example.com", "password123");
+    cy.visitCalendar();
     cy.get(".rbc-calendar", { timeout: 5000 }).should("be.visible");
     const loadTime = Date.now() - startTime;
 
@@ -42,22 +33,14 @@ describe("Performance and Loading", () => {
   });
 
   it("should load groups page within reasonable time", () => {
-    // Mock authentication
-    cy.intercept("POST", "**/auth/v1/token", {
-      statusCode: 200,
-      body: { access_token: "token", user: { id: "user-1" } },
-    });
-
-    cy.intercept("GET", "**/api/groups", {
+    // Use custom login command
+    cy.login("test@example.com", "password123");
+    
+    // Mock groups API
+    cy.intercept("GET", "**/rest/v1/group_members*user_id=eq.*", {
       statusCode: 200,
       body: [],
     });
-
-    cy.visit("/login");
-    cy.get('input[type="email"]').type("test@example.com");
-    cy.get('input[type="password"]').type("password123");
-    cy.get('button[type="submit"]').click();
-    cy.url({ timeout: 5000 }).should("include", "/calendar");
 
     const startTime = Date.now();
     cy.visit("/groups");
@@ -69,22 +52,14 @@ describe("Performance and Loading", () => {
   });
 
   it("should handle multiple rapid page navigations", () => {
-    // Mock authentication
-    cy.intercept("POST", "**/auth/v1/token", {
-      statusCode: 200,
-      body: { access_token: "token", user: { id: "user-1" } },
-    });
+    // Use custom login command
+    cy.login("test@example.com", "password123");
 
-    cy.intercept("GET", "**/api/groups", {
+    // Mock groups API
+    cy.intercept("GET", "**/rest/v1/group_members*user_id=eq.*", {
       statusCode: 200,
       body: [],
     });
-
-    cy.visit("/login");
-    cy.get('input[type="email"]').type("test@example.com");
-    cy.get('input[type="password"]').type("password123");
-    cy.get('button[type="submit"]').click();
-    cy.url({ timeout: 5000 }).should("include", "/calendar");
 
     // Rapid navigation between pages
     cy.visit("/groups");
@@ -98,37 +73,56 @@ describe("Performance and Loading", () => {
   });
 
   it("should not have memory leaks during multiple event creations", () => {
-    // Mock authentication
-    cy.intercept("POST", "**/auth/v1/token", {
-      statusCode: 200,
-      body: { access_token: "token", user: { id: "user-1" } },
-    });
+    // Use custom login command
+    cy.login("test@example.com", "password123");
+    cy.visitCalendar();
 
-    cy.visit("/login");
-    cy.get('input[type="email"]').type("test@example.com");
-    cy.get('input[type="password"]').type("password123");
-    cy.get('button[type="submit"]').click();
-    cy.url({ timeout: 5000 }).should("include", "/calendar");
+      // Switch to month view to see all events
+      cy.get("button").contains("Month").click();
+      cy.wait(500);
 
-    // Create multiple events
-    for (let i = 1; i <= 5; i++) {
-      cy.get('input[placeholder*="title" i]').type(`Event ${i}`);
-      cy.get('input[type="datetime-local"]')
-        .first()
-        .clear()
-        .type(`2024-12-${25 + i}T10:00`);
-      cy.get('input[type="datetime-local"]')
-        .last()
-        .clear()
-        .type(`2024-12-${25 + i}T11:00`);
-      cy.contains("button", "Create Event").click();
-      cy.contains(`Event ${i}`, { timeout: 5000 }).should("be.visible");
-    }
+      // Create multiple events with dynamic dates
+      cy.window().then((win) => {
+        const formatLocalDateTime = (date) => {
+          const year = date.getFullYear();
+          const month = String(date.getMonth() + 1).padStart(2, '0');
+          const day = String(date.getDate()).padStart(2, '0');
+          const hours = String(date.getHours()).padStart(2, '0');
+          const minutes = String(date.getMinutes()).padStart(2, '0');
+          return `${year}-${month}-${day}T${hours}:${minutes}`;
+        };
 
-    // Verify all events are still visible
-    for (let i = 1; i <= 5; i++) {
-      cy.contains(`Event ${i}`).should("be.visible");
-    }
+        for (let i = 1; i <= 5; i++) {
+          const now = new Date();
+          const eventDate = new Date(now);
+          eventDate.setDate(eventDate.getDate() + i);
+          eventDate.setHours(10, 0, 0, 0);
+          
+          const endTime = new Date(eventDate);
+          endTime.setHours(11, 0, 0, 0);
+
+          cy.get('input[placeholder*="title" i]').type(`Event ${i}`);
+          cy.get('input[type="datetime-local"]')
+            .first()
+            .clear()
+            .type(formatLocalDateTime(eventDate));
+          cy.get('input[type="datetime-local"]')
+            .last()
+            .clear()
+            .type(formatLocalDateTime(endTime));
+          cy.contains("button", "Create Event").click();
+          cy.get('input[placeholder*="title" i]', { timeout: 5000 }).should("have.value", "");
+          cy.wait(1000);
+        }
+
+        // Wait for all events to be rendered
+        cy.wait(2000);
+        
+        // Verify all events are still visible - use contains for more flexibility
+        for (let i = 1; i <= 5; i++) {
+          cy.contains(`Event ${i}`, { timeout: 10000 }).should("be.visible");
+        }
+      });
   });
 });
 

@@ -1,31 +1,10 @@
 [ {
-  "relativePath" : "frontend/cypress/e2e/signup.cy.js",
-  "extension" : "js",
-  "linesOfCode" : 35,
-  "unitsCount" : 0,
-  "unitsMcCabeIndexSum" : 0,
-  "linesOfCodeInUnits" : 0
-}, {
-  "relativePath" : "frontend/cypress/support/commands.js",
-  "extension" : "js",
-  "linesOfCode" : 1,
-  "unitsCount" : 0,
-  "unitsMcCabeIndexSum" : 0,
-  "linesOfCodeInUnits" : 0
-}, {
-  "relativePath" : "frontend/cypress/support/e2e.js",
-  "extension" : "js",
-  "linesOfCode" : 5,
-  "unitsCount" : 0,
-  "unitsMcCabeIndexSum" : 0,
-  "linesOfCodeInUnits" : 0
-}, {
   "relativePath" : "frontend/cypress.config.js",
   "extension" : "js",
-  "linesOfCode" : 15,
+  "linesOfCode" : 30,
   "unitsCount" : 2,
   "unitsMcCabeIndexSum" : 2,
-  "linesOfCodeInUnits" : 9
+  "linesOfCodeInUnits" : 19
 }, {
   "relativePath" : "frontend/eslint.config.js",
   "extension" : "js",
@@ -36,7 +15,7 @@
 }, {
   "relativePath" : "frontend/index.html",
   "extension" : "html",
-  "linesOfCode" : 18,
+  "linesOfCode" : 46,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
@@ -55,6 +34,13 @@
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
+  "relativePath" : "frontend/public/404.html",
+  "extension" : "html",
+  "linesOfCode" : 118,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
   "relativePath" : "frontend/src/App.css",
   "extension" : "css",
   "linesOfCode" : 37,
@@ -64,7 +50,14 @@
 }, {
   "relativePath" : "frontend/src/App.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 55,
+  "linesOfCode" : 96,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/src/components/ErrorBoundary.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 105,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
@@ -85,7 +78,7 @@
 }, {
   "relativePath" : "frontend/src/context/AuthContext.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 109,
+  "linesOfCode" : 125,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
@@ -134,7 +127,7 @@
 }, {
   "relativePath" : "frontend/src/index.css",
   "extension" : "css",
-  "linesOfCode" : 270,
+  "linesOfCode" : 324,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
@@ -169,7 +162,7 @@
 }, {
   "relativePath" : "frontend/src/pages/HomePage.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 131,
+  "linesOfCode" : 296,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
@@ -206,8 +199,15 @@
   "extension" : "js",
   "linesOfCode" : 120,
   "unitsCount" : 5,
-  "unitsMcCabeIndexSum" : 30,
+  "unitsMcCabeIndexSum" : 31,
   "linesOfCodeInUnits" : 119
+}, {
+  "relativePath" : "frontend/src/setupTests.js",
+  "extension" : "js",
+  "linesOfCode" : 15,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
 }, {
   "relativePath" : "frontend/src/supabaseClient.js",
   "extension" : "js",
@@ -239,8 +239,8 @@
 }, {
   "relativePath" : "frontend/vite.config.js",
   "extension" : "js",
-  "linesOfCode" : 6,
+  "linesOfCode" : 14,
   "unitsCount" : 1,
   "unitsMcCabeIndexSum" : 1,
-  "linesOfCodeInUnits" : 3
+  "linesOfCodeInUnits" : 11
 } ]

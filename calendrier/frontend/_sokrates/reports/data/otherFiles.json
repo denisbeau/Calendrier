@@ -20,6 +20,48 @@
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
+  "relativePath" : "frontend/CYPRESS_FINAL_FIXES.md",
+  "extension" : "md",
+  "linesOfCode" : 52,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/CYPRESS_FIXES_APPLIED.md",
+  "extension" : "md",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/CYPRESS_FIXES_SUMMARY.md",
+  "extension" : "md",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/CYPRESS_TEST_PLAN.md",
+  "extension" : "md",
+  "linesOfCode" : 625,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/DEBUG_404_FIX.md",
+  "extension" : "md",
+  "linesOfCode" : 118,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/documentation/workflows/evaluation-checklist.md",
+  "extension" : "md",
+  "linesOfCode" : 235,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
   "relativePath" : "frontend/eslint-config.json",
   "extension" : "json",
   "linesOfCode" : 1449,
@@ -27,9 +69,30 @@
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
+  "relativePath" : "frontend/EVALUATION_CRITERES.md",
+  "extension" : "md",
+  "linesOfCode" : 221,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/EVALUATION_FINAL.md",
+  "extension" : "md",
+  "linesOfCode" : 166,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
   "relativePath" : "frontend/package.json",
   "extension" : "json",
-  "linesOfCode" : 60,
+  "linesOfCode" : 72,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/QUICK_START_TESTING.md",
+  "extension" : "md",
+  "linesOfCode" : 66,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
@@ -41,6 +104,13 @@
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
+  "relativePath" : "frontend/SPA_ROUTING_FIX.md",
+  "extension" : "md",
+  "linesOfCode" : 66,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
   "relativePath" : "frontend/src/server/README.md",
   "extension" : "md",
   "linesOfCode" : 13,
@@ -48,9 +118,23 @@
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
 }, {
+  "relativePath" : "frontend/TESTING_SETUP.md",
+  "extension" : "md",
+  "linesOfCode" : 317,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/vercel.json",
+  "extension" : "json",
+  "linesOfCode" : 27,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
   "relativePath" : "vercel.json",
   "extension" : "json",
-  "linesOfCode" : 1,
+  "linesOfCode" : 9,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0

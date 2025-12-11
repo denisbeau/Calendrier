@@ -1,25 +1,27 @@
-frontend/src/server/index.js [92:98]:
+frontend/src/features/calendar/hooks/useCalendarEvents.js [166:173]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  try {
-    const result = await sendInviteEmail({ to: email, subject, text, html, acceptUrl });
-    return res.status(201).json(result);
-  } catch (err) {
-    return res.status(500).json({ error: err.message });
-  }
-});
+    isSubmitting,
+    errors,
+    setErrors,
+    handleFormSubmit,
+    handleSelectEvent,
+    handleDeleteEvent,
+    handleSelectSlot,
+    getInitialFormState,
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-frontend/src/server/index.js [132:138]:
+frontend/src/pages/CalendarPage.jsx [14:21]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-  try {
-    const result = await sendInviteEmail({ to: email, subject, text, html, acceptUrl });
-    return res.status(201).json(result);
-  } catch (err) {
-    return res.status(500).json({ error: err.message });
-  }
-});
+    isSubmitting,
+    errors,
+    setErrors,
+    handleFormSubmit,
+    handleSelectEvent,
+    handleDeleteEvent,
+    handleSelectSlot,
+    getInitialFormState,
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

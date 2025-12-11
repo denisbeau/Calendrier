@@ -55,7 +55,9 @@ export async function createGroup({ name, description }) {
       .single();
 
     if (!error) {
-      group = inserted;
+      // Handle both array (from intercept) and object (from real API) responses
+      // .single() should extract first element, but intercepts might return array
+      group = Array.isArray(inserted) ? inserted[0] : inserted;
       break;
     }
 

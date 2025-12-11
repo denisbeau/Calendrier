@@ -12,132 +12,274 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">frontend/src/pages/HomePage.jsx (<b>131</b> lines of code) (<a href="HomePage.jsx">raw</a>):</h3>
+<h3 style="margin-bottom: 0">frontend/src/pages/HomePage.jsx (<b>296</b> lines of code) (<a href="HomePage.jsx">raw</a>):</h3>
 <div id="editor">// src/pages/HomePage.jsx
 import React from &quot;react&quot;;
 import { useNavigate } from &quot;react-router-dom&quot;;
+import { useTheme } from &quot;../theme/ThemeProvider&quot;;
+
+const FEATURE_CARDS = [
+  {
+    icon: &quot;📅&quot;,
+    title: &quot;Event Management&quot;,
+    description:
+      &quot;Create, edit, and delete events easily. Click on any time slot or event to manage your schedule.&quot;,
+  },
+  {
+    icon: &quot;👁️&quot;,
+    title: &quot;Multiple Views&quot;,
+    description:
+      &quot;Switch between month, week, day, and agenda views to see your schedule in different formats.&quot;,
+  },
+  {
+    icon: &quot;👥&quot;,
+    title: &quot;Team Collaboration&quot;,
+    description:
+      &quot;Create groups, invite team members, and collaborate on shared calendars seamlessly.&quot;,
+  },
+];
+
+const HOW_IT_WORKS_STEPS = [
+  {
+    number: 1,
+    title: &quot;Create Events&quot;,
+    description:
+      &quot;Use the form at the top or click and drag on the calendar to select a time range.&quot;,
+  },
+  {
+    number: 2,
+    title: &quot;Edit Events&quot;,
+    description:
+      &quot;Click on any existing event to edit it. The form will populate with the event details.&quot;,
+  },
+  {
+    number: 3,
+    title: &quot;Collaborate&quot;,
+    description:
+      &quot;Create groups, share invite codes, and manage team calendars together.&quot;,
+  },
+];
+
+function FeatureCard({ icon, title, description, isDark }) {
+  return (
+    &lt;div className=&quot;simple-card text-center&quot;&gt;
+      &lt;div className=&quot;mb-4&quot;&gt;
+        &lt;div
+          style={{
+            width: &quot;64px&quot;,
+            height: &quot;64px&quot;,
+            borderRadius: &quot;12px&quot;,
+            margin: &quot;0 auto&quot;,
+            display: &quot;flex&quot;,
+            alignItems: &quot;center&quot;,
+            justifyContent: &quot;center&quot;,
+            background: isDark
+              ? &quot;linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)&quot;
+              : &quot;linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%)&quot;,
+            fontSize: &quot;32px&quot;,
+          }}
+        &gt;
+          {icon}
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;h3
+        style={{
+          fontSize: &quot;20px&quot;,
+          fontWeight: &quot;700&quot;,
+          marginBottom: &quot;12px&quot;,
+          color: &quot;var(--text-primary)&quot;,
+        }}
+      &gt;
+        {title}
+      &lt;/h3&gt;
+      &lt;p
+        style={{
+          color: &quot;var(--text-secondary)&quot;,
+          lineHeight: &quot;1.6&quot;,
+        }}
+      &gt;
+        {description}
+      &lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+function HowItWorksStep({ number, title, description }) {
+  return (
+    &lt;div style={{ display: &quot;flex&quot;, alignItems: &quot;flex-start&quot;, gap: &quot;16px&quot; }}&gt;
+      &lt;div
+        style={{
+          width: &quot;40px&quot;,
+          height: &quot;40px&quot;,
+          backgroundColor: &quot;var(--accent-primary)&quot;,
+          borderRadius: &quot;50%&quot;,
+          display: &quot;flex&quot;,
+          alignItems: &quot;center&quot;,
+          justifyContent: &quot;center&quot;,
+          flexShrink: 0,
+          marginTop: &quot;4px&quot;,
+          color: &quot;white&quot;,
+          fontWeight: &quot;700&quot;,
+          fontSize: &quot;18px&quot;,
+        }}
+      &gt;
+        {number}
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;h4
+          style={{
+            fontWeight: &quot;600&quot;,
+            marginBottom: &quot;8px&quot;,
+            fontSize: &quot;18px&quot;,
+            color: &quot;var(--text-primary)&quot;,
+          }}
+        &gt;
+          {title}
+        &lt;/h4&gt;
+        &lt;p style={{ color: &quot;var(--text-secondary)&quot;, lineHeight: &quot;1.6&quot; }}&gt;
+          {description}
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
 
 export default function HomePage() {
   const navigate = useNavigate();
+  const { isDark } = useTheme();
 
   return (
-    &lt;div className=&quot;min-h-screen bg-gray-50 text-gray-900&quot;&gt;
-      
+    &lt;div
+      style={{
+        minHeight: &quot;100vh&quot;,
+        backgroundColor: &quot;var(--bg-secondary)&quot;,
+        color: &quot;var(--text-primary)&quot;,
+      }}
+    &gt;
       {/* Hero Section */}
       &lt;div className=&quot;max-w-6xl mx-auto px-6 py-16&quot;&gt;
         &lt;div className=&quot;text-center mb-16&quot;&gt;
-          &lt;h1 className=&quot;text-5xl font-bold mb-6&quot;&gt;Calendar App&lt;/h1&gt;
-          &lt;p className=&quot;text-xl max-w-2xl mx-auto text-gray-600&quot;&gt;
-            A simple and powerful calendar application to manage your events and schedule efficiently.
+          &lt;h1
+            style={{
+              fontSize: &quot;56px&quot;,
+              fontWeight: &quot;800&quot;,
+              marginBottom: &quot;24px&quot;,
+              background: isDark
+                ? &quot;linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%)&quot;
+                : &quot;linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)&quot;,
+              WebkitBackgroundClip: &quot;text&quot;,
+              WebkitTextFillColor: &quot;transparent&quot;,
+              backgroundClip: &quot;text&quot;,
+            }}
+          &gt;
+            WeSchedule
+          &lt;/h1&gt;
+          &lt;p
+            style={{
+              fontSize: &quot;20px&quot;,
+              maxWidth: &quot;700px&quot;,
+              margin: &quot;0 auto&quot;,
+              color: &quot;var(--text-secondary)&quot;,
+              lineHeight: &quot;1.8&quot;,
+            }}
+          &gt;
+            A simple and powerful calendar application to manage your events and
+            schedule efficiently with your team.
           &lt;/p&gt;
         &lt;/div&gt;
 
         {/* Features Section */}
         &lt;div className=&quot;grid md:grid-cols-3 gap-8 mb-16&quot;&gt;
-          
-          {/* Feature 1 */}
-          &lt;div className=&quot;simple-card text-center&quot;&gt;
-            &lt;div className=&quot;mb-4&quot;&gt;
-              &lt;div className=&quot;w-12 h-12 rounded-lg mx-auto flex items-center justify-center bg-gray-200&quot;&gt;
-                &lt;span className=&quot;text-2xl&quot;&gt;📅&lt;/span&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;h3 className=&quot;text-xl font-semibold mb-3&quot;&gt;Event Management&lt;/h3&gt;
-            &lt;p className=&quot;text-gray-600&quot;&gt;
-              Create, edit, and delete events easily. Click on any time slot or event to manage your schedule.
-            &lt;/p&gt;
-          &lt;/div&gt;
-
-          {/* Feature 2 */}
-          &lt;div className=&quot;simple-card text-center&quot;&gt;
-            &lt;div className=&quot;mb-4&quot;&gt;
-              &lt;div className=&quot;w-12 h-12 rounded-lg mx-auto flex items-center justify-center bg-gray-200&quot;&gt;
-                &lt;span className=&quot;text-2xl&quot;&gt;👁️&lt;/span&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;h3 className=&quot;text-xl font-semibold mb-3&quot;&gt;Multiple Views&lt;/h3&gt;
-            &lt;p className=&quot;text-gray-600&quot;&gt;
-              Switch between month, week, day, and agenda views to see your schedule in different formats.
-            &lt;/p&gt;
-          &lt;/div&gt;
-
-          {/* Feature 3 */}
-          &lt;div className=&quot;simple-card text-center&quot;&gt;
-            &lt;div className=&quot;mb-4&quot;&gt;
-              &lt;div className=&quot;w-12 h-12 rounded-lg mx-auto flex items-center justify-center bg-gray-200&quot;&gt;
-                &lt;span className=&quot;text-2xl&quot;&gt;✏️&lt;/span&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;h3 className=&quot;text-xl font-semibold mb-3&quot;&gt;Quick Editing&lt;/h3&gt;
-            &lt;p className=&quot;text-gray-600&quot;&gt;
-              Edit events inline with our unified form. Update, delete, or cancel changes with simple buttons.
-            &lt;/p&gt;
-          &lt;/div&gt;
-
+          {FEATURE_CARDS.map((feature) =&gt; (
+            &lt;FeatureCard key={feature.title} isDark={isDark} {...feature} /&gt;
+          ))}
         &lt;/div&gt;
 
         {/* How It Works Section */}
         &lt;div className=&quot;mb-16&quot;&gt;
-          &lt;h2 className=&quot;text-3xl font-bold text-center mb-12&quot;&gt;How It Works&lt;/h2&gt;
-          
+          &lt;h2
+            style={{
+              fontSize: &quot;36px&quot;,
+              fontWeight: &quot;700&quot;,
+              textAlign: &quot;center&quot;,
+              marginBottom: &quot;48px&quot;,
+              color: &quot;var(--text-primary)&quot;,
+            }}
+          &gt;
+            How It Works
+          &lt;/h2&gt;
+
           &lt;div className=&quot;grid md:grid-cols-2 gap-12 items-center&quot;&gt;
-            
             {/* Instructions */}
             &lt;div&gt;
-              &lt;div className=&quot;space-y-6&quot;&gt;
-                
-                &lt;div className=&quot;flex items-start space-x-4&quot;&gt;
-                  &lt;div className=&quot;w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1&quot;&gt;
-                    &lt;span className=&quot;text-sm font-bold&quot;&gt;1&lt;/span&gt;
-                  &lt;/div&gt;
-                  &lt;div&gt;
-                    &lt;h4 className=&quot;font-semibold mb-2&quot;&gt;Create Events&lt;/h4&gt;
-                    &lt;p className=&quot;text-gray-600&quot;&gt;Use the form at the top or click and drag on the calendar to select a time range.&lt;/p&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
-
-                &lt;div className=&quot;flex items-start space-x-4&quot;&gt;
-                  &lt;div className=&quot;w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1&quot;&gt;
-                    &lt;span className=&quot;text-sm font-bold&quot;&gt;2&lt;/span&gt;
-                  &lt;/div&gt;
-                  &lt;div&gt;
-                    &lt;h4 className=&quot;font-semibold mb-2&quot;&gt;Edit Events&lt;/h4&gt;
-                    &lt;p className=&quot;text-gray-600&quot;&gt;Click on any existing event to edit it. The form will populate with the event details.&lt;/p&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
-
-                &lt;div className=&quot;flex items-start space-x-4&quot;&gt;
-                  &lt;div className=&quot;w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1&quot;&gt;
-                    &lt;span className=&quot;text-sm font-bold&quot;&gt;3&lt;/span&gt;
-                  &lt;/div&gt;
-                  &lt;div&gt;
-                    &lt;h4 className=&quot;font-semibold mb-2&quot;&gt;Manage Views&lt;/h4&gt;
-                    &lt;p className=&quot;text-gray-600&quot;&gt;Switch between different calendar views to see your schedule the way you prefer.&lt;/p&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
-
+              &lt;div
+                style={{
+                  display: &quot;flex&quot;,
+                  flexDirection: &quot;column&quot;,
+                  gap: &quot;24px&quot;,
+                }}
+              &gt;
+                {HOW_IT_WORKS_STEPS.map((step) =&gt; (
+                  &lt;HowItWorksStep key={step.number} {...step} /&gt;
+                ))}
               &lt;/div&gt;
             &lt;/div&gt;
 
             {/* Visual Representation */}
             &lt;div className=&quot;simple-card&quot;&gt;
-              &lt;h4 className=&quot;font-semibold mb-4 text-center&quot;&gt;Calendar Features&lt;/h4&gt;
-              &lt;div className=&quot;space-y-3&quot;&gt;
-                &lt;div className=&quot;flex items-center space-x-3&quot;&gt;
-                  &lt;div className=&quot;w-4 h-4 bg-green-500 rounded&quot;&gt;&lt;/div&gt;
-                  &lt;span className=&quot;text-sm&quot;&gt;Personal Calendar Management&lt;/span&gt;
+              &lt;h4 style={{
+                fontWeight: '600',
+                marginBottom: '16px',
+                textAlign: 'center',
+                fontSize: '18px',
+                color: 'var(--text-primary)'
+              }}&gt;
+                Calendar Features
+              &lt;/h4&gt;
+              &lt;div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}&gt;
+                &lt;div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}&gt;
+                  &lt;div style={{
+                    width: '16px',
+                    height: '16px',
+                    backgroundColor: '#10b981',
+                    borderRadius: '4px'
+                  }}&gt;&lt;/div&gt;
+                  &lt;span style={{ fontSize: '14px', color: 'var(--text-secondary)' }}&gt;
+                    Personal Calendar Management
+                  &lt;/span&gt;
                 &lt;/div&gt;
-                &lt;div className=&quot;flex items-center space-x-3&quot;&gt;
-                  &lt;div className=&quot;w-4 h-4 bg-blue-500 rounded&quot;&gt;&lt;/div&gt;
-                  &lt;span className=&quot;text-sm&quot;&gt;Team Collaboration (Coming Soon)&lt;/span&gt;
+                &lt;div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}&gt;
+                  &lt;div style={{
+                    width: '16px',
+                    height: '16px',
+                    backgroundColor: '#3b82f6',
+                    borderRadius: '4px'
+                  }}&gt;&lt;/div&gt;
+                  &lt;span style={{ fontSize: '14px', color: 'var(--text-secondary)' }}&gt;
+                    Team Group Calendars
+                  &lt;/span&gt;
                 &lt;/div&gt;
-                &lt;div className=&quot;flex items-center space-x-3&quot;&gt;
-                  &lt;div className=&quot;w-4 h-4 bg-purple-500 rounded&quot;&gt;&lt;/div&gt;
-                  &lt;span className=&quot;text-sm&quot;&gt;Multiple View Options&lt;/span&gt;
+                &lt;div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}&gt;
+                  &lt;div style={{
+                    width: '16px',
+                    height: '16px',
+                    backgroundColor: '#a855f7',
+                    borderRadius: '4px'
+                  }}&gt;&lt;/div&gt;
+                  &lt;span style={{ fontSize: '14px', color: 'var(--text-secondary)' }}&gt;
+                    Multiple View Options
+                  &lt;/span&gt;
                 &lt;/div&gt;
-                &lt;div className=&quot;flex items-center space-x-3&quot;&gt;
-                  &lt;div className=&quot;w-4 h-4 bg-orange-500 rounded&quot;&gt;&lt;/div&gt;
-                  &lt;span className=&quot;text-sm&quot;&gt;Quick Event Creation&lt;/span&gt;
+                &lt;div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}&gt;
+                  &lt;div style={{
+                    width: '16px',
+                    height: '16px',
+                    backgroundColor: '#f59e0b',
+                    borderRadius: '4px'
+                  }}&gt;&lt;/div&gt;
+                  &lt;span style={{ fontSize: '14px', color: 'var(--text-secondary)' }}&gt;
+                    Quick Event Creation
+                  &lt;/span&gt;
                 &lt;/div&gt;
               &lt;/div&gt;
             &lt;/div&gt;
@@ -147,15 +289,32 @@ export default function HomePage() {
 
         {/* Call to Action */}
         &lt;div className=&quot;text-center&quot;&gt;
-          &lt;h2 className=&quot;text-2xl font-bold mb-4&quot;&gt;Ready to Get Started?&lt;/h2&gt;
-          &lt;p className=&quot;mb-8 text-gray-600&quot;&gt;
+          &lt;h2 style={{
+            fontSize: '28px',
+            fontWeight: '700',
+            marginBottom: '16px',
+            color: 'var(--text-primary)'
+          }}&gt;
+            Ready to Get Started?
+          &lt;/h2&gt;
+          &lt;p style={{
+            marginBottom: '32px',
+            color: 'var(--text-secondary)',
+            fontSize: '16px'
+          }}&gt;
             Navigate to your Personal Calendar to start managing your events and schedule.
           &lt;/p&gt;
           &lt;button 
             onClick={() =&gt; navigate('/calendar')}
-            className=&quot;simple-button max-w-xs mx-auto&quot;
+            className=&quot;simple-button&quot;
+            style={{
+              maxWidth: '300px',
+              margin: '0 auto',
+              fontSize: '16px',
+              padding: '14px 28px'
+            }}
           &gt;
-            Go to Personal Calendar
+            Go to Personal Calendar &rarr;
           &lt;/button&gt;
         &lt;/div&gt;
 

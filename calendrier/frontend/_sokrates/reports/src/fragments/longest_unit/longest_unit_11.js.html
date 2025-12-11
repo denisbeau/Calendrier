@@ -1,30 +1,35 @@
 <html>
 <head>
-    <title>function handleSelectEvent()</title>
+    <title>function createTransporter()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">function handleSelectEvent()</h3>
-<p style="margin-top: 4px">in <i>frontend/src/features/calendar/hooks/useCalendarEvents.js [102:113]</i></p>
+<h3 style="margin-bottom: 0">function createTransporter()</h3>
+<p style="margin-top: 4px">in <i>frontend/src/server/index.js [15:31]</i></p>
 <ul>
-    <li><b>11</b> lines of code</li>
-    <li><b>3</b> McCabe index (conditional complexity)</li>
+    <li><b>15</b> lines of code</li>
+    <li><b>5</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="js">
-  function handleSelectEvent(event, onSelect) {
-    // Populate the form with the event data for editing
-    const eventData = {
-      title: event.title,
-      start: formatDateTimeLocal(event.start),
-      end: formatDateTimeLocal(event.end),
-      color: event.color || DEFAULT_EVENT_COLOR,
-      categoryName: event.categoryName || DEFAULT_CATEGORY_NAME
-    };
-    onSelect?.(eventData, event.id);
-    setErrors({});
-  }
+function createTransporter() {
+  const host = process.env.SMTP_HOST;
+  const port = process.env.SMTP_PORT
+    ? Number(process.env.SMTP_PORT)
+    : undefined;
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+
+  if (!host) return null;
+
+  return nodemailer.createTransport({
+    host,
+    port,
+    secure: port === 465, // true for 465, false for other ports
+    auth: user &amp;&amp; pass ? { user, pass } : undefined,
+  });
+}
 
 </code>
 </pre>

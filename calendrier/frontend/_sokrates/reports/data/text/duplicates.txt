@@ -1,24 +1,42 @@
 duplicated block id: 1
+size: 11 cleaned lines of code
+in 2 files:
+ - frontend/src/components/ErrorBoundary.jsx (73:83)
+ - frontend/src/components/ErrorBoundary.jsx (88:98)
+
+duplicated block id: 2
+size: 9 cleaned lines of code
+in 2 files:
+ - frontend/src/index.css (182:190)
+ - frontend/src/index.css (321:329)
+
+duplicated block id: 3
 size: 8 cleaned lines of code
 in 2 files:
  - frontend/src/features/calendar/hooks/useCalendarEvents.js (166:173)
  - frontend/src/pages/CalendarPage.jsx (14:21)
 
-duplicated block id: 2
-size: 6 cleaned lines of code
-in 2 files:
- - frontend/src/index.css (146:151)
- - frontend/src/index.css (227:232)
-
-duplicated block id: 3
+duplicated block id: 4
 size: 6 cleaned lines of code
 in 2 files:
  - frontend/src/server/index.js (92:98)
  - frontend/src/server/index.js (132:138)
 
-duplicated block id: 4
+duplicated block id: 5
 size: 6 cleaned lines of code
 in 2 files:
  - frontend/src/server/index.js (77:82)
  - frontend/src/server/index.js (113:119)
+
+duplicated block id: 6
+size: 6 cleaned lines of code
+in 2 files:
+ - frontend/src/index.css (172:177)
+ - frontend/src/index.css (270:275)
+
+duplicated block id: 7
+size: 6 cleaned lines of code
+in 2 files:
+ - frontend/src/index.css (160:165)
+ - frontend/src/index.css (258:263)
 

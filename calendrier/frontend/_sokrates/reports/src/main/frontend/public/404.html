@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found - WeSchedule</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .container {
+      text-align: center;
+      padding: 2rem;
+      max-width: 600px;
+    }
+    h1 {
+      font-size: 4rem;
+      margin: 0;
+      font-weight: 900;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      opacity: 0.9;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0.8;
+      margin: 1.5rem 0;
+    }
+    .debug-info {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      text-align: left;
+    }
+    .debug-info strong {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 2rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid white;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>404</h1>
+    <h2>Page Not Found</h2>
+    <p>
+      The page you're looking for doesn't exist. This might be a routing issue with the Single Page Application (SPA).
+    </p>
+    <div class="debug-info">
+      <strong>Debug Information:</strong>
+      <div>Current URL: <span id="current-url"></span></div>
+      <div>Timestamp: <span id="timestamp"></span></div>
+      <div>User Agent: <span id="user-agent"></span></div>
+      <div>Redirecting to home page in <span id="countdown">5</span> seconds...</div>
+    </div>
+    <a href="/" class="button">Go to Home Page</a>
+  </div>
+  <script>
+    // Display debug information
+    document.getElementById('current-url').textContent = window.location.href;
+    document.getElementById('timestamp').textContent = new Date().toISOString();
+    document.getElementById('user-agent').textContent = navigator.userAgent.substring(0, 80) + '...';
+    
+    // Auto-redirect after countdown
+    let countdown = 5;
+    const countdownEl = document.getElementById('countdown');
+    const interval = setInterval(() => {
+      countdown--;
+      countdownEl.textContent = countdown;
+      if (countdown <= 0) {
+        clearInterval(interval);
+        window.location.href = '/';
+      }
+    }, 1000);
+    
+    // Log to console for debugging
+    console.error('404 Error - Page not found:', {
+      url: window.location.href,
+      pathname: window.location.pathname,
+      search: window.location.search,
+      hash: window.location.hash,
+      timestamp: new Date().toISOString(),
+      userAgent: navigator.userAgent
+    });
+  </script>
+</body>
+</html>
+

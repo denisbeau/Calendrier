@@ -51,7 +51,7 @@ export default function CalendarPage() {
       editingEventId,
       () =&gt; {
         if (isEditing) {
-          handleCancelEdit();
+          onCancelEdit();
         } else {
           setFormEvent(getInitialFormState());
         }
@@ -69,7 +69,7 @@ export default function CalendarPage() {
 
   const onDelete = () =&gt; {
     handleDeleteEvent(editingEventId, () =&gt; {
-      handleCancelEdit();
+      onCancelEdit();
     });
   };
 

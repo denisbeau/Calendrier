@@ -12,62 +12,110 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">frontend/src/App.jsx (<b>55</b> lines of code) (<a href="App.jsx">raw</a>):</h3>
+<h3 style="margin-bottom: 0">frontend/src/App.jsx (<b>96</b> lines of code) (<a href="App.jsx">raw</a>):</h3>
 <div id="editor">// src/App.jsx
-import React from &quot;react&quot;;
-import { BrowserRouter, Routes, Route, Navigate } from &quot;react-router-dom&quot;;
+import React, { useEffect } from &quot;react&quot;;
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from &quot;react-router-dom&quot;;
 import { AuthProvider } from &quot;./context/AuthContext&quot;;
 import { ThemeProvider } from &quot;./theme/ThemeProvider&quot;;
 import MainLayout from &quot;./layouts/MainLayout&quot;;
 import ProtectedRoute from &quot;./components/ProtectedRoute&quot;;
+import ErrorBoundary from &quot;./components/ErrorBoundary&quot;;
 import HomePage from &quot;./pages/HomePage&quot;;
 import LoginPage from &quot;./pages/LoginPage&quot;;
 import SignUpPage from &quot;./pages/SignUpPage&quot;;
 import CalendarPage from &quot;./pages/CalendarPage&quot;;
 import GroupsPage from &quot;./pages/GroupsPage&quot;;
 
-export default function App() {
-  return (
-    &lt;ThemeProvider&gt;
-      &lt;AuthProvider&gt;
-        &lt;BrowserRouter&gt;
-          &lt;Routes&gt;
-            {/* Public routes */}
-            &lt;Route path=&quot;/login&quot; element={&lt;LoginPage /&gt;} /&gt;
-            &lt;Route path=&quot;/signup&quot; element={&lt;SignUpPage /&gt;} /&gt;
+// Component to log route changes and detect 404s
+function RouteLogger() {
+  const location = useLocation();
 
-            {/* Protected routes */}
-            &lt;Route
-              path=&quot;/*&quot;
-              element={
-                &lt;MainLayout&gt;
-                  &lt;Routes&gt;
-                    &lt;Route path=&quot;/&quot; element={&lt;HomePage /&gt;} /&gt;
-                    &lt;Route
-                      path=&quot;/calendar&quot;
-                      element={
-                        &lt;ProtectedRoute&gt;
-                          &lt;CalendarPage /&gt;
-                        &lt;/ProtectedRoute&gt;
-                      }
-                    /&gt;
-                    &lt;Route
-                      path=&quot;/groups&quot;
-                      element={
-                        &lt;ProtectedRoute&gt;
-                          &lt;GroupsPage /&gt;
-                        &lt;/ProtectedRoute&gt;
-                      }
-                    /&gt;
-                    &lt;Route path=&quot;*&quot; element={&lt;Navigate to=&quot;/&quot; replace /&gt;} /&gt;
-                  &lt;/Routes&gt;
-                &lt;/MainLayout&gt;
-              }
-            /&gt;
-          &lt;/Routes&gt;
-        &lt;/BrowserRouter&gt;
-      &lt;/AuthProvider&gt;
-    &lt;/ThemeProvider&gt;
+  useEffect(() =&gt; {
+    // Log route changes for debugging
+    console.log(&quot;📍 Route changed:&quot;, {
+      pathname: location.pathname,
+      search: location.search,
+      hash: location.hash,
+      fullUrl: window.location.href,
+      timestamp: new Date().toISOString(),
+    });
+
+    // Check if we're on a known route
+    const knownRoutes = [&quot;/&quot;, &quot;/login&quot;, &quot;/signup&quot;, &quot;/calendar&quot;, &quot;/groups&quot;];
+    const isKnownRoute = knownRoutes.includes(location.pathname);
+
+    if (!isKnownRoute) {
+      console.warn(&quot;⚠️ Unknown route detected:&quot;, location.pathname);
+      console.warn(&quot;💡 This might indicate a routing configuration issue.&quot;);
+      console.warn(&quot;💡 Check vercel.json, netlify.toml, or server configuration.&quot;);
+    }
+  }, [location]);
+
+  return null;
+}
+
+export default function App() {
+  // Log app initialization
+  useEffect(() =&gt; {
+    console.log(&quot;🚀 App initialized&quot;, {
+      userAgent: navigator.userAgent,
+      url: window.location.href,
+      timestamp: new Date().toISOString(),
+    });
+
+    // Check if we're in a SPA context
+    if (window.history &amp;&amp; window.history.pushState) {
+      console.log(&quot;✅ Browser supports SPA routing&quot;);
+    } else {
+      console.warn(&quot;⚠️ Browser may not fully support SPA routing&quot;);
+    }
+  }, []);
+
+  return (
+    &lt;ErrorBoundary&gt;
+      &lt;ThemeProvider&gt;
+        &lt;AuthProvider&gt;
+          &lt;BrowserRouter&gt;
+            &lt;RouteLogger /&gt;
+            &lt;Routes&gt;
+              {/* Public routes */}
+              &lt;Route path=&quot;/login&quot; element={&lt;LoginPage /&gt;} /&gt;
+              &lt;Route path=&quot;/signup&quot; element={&lt;SignUpPage /&gt;} /&gt;
+
+              {/* Protected routes */}
+              &lt;Route
+                path=&quot;/*&quot;
+                element={
+                  &lt;MainLayout&gt;
+                    &lt;Routes&gt;
+                      &lt;Route path=&quot;/&quot; element={&lt;HomePage /&gt;} /&gt;
+                      &lt;Route
+                        path=&quot;/calendar&quot;
+                        element={
+                          &lt;ProtectedRoute&gt;
+                            &lt;CalendarPage /&gt;
+                          &lt;/ProtectedRoute&gt;
+                        }
+                      /&gt;
+                      &lt;Route
+                        path=&quot;/groups&quot;
+                        element={
+                          &lt;ProtectedRoute&gt;
+                            &lt;GroupsPage /&gt;
+                          &lt;/ProtectedRoute&gt;
+                        }
+                      /&gt;
+                      &lt;Route path=&quot;*&quot; element={&lt;Navigate to=&quot;/&quot; replace /&gt;} /&gt;
+                    &lt;/Routes&gt;
+                  &lt;/MainLayout&gt;
+                }
+              /&gt;
+            &lt;/Routes&gt;
+          &lt;/BrowserRouter&gt;
+        &lt;/AuthProvider&gt;
+      &lt;/ThemeProvider&gt;
+    &lt;/ErrorBoundary&gt;
   );
 }
 </div>
