@@ -1,24 +1,25 @@
-frontend/src/server/index.js [77:82]:
+frontend/src/server/index.js [92:98]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    process.env.FRONTEND_URL ||
-    process.env.VITE_FRONTEND_URL ||
-    "http://localhost:5173";
-  const acceptUrl = `${frontend.replace(
-    /\/$/,
-    ""
+  try {
+    const result = await sendInviteEmail({ to: email, subject, text, html, acceptUrl });
+    return res.status(201).json(result);
+  } catch (err) {
+    return res.status(500).json({ error: err.message });
+  }
+});
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-frontend/src/server/index.js [113:119]:
+frontend/src/server/index.js [132:138]:
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    process.env.FRONTEND_URL ||
-    process.env.VITE_FRONTEND_URL ||
-    "http://localhost:5173";
-
-  const acceptUrl = `${frontend.replace(
-    /\/$/,
-    ""
+  try {
+    const result = await sendInviteEmail({ to: email, subject, text, html, acceptUrl });
+    return res.status(201).json(result);
+  } catch (err) {
+    return res.status(500).json({ error: err.message });
+  }
+});
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

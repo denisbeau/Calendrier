@@ -14,7 +14,7 @@ Ce document résume, pour chaque critère de la grille (TOTAL 100), ce qui est d
 
 ---
 
-## 1. Contribution & normes Git (commits, branches, PR, revues) — 30 pts
+## 1. Contribution & normes Git (commits, branches, PR, revues) — 30 pts ✅ (effectué)
 
 - **Ce qui est attendu**
 
@@ -22,15 +22,13 @@ Ce document résume, pour chaque critère de la grille (TOTAL 100), ce qui est d
   - Beaucoup de petits commits avec messages descriptifs.
   - (Optionnel) Pull Requests avec revues.
 
-- **Commandes à exécuter**
+- **Commandes exécutées**
 
 ```bash
 git status -sb
 
-# Si vous êtes sur main/master et que vous continuez à travailler :
 git checkout -b feature/final-evaluation
 
-# Après vos derniers changements :
 git add .
 git commit -m "chore: finalize testing documentation and evidence"
 git push -u origin feature/final-evaluation
@@ -48,7 +46,7 @@ git branch -a
 
 ---
 
-## 2. Couverture tests unitaires (≥ 75 % lignes/branches, rapport) — 10 pts
+## 2. Couverture tests unitaires (≥ 75 % lignes/branches, rapport) — 10 pts ✅ (effectué)
 
 - **Déjà en place dans le projet**
 
@@ -61,7 +59,7 @@ git branch -a
     - `src/features/auth/__tests__/SignUp.test.jsx`
   - Rapport de couverture déjà généré dans `coverage/`.
 
-- **Commandes à exécuter**
+- **Commandes exécutées**
 
 ```bash
 npm install
@@ -84,7 +82,7 @@ npm run test:coverage
 
 ---
 
-## 3. Tests d’intégration (≥ 3 cas critiques, verts en CI) — 10 pts
+## 3. Tests d’intégration (≥ 3 cas critiques, verts en CI) — 10 pts ✅ (effectué)
 
 - **Déjà en place dans le projet**
 
@@ -94,7 +92,7 @@ npm run test:coverage
     - `src/__tests__/integration/groups.integration.test.js`
   - Environ 9 tests couvrant au moins 3 cas critiques.
 
-- **Commandes à exécuter**
+- **Commandes exécutées**
 
 ```bash
 npm run test:integration
@@ -110,7 +108,7 @@ npm run test:integration
 
 ---
 
-## 4. Tests E2E (≥ 3 parcours utilisateurs critiques, verts en CI) — 10 pts
+## 4. Tests E2E (≥ 3 parcours utilisateurs critiques, verts en CI) — 10 pts ✅ (effectué localement)
 
 - **Déjà en place dans le projet**
 
@@ -127,13 +125,13 @@ npm run test:integration
     - `cypress/e2e/performance.cy.js`
   - 30+ tests couvrant les parcours critiques.
 
-- **Option 1 (recommandée) : script E2E complet**
+- **Option 1 (recommandée, exécutée) : script E2E complet**
 
 ```bash
 npm run test:e2e
 ```
 
-- **Option 2 : manuel (2 terminaux)**
+- **Option 2 : manuel (2 terminaux, si besoin uniquement)**
 
 ```bash
 # Terminal 1 : démarrer le serveur
@@ -156,7 +154,7 @@ npm run cypress:open
 
 ---
 
-## 5. Utilisation de Cucumber (≥ 3 scénarios Given/When/Then) — 5 pts
+## 5. Utilisation de Cucumber (≥ 3 scénarios Given/When/Then) — 5 pts ✅ (scénarios .feature verts)
 
 - **Déjà en place dans le projet**
 
@@ -167,7 +165,7 @@ npm run cypress:open
   - Step definitions :
     - `cypress/support/step_definitions/common.steps.js`
 
-- **Commandes à exécuter**
+- **Commandes exécutées**
 
 ```bash
 # Vérifier la présence des fichiers .feature
@@ -184,7 +182,7 @@ npm run cypress:run -- --spec "cypress/e2e/**/*.feature"
 
 ---
 
-## 6. Toutes les fonctionnalités fonctionnent ET sont testées (démo + preuves) — 10 pts
+## 6. Toutes les fonctionnalités fonctionnent ET sont testées (démo + preuves) — 10 pts ✅ (tests automatisés exécutés)
 
 - **Ce que couvrent déjà les tests**
 
@@ -194,7 +192,7 @@ npm run cypress:run -- --spec "cypress/e2e/**/*.feature"
   - Navigation : routes protégées.
   - Responsive design (breakpoints principaux).
 
-- **Commandes à exécuter**
+- **Commandes exécutées (automatisé)**
 
 ```bash
 npm run test:coverage
@@ -202,7 +200,7 @@ npm run test:integration
 npm run test:e2e
 ```
 
-- **Démo manuelle**
+- **Démo manuelle (à faire vous-même)**
 
 ```bash
 npm run dev
@@ -221,7 +219,7 @@ Dans le navigateur :
 
 ---
 
-## 7. Sokrates.dev — Goals tous au vert — 15 pts
+## 7. Sokrates.dev — Goals tous au vert — 15 pts ✅ (analyse régénérée)
 
 - **Déjà en place dans le projet**
 
@@ -230,9 +228,11 @@ Dans le navigateur :
     - `_sokrates/reports/data/*`
   - Goals clés (tels que décrits dans `TESTING_SETUP.md`) déjà au vert.
 
-- **Commandes à exécuter**
+- **Commandes exécutées**
 
 ```bash
+java -jar sokrates-LATEST.jar generateReports -confFile _sokrates/config.json -outputFolder _sokrates/reports
+
 # Windows
 start _sokrates/reports/html/index.html
 ```

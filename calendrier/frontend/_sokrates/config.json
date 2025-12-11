@@ -65,6 +65,11 @@
     "exception" : false,
     "note" : "Binaries for distribution"
   }, {
+    "pathPattern" : ".*/coverage/.*",
+    "contentPattern" : "",
+    "exception" : false,
+    "note" : "Generated coverage reports (HTML, JS, CSS)"
+  }, {
     "pathPattern" : ".*[.]min[.]js",
     "contentPattern" : "",
     "exception" : false,
@@ -112,7 +117,12 @@
   },
   "test" : {
     "name" : "test",
-    "sourceFileFilters" : [ {
+  "sourceFileFilters" : [ {
+    "pathPattern" : ".*/cypress/.*",
+    "contentPattern" : "",
+    "exception" : false,
+    "note" : "Cypress E2E and Cucumber tests"
+  }, {
       "pathPattern" : ".*/jest[.][a-zA-Z0-9\\.]+",
       "contentPattern" : "",
       "exception" : false,

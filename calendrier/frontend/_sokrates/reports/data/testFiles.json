@@ -1,7 +1,161 @@
 [ {
+  "relativePath" : "frontend/cypress/e2e/calendar-events.cy.js",
+  "extension" : "js",
+  "linesOfCode" : 193,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/cypress/e2e/calendar-views.cy.js",
+  "extension" : "js",
+  "linesOfCode" : 164,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/cypress/e2e/groups.cy.js",
+  "extension" : "js",
+  "linesOfCode" : 246,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/cypress/e2e/homepage.cy.js",
+  "extension" : "js",
+  "linesOfCode" : 36,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/cypress/e2e/login.cy.js",
+  "extension" : "js",
+  "linesOfCode" : 256,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/cypress/e2e/navigation.cy.js",
+  "extension" : "js",
+  "linesOfCode" : 20,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/cypress/e2e/performance.cy.js",
+  "extension" : "js",
+  "linesOfCode" : 89,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/cypress/e2e/responsive.cy.js",
+  "extension" : "js",
+  "linesOfCode" : 49,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/cypress/e2e/signup.cy.js",
+  "extension" : "js",
+  "linesOfCode" : 221,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/cypress/e2e/workflow.cy.js",
+  "extension" : "js",
+  "linesOfCode" : 233,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/cypress/support/commands.js",
+  "extension" : "js",
+  "linesOfCode" : 84,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/cypress/support/e2e.js",
+  "extension" : "js",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/cypress/support/step_definitions/common.steps.js",
+  "extension" : "js",
+  "linesOfCode" : 317,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
   "relativePath" : "frontend/jest.config.js",
   "extension" : "js",
-  "linesOfCode" : 15,
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/src/features/auth/__tests__/Login.test.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 174,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/src/features/auth/__tests__/SignUp.test.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 144,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/src/features/calendar/hooks/__tests__/useCalendarEvents.test.js",
+  "extension" : "js",
+  "linesOfCode" : 251,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/src/services/__tests__/api.test.js",
+  "extension" : "js",
+  "linesOfCode" : 169,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/src/utils/__tests__/dateUtils.test.js",
+  "extension" : "js",
+  "linesOfCode" : 56,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/src/__tests__/integration/auth.integration.test.js",
+  "extension" : "js",
+  "linesOfCode" : 132,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/src/__tests__/integration/calendar.integration.test.js",
+  "extension" : "js",
+  "linesOfCode" : 144,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/src/__tests__/integration/groups.integration.test.js",
+  "extension" : "js",
+  "linesOfCode" : 148,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "frontend/vitest.config.js",
+  "extension" : "js",
+  "linesOfCode" : 39,
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0

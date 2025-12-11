@@ -6,6 +6,26 @@
   <link rel="icon" type="image/png" href="/src/assets/CalendarLogo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WeSchedule</title>
+    <script>
+      // Debug logging for 404 errors
+      window.addEventListener('error', function(e) {
+        if (e.target && e.target.tagName === 'SCRIPT' && e.target.src) {
+          console.error('❌ Script loading error:', {
+            src: e.target.src,
+            error: e.message,
+            timestamp: new Date().toISOString(),
+            url: window.location.href
+          });
+        }
+      });
+
+      // Log page load
+      console.log('📄 HTML page loaded:', {
+        url: window.location.href,
+        pathname: window.location.pathname,
+        timestamp: new Date().toISOString()
+      });
+    </script>
   </head>
   <body class="light">
     <div id="root"></div>
@@ -14,6 +34,16 @@
       // Ensure light theme is always applied
       document.body.classList.add('light');
       document.body.classList.remove('dark');
+      
+      // Additional debug info
+      console.log('✅ DOM ready');
+      console.log('🔍 Debug info:', {
+        currentUrl: window.location.href,
+        pathname: window.location.pathname,
+        search: window.location.search,
+        hash: window.location.hash,
+        userAgent: navigator.userAgent.substring(0, 50) + '...'
+      });
     </script>
   </body>
 </html>

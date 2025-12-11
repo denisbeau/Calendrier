@@ -12,7 +12,7 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">frontend/index.html (<b>18</b> lines of code) (<a href="index.html">raw</a>):</h3>
+<h3 style="margin-bottom: 0">frontend/index.html (<b>46</b> lines of code) (<a href="index.html">raw</a>):</h3>
 <div id="editor">&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
   &lt;head&gt;
@@ -21,6 +21,26 @@
   &lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; href=&quot;/src/assets/CalendarLogo.png&quot; /&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
     &lt;title&gt;WeSchedule&lt;/title&gt;
+    &lt;script&gt;
+      // Debug logging for 404 errors
+      window.addEventListener('error', function(e) {
+        if (e.target &amp;&amp; e.target.tagName === 'SCRIPT' &amp;&amp; e.target.src) {
+          console.error('❌ Script loading error:', {
+            src: e.target.src,
+            error: e.message,
+            timestamp: new Date().toISOString(),
+            url: window.location.href
+          });
+        }
+      });
+
+      // Log page load
+      console.log('📄 HTML page loaded:', {
+        url: window.location.href,
+        pathname: window.location.pathname,
+        timestamp: new Date().toISOString()
+      });
+    &lt;/script&gt;
   &lt;/head&gt;
   &lt;body class=&quot;light&quot;&gt;
     &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;
@@ -29,6 +49,16 @@
       // Ensure light theme is always applied
       document.body.classList.add('light');
       document.body.classList.remove('dark');
+      
+      // Additional debug info
+      console.log('✅ DOM ready');
+      console.log('🔍 Debug info:', {
+        currentUrl: window.location.href,
+        pathname: window.location.pathname,
+        search: window.location.search,
+        hash: window.location.hash,
+        userAgent: navigator.userAgent.substring(0, 50) + '...'
+      });
     &lt;/script&gt;
   &lt;/body&gt;
 &lt;/html&gt;

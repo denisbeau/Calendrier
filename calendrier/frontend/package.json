@@ -14,7 +14,7 @@
     "test:coverage": "vitest --coverage",
     "test:integration": "vitest run src/__tests__/integration",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
+    "cypress:run": "cypress run --",
     "test:e2e": "start-server-and-test dev http://localhost:5173 cypress:run",
     "test:e2e:calendar-events": "start-server-and-test dev http://localhost:5173 \"cypress run --spec cypress/e2e/calendar-events.cy.js\"",
     "test:e2e:calendar-views": "start-server-and-test dev http://localhost:5173 \"cypress run --spec cypress/e2e/calendar-views.cy.js\"",

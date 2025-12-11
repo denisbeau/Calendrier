@@ -1,9 +1,21 @@
 Path	Lines of Code
+frontend/CYPRESS_FINAL_FIXES.md	52
+frontend/CYPRESS_FIXES_APPLIED.md	42
+frontend/CYPRESS_FIXES_SUMMARY.md	64
+frontend/CYPRESS_TEST_PLAN.md	625
+frontend/DEBUG_404_FIX.md	118
+frontend/EVALUATION_CRITERES.md	221
+frontend/EVALUATION_FINAL.md	166
+frontend/QUICK_START_TESTING.md	66
 frontend/README.md	7
+frontend/SPA_ROUTING_FIX.md	66
+frontend/TESTING_SETUP.md	317
 frontend/all_files_content.txt	2059
 frontend/analysis_conventions.json	26
 frontend/cypress/fixtures/example.json	5
+frontend/documentation/workflows/evaluation-checklist.md	235
 frontend/eslint-config.json	1449
-frontend/package.json	60
+frontend/package.json	72
 frontend/src/server/README.md	13
-vercel.json	1
+frontend/vercel.json	27
+vercel.json	9

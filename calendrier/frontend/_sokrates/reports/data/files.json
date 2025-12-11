@@ -1,25 +1,7 @@
 [ {
-  "relativePath" : "frontend/cypress/e2e/signup.cy.js",
-  "extension" : "js",
-  "linesOfCode" : 35,
-  "components" : [ "primary::frontend" ],
-  "concerns" : [ "::Unclassified" ]
-}, {
-  "relativePath" : "frontend/cypress/support/commands.js",
-  "extension" : "js",
-  "linesOfCode" : 1,
-  "components" : [ "primary::frontend" ],
-  "concerns" : [ "::Unclassified" ]
-}, {
-  "relativePath" : "frontend/cypress/support/e2e.js",
-  "extension" : "js",
-  "linesOfCode" : 5,
-  "components" : [ "primary::frontend" ],
-  "concerns" : [ "::Unclassified" ]
-}, {
   "relativePath" : "frontend/cypress.config.js",
   "extension" : "js",
-  "linesOfCode" : 15,
+  "linesOfCode" : 30,
   "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -31,7 +13,7 @@
 }, {
   "relativePath" : "frontend/index.html",
   "extension" : "html",
-  "linesOfCode" : 18,
+  "linesOfCode" : 46,
   "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -47,6 +29,12 @@
   "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
+  "relativePath" : "frontend/public/404.html",
+  "extension" : "html",
+  "linesOfCode" : 118,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
   "relativePath" : "frontend/src/App.css",
   "extension" : "css",
   "linesOfCode" : 37,
@@ -55,7 +43,13 @@
 }, {
   "relativePath" : "frontend/src/App.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 55,
+  "linesOfCode" : 96,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "frontend/src/components/ErrorBoundary.jsx",
+  "extension" : "jsx",
+  "linesOfCode" : 105,
   "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -73,7 +67,7 @@
 }, {
   "relativePath" : "frontend/src/context/AuthContext.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 109,
+  "linesOfCode" : 125,
   "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -115,7 +109,7 @@
 }, {
   "relativePath" : "frontend/src/index.css",
   "extension" : "css",
-  "linesOfCode" : 270,
+  "linesOfCode" : 324,
   "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -145,7 +139,7 @@
 }, {
   "relativePath" : "frontend/src/pages/HomePage.jsx",
   "extension" : "jsx",
-  "linesOfCode" : 131,
+  "linesOfCode" : 296,
   "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -179,6 +173,12 @@
   "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 }, {
+  "relativePath" : "frontend/src/setupTests.js",
+  "extension" : "js",
+  "linesOfCode" : 15,
+  "components" : [ "primary::frontend" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
   "relativePath" : "frontend/src/supabaseClient.js",
   "extension" : "js",
   "linesOfCode" : 20,
@@ -205,7 +205,7 @@
 }, {
   "relativePath" : "frontend/vite.config.js",
   "extension" : "js",
-  "linesOfCode" : 6,
+  "linesOfCode" : 14,
   "components" : [ "primary::frontend" ],
   "concerns" : [ "::Unclassified" ]
 } ]

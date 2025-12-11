@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>frontend/src/setupTests.js</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/src/setupTests.js (<b>15</b> lines of code) (<a href="setupTests.js">raw</a>):</h3>
+<div id="editor">// src/setupTests.js
+import '@testing-library/jest-dom';
+import { vi } from 'vitest';
+
+// Mock window.confirm and window.prompt
+global.confirm = vi.fn(() =&gt; true);
+global.prompt = vi.fn(() =&gt; 'Test Event');
+
+// Mock import.meta.env for Vitest
+if (typeof import.meta === 'undefined') {
+  global.import = {
+    meta: {
+      env: {
+        DEV: true,
+        VITE_SUPABASE_URL: 'https://test.supabase.co',
+        VITE_SUPABASE_ANON_KEY: 'test-key',
+      },
+    },
+  };
+}
+
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/javascript");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

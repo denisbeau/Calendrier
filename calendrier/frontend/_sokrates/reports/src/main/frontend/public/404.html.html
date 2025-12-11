@@ -1,0 +1,147 @@
+<html>
+<head>
+    <title>frontend/public/404.html</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/public/404.html (<b>118</b> lines of code) (<a href="404.html">raw</a>):</h3>
+<div id="editor">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Page Not Found - WeSchedule&lt;/title&gt;
+  &lt;style&gt;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .container {
+      text-align: center;
+      padding: 2rem;
+      max-width: 600px;
+    }
+    h1 {
+      font-size: 4rem;
+      margin: 0;
+      font-weight: 900;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      opacity: 0.9;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0.8;
+      margin: 1.5rem 0;
+    }
+    .debug-info {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      text-align: left;
+    }
+    .debug-info strong {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 2rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid white;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;h1&gt;404&lt;/h1&gt;
+    &lt;h2&gt;Page Not Found&lt;/h2&gt;
+    &lt;p&gt;
+      The page you're looking for doesn't exist. This might be a routing issue with the Single Page Application (SPA).
+    &lt;/p&gt;
+    &lt;div class=&quot;debug-info&quot;&gt;
+      &lt;strong&gt;Debug Information:&lt;/strong&gt;
+      &lt;div&gt;Current URL: &lt;span id=&quot;current-url&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;div&gt;Timestamp: &lt;span id=&quot;timestamp&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;div&gt;User Agent: &lt;span id=&quot;user-agent&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+      &lt;div&gt;Redirecting to home page in &lt;span id=&quot;countdown&quot;&gt;5&lt;/span&gt; seconds...&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;a href=&quot;/&quot; class=&quot;button&quot;&gt;Go to Home Page&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+    // Display debug information
+    document.getElementById('current-url').textContent = window.location.href;
+    document.getElementById('timestamp').textContent = new Date().toISOString();
+    document.getElementById('user-agent').textContent = navigator.userAgent.substring(0, 80) + '...';
+    
+    // Auto-redirect after countdown
+    let countdown = 5;
+    const countdownEl = document.getElementById('countdown');
+    const interval = setInterval(() =&gt; {
+      countdown--;
+      countdownEl.textContent = countdown;
+      if (countdown &lt;= 0) {
+        clearInterval(interval);
+        window.location.href = '/';
+      }
+    }, 1000);
+    
+    // Log to console for debugging
+    console.error('404 Error - Page not found:', {
+      url: window.location.href,
+      pathname: window.location.pathname,
+      search: window.location.search,
+      hash: window.location.hash,
+      timestamp: new Date().toISOString(),
+      userAgent: navigator.userAgent
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

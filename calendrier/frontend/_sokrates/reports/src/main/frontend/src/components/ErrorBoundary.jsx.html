@@ -1,0 +1,138 @@
+<html>
+<head>
+    <title>frontend/src/components/ErrorBoundary.jsx</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">frontend/src/components/ErrorBoundary.jsx (<b>105</b> lines of code) (<a href="ErrorBoundary.jsx">raw</a>):</h3>
+<div id="editor">// src/components/ErrorBoundary.jsx
+import React from &quot;react&quot;;
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null, errorInfo: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error(&quot;ErrorBoundary caught an error:&quot;, error, errorInfo);
+    this.setState({
+      error,
+      errorInfo,
+    });
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        &lt;div
+          style={{
+            minHeight: &quot;100vh&quot;,
+            display: &quot;flex&quot;,
+            alignItems: &quot;center&quot;,
+            justifyContent: &quot;center&quot;,
+            padding: &quot;2rem&quot;,
+            background: &quot;linear-gradient(135deg, #667eea 0%, #764ba2 100%)&quot;,
+            color: &quot;white&quot;,
+          }}
+        &gt;
+          &lt;div style={{ maxWidth: &quot;800px&quot;, width: &quot;100%&quot; }}&gt;
+            &lt;h1 style={{ fontSize: &quot;3rem&quot;, marginBottom: &quot;1rem&quot; }}&gt;
+              ⚠️ Something went wrong
+            &lt;/h1&gt;
+            &lt;p style={{ fontSize: &quot;1.2rem&quot;, marginBottom: &quot;2rem&quot; }}&gt;
+              An error occurred while loading the application.
+            &lt;/p&gt;
+            &lt;div
+              style={{
+                background: &quot;rgba(0, 0, 0, 0.2)&quot;,
+                padding: &quot;1.5rem&quot;,
+                borderRadius: &quot;8px&quot;,
+                marginBottom: &quot;1.5rem&quot;,
+                fontFamily: &quot;monospace&quot;,
+                fontSize: &quot;0.875rem&quot;,
+                overflow: &quot;auto&quot;,
+                maxHeight: &quot;400px&quot;,
+              }}
+            &gt;
+              &lt;strong&gt;Error Details:&lt;/strong&gt;
+              &lt;pre style={{ marginTop: &quot;0.5rem&quot;, whiteSpace: &quot;pre-wrap&quot; }}&gt;
+                {this.state.error?.toString()}
+              &lt;/pre&gt;
+              {this.state.errorInfo &amp;&amp; (
+                &lt;details style={{ marginTop: &quot;1rem&quot; }}&gt;
+                  &lt;summary style={{ cursor: &quot;pointer&quot;, marginBottom: &quot;0.5rem&quot; }}&gt;
+                    Stack Trace
+                  &lt;/summary&gt;
+                  &lt;pre style={{ whiteSpace: &quot;pre-wrap&quot;, fontSize: &quot;0.75rem&quot; }}&gt;
+                    {this.state.errorInfo.componentStack}
+                  &lt;/pre&gt;
+                &lt;/details&gt;
+              )}
+            &lt;/div&gt;
+            &lt;div style={{ display: &quot;flex&quot;, gap: &quot;1rem&quot; }}&gt;
+              &lt;button
+                onClick={() =&gt; window.location.reload()}
+                style={{
+                  padding: &quot;0.75rem 2rem&quot;,
+                  background: &quot;rgba(255, 255, 255, 0.2)&quot;,
+                  border: &quot;2px solid white&quot;,
+                  borderRadius: &quot;8px&quot;,
+                  color: &quot;white&quot;,
+                  cursor: &quot;pointer&quot;,
+                  fontSize: &quot;1rem&quot;,
+                  fontWeight: &quot;600&quot;,
+                }}
+              &gt;
+                Reload Page
+              &lt;/button&gt;
+              &lt;button
+                onClick={() =&gt; (window.location.href = &quot;/&quot;)}
+                style={{
+                  padding: &quot;0.75rem 2rem&quot;,
+                  background: &quot;rgba(255, 255, 255, 0.2)&quot;,
+                  border: &quot;2px solid white&quot;,
+                  borderRadius: &quot;8px&quot;,
+                  color: &quot;white&quot;,
+                  cursor: &quot;pointer&quot;,
+                  fontSize: &quot;1rem&quot;,
+                  fontWeight: &quot;600&quot;,
+                }}
+              &gt;
+                Go to Home
+              &lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
+export default ErrorBoundary;
+
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/html");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

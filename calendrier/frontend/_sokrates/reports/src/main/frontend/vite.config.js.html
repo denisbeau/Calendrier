@@ -12,7 +12,7 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">frontend/vite.config.js (<b>6</b> lines of code) (<a href="vite.config.js">raw</a>):</h3>
+<h3 style="margin-bottom: 0">frontend/vite.config.js (<b>14</b> lines of code) (<a href="vite.config.js">raw</a>):</h3>
 <div id="editor">import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
@@ -20,6 +20,16 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  // Configure preview server to handle SPA routing
+  preview: {
+    port: 4173,
+    strictPort: true,
+  },
+  // Ensure proper handling of client-side routing in development
+  server: {
+    port: 5173,
+    strictPort: true,
+  },
 })
 </div>
 <script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>

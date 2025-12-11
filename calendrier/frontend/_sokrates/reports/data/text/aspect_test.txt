@@ -1,2 +1,24 @@
 Path	Lines of Code
-frontend/jest.config.js	15
+frontend/cypress/e2e/calendar-events.cy.js	193
+frontend/cypress/e2e/calendar-views.cy.js	164
+frontend/cypress/e2e/groups.cy.js	246
+frontend/cypress/e2e/homepage.cy.js	36
+frontend/cypress/e2e/login.cy.js	256
+frontend/cypress/e2e/navigation.cy.js	20
+frontend/cypress/e2e/performance.cy.js	89
+frontend/cypress/e2e/responsive.cy.js	49
+frontend/cypress/e2e/signup.cy.js	221
+frontend/cypress/e2e/workflow.cy.js	233
+frontend/cypress/support/commands.js	84
+frontend/cypress/support/e2e.js	5
+frontend/cypress/support/step_definitions/common.steps.js	317
+frontend/jest.config.js	35
+frontend/src/__tests__/integration/auth.integration.test.js	132
+frontend/src/__tests__/integration/calendar.integration.test.js	144
+frontend/src/__tests__/integration/groups.integration.test.js	148
+frontend/src/features/auth/__tests__/Login.test.jsx	174
+frontend/src/features/auth/__tests__/SignUp.test.jsx	144
+frontend/src/features/calendar/hooks/__tests__/useCalendarEvents.test.js	251
+frontend/src/services/__tests__/api.test.js	169
+frontend/src/utils/__tests__/dateUtils.test.js	56
+frontend/vitest.config.js	39

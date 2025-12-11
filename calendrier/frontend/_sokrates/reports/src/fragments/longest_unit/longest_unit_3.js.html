@@ -6,10 +6,10 @@
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
 <h3 style="margin-bottom: 0">export async function createGroup()</h3>
-<p style="margin-top: 4px">in <i>frontend/src/services/groups.js [18:69]</i></p>
+<p style="margin-top: 4px">in <i>frontend/src/services/groups.js [18:71]</i></p>
 <ul>
     <li><b>40</b> lines of code</li>
-    <li><b>6</b> McCabe index (conditional complexity)</li>
+    <li><b>7</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="js">
@@ -38,7 +38,9 @@ export async function createGroup({ name, description }) {
       .single();
 
     if (!error) {
-      group = inserted;
+      // Handle both array (from intercept) and object (from real API) responses
+      // .single() should extract first element, but intercepts might return array
+      group = Array.isArray(inserted) ? inserted[0] : inserted;
       break;
     }
 
