@@ -242,6 +242,17 @@ body.dark .rbc-time-header {
   color: var(--text-primary) !important;
 }
 
+/* Ensure time slots are visible and clickable */
+body.dark .rbc-time-content,
+body.dark .rbc-time-view {
+  overflow: visible !important;
+}
+
+body.dark .rbc-time-slot {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
 /* Calendar Styles - Light Theme */
 body.light .rbc-header {
   background-color: var(--bg-primary) !important;
@@ -368,4 +379,15 @@ body.light .rbc-time-content,
 body.light .rbc-time-header {
   background-color: var(--bg-secondary) !important;
   color: var(--text-primary) !important;
+}
+
+/* Ensure time slots are visible and clickable */
+.rbc-time-content,
+.rbc-time-view {
+  overflow: visible !important;
+}
+
+.rbc-time-slot {
+  position: relative !important;
+  z-index: 1 !important;
 }
