@@ -35,8 +35,6 @@ export default defineConfig([
   // Cypress spec/support files — allow Cypress globals and browser APIs
   {
     files: ["cypress/**/*.js", "cypress/**/*.jsx"],
-    // enable the Cypress environment so Cypress, cy, etc. are known
-    env: { browser: true, cypress: true, es2021: true },
     languageOptions: {
       ecmaVersion: 2020,
       globals: { ...globals.browser, Cypress: "readonly", cy: "readonly" },
@@ -51,7 +49,6 @@ export default defineConfig([
   // Cypress config file runs in Node / CommonJS
   {
     files: ["cypress.config.js"],
-    env: { node: true, es2021: true },
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.node,
