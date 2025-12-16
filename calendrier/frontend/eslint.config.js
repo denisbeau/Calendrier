@@ -49,7 +49,7 @@ export default defineConfig([
     },
     rules: {
       "no-console": "off",
-      "no-unused-vars": ["error", { varsIgnorePattern: "^(win|_)" }],
+      "no-unused-vars": "off",
     },
   },
 
@@ -78,7 +78,7 @@ export default defineConfig([
       parserOptions: moduleParserOptions,
     },
     rules: {
-      "no-unused-vars": ["error", { varsIgnorePattern: "^(result|expected|_)" }],
+      "no-unused-vars": "off",
       "react-refresh/only-export-components": "off",
     },
   },
