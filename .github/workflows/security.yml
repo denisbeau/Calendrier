@@ -1,0 +1,35 @@
+name: Security
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  schedule:
+    - cron: '0 0 * * 1'
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        working-directory: ./calendrier/frontend
+        run: npm install
+
+      - name: Run npm audit
+        working-directory: ./calendrier/frontend
+        run: npm audit --audit-level=high
+        continue-on-error: true
+
+      - name: Check for outdated packages
+        working-directory: ./calendrier/frontend
+        run: npm outdated
+        continue-on-error: true
+
+      - name: Verify package-lock integrity
+        working-directory: ./calendrier/frontend
+        run: npm ci --dry-run
