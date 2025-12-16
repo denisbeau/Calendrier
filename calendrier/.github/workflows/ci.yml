@@ -23,6 +23,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: ''
 
       - name: Install dependencies
         working-directory: ./frontend
@@ -56,9 +57,9 @@ jobs:
       - name: Run integration tests
         working-directory: ./frontend
         run: npm run test:integration
+        env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
-          timeout 60 bash -c 'until curl -f http://localhost:5173; do sleep 2; done'
         continue-on-error: true
 
       - name: Run E2E tests with Cypress
@@ -72,6 +73,9 @@ jobs:
           headless: true
           start: npm run dev
           command: npm run cypress:run
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
       - name: Run Cucumber tests
         working-directory: ./frontend
@@ -84,9 +88,6 @@ jobs:
       - name: Upload Cypress screenshots
         uses: actions/upload-artifact@v4
         if: failure()
-        env:
-          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         with:
           name: cypress-screenshots
           path: frontend/cypress/screenshots
@@ -96,4 +97,4 @@ jobs:
         if: always()
         with:
           name: cypress-videos
-          path: frontend/cypress/videos
+          path: cypress/videos
