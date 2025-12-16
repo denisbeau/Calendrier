@@ -12,7 +12,7 @@ const moduleParserOptions = {
 };
 
 export default defineConfig([
-  globalIgnores(["dist"]),
+  globalIgnores(["dist", "_sokrates/**", "coverage/**", "node_modules/**"]),
 
   // Default app rules (your existing config)
   {
@@ -28,7 +28,8 @@ export default defineConfig([
       parserOptions: moduleParserOptions,
     },
     rules: {
-      "no-unused-vars": ["error", { varsIgnorePattern: "^[A-Z_]" }],
+      "no-unused-vars": ["warn", { varsIgnorePattern: "^[A-Z_]" }],
+      "react-refresh/only-export-components": "warn",
     },
   },
 
@@ -37,12 +38,18 @@ export default defineConfig([
     files: ["cypress/**/*.js", "cypress/**/*.jsx"],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: { ...globals.browser, Cypress: "readonly", cy: "readonly" },
+      globals: { 
+        ...globals.browser, 
+        ...globals.mocha,
+        Cypress: "readonly", 
+        cy: "readonly",
+        expect: "readonly",
+      },
       parserOptions: moduleParserOptions,
     },
     rules: {
-      // allow console in Cypress support if you want
       "no-console": "off",
+      "no-unused-vars": ["error", { varsIgnorePattern: "^(win|_)" }],
     },
   },
 
@@ -58,7 +65,33 @@ export default defineConfig([
       },
     },
     rules: {
-      // allow console in config files
+      "no-console": "off",
+    },
+  },
+
+  // Test files (Vitest, Jest)
+  {
+    files: ["**/*.test.{js,jsx}", "**/__tests__/**/*.{js,jsx}", "src/setupTests.js", "vitest.config.js"],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: { ...globals.browser, ...globals.node, global: "readonly" },
+      parserOptions: moduleParserOptions,
+    },
+    rules: {
+      "no-unused-vars": ["error", { varsIgnorePattern: "^(result|expected|_)" }],
+      "react-refresh/only-export-components": "off",
+    },
+  },
+
+  // Server/Node files
+  {
+    files: ["src/server/**/*.js", "vite.config.js"],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: { ...globals.node, process: "readonly", __dirname: "readonly" },
+      parserOptions: moduleParserOptions,
+    },
+    rules: {
       "no-console": "off",
     },
   },
